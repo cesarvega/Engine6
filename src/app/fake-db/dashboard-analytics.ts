@@ -4,26 +4,26 @@ export class AnalyticsDashboardDb
         widget1: {
             chartType: 'line',
             datasets : {
-                '2015': [
-                    {
-                        label: 'Sales',
-                        data : [1.9, 3, 3.4, 2.2, 2.9, 3.9, 2.5, 3.8, 4.1, 3.8, 3.2, 2.9],
-                        fill : 'start'
-
-                    }
-                ],
                 '2016': [
                     {
-                        label: 'Sales',
-                        data : [2.2, 2.9, 3.9, 2.5, 3.8, 3.2, 2.9, 1.9, 3, 3.4, 4.1, 3.8],
+                        label: 'surveys',
+                        data : [4.0, 5, 3.0, 7.0, 2.0, 3.0, 2.0, 8.0, 4.0, 3.0, 3.0, 2.0],
                         fill : 'start'
 
                     }
                 ],
                 '2017': [
                     {
-                        label: 'Sales',
-                        data : [3.9, 2.5, 3.8, 4.1, 1.9, 3, 3.8, 3.2, 2.9, 3.4, 2.2, 2.9],
+                        label: 'surveys',
+                        data : [2.0, 2.0, 3.0, 2.0, 3.0, 3.0, 2.0, 1.0, 3, 3.0, 4.0, 3.0],
+                        fill : 'start'
+
+                    }
+                ],
+                '2018': [
+                    {
+                        label: 'surveys',
+                        data : [3.0, 2.0, 3.0, 4.0, 1.0, 3, 3.0, 3.0, 2.0, 3.0, 2.0, 2.0],
                         fill : 'start'
 
                     }
@@ -101,14 +101,14 @@ export class AnalyticsDashboardDb
         },
         widget2: {
             conversion: {
-                value   : 492,
+                value   : 49,
                 ofTarget: 13
             },
             chartType : 'bar',
             datasets  : [
                 {
                     label: 'Conversion',
-                    data : [221, 428, 492, 471, 413, 344, 294]
+                    data : [221, 422, 491, 472, 411, 342, 291]
                 }
             ],
             labels    : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -268,7 +268,7 @@ export class AnalyticsDashboardDb
             datasets : {
                 'yesterday': [
                     {
-                        label: 'Visitors',
+                        label: 'Montly- Surveys',
                         data : [190, 300, 340, 220, 290, 390, 250, 380, 410, 380, 320, 290],
                         fill : 'start'
 
@@ -281,7 +281,7 @@ export class AnalyticsDashboardDb
                 ],
                 'today'    : [
                     {
-                        label: 'Visitors',
+                        label: 'Montly- Surveys',
                         data : [410, 380, 320, 290, 190, 390, 250, 380, 300, 340, 220, 290],
                         fill : 'start'
                     },

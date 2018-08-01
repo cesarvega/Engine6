@@ -10,6 +10,10 @@ import { ProfileTimelineComponent } from 'app/main/pages/profile/tabs/timeline/t
 import { ProfileAboutComponent } from 'app/main/pages/profile/tabs/about/about.component';
 import { ProfilePhotosVideosComponent } from 'app/main/pages/profile/tabs/photos-videos/photos-videos.component';
 
+import { TranslateModule } from '@ngx-translate/core';
+
+
+import { MatFormFieldModule, MatInputModule, MatSelectModule, MatStepperModule } from '@angular/material';
 
 const routes = [
     {
@@ -30,10 +34,14 @@ const routes = [
     ],
     imports     : [
         RouterModule.forChild(routes),
-
+        TranslateModule,
         MatButtonModule,
-        MatDividerModule,
+        MatFormFieldModule,
         MatIconModule,
+        MatInputModule,
+        MatSelectModule,
+        MatStepperModule,
+        MatDividerModule,
         MatTabsModule,
 
         FuseSharedModule
