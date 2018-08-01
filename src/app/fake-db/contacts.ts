@@ -339,7 +339,7 @@ export class ContactsFakeDb
         },
         {
             'id'      : '5725a6809413bf8a0a5272b1',
-            'name'    : 'Velazquez',
+            'name'    : 'Cesar',
             'lastName': 'Smethley',
             'avatar'  : 'assets/images/avatars/Velazquez.jpg',
             'nickname': 'Strifedream',

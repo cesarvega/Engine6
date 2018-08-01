@@ -314,7 +314,7 @@ export class ChatFakeDb
                 {
                     'id'             : '3725a6809413bf8a0a5272b4',
                     'contactId'      : '5725a6809413bf8a0a5272b1',
-                    'name'           : 'Velazquez',
+                    'name'           : 'Cesar',
                     'unread'         : 2,
                     'lastMessageTime': '2017-03-18T12:30:18.931Z'
                 }

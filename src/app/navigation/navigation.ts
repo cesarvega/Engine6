@@ -15,7 +15,7 @@ export const navigation: FuseNavigation[] = [
         title: 'Profile',
         // translate: 'NAV.Profile',
         type: 'item',
-        icon: 'today',
+        icon: 'person',
         url  : '/pages/profile'
     },
     {
@@ -23,7 +23,7 @@ export const navigation: FuseNavigation[] = [
         title: 'Surverys',
         // translate: 'NAV.Surverys',
         type: 'item',
-        icon: 'today',
+        icon: 'layers',
         url: '/apps/calendar'
     },
     {
@@ -31,7 +31,7 @@ export const navigation: FuseNavigation[] = [
         title: 'Payments',
         // translate: 'NAV.payments',
         type: 'item',
-        icon: 'today',
+        icon: 'attach_money',
         url: '/apps/calendar'
     },
     {
@@ -39,7 +39,7 @@ export const navigation: FuseNavigation[] = [
         title: 'Settings',
         // translate: 'NAV.CALENDAR',
         type: 'item',
-        icon: 'today',
+        icon: 'settings',
         url: '/apps/calendar'
     },
     {
@@ -47,7 +47,7 @@ export const navigation: FuseNavigation[] = [
         title: 'Help',
         // translate: 'NAV.HELP',
         type: 'item',
-        icon: 'today',
+        icon: 'help',
         url: '/apps/calendar'
     }
 

@@ -178,7 +178,7 @@ export class ChatPanelFakeDb
         },
         {
             'id'    : '5725a6809413bf8a0a5272b1',
-            'name'  : 'Velazquez',
+            'name'  : 'Cesar',
             'avatar': 'assets/images/avatars/Velazquez.jpg',
             'status': 'online',
             'mood'  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...'

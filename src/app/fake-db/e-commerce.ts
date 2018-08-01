@@ -502,7 +502,7 @@ export class ECommerceFakeDb
                         'location': 'French'
                     },
                     {
-                        'name'    : 'Velazquez Smethley',
+                        'name'    : 'Cesar Vega',
                         'location': 'Russia'
                     },
                     {

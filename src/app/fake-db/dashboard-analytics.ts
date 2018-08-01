@@ -152,7 +152,7 @@ export class AnalyticsDashboardDb
         },
         widget3: {
             impressions: {
-                value   : '87k',
+                value   : '87',
                 ofTarget: 12
             },
             chartType  : 'line',

@@ -14,7 +14,7 @@ import { AnalyticsDashboardService } from 'app/main/apps/dashboards/analytics/an
 export class AnalyticsDashboardComponent implements OnInit
 {
     widgets: any;
-    widget1SelectedYear = '2016';
+    widget1SelectedYear = '2018';
     widget5SelectedDay = 'today';
 
     /**
