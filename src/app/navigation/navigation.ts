@@ -24,7 +24,7 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.Surverys',
         type: 'item',
         icon: 'layers',
-        url: '/apps/calendar'
+        url: '/apps/surveys'
     },
     {
         id: 'payments',
