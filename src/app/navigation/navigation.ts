@@ -27,6 +27,14 @@ export const navigation: FuseNavigation[] = [
         url: '/apps/surveys'
     },
     {
+        id: 'dynamic',
+        title: 'dynamic',
+        // translate: 'NAV.dynamic',
+        type: 'item',
+        icon: 'attach_money',
+        url: '/apps/dynamic-forms'
+    },
+    {
         id: 'payments',
         title: 'Payments',
         // translate: 'NAV.payments',
