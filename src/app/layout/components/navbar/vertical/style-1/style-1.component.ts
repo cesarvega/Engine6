@@ -19,7 +19,9 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     fuseConfig: any;
     fusePerfectScrollbarUpdateTimeout: any;
     navigation: any;
-
+    counter = 0;
+    avatar = 'assets/images/avatars/Abbott.jpg';
+    avatars = [ 'assets/images/avatars/Barrera.jpg', 'assets/images/avatars/Abbott.jpg', 'assets/images/avatars/Velazquez.jpg'];
     // Private
     private _fusePerfectScrollbar: FusePerfectScrollbarDirective;
     private _unsubscribeAll: Subject<any>;
@@ -163,5 +165,14 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     toggleSidebarFolded(): void
     {
         this._fuseSidebarService.getSidebar('navbar').toggleFold();
+    }
+
+    changeAvatar(): void{
+        if (this.counter < 3){
+            this.avatar = this.avatars[this.counter];
+            this.counter++;
+        }else{
+            this.counter = 0;
+        }    
     }
 }

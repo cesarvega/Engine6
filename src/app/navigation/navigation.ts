@@ -32,7 +32,7 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.payments',
         type: 'item',
         icon: 'attach_money',
-        url: '/apps/calendar'
+        url: '/apps/payment'
     },
     {
         id: 'settings',
@@ -40,7 +40,7 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.CALENDAR',
         type: 'item',
         icon: 'settings',
-        url: '/apps/calendar'
+        url: 'apps/todo/all'
     },
     {
         id: 'help',
@@ -48,7 +48,7 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.HELP',
         type: 'item',
         icon: 'help',
-        url: '/apps/calendar'
+        url: '/pages/faq'
     }
 
     // {

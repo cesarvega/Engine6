@@ -18,6 +18,10 @@ const routes = [
         loadChildren: './surveys/surveys.module#SurveysModule'
     },
     {
+        path: 'payment',
+        loadChildren: './payment/payment.module#PaymentModule'
+    },
+    {
         path: 'mail',
         loadChildren: './mail/mail.module#MailModule'
     },

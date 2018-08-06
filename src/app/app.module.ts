@@ -19,6 +19,7 @@ import { FakeDbService } from 'app/fake-db/fake-db.service';
 import { AppComponent } from 'app/app.component';
 import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
+import { APP_BASE_HREF } from '../../node_modules/@angular/common';
 
 const appRoutes: Routes = [
     {
@@ -83,7 +84,8 @@ const appRoutes: Routes = [
     ],
     bootstrap   : [
         AppComponent
-    ]
+    ],
+    providers: [{ provide: APP_BASE_HREF, useValue: '/unity/'}]
 })
 export class AppModule
 {

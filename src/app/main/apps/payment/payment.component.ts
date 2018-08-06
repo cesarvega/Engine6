@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 @Component({
-  selector: 'app-surveys',
-  templateUrl: './surveys.component.html',
-  styleUrls: ['./surveys.component.scss']
+  selector: 'app-payment',
+  templateUrl: './payment.component.html',
+  styleUrls: ['./payment.component.scss']
 })
-export class SurveysComponent implements OnInit {
+export class PaymentComponent implements OnInit {
   displayedColumns = ['id', 'survey', 'progress', 'color'];
   dataSource: MatTableDataSource<UserData>;
 
@@ -62,3 +62,4 @@ export interface UserData {
   progress: string;
   color: string;
 }
+
