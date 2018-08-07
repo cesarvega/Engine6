@@ -1,19 +1,11 @@
-import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 import { QuestionBase } from './question-base';
 
-@Injectable()
-export class QuestionControlService {
-  constructor() { }
+export class DropdownQuestion extends QuestionBase<string> {
+  controlType = 'dropdown';
+  options: {key: string, value: string}[] = [];
 
-  toFormGroup(questions: QuestionBase<any>[] ): FormGroup {
-    let group: any = {};
-
-    questions.forEach(question => {
-      group[question.key] = question.required ? new FormControl(question.value || '', Validators.required)
-                                              : new FormControl(question.value || '');
-    });
-    return new FormGroup(group);
+  constructor(options: {} = {}) {
+    super(options);
+    this.options = options['options'] || [];
   }
 }

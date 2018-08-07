@@ -18,6 +18,10 @@ const routes = [
         loadChildren: './surveys/surveys.module#SurveysModule'
     },
     {
+        path: 'dynamic-forms',
+        loadChildren: './dynamic-forms/render-component/render.module#RenderModule'
+    },
+    {
         path: 'payment',
         loadChildren: './payment/payment.module#PaymentModule'
     },
