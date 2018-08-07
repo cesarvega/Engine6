@@ -3,18 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { DropdownQuestion } from './question-dropdown';
 import { QuestionBase } from './question-base';
 import { TextboxQuestion } from './question-textbox';
+import { Respondents } from '../questions-database/repondents-questionary';
 @Injectable()
 export class QuestionService {
-
+private url = '';
+private questionsClass: any = '';
   constructor(
     private _httpClient: HttpClient
 )
 {
-
-  this._httpClient.get('./BI_objects.json').subscribe(result => {
+ // get data from server database
+  this._httpClient.get(this.url).subscribe(result => {
   console.log(result);
-  
   });
+
+ this.questionsClass =  Respondents.courses;
 
 }
   
@@ -22,16 +25,31 @@ export class QuestionService {
   // TODO: make asynchronous
   getQuestions(): QuestionBase<any>[] {
 
-    let questions: QuestionBase<any>[] = [
+    const questions: QuestionBase<any>[] = [
 
       new DropdownQuestion({
         key: 'brave',
         label: 'Bravery Rating',
+        value: 'Solid',
         options: [
           {key: 'solid',  value: 'Solid'},
           {key: 'great',  value: 'Great'},
           {key: 'good',   value: 'Good'},
           {key: 'unproven', value: 'Unproven'}
+        ],
+        order: 3
+      }),
+
+
+      new DropdownQuestion({
+        key: 'hello',
+        label: 'hellory Rating',
+        value: 'Solid',
+        options: [
+          {key: 'red',  value: false},
+          {key: 'green',  value: false},
+          {key: 'blue',   value: false},
+          {key: 'white', value: true}
         ],
         order: 3
       }),
@@ -49,37 +67,7 @@ export class QuestionService {
         label: 'Email',
         type: 'email',
         order: 2
-      }),
-
-      new TextboxQuestion({
-        key: 'emailAddres',
-        label: 'Email',
-        type: 'email',
-        order
-        : 2
-      }),
-
-      new TextboxQuestion({
-        key: 'emailAddrs',
-        label: 'Email',
-        type: 'email',
-        order: 2
-      }),
-
-      new TextboxQuestion({
-        key: 'emailAddr',
-        label: 'Email',
-        type: 'email',
-        order: 2
-      }),
-
-      new TextboxQuestion({
-        key: 'emailAd',
-        label: 'Email',
-        type: 'email',
-        order: 2
       })
-
     ];
 
     return questions.sort((a, b) => a.order - b.order);

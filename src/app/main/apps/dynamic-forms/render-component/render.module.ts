@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DynamicFormsComponent } from '../dynamic-forms.component';
-import { MatFormFieldModule, MatPaginatorModule, MatInputModule, MatTableModule } from '@angular/material';
+import { MatFormFieldModule, MatPaginatorModule, MatCheckboxModule ,
+         MatInputModule, MatTableModule, MatSelectModule, MatRadioModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { MatButtonModule, MatDividerModule, MatIconModule, MatTabsModule } from '@angular/material';
 import { DynamicFormQuestionComponent } from '../dynamic-form-question/dynamic-form-question.component';
 import { RenderComponent } from '../render-component/render.component';
 const routes: Routes = [
@@ -20,10 +22,17 @@ const routes: Routes = [
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
     MatPaginatorModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+    MatTabsModule
   ],
-  declarations: [RenderComponent, DynamicFormsComponent, DynamicFormQuestionComponent]
+  declarations: [RenderComponent, DynamicFormQuestionComponent, DynamicFormsComponent ]
 })
 export class RenderModule { }

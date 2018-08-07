@@ -1,18 +1,48 @@
 <div [formGroup]="form">
-    <label [attr.for]="question.key">{{question.label}}</label>
-  
-    <div [ngSwitch]="question.controlType">
-  
-      <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
-              [id]="question.key" [type]="question.type">
-  
-      <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-        <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
-      </select>
-  
-    </div> 
-  
-    <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+  <!-- <label [attr.for]="question.key">{{question.label}}</label> -->
+
+  <div [ngSwitch]="question.controlType">
+
+    <mat-form-field *ngSwitchCase="'textbox'">
+      <input matInput [placeholder]="question.key" [formControlName]="question.key" [id]="question.key" [type]="question.type">
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'textarea'">
+      <textarea matInput [placeholder]="question.key"></textarea>
+    </mat-form-field>
+
+
+    <div *ngSwitchCase="'radio'">
+      <label>{{question.label  | uppercase}}</label><br/><br/>
+      <mat-radio-group [formControlName]="question.key">
+        <mat-radio-button [ngClass]="i>0 ? 'p-20' : ''" 
+          *ngFor="let opt of question.options; let i= index" [value]="opt.value"> {{opt.value}} 
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+
+    <div *ngSwitchCase="'dropdown'">
+      <label>{{question.label  | uppercase}}</label><br/><br/>
+      <div>
+        <mat-checkbox  [formControlName]="question.key" [name]="opt.key" [ngClass]="i>0 ? 'p-20' : ''" 
+          *ngFor="let opt of question.options; let i= index"    [checked]="false"> {{opt.key}} 
+        </mat-checkbox>
+        <mat-checkbox [formControlName]="question.key" >change test</mat-checkbox> 
+        <mat-checkbox [formControlName]="question.key">change test</mat-checkbox> 
+        <mat-checkbox [formControlName]="question.key">change test</mat-checkbox> 
+        <mat-checkbox [formControlName]="question.key">change test</mat-checkbox> 
+      </div>
+    </div>
+
+    <mat-form-field *ngSwitchCase="'dropdown2'">
+      <mat-select [id]="question.key" [formControlName]="question.key" [placeholder]="question.key">
+        <mat-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </div>
-  
-  
+
+  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+</div>
