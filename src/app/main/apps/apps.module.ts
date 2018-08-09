@@ -22,6 +22,10 @@ const routes = [
         loadChildren: './dynamic-forms/render-component/render.module#RenderModule'
     },
     {
+        path: 'dynamic-profile',
+        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+    },
+    {
         path: 'payment',
         loadChildren: './payment/payment.module#PaymentModule'
     },

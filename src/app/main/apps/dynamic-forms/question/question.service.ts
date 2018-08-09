@@ -4,6 +4,7 @@ import { DropdownQuestion } from './question-dropdown';
 import { QuestionBase } from './question-base';
 import { TextboxQuestion } from './question-textbox';
 import { Respondents } from '../questions-database/repondents-questionary';
+import { DatePicker } from './question-datepicker';
 @Injectable()
 export class QuestionService {
 private url = '';
@@ -37,6 +38,7 @@ private questionsClass: any = '';
           {key: 'good',   value: 'Good'},
           {key: 'unproven', value: 'Unproven'}
         ],
+        type: 'dropdown',
         order: 3
       }),
 
@@ -51,6 +53,7 @@ private questionsClass: any = '';
           {key: 'blue',   value: false},
           {key: 'white', value: true}
         ],
+        type: 'dropdown',
         order: 3
       }),
 
@@ -59,6 +62,15 @@ private questionsClass: any = '';
         label: 'First name',
         value: 'Bombasto',
         required: true,
+        order: 1
+      }),
+
+      new DatePicker({
+        key: 'Date',
+        label: 'Date',
+        value: '10-26-2018',
+        required: true,
+        type: 'date',
         order: 1
       }),
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DynamicFormsComponent } from '../dynamic-forms.component';
 import { MatFormFieldModule, MatPaginatorModule, MatCheckboxModule ,
-         MatInputModule, MatTableModule, MatSelectModule, MatRadioModule } from '@angular/material';
+         MatInputModule, MatTableModule, MatSelectModule, MatRadioModule, MatDatepickerModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule, MatDividerModule, MatIconModule, MatTabsModule } from '@angular/material';
@@ -25,6 +25,7 @@ const routes: Routes = [
     MatSelectModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatDatepickerModule,
     MatPaginatorModule,
     MatTableModule,
     ReactiveFormsModule,

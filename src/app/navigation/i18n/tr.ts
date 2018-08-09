@@ -7,6 +7,7 @@ export const locale = {
             'CALENDAR'    : 'Takvim',
             'ECOMMERCE'   : 'E-Ticaret',
             'ACADEMY'     : 'Akademi',
+            'SURVEYS'      : 'surv',
             'MAIL'        : {
                 'TITLE': 'Posta',
                 'BADGE': '15'

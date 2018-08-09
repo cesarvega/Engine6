@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormArray } from '@angular/forms';
 import { QuestionControlService } from './question/question-control.service';
 import { QuestionBase } from './question/question-base';
 
