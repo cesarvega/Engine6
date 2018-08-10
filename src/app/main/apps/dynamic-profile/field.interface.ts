@@ -13,3 +13,14 @@ export interface FieldConfig {
   value?: any;
   validations?: Validator[];
 }
+
+export interface FieldGroupConfig {
+  item?: FieldConfig[];
+  name?: string;
+  // inputType?: string;
+  // options?: string[];
+  // collections?: any;
+  // type: string;
+  // value?: any;
+  // validations?: Validator[];
+}

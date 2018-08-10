@@ -21,6 +21,24 @@
           <button type="submit" [disabled]="!form.valid">Save</button>
         </div>
       </mat-tab>
+      <mat-tab label="OTHER INFO">
+        <div *ngFor="let question of questions" class="form-row">
+          <app-question [question]="question" [form]="form"></app-question>
+        </div>
+
+        <div class="form-row">
+          <button type="submit" [disabled]="!form.valid">Save</button>
+        </div>
+      </mat-tab>
+      <mat-tab label="OTHER INFO">
+        <div *ngFor="let question of questions" class="form-row">
+          <app-question [question]="question" [form]="form"></app-question>
+        </div>
+
+        <div class="form-row">
+          <button type="submit" [disabled]="!form.valid">Save</button>
+        </div>
+      </mat-tab>
     </mat-tab-group>
   </form>
 

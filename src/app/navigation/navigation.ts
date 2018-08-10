@@ -57,7 +57,7 @@ export const navigation: FuseNavigation[] = [
         type: 'item',
         icon: 'help',
         url: '/pages/faq'
-    }
+    },
 
     // ,{
     //     id       : 'applications',
@@ -729,80 +729,81 @@ export const navigation: FuseNavigation[] = [
     //                 }
     //             ]
     //         },
-    //         {
-    //             id      : 'layout',
-    //             title   : 'Layout',
-    //             type    : 'collapsable',
-    //             icon    : 'layers',
-    //             children: [
-    //                 {
-    //                     id   : 'badge',
-    //                     title: 'Badge',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/badge'
-    //                 },
-    //                 {
-    //                     id   : 'bottom-sheet',
-    //                     title: 'Bottom Sheet',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/bottom-sheet'
-    //                 },
-    //                 {
-    //                     id   : 'card',
-    //                     title: 'Card',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/card'
-    //                 },
-    //                 {
-    //                     id   : 'divider',
-    //                     title: 'Divider',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/divider'
-    //                 },
-    //                 {
-    //                     id   : 'elevation',
-    //                     title: 'Elevation',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/elevation'
-    //                 },
-    //                 {
-    //                     id   : 'expansion-panel',
-    //                     title: 'Expansion Panel',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/expansion-panel'
-    //                 },
-    //                 {
-    //                     id   : 'grid-list',
-    //                     title: 'Grid list',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/grid-list'
-    //                 },
-    //                 {
-    //                     id   : 'list',
-    //                     title: 'List',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/list'
-    //                 },
-    //                 {
-    //                     id   : 'stepper',
-    //                     title: 'Stepper',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/stepper'
-    //                 },
-    //                 {
-    //                     id   : 'tabs',
-    //                     title: 'Tabs',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/tabs'
-    //                 },
-    //                 {
-    //                     id   : 'tree',
-    //                     title: 'Tree',
-    //                     type : 'item',
-    //                     url  : '/angular-material-elements/tree'
-    //                 }
-    //             ]
-    //         },
+            {
+                id      : 'layout',
+                title   : 'Layout',
+                type    : 'collapsable',
+                icon    : 'layers',
+                children: [
+                    // {
+                    //     id   : 'badge',
+                    //     title: 'Badge',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/badge'
+                    // },
+                    // {
+                    //     id   : 'bottom-sheet',
+                    //     title: 'Bottom Sheet',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/bottom-sheet'
+                    // },
+                    // {
+                    //     id   : 'card',
+                    //     title: 'Card',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/card'
+                    // },
+                    // {
+                    //     id   : 'divider',
+                    //     title: 'Divider',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/divider'
+                    // },
+                    // {
+                    //     id   : 'elevation',
+                    //     title: 'Elevation',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/elevation'
+                    // },
+                    // {
+                    //     id   : 'expansion-panel',
+                    //     title: 'Expansion Panel',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/expansion-panel'
+                    // },
+                    // {
+                    //     id   : 'grid-list',
+                    //     title: 'Grid list',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/grid-list'
+                    // },
+                    // {
+                    //     id   : 'list',
+                    //     title: 'List',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/list'
+                    // },
+                    // {
+                    //     id   : 'stepper',
+                    //     title: 'Stepper',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/stepper'
+                    // },
+                    {
+                        id   : 'tabs',
+                        title: 'Tabs',
+                        type : 'item',
+                        url  : '/angular-material-elements/tabs'
+                    }
+                    // ,
+                    // {
+                    //     id   : 'tree',
+                    //     title: 'Tree',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/tree'
+                    // }
+                ]
+            },
     //         {
     //             id      : 'buttons-indicators',
     //             title   : 'Buttons & Indicators',
