@@ -1,4 +1,4 @@
-<div style="width: 200px;">
+<div style="width:100%;">
   <mat-tab-group>
     <mat-tab  [label]="tab.name" *ngFor="let tab of tabConfig">
       <dynamic-form [fields]="tab.item" (submit)="submit($event)">
