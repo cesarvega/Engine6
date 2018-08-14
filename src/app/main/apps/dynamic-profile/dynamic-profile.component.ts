@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { FieldConfig, FieldGroupConfig } from './field.interface';
+import { FieldConfig, FieldGroupConfig, FieldConfig2 } from './field.interface';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 
 
@@ -11,419 +11,844 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 })
 export class DynamicProfileComponent implements OnInit {
 
- @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
+//  @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
 
- regConfig1: FieldConfig[] = [
-    {
-      type: 'input',
-      label: 'First name *',
-      inputType: 'text',
-      name: 'FirstName',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Name Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'First name *',
-      inputType: 'text',
-      name: 'FirstName',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Name Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'First name *',
-      inputType: 'text',
-      name: 'FirstName',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Name Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Middle name',
-      inputType: 'text',
-      name: 'Middle name',
-      validations: [
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Work Email',
-      inputType: 'email',
-      name: 'Work Email',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Email Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern(
-            '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'
-          ),
-          message: 'Invalid email'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Password',
-      inputType: 'password',
-      name: 'password',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Password Required'
-        }
-      ]
-    },
-    {
+regConfig1: FieldConfig[]  = [
+  {   
       type: 'radiobutton',
-      label: 'Gender',
-      name: 'gender',
-      options: ['Male', 'Female'],
-      value: 'Male'
-    },
-    {
-      type: 'date',
-      label: 'DOB',
-      name: 'dob',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Date of Birth Required'
-        }
-      ]
-    },
-    {
-      type: 'select',
-      label: 'Country',
-      name: 'country',
-      value: 'UK',
-      options: ['India', 'UAE', 'UK', 'US']
-    },
-    {
-      type: 'checkbox',
-      label: 'Accept Terms',
-      name: 'term',
-      value: true
-    },
-    {
-      type: 'button',
-      label: 'Save'
-    }
-  ];
- regConfig2: FieldConfig[] = [
-    {
-      type: 'input',
-      label: 'Username',
-      inputType: 'text',
-      name: 'name',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Name Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Email Address',
-      inputType: 'email',
-      name: 'email',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Email Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern(
-            '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'
-          ),
-          message: 'Invalid email'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Password',
-      inputType: 'password',
-      name: 'password',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Password Required'
-        }
-      ]
-    },
-    {
-      type: 'radiobutton',
-      label: 'Gender',
-      name: 'gender',
-      options: ['Male', 'Female'],
-      value: 'Male'
-    },
-    {
-      type: 'date',
-      label: 'DOB',
-      name: 'dob',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Date of Birth Required'
-        }
-      ]
-    },
-    {
-      type: 'select',
-      label: 'Country',
-      name: 'country',
-      value: 'UK',
-      options: ['India', 'UAE', 'UK', 'US']
-    },
-    {
-      type: 'checkbox',
-      label: 'Accept Terms',
-      name: 'term',
-      value: true
-    },
-    {
-      type: 'button',
-      label: 'Save'
-    }
-  ];
- regConfig3: FieldConfig[] = [
-    {
-      type: 'input',
-      label: 'Username',
-      inputType: 'text',
-      name: 'name',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Name Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Email Address',
-      inputType: 'email',
-      name: 'email',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Email Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern(
-            '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'
-          ),
-          message: 'Invalid email'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Password',
-      inputType: 'password',
-      name: 'password',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Password Required'
-        }
-      ]
-    },
-    {
-      type: 'radiobutton',
-      label: 'Gender',
-      name: 'gender',
-      options: ['Male', 'Female'],
-      value: 'Male'
-    },
-    {
-      type: 'date',
-      label: 'DOB',
-      name: 'dob',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Date of Birth Required'
-        }
-      ]
-    },
-    {
-      type: 'select',
-      label: 'Country',
-      name: 'country',
-      value: 'UK',
-      options: ['India', 'UAE', 'UK', 'US']
-    },
-    {
-      type: 'checkbox',
-      label: 'Accept Terms',
-      name: 'term',
-      value: true
-    },
-    {
-      type: 'button',
-      label: 'Save'
-    }
-  ];
- regConfig4: FieldConfig[] = [
-    {
-      type: 'input',
-      label: 'Username',
-      inputType: 'text',
-      name: 'name',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Name Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z]+$'),
-          message: 'Accept only text'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Email Address',
-      inputType: 'email',
-      name: 'email',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Email Required'
-        },
-        {
-          name: 'pattern',
-          validator: Validators.pattern(
-            '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'
-          ),
-          message: 'Invalid email'
-        }
-      ]
-    },
-    {
-      type: 'input',
-      label: 'Password',
-      inputType: 'password',
-      name: 'password',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Password Required'
-        }
-      ]
-    },
-    {
-      type: 'radiobutton',
-      label: 'Gender',
-      name: 'gender',
-      options: ['Male', 'Female'],
-      value: 'Male'
-    },
-    {
-      type: 'date',
-      label: 'DOB',
-      name: 'dob',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Date of Birth Required'
-        }
-      ]
-    },
-    {
-      type: 'select',
-      label: 'Country',
-      name: 'country',
-      value: 'UK',
-      options: ['India', 'UAE', 'UK', 'US']
-    },
-    {
-      type: 'checkbox',
-      label: 'Accept Terms',
-      name: 'term',
-      value: true
-    },
-    {
-      type: 'button',
-      label: 'Save'
-    }
-  ];
 
-  tabConfig: FieldGroupConfig[] = 
+      label: 'VEHICLE TYPE',
+
+      name: 'vehicleType',
+
+      options: ['Regular size car', 'Small SUV / Station Wagon', 'Large SUV / Minivan'],
+
+      value: 'RegularSizeCar'
+  },
+  {
+      type: 'radiobutton',
+
+      label: 'DETAIL PACKAGES',
+
+      name: 'detail',
+
+      options: ['Interior', 'Exterior', 'Full'],
+
+      value: 'Interior'
+  },
+  { 
+      type: 'input',
+
+      inputType: 'text',
+
+      label: 'Time',
+
+      name: 'serviceTime',
+      validations: [
+        {
+        name: 'required',
+        validator: Validators.required,
+        message: 'Service time is required'
+        }
+      ]
+      
+  },
+  { 
+      type: 'input',
+
+      inputType: 'text',
+
+      label: 'Price',
+
+      name: 'servicePrice',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Service price is required'
+        }
+     ]
+      
+  },
+  { 
+      type: 'input',
+
+      inputType: 'text',
+
+      label: 'description',
+
+      name: 'serviceDescription',
+      validations: [
+                    {
+                      name: 'required',
+                       validator: Validators.required,
+                      message: 'Service description is required'
+                    }
+                ]
+      
+  },      
+  {
+      type: 'checkbox',
+
+      label: 'Leather Treatment',
+
+      name: 'leatherTreatment',
+  
+      value: false
+  },
+  {
+      type: 'input',
+
+      inputType: 'text',
+
+      label: 'Description',
+
+      name: 'descriptionTreatment',
+  
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Service description required'
+        }
+      ]
+  },
+  {
+      type: 'input',
+
+      inputType: 'text',
+
+      label: 'Time',
+
+      name: 'timeTreatment',
+  
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Service time required'
+        }
+     ]
+  },
+  {
+      type: 'input',
+
+      inputType: 'text',
+
+      label: 'Price',
+
+      name: 'priceTreatment',
+  
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Service price required'
+        }
+      ]
+  },
+       
+       {
+        type: 'checkbox',
+
+        label: 'Odor Elimination',
+
+        name: 'odorElimination',
+  
+        value: false
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Description',
+
+        name: 'descriptionTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service description required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Time',
+
+        name: 'timeTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service time required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Price',
+
+        name: 'priceTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service price required'
+                      }
+                  ]
+         },
+      
+      
+       {
+        type: 'checkbox',
+
+        label: 'Machine Polish',
+
+        name: 'machinePolish',
+  
+        value: false
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Description',
+
+        name: 'descriptionTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service description required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Time',
+
+        name: 'timeTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service time required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Price',
+
+        name: 'priceTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service price required'
+                      }
+                  ]
+         },
+       
+     
+       {
+        type: 'checkbox',
+
+        label: 'Headlight Restoration',
+
+        name: 'headlightRestoration',
+  
+        value: false
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Description',
+
+        name: 'descriptionTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service description required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Time',
+
+        name: 'timeTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service time required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Price',
+
+        name: 'priceTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service price required'
+                      }
+                  ]
+         },
+       
+      
+       {
+        type: 'checkbox',
+
+        label: 'Interior Shampoo',
+
+        name: 'interiorShampoo',
+  
+        value: false
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Description',
+
+        name: 'descriptionTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service description required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Time',
+
+        name: 'timeTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service time required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Price',
+
+        name: 'priceTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service price required'
+                      }
+                  ]
+         },
+       
+       
+       {
+        type: 'checkbox',
+
+        label: 'Paint Sealant',
+
+        name: 'paintSealant',
+  
+        value: false
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Description',
+
+        name: 'descriptionTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service description required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Time',
+
+        name: 'timeTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service time required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Price',
+
+        name: 'priceTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service price required'
+                      }
+                  ]
+         },
+       
+      
+       {
+        type: 'checkbox',
+
+        label: 'Premium Hand Wax',
+
+        name: 'premiumHandWax',
+  
+        value: false
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Description',
+
+        name: 'descriptionTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service description required'
+                      }
+                  ]
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Time',
+
+        name: 'timeTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service time required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Price',
+
+        name: 'priceTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service price required'
+                      }
+                  ]
+         },
+       
+
+       {
+        type: 'checkbox',
+
+        label: 'Pet Hair Removal',
+
+        name: 'Pet Hair Removal',
+  
+        value: false
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Description',
+
+        name: 'descriptionTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service description required'
+                      }
+                  ]
+         },
+       {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Time',
+
+        name: 'timeTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service time required'
+                      }
+                  ]
+         },
+      {
+        type: 'input',
+
+        inputType: 'text',
+
+        label: 'Price',
+
+        name: 'priceTreatment',
+  
+        validations: [
+                      {
+                        name: 'required',
+                        validator: Validators.required,
+                        message: 'Service price required'
+                      }
+                  ]
+         }
+
+       
+      
+     
+ 
+  
+];
+  
+regConfig2: FieldConfig[] = [
+  
+    
+     
+           {
+            label: 'First name',
+            type: 'input',
+            inputType: 'text',
+            name: 'firstName',
+          
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'First name Required'
+              },
+              {
+                name: 'pattern',
+                validator: Validators.pattern('^[a-zA-Z]+$'),
+                message: 'Accept only text'
+              }
+            ]
+           },
+           {
+            label: 'Last Name',
+            type: 'input',
+            inputType: 'text',
+            name: 'lastName',
+         
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'Last Name Required'
+              },
+              {
+                name: 'pattern',
+                validator: Validators.pattern('^[a-zA-Z]+$'),
+                message: 'Accept only text'
+              }
+            ]
+           },
+           {
+            label: 'Phone number',
+            type: 'input',
+            inputType: 'text',
+            name: 'phone',
+         
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'Phone number Required'
+              }
+              
+            ]
+           },
+           {
+            label: 'Email addres',
+            type: 'input',
+            inputType: 'email',
+            name: 'email',
+          
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'Email Required'
+              }
+            ]
+           },       
+       
+           {
+            label: 'Year',
+            type: 'input',
+            inputType: 'text',
+            name: 'year'
+          
+             
+           },
+           {
+            label: 'Make',
+            type: 'input',
+            inputType: 'text',
+            name: 'make',
+        
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'make Required'
+              }
+            ]
+           },
+           {
+            label: 'Model',
+            type: 'input',
+            inputType: 'text',
+            name: 'model',
+           
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'Model Required'
+              }
+            ]
+           },
+           {
+            label: 'Color',
+            type: 'input',
+            inputType: 'text',
+            name: 'color',
+          
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'Color Required'
+              }
+            ]
+           },
+           {
+            label: 'Special instruction',
+            type: 'textarea',
+            name: 'specialInst'
+           
+           },
+         
+ 
+           {
+            label: 'Address',
+            type: 'input',
+            inputType: 'text',
+            name: 'address',
+          
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'Address Required'
+              }
+              ]
+           },
+           {
+            type: 'input',
+            inputType: 'text',
+            name: 'apt'
+          
+           },
+           {
+            label: 'City',
+            type: 'input',
+            inputType: 'text',
+            name: 'City',
+        
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'City Required'
+              }
+              
+            ]
+           },
+           {
+             type: 'select',
+            label: 'State',
+            name: 'state',
+            value: '',
+            'options': ['Alabama', 'Alaska', 'Arizona', 'California', 'Florida']
+           },
+           {
+            label: 'Zip',
+            type: 'input',
+            inputType: 'text',
+            name: 'zip',
+           
+            validations: [
+              {
+                name: 'required',
+                validator: Validators.required,
+                message: 'Zip Required'
+              }
+              
+            ]
+           },
+           {
+            label: 'Special Instructions',
+            type: 'textarea',
+            name: 'specialInst'
+           
+           }
+     
+      
+    
+];  
+  
+  regConfig3: FieldConfig[] = [
+    {
+        label: 'Date',
+        type: 'input',
+        inputType: 'text',
+        name: 'date'
+      },
+      {
+        label: 'Time',
+        type: 'input',
+        inputType: 'text',
+        name: 'time'
+      }
+      
+  ];
+  
+  regConfig4: FieldConfig[] = [
+     {
+       label: 'Payment details',
+       type: 'radiobutton',
+       value: 'Credit',
+       name: 'payment',
+       options: ['Credit', 'Cash']
+     },
+     {
+       label: 'Card Number',
+       type: 'input',
+       inputType: 'text',
+       name: 'cardNumber',
+       
+     },
+     {
+       label: 'CVV',
+       type: 'input',
+       inputType: 'text',
+       name: 'cvv',
+     
+     },
+     {
+       label: 'Expiration Date',
+       type: 'date',
+       name: 'expiration',
+     
+       
+     },
+     {
+       label: 'Billing ZIP Code',
+       type: 'input',
+       inputType: 'text',
+       name: 'zipCode',
+       
+     },
+     {
+      type: 'button',
+      label: 'Save'
+    }
+    ];
+
+    tabConfig: FieldGroupConfig[] = 
   [
     {
       item: this.regConfig1,
-      name: 'GENERAL INFO'
+      name: 'PACKAGE INFO'
     }
     ,
     {
@@ -442,9 +867,9 @@ export class DynamicProfileComponent implements OnInit {
     }
   ];
 
-  submit(value: any): void {
-    
-  }
+
+
+
 
   ngOnInit(): void {
     setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);

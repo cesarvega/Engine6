@@ -12,6 +12,7 @@ import { RadiobuttonComponent } from './components/radiobutton/radiobutton.compo
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { FuseSharedModule } from '@fuse/shared.module';
 const routes: Routes = [
   {
     path     : '**',
@@ -24,7 +25,8 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FuseSharedModule
   ],
   declarations:   [
     DynamicProfileComponent,

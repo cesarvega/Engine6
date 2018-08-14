@@ -27,6 +27,14 @@ export const navigation: FuseNavigation[] = [
         url: '/apps/dynamic-profile'
     },
     {
+        id: 'smart',
+        title: 'smart',
+        // translate: 'NAV.dynamic',
+        type: 'item',
+        icon: 'person',
+        url: '/apps/smart'
+    },
+    {
         id: 'dynamic',
         title: 'dynamic',
         // translate: 'NAV.dynamic',
