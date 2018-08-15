@@ -6,7 +6,7 @@ import { FieldConfig, Validator } from '../../field.interface';
   exportAs: 'dynamicForm',
   selector: 'dynamic-form',
   template: `
-  <form  fxFlex="100"  fxLayout="column" fxLayoutAlign="center center"  class="p-24" [formGroup]="form" (submit)="onSubmit($event)" >
+  <form  class="p-24" [formGroup]="form" (submit)="onSubmit($event)" >
       <ng-container *ngFor="let field of fields;" dynamicField [field]="field" 
         [group]="form">
       </ng-container>
