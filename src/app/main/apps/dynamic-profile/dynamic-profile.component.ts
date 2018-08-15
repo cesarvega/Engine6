@@ -23,11 +23,11 @@ export class DynamicProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'radiobutton',
+      type: 'input',
       label: 'bi-signup-form',
       name: 'bi-signup-form',
       value: '',
-      inputType: 'bi-signup-form',
+      inputType: 'text',
       validations: [
         {
           name: 'required',
@@ -139,22 +139,17 @@ export class DynamicProfileComponent implements OnInit {
       labelValue: 'Date of birth *',
       icon: '',
       defaultInputValue: '1999-06-15',
-      componentType: 'bi-input-date',
-       options: [
-        
-          'sql: [BI_MEMBERS].[dbo].[pm_getCountryList]'
-        
-      ],
+      componentType: 'bi-input-date',         
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',    
       placeHolder: '',
-      type: 'radiobutton',
+      type: 'input',
       label: 'Date of birth *',
       name: 'Date of birth *',
       value: '',
-      inputType: 'bi-input-date',
+      inputType: 'date',
       validations: [
         {
           name: 'required',
@@ -168,13 +163,13 @@ export class DynamicProfileComponent implements OnInit {
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'bi-select',
-      options: [''],
+      options: ['Colombia', 'Espania','E.U'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',       
       placeHolder: 'Select Country',
-      type: 'radiobutton',
+      type: 'select',
       label: 'Select country of residency *',
       name: 'Select country of residency *',
       value: '',
@@ -238,8 +233,9 @@ export class DynamicProfileComponent implements OnInit {
       defaultInputValue: '',
       componentType: 'bi-select-input',
       options: [
-        
-          'sql: [BI_MEMBERS].[dbo].[pm_getStateList]'
+        'Catalunia',
+        'Valle',
+        'California'   
         
       ],
       disabled: 'false',
@@ -247,11 +243,11 @@ export class DynamicProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'State/Province',
-      type: 'radiobutton',
+      type: 'select',
       label: 'Select State/Province *',
       name: 'Select State/Province *',
       value: '',
-      inputType: 'bi-select-input',
+      inputType: '',
       validations: [
         {
           name: 'required',
@@ -271,11 +267,11 @@ export class DynamicProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'ZipCode',
-      type: 'radiobutton',
+      type: 'input',
       label: 'Zip Code *',
       name: 'Zip Code *',
       value: '',
-      inputType: 'bi-input-number',
+      inputType: 'text',
       validations: [
         {
           name: 'required',
@@ -352,18 +348,28 @@ export class DynamicProfileComponent implements OnInit {
         {
           'names': 'Allied Health Care Profession or Occupation',
           'values': 'OTHER_HCP'
-        }
+        },
+        'Not related to Health Care',
+        'Physician/Doctor of Medicine (MD, DO)',
+        'Physician Assistant (PA)',
+        'Nurse',
+        'Pharmacist', 
+        'Pharmacist Technician', 
+        'Dentist',
+        'Optometrist', 
+        'Veterinarian', 
+        'Allied Health Care Profession or Occupation'     
       ],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'Select Profession/Occupation',
-      type: 'radiobutton',
+      type: 'select',
       label: 'Specify your profession or occupation in order to continue',
       name: 'Specify your profession or occupation in order to continue',
       value: '',
-      inputType: 'bi-dropdown',
+      inputType: '',
       validations: [
         {
           name: 'required',
@@ -383,11 +389,10 @@ export class DynamicProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'radiobutton',
+      type: 'input',
       label: '',
       name: '',
       value: '',
-      inputType: 'bi-help',
       validations: [
         {
           name: 'required',
@@ -407,15 +412,16 @@ NonHCP: FieldConfig2[]  = [
   componentType: 'bi-select',
   options: [
     
-      'sql [BI_MEMBERS].[dbo].[pm_getIndustryList]'
-    
+      'Aerospace industry',
+      'Agriculture',
+      'Education industry'      
   ],
   disabled: 'false',
   componentId: '0',
   sortOrder: '0',
   tooltip: '',
   placeHolder: 'Select an Industry',
-  type: 'radiobutton',
+  type: 'select',
   label: 'Type of industry *',
   name: 'Type of industry *',
   value: '',
@@ -433,17 +439,17 @@ NonHCP: FieldConfig2[]  = [
   icon: 'sql',
   defaultInputValue: '',
   componentType: 'bi-select',
-  options: [
-    
-      'sql: [BI_MEMBERS].[dbo].[pm_getTitleList] other'
-    
+  options: [      
+      'Meeting Management',
+      'Office Support',
+      'Administrative Assistant'    
   ],
   disabled: 'false',
   componentId: '0',
   sortOrder: '0',
   tooltip: '',
   placeHolder: 'Select a Position',
-  type: 'radiobutton',
+  type: 'select',
   label: 'Title position *',
   name: 'Title position *',
   value: '',
@@ -461,17 +467,16 @@ NonHCP: FieldConfig2[]  = [
   icon: 'sql',
   defaultInputValue: '',
   componentType: 'bi-select',
-  options: [
-    {
-      'sql': '[BI_MEMBERS].[dbo].[pm_getEducationLevelList]'
-    }
+  options: [      
+      'Secondary Education',
+      'Professional'      
   ],
   disabled: 'false',
   componentId: '0',
   sortOrder: '0',
   tooltip: '',
   placeHolder: 'Select Education Level',
-  type: 'radiobutton',
+  type: 'select',
   label: 'Level of Education',
   name: 'Level of Education',
   value: '',
@@ -499,11 +504,11 @@ NonHCP: FieldConfig2[]  = [
   sortOrder: '0',
   tooltip: '',
   placeHolder: 'Select Language(s)',
-  type: 'radiobutton',
+  type: 'input',
   label: 'Spoken Languages',
   name: 'Spoken Languages',
   value: '',
-  inputType: 'bi-select',
+  inputType: 'text',
   validations: [
     {
       name: 'required',
@@ -547,7 +552,7 @@ NonHCP: FieldConfig2[]  = [
   sortOrder: '0',
   tooltip: '',
   placeHolder: '',
-  type: 'radiobutton',
+  type: 'input',
   label: '',
   name: '',
   value: '',
@@ -565,15 +570,9 @@ NonHCP: FieldConfig2[]  = [
   icon: '',
   defaultInputValue: '',
   componentType: 'bi-button',
-  options: [
-    {
-      'names': 'Previous',
-      'values': 'P_info_1'
-    },
-    {
-      'names': 'Continue',
-      'values': 'Payment_Email_Type'
-    }
+  options: [      
+       'Previous',   
+      'Continue'  
   ],
   disabled: 'false',
   componentId: '0',
@@ -597,24 +596,21 @@ NonHCP: FieldConfig2[]  = [
 
 
 OTHER_HCP: FieldConfig2[]  = [
-{
+      {
         labelValue: 'Profession or Occupation *',
         icon: 'sql',
         defaultInputValue: '',
-        componentType: 'bi-select',
-        options: [            
-            'sql: [BI_MEMBERS].[dbo].[pm_getTitleList] other'            
-        ],
+        componentType: 'bi-select',          
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select Pofession/Occupation',
-        type: 'radiobutton',
+        type: 'input',
         label: 'Profession or Occupation *',
         name: 'Profession or Occupation *',
         value: '',
-        inputType: 'bi-select',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -628,21 +624,17 @@ OTHER_HCP: FieldConfig2[]  = [
         icon: 'sql',
         defaultInputValue: '',
         componentType: 'bi-select',
-        options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getOtherTypeList]'
-          }
-        ],
+        
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',        
         placeHolder: 'Select Practice Type',
-        type: 'radiobutton',
+        type: 'input',
         label: 'Practice type *',
         name: 'Practice type *',
         value: '',
-        inputType: 'bi-select',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -732,17 +724,17 @@ OTHER_HCP: FieldConfig2[]  = [
         icon: '',
         defaultInputValue: '',
         componentType: 'bi-input-upload',
-        options: [''],
+     
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',         
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: 'You must provide proof of your medical profession',
         name: 'You must provide proof of your medical profession',
         value: '',
-        inputType: 'bi-input-upload',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -762,7 +754,7 @@ OTHER_HCP: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'text',
         label: '',
         name: '',
         value: '',
@@ -781,21 +773,17 @@ OTHER_HCP: FieldConfig2[]  = [
         defaultInputValue: '',
         componentType: 'bi-button',
         options: [
-          {
-            'names': 'Previous',
-            'values': 'P_info_1'
-          },
-          {
-            'names': 'Continue',
-            'values': 'Payment_Email_Type'
-          }
+          'Previous',
+          
+          'Continue' 
+          
         ],
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'button',
         label: '',
         name: '',
         value: '',
@@ -817,46 +805,30 @@ MD_PA_Lic_Info: FieldConfig2[]  = [
         labelValue: 'Primary specialty *',
         icon: 'sql',
         defaultInputValue: '',
-        componentType: 'bi-select',
-        options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getSpecialtyList]'
-          }
-        ],
+        componentType: 'bi-select',         
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select a Specialty',
-        type: 'radiobutton',
+        type: 'checkbox',
         label: 'Primary specialty *',
         name: 'Primary specialty *',
         value: '',
         inputType: 'bi-select',
-        validations: [
-          {
-            name: 'required',
-            validator: Validators.required,
-            message: 'Must select at least one specialty'
-          }
-        ]
+        
       },
       {
         labelValue: 'Secondary specialty',
         icon: 'sql',
         defaultInputValue: '',
-        componentType: 'bi-select',
-        options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getSpecialtyList]'
-          }
-        ],
+        componentType: 'bi-select',         
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select a Specialty (optional)',
-        type: 'radiobutton',
+        type: 'checkbox',
         label: 'Secondary specialty',
         name: 'Secondary specialty',
         value: '',
@@ -874,52 +846,35 @@ MD_PA_Lic_Info: FieldConfig2[]  = [
         icon: 'sql',
         defaultInputValue: '',
         componentType: 'bi-select',
-        options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getSpecialtyList]'
-          }
-        ],
+       
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select a Specialty (optional)',
-        type: 'radiobutton',
+        type: 'checkbox',
         label: 'Terciary specialty',
         name: 'Terciary specialty',
         value: '',
-        inputType: 'bi-select',
-        validations: [
-          {
-            name: 'required',
-            validator: Validators.required,
-            message: 'Service time is required'
-          }
-        ]
+        inputType: 'bi-select'         
       },
       {
         labelValue: 'Degree date *',
         icon: '',
         defaultInputValue: '',
         componentType: 'bi-input-date',
-        options: [''],
+       
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'checkbox',
         label: 'Degree date *',
         name: 'Degree date *',
         value: '',
         inputType: 'bi-input-date',
-        validations: [
-          {
-            name: 'required',
-            validator: Validators.required,
-            message: 'Please select a date for degree obtained'
-          }
-        ]
+    
       },
       {
         labelValue: 'University/College',
@@ -1024,17 +979,17 @@ MD_PA_Lic_Info: FieldConfig2[]  = [
         icon: '',
         defaultInputValue: '',
         componentType: 'bi-input-upload',
-        options: [''],
+      
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: 'You must provide proof of your medical profession',
         name: 'You must provide proof of your medical profession',
         value: '',
-        inputType: 'bi-input-upload',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -1054,11 +1009,11 @@ MD_PA_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: '',
         name: '',
         value: '',
-        inputType: 'bi-help',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -1087,7 +1042,7 @@ MD_PA_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'button',
         label: '',
         name: '',
         value: '',
@@ -1119,11 +1074,11 @@ Pharm_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select Practice Type',
-        type: 'radiobutton',
+        type: 'input',
         label: 'Practice type *',
         name: 'Practice type *',
         value: '',
-        inputType: 'bi-select',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -1145,11 +1100,11 @@ Pharm_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: 'Degree date *',
         name: 'Degree date *',
         value: '',
-        inputType: 'bi-input-date',
+        inputType: 'date',
         validations: [
           {
             name: 'required',
@@ -1245,11 +1200,11 @@ Pharm_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: 'You must provide proof of your medical profession',
         name: 'You must provide proof of your medical profession',
         value: '',
-        inputType: 'bi-input-upload',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -1269,7 +1224,7 @@ Pharm_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: '',
         name: '',
         value: '',
@@ -1302,7 +1257,7 @@ Pharm_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'button',
         label: '',
         name: '',
         value: '',
@@ -1334,11 +1289,11 @@ Nurse_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select Practice Type',
-        type: 'radiobutton',
+        type: 'input',
         label: 'Practice type *',
         name: 'Practice type *',
         value: '',
-        inputType: 'bi-select',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -1352,21 +1307,17 @@ Nurse_Lic_Info: FieldConfig2[]  = [
         icon: 'sql',
         defaultInputValue: '',
         componentType: 'bi-select',
-        options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getNurseClassList]'
-          }
-        ],
+        
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select a Nurse Class',
-        type: 'radiobutton',
+        type: 'input',
         label: 'Nurse Class *',
         name: 'Nurse Class *',
         value: '',
-        inputType: 'bi-select',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -1436,11 +1387,11 @@ Nurse_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: 'You must provide proof of your Nursing profession',
         name: 'You must provide proof of your Nursing profession',
         value: '',
-        inputType: 'bi-input-upload',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -1460,7 +1411,7 @@ Nurse_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: '',
         name: '',
         value: '',
@@ -1493,7 +1444,7 @@ Nurse_Lic_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: '',
         name: '',
         value: '',
@@ -1810,7 +1761,7 @@ Payment_Email_Type: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: '',
         name: '',
         value: '',
@@ -1843,7 +1794,7 @@ Payment_Email_Type: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: '',
         name: '',
         value: '',
@@ -1971,7 +1922,7 @@ profile_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: 'Click to see account History',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'checkbox',
         label: 'accHistory',
         name: 'accHistory',
         value: '',
@@ -1990,28 +1941,27 @@ profile_Info: FieldConfig2[]  = [
         defaultInputValue: '',
         componentType: 'bi-label',
         options: [
-          {
-            'FullName': 'Frank DiRoma',
-            'Country': 'United States',
-            'State/Province': 'NY',
-            'City': 'New York',
-            'Email': 'xx@gmail.com',
-            'PayPal email': 'xx@gmail.com',
-            'Gender': 'M',
-            'DOB': '04/24/1988',
-            'Respondent type': 'Doctor',
-            'Practice type': 'Hospital',
-            'Medical speciality': 'Surgery, Reconstructive',
-            'License number': '78562',
-            'State license': 'NY'
-          }
+           'Frank DiRoma',
+           'United States',
+             'NY',
+           'New York',
+            'xx@gmail.com',
+             'xx@gmail.com',
+            'M',
+            '04/24/1988',
+            'Doctor',
+            'Hospital',
+            'Surgery, Reconstructive',
+            '78562',
+            'NY'
+          
         ],
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'select',
         label: 'accDetails',
         name: 'accDetails',
         value: '',
@@ -2035,11 +1985,11 @@ profile_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: 'Click to update your profile',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: 'updateInfo',
         name: 'updateInfo',
         value: '',
-        inputType: 'bi-label',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -2059,11 +2009,11 @@ profile_Info: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: 'Contact Us',
         name: 'Contact Us',
         value: '',
-        inputType: 'bi-label',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -2104,16 +2054,18 @@ Ext_Profile: FieldConfig2[]  = [
         defaultInputValue: '',
         componentType: 'bi-select',
         options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getMedicalHistoryList]'
-          }
+          
+            'Hypertension.',
+            'Cancer',
+            'Coronary Heart Disease'
+          
         ],
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: 'Select up to 5 medical conditions',
         placeHolder: '5',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Medical history. Do you, anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
         name: 'Medical history. Do you, anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
         value: '',
@@ -2131,17 +2083,16 @@ Ext_Profile: FieldConfig2[]  = [
         icon: 'sql',
         defaultInputValue: '',
         componentType: 'bi-select',
-        options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getEthnicityList]'
-          }
+        options: [            
+            'Manchu',
+            'latin'            
         ],
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select an Ethnicity',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Ethnic: For clasification purposes select the ethnic group you belong',
         name: 'Ethnic: For clasification purposes select the ethnic group you belong',
         value: '',
@@ -2160,16 +2111,17 @@ Ext_Profile: FieldConfig2[]  = [
         defaultInputValue: '',
         componentType: 'bi-select',
         options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getEducationLevelList]'
-          }
+          
+            'secundary',
+            'professional'
+          
         ],
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select Highest Education Level',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Level of Education: Select the maximum level of education you have',
         name: 'Level of Education: Select the maximum level of education you have',
         value: '',
@@ -2188,16 +2140,17 @@ Ext_Profile: FieldConfig2[]  = [
         defaultInputValue: '',
         componentType: 'bi-select',
         options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getMaritalStatusList]'
-          }
+          
+            'soltero',
+            'casado'
+          
         ],
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Marital Status',
         name: 'Marital Status',
         value: '',
@@ -2216,16 +2169,17 @@ Ext_Profile: FieldConfig2[]  = [
         defaultInputValue: '',
         componentType: 'bi-select',
         options: [
-          {
-            'sql': '[BI_MEMBERS].[dbo].[pm_getIncomeList]'
-          }
+          
+            '5000',
+            '6000'
+          
         ],
         disabled: 'false',
         componentId: '0',
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select a Household Income',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Household income',
         name: 'Household income',
         value: '',
@@ -2256,7 +2210,7 @@ Ext_Profile: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: 'Select Number of Children',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Number of children',
         name: 'Number of children',
         value: '',
@@ -2290,7 +2244,7 @@ Ext_Profile: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Marketing Affiliated: Do you or any member of your immediate family work in any of the following areas?',
         name: 'Marketing Affiliated: Do you or any member of your immediate family work in any of the following areas?',
         value: '',
@@ -2318,7 +2272,7 @@ Ext_Profile: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'select',
         label: 'Other information: Some questions about your current system configurations',
         name: 'Other information: Some questions about your current system configurations',
         value: '',
@@ -2334,7 +2288,6 @@ Ext_Profile: FieldConfig2[]  = [
       {
         labelValue: '',
         icon: 'question',
-        // tslint:disable-next-line:max-line-length
         defaultInputValue: 'This section is completely optional, but all information provide here will help us better match you with current survey opportunities. You can answer some or all of the questions here. We do not share your profile information with any other third party.',
         componentType: 'bi-help',
         options: [''],
@@ -2376,7 +2329,7 @@ Ext_Profile: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'radiobutton',
+        type: 'input',
         label: '',
         name: '',
         value: '',
@@ -2429,6 +2382,10 @@ Ext_Profile: FieldConfig2[]  = [
   {
     item: this.Payment_Email_Type,
     name: 'Payment_Email_Type'
+  },
+  {
+    item: this.acc_History,
+    name: 'acc_History'
   },
   {
     item: this.profile_Info,

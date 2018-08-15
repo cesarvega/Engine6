@@ -21,6 +21,7 @@ import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
 import { APP_BASE_HREF } from '../../node_modules/@angular/common';
 
+
 const appRoutes: Routes = [
     {
         path        : 'apps',

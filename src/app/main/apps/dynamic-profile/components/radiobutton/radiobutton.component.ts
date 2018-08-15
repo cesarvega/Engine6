@@ -4,11 +4,11 @@ import { FieldConfig } from '../../field.interface';
 @Component({
   selector: 'app-radiobutton',
   template: `
-<div class="demo-full-width margin-top" [formGroup]="group">
-<label class="radio-label-padding">{{field.label}}:</label><br><br>
+<div [formGroup]="group">
+<label>{{field.label}}:</label><br><br>
 <mat-radio-group [formControlName]="field.name">
 <mat-radio-button class="p-24" *ngFor="let item of field.options" [value]="item">{{item}}</mat-radio-button>
-</mat-radio-group><br><br>
+</mat-radio-group><br>
 </div>
 `,
   styles: []

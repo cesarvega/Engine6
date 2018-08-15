@@ -12,6 +12,7 @@ import { RadiobuttonComponent } from './components/radiobutton/radiobutton.compo
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { LabelComponent } from './textlabel/textlabel.component';
 import { FuseSharedModule } from '@fuse/shared.module';
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
     DateComponent,
     RadiobuttonComponent,
     CheckboxComponent,
+    LabelComponent,
     DynamicFieldDirective,
     DynamicFormComponent
   ],
