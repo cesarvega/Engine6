@@ -1,7 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { FieldConfig, FieldGroupConfig, FieldConfig2 } from './field.interface';
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { FieldGroupConfig, FieldConfig2 } from './field.interface';
 
 
 @Component({
@@ -24,10 +23,10 @@ export class DynamicProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: '',
       type: 'input',
-      label: 'bi-signup-form',
-      name: 'bi-signup-form',
+      label: 'label',
+      name: 'label',
       value: '',
-      inputType: 'text',
+      inputType: 'label',
       validations: [
         {
           name: 'required',
@@ -393,6 +392,7 @@ export class DynamicProfileComponent implements OnInit {
       label: '',
       name: '',
       value: '',
+      inputType: '',
       validations: [
         {
           name: 'required',
@@ -787,7 +787,7 @@ OTHER_HCP: FieldConfig2[]  = [
         label: '',
         name: '',
         value: '',
-        inputType: 'bi-button',
+        inputType: 'button',
         validations: [
           {
             name: 'required',
@@ -2358,11 +2358,11 @@ Ext_Profile: FieldConfig2[]  = [
     item: this.NonHCP,
     name: 'NonHCP'
   },
-  {
-    item: this.OTHER_HCP,
-    name: 'OTHER_HCP'
-  }
-  ,
+  // {
+  //   item: this. inputType: '',,
+  //   name: 'OTHER_HCP'
+  // }
+  // ,
   {
     item: this.MD_PA_Lic_Info,
     name: 'MD_PA_Lic_Info'

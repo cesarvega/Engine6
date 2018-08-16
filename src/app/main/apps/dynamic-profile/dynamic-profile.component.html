@@ -1,14 +1,15 @@
-<div style="width: 100%;">
-  <mat-tab-group>
+
+  <div style="width: 100%;"></div>
+  <mat-tab-group  fxFlex="100" fxLayoutAlign="start center" fxLayout="column wrap">
     <mat-tab [label]="tab.name" *ngFor="let tab of tabConfig">
       <dynamic-form [fields]="tab.item" (submit)="submit($event)">
       </dynamic-form>      
     </mat-tab>
   </mat-tab-group>
-</div>
 
 
-<!-- <div fxFlex="100" fxLayoutAlign="start start" fxLayout="row wrap">
+
+<!-- <div fxFlex="100" fxLayoutAlign="center start" fxLayout="row wrap">
 <form class="dynamic-form p-24" [formGroup]="form" (submit)="onSubmit($event)" >
     <ng-container *ngFor="let field of fields;" dynamicField [field]="field" 
       [group]="form">

@@ -47,7 +47,8 @@ const routes: Routes = [
     SelectComponent,
     DateComponent,
     RadiobuttonComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    LabelComponent
 ]
 })
 export class DynamicProfileModule { }
