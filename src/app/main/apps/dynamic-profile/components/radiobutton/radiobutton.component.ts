@@ -3,14 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { FieldConfig } from '../../field.interface';
 @Component({
   selector: 'app-radiobutton',
-  template: `
-<div [formGroup]="group">
-<label>{{field.label}}:</label><br><br>
-<mat-radio-group [formControlName]="field.name">
-<mat-radio-button class="p-24" *ngFor="let item of field.options" [value]="item">{{item}}</mat-radio-button>
-</mat-radio-group><br>
-</div>
-`,
+  templateUrl: './radiobutton.component.html' ,
   styles: []
 })
 export class RadiobuttonComponent implements OnInit {

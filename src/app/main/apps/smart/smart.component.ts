@@ -90,7 +90,7 @@ export class SmartComponent implements OnInit {
   
         name: 'leatherTreatment',
     
-        value: false
+        value: 'false'
     },
     {
         type: 'input',
@@ -151,7 +151,7 @@ export class SmartComponent implements OnInit {
   
           name: 'odorElimination',
     
-          value: false
+          value: 'false'
            },
          {
           type: 'input',
@@ -213,7 +213,7 @@ export class SmartComponent implements OnInit {
   
           name: 'machinePolish',
     
-          value: false
+          value: 'false'
            },
          {
           type: 'input',
@@ -275,7 +275,7 @@ export class SmartComponent implements OnInit {
   
           name: 'headlightRestoration',
     
-          value: false
+          value: 'false'
            },
          {
           type: 'input',
@@ -337,7 +337,7 @@ export class SmartComponent implements OnInit {
   
           name: 'interiorShampoo',
     
-          value: false
+          value: 'false'
            },
          {
           type: 'input',
@@ -399,7 +399,7 @@ export class SmartComponent implements OnInit {
   
           name: 'paintSealant',
     
-          value: false
+          value: 'false'
            },
          {
           type: 'input',
@@ -461,7 +461,7 @@ export class SmartComponent implements OnInit {
   
           name: 'premiumHandWax',
     
-          value: false
+          value: 'false'
            },
          {
           type: 'input',
@@ -523,7 +523,7 @@ export class SmartComponent implements OnInit {
   
           name: 'Pet Hair Removal',
     
-          value: false
+          value: 'false'
            },
          {
           type: 'input',
@@ -706,12 +706,6 @@ export class SmartComponent implements OnInit {
                 }
               ]
              },
-             {
-              label: 'Special instruction',
-              type: 'textarea',
-              name: 'specialInst'
-             
-             },
            
    
              {
@@ -770,15 +764,7 @@ export class SmartComponent implements OnInit {
                 }
                 
               ]
-             },
-             {
-              label: 'Special Instructions',
-              type: 'textarea',
-              name: 'specialInst'
-             
              }
-       
-        
       
   ];  
     

@@ -5,12 +5,16 @@ import { FieldConfig, Validator } from '../../field.interface';
 @Component({
   exportAs: 'dynamicForm',
   selector: 'dynamic-form',
-  template: `
-  <form  class="p-24" [formGroup]="form" (submit)="onSubmit($event)" >
+  template: `      <mat-card style="max-width:800px">
+  <mat-card-content>
+  <form class="p-24"  fxFlex="100" fxLayoutAlign="start center" fxLayout="row wrap"  
+              [formGroup]="form" (submit)="onSubmit($event)" >
+              <div >
       <ng-container *ngFor="let field of fields;" dynamicField [field]="field" 
         [group]="form">
-      </ng-container>
-    </form>
+      </ng-container></div>
+    </form>  </mat-card-content>
+    </mat-card>
             `,
   styles: []
 })

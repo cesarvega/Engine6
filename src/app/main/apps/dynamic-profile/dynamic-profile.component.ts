@@ -10,7 +10,7 @@ import { FieldGroupConfig, FieldConfig2 } from './field.interface';
 })
 export class DynamicProfileComponent implements OnInit {
 
-  P_info_1: FieldConfig2[]  = [
+    P_info_1: FieldConfig2[]  = [
     {
       labelValue: 'bi-signup-form',
       icon: '',
@@ -404,7 +404,7 @@ export class DynamicProfileComponent implements OnInit {
 
 ];
 
-NonHCP: FieldConfig2[]  = [
+  NonHCP: FieldConfig2[]  = [
 {
   labelValue: 'Type of industry *',
   icon: 'sql',
@@ -594,8 +594,7 @@ NonHCP: FieldConfig2[]  = [
 }
 ];
 
-
-OTHER_HCP: FieldConfig2[]  = [
+  OTHER_HCP: FieldConfig2[]  = [
       {
         labelValue: 'Profession or Occupation *',
         icon: 'sql',
@@ -754,11 +753,11 @@ OTHER_HCP: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'text',
-        label: '',
+        type: 'input',
+        label: 'Anybody can register',
         name: '',
-        value: '',
-        inputType: 'bi-help',
+        value: 'Anybody can register',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -783,11 +782,11 @@ OTHER_HCP: FieldConfig2[]  = [
         sortOrder: '0',
         tooltip: '',
         placeHolder: '',
-        type: 'button',
+        type: 'input',
         label: '',
         name: '',
         value: '',
-        inputType: 'button',
+        inputType: 'text',
         validations: [
           {
             name: 'required',
@@ -798,9 +797,7 @@ OTHER_HCP: FieldConfig2[]  = [
       }
 ];
 
-
-
-MD_PA_Lic_Info: FieldConfig2[]  = [
+  MD_PA_Lic_Info: FieldConfig2[]  = [
  {
         labelValue: 'Primary specialty *',
         icon: 'sql',
@@ -1057,8 +1054,7 @@ MD_PA_Lic_Info: FieldConfig2[]  = [
       }
 ];
 
-
-Pharm_Lic_Info: FieldConfig2[]  = [
+  Pharm_Lic_Info: FieldConfig2[]  = [
 {
         labelValue: 'Practice type *',
         icon: 'sql',
@@ -1272,8 +1268,7 @@ Pharm_Lic_Info: FieldConfig2[]  = [
       }
 ];
 
-
-Nurse_Lic_Info: FieldConfig2[]  = [
+  Nurse_Lic_Info: FieldConfig2[]  = [
 {
         labelValue: 'Practice type *',
         icon: 'sql',
@@ -1459,8 +1454,7 @@ Nurse_Lic_Info: FieldConfig2[]  = [
       }
 ];
 
-
-Payment_Email_Type: FieldConfig2[]  = [
+  Payment_Email_Type: FieldConfig2[]  = [
 {
         labelValue: 'Select preferred payment method *',
         icon: '',
@@ -1809,7 +1803,7 @@ Payment_Email_Type: FieldConfig2[]  = [
       }
 ];
 
-acc_History: FieldConfig2[]  = [
+  acc_History: FieldConfig2[]  = [
 {
         labelValue: 'surveyHistoryTitle',
         icon: '',
@@ -1910,7 +1904,7 @@ acc_History: FieldConfig2[]  = [
       }
 ];
 
-profile_Info: FieldConfig2[]  = [
+  profile_Info: FieldConfig2[]  = [
 {
         labelValue: 'accHistory',
         icon: '',
@@ -2023,7 +2017,8 @@ profile_Info: FieldConfig2[]  = [
         ]
       }
 ];
-Ext_Profile: FieldConfig2[]  = [
+
+  Ext_Profile: FieldConfig2[]  = [
 {
         labelValue: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.',
         icon: '',
@@ -2347,8 +2342,7 @@ Ext_Profile: FieldConfig2[]  = [
 
 
 
-  tabConfig: FieldGroupConfig[] = 
-[
+  tabConfig: FieldGroupConfig[] = [
   {
     item: this.P_info_1,
     name: 'P_info_1'
@@ -2358,11 +2352,11 @@ Ext_Profile: FieldConfig2[]  = [
     item: this.NonHCP,
     name: 'NonHCP'
   },
-  // {
-  //   item: this. inputType: '',,
-  //   name: 'OTHER_HCP'
-  // }
-  // ,
+  {
+    item: this.OTHER_HCP,
+    name: 'OTHER_HCP'
+  }
+  ,
   {
     item: this.MD_PA_Lic_Info,
     name: 'MD_PA_Lic_Info'
@@ -2397,6 +2391,8 @@ Ext_Profile: FieldConfig2[]  = [
   }
  
 ];
+
+
 
   ngOnInit(): void {
     setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
