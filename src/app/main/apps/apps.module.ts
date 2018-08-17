@@ -21,10 +21,10 @@ const routes = [
         path: 'dynamic-forms',
         loadChildren: './dynamic-forms/render-component/render.module#RenderModule'
     },
-    {
-        path: 'smart',
-        loadChildren: './smart/smart.module#SmartModule'
-    },
+    // {
+    //     path: 'smart',
+    //     loadChildren: './smart/smart.module#SmartModule'
+    // },
     {
         path: 'dynamic-profile',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'

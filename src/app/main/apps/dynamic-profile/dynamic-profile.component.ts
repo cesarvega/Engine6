@@ -10,31 +10,7 @@ import { FieldGroupConfig, FieldConfig2 } from './field.interface';
 })
 export class DynamicProfileComponent implements OnInit {
 
-    P_info_1: FieldConfig2[]  = [
-    {
-      labelValue: 'bi-signup-form',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-signup-form',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: 'label',
-      name: 'label',
-      value: '',
-      inputType: 'label',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
+    P_info_1: FieldConfig2[]  = [   
     {
       labelValue: 'First name *',
       icon: '',

@@ -5,17 +5,7 @@ import { FieldConfig, Validator } from '../../field.interface';
 @Component({
   exportAs: 'dynamicForm',
   selector: 'dynamic-form',
-  template: `      <mat-card style="max-width:800px">
-  <mat-card-content>
-  <form class="p-24"  fxFlex="100" fxLayoutAlign="start center" fxLayout="row wrap"  
-              [formGroup]="form" (submit)="onSubmit($event)" >
-              <div >
-      <ng-container *ngFor="let field of fields;" dynamicField [field]="field" 
-        [group]="form">
-      </ng-container></div>
-    </form>  </mat-card-content>
-    </mat-card>
-            `,
+  templateUrl: './dynamic-form.component.html',
   styles: []
 })
 export class DynamicFormComponent implements OnInit {
