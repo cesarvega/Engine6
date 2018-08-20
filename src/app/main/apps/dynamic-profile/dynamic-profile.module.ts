@@ -14,10 +14,16 @@ import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { LabelComponent } from './textlabel/textlabel.component';
 import { FuseSharedModule } from '@fuse/shared.module';
+import { SmartComponent } from '../smart/smart.component';
 const routes: Routes = [
   {
-    path     : '**',
+    path     : 'profile',
       component: DynamicProfileComponent
+  }
+  ,
+  {
+    path     : 'smart',
+      component: SmartComponent
   }
 ];
 @NgModule({
@@ -30,6 +36,7 @@ const routes: Routes = [
     FuseSharedModule
   ],
   declarations:   [
+    SmartComponent,
     DynamicProfileComponent,
     InputComponent,
     ButtonComponent,

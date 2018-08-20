@@ -826,7 +826,7 @@ export class SmartComponent implements OnInit {
       }
       ];
   
-      tabConfig: FieldGroupConfig[] = 
+       fieldData2: FieldGroupConfig[] = 
     [
       {
         item: this.regConfig1,
@@ -848,6 +848,9 @@ export class SmartComponent implements OnInit {
         name: 'HOUSEHOLD'
       }
     ];
+
+    // fieldOBJ = JSON.stringify(this.fieldData2);
+    fieldOBJ = this.fieldData2;
     ngOnInit(): void {
       setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
     }

@@ -24,7 +24,23 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.dynamic',
         type: 'item',
         icon: 'person',
-        url: '/apps/dynamic-profile'
+        url: '/apps/dynamic-profile/profile'
+    },
+    {
+        id: 'help',
+        title: 'Contact US',
+        // translate: 'NAV.HELP',
+        type: 'item',
+        icon: 'help',
+        url: '/pages/faq'
+    },
+    {
+        id: 'temp',
+        title: 'login',
+        // translate: 'NAV.HELP',
+        type: 'item',
+        icon: 'help',
+        url: '/apps/login-register/auth/login'
     },
     {
         id: 'smart',
@@ -32,41 +48,32 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.dynamic',
         type: 'item',
         icon: 'person',
-        url: '/apps/smart'
+        url: '/apps/dynamic-profile/smart'
     },
-    {
-        id: 'dynamic',
-        title: 'dynamic',
-        // translate: 'NAV.dynamic',
-        type: 'item',
-        icon: 'attach_money',
-        url: '/apps/dynamic-forms'
-    },
-    {
-        id: 'payments',
-        title: 'Payments',
-        // translate: 'NAV.payments',
-        type: 'item',
-        icon: 'attach_money',
-        url: '/apps/payment'
-    },
-    {
-        id: 'settings',
-        title: 'Settings',
-        // translate: 'NAV.CALENDAR',
-        type: 'item',
-        icon: 'settings',
-        url: 'apps/todo/all'
-    },
-    {
-        id: 'help',
-        title: 'Help',
-        // translate: 'NAV.HELP',
-        type: 'item',
-        icon: 'help',
-        url: '/pages/faq'
-    },
-
+    // {
+    //     id: 'dynamic',
+    //     title: 'dynamic',
+    //     // translate: 'NAV.dynamic',
+    //     type: 'item',
+    //     icon: 'attach_money',
+    //     url: '/apps/dynamic-forms'
+    // },
+    // {
+    //     id: 'payments',
+    //     title: 'Payments',
+    //     // translate: 'NAV.payments',
+    //     type: 'item',
+    //     icon: 'attach_money',
+    //     url: '/apps/payment'
+    // },
+    // {
+    //     id: 'settings',
+    //     title: 'Settings',
+    //     // translate: 'NAV.CALENDAR',
+    //     type: 'item',
+    //     icon: 'settings',
+    //     url: 'apps/todo/all'
+    // },  
     // ,{
     //     id       : 'applications',
     //     title    : 'Applications',

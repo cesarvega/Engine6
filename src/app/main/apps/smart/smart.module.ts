@@ -16,6 +16,7 @@ import { DynamicFormComponent } from '../dynamic-profile/components/dynamic-form
 import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { MaterialModule } from '../dynamic-profile/material.module';
 import { DynamicProfileModule } from '../dynamic-profile/dynamic-profile.module';
+
 const routes: Routes = [
   {
     path     : '**',
@@ -28,13 +29,14 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule,
-    FormsModule,
+    // ReactiveFormsModule,
+    // FormsModule,
     FuseSharedModule,
     DynamicProfileModule
   ],
   declarations:   [
-    SmartComponent
+    // SmartComponent,
+    // DynamicProfileComponent
   ],
 
 })

@@ -27,10 +27,10 @@ const appRoutes: Routes = [
         path        : 'apps',
         loadChildren: './main/apps/apps.module#AppsModule'
     },
-    // {
-    //     path        : 'pages',
-    //     loadChildren: './main/pages/pages.module#PagesModule'
-    // },
+    {
+        path        : 'pages',
+        loadChildren: './main/pages/pages.module#PagesModule'
+    },
     // {
     //     path        : 'ui',
     //     loadChildren: './main/ui/ui.module#UIModule'
@@ -43,10 +43,10 @@ const appRoutes: Routes = [
         path        : 'angular-material-elements',
         loadChildren: './main/angular-material-elements/angular-material-elements.module#AngularMaterialElementsModule'
     },
-    // {
-    //     path      : '**',
-    //     redirectTo: 'apps/dashboards/analytics'
-    // }
+    {
+        path      : '**',
+        redirectTo: 'apps/dashboards/analytics'
+    }
 ];
 
 @NgModule({
