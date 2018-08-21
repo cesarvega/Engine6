@@ -3,17 +3,17 @@ export class ScrumboardFakeDb
     public static boards = [
         {
             'id'      : '32gfhaf2',
-            'name'    : 'ACME Frontend Application',
+            'name'    : 'ORDER LIVE UPDATE',
             'uri'     : 'acme-frontend-application',
             'settings': {
                 'color'          : 'fuse-dark',
                 'subscribed'     : false,
-                'cardCoverImages': true
+                'cardCoverImages': false
             },
             'lists'   : [
                 {
                     'id'     : '56027cf5a2ca3839a5d36103',
-                    'name'   : 'Design',
+                    'name'   : 'LAB',
                     'idCards': [
                         '5603a2a3cab0c8300f6096b3',
                         '44d1.2b51ea6cc2b5d.21f4a3412e857.8ffa2d8b44ad9.ac87215ed53a1.67d4921ad8f8d.9f318bcb2'
@@ -21,7 +21,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'     : '56127cf2a2ca3539g7d36103',
-                    'name'   : 'Development',
+                    'name'   : 'SHIPPING',
                     'idCards': [
                         '2837273da9b93dd84243s0f9',
                         '5787b7e4740c57bf0dffd5b6',
@@ -31,7 +31,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'     : 'faf244627326f1249525763d',
-                    'name'   : 'Upcoming Features',
+                    'name'   : 'COMPLETED',
                     'idCards': [
                         'd9005a4b89ed2aadca48a6ad',
                         'f6b9d7a9247e5d794a081927',
@@ -40,15 +40,15 @@ export class ScrumboardFakeDb
                         'bad3.51be8ad33acaf.9540ecb37f7e8.6bee596cfe7d3.44c68bee289c4.b96ed0b9f0af7.e14846035'
                     ]
                 },
-                {
-                    'id'     : 'ad7d.9fffac5dff412.c83bca6853767.8fd7549b2b1ca.ceda8a01774c4.a5cf3976e87e4.ce79eeeea',
-                    'name'   : 'Known Bugs',
-                    'idCards': [
-                        'acc6.9c673cd2f5e35.521e91d8d5991.4b2a95e0539d1.027930c0743c5.7ad1ea7bea476.e8fbe6347',
-                        '3279.3d69b40cc0b75.690252b6bea08.1e1789b0b7c2e.2f264b8661ce2.84d5f56910e23.429be5e8a',
-                        'ba01.8e1a43f92a03a.0022bd5cbb9ba.275c64d911d8c.880e0846a3966.f75ff43e53ad.48ad612e7'
-                    ]
-                }
+                // {
+                //     'id'     : 'ad7d.9fffac5dff412.c83bca6853767.8fd7549b2b1ca.ceda8a01774c4.a5cf3976e87e4.ce79eeeea',
+                //     'name'   : 'Known Bugs',
+                //     'idCards': [
+                //         'acc6.9c673cd2f5e35.521e91d8d5991.4b2a95e0539d1.027930c0743c5.7ad1ea7bea476.e8fbe6347',
+                //         '3279.3d69b40cc0b75.690252b6bea08.1e1789b0b7c2e.2f264b8661ce2.84d5f56910e23.429be5e8a',
+                //         'ba01.8e1a43f92a03a.0022bd5cbb9ba.275c64d911d8c.880e0846a3966.f75ff43e53ad.48ad612e7'
+                //     ]
+                // }
             ],
             'cards'   : [
                 {
