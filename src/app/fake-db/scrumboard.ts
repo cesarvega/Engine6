@@ -3,17 +3,17 @@ export class ScrumboardFakeDb
     public static boards = [
         {
             'id'      : '32gfhaf2',
-            'name'    : 'ORDER LIVE UPDATE',
+            'name'    : 'ACME Frontend Application',
             'uri'     : 'acme-frontend-application',
             'settings': {
                 'color'          : 'fuse-dark',
                 'subscribed'     : false,
-                'cardCoverImages': false
+                'cardCoverImages': true
             },
             'lists'   : [
                 {
                     'id'     : '56027cf5a2ca3839a5d36103',
-                    'name'   : 'LAB',
+                    'name'   : 'Design',
                     'idCards': [
                         '5603a2a3cab0c8300f6096b3',
                         '44d1.2b51ea6cc2b5d.21f4a3412e857.8ffa2d8b44ad9.ac87215ed53a1.67d4921ad8f8d.9f318bcb2'
@@ -21,7 +21,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'     : '56127cf2a2ca3539g7d36103',
-                    'name'   : 'SHIPPING',
+                    'name'   : 'Development',
                     'idCards': [
                         '2837273da9b93dd84243s0f9',
                         '5787b7e4740c57bf0dffd5b6',
@@ -31,7 +31,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'     : 'faf244627326f1249525763d',
-                    'name'   : 'COMPLETED',
+                    'name'   : 'Upcoming Features',
                     'idCards': [
                         'd9005a4b89ed2aadca48a6ad',
                         'f6b9d7a9247e5d794a081927',
@@ -40,15 +40,15 @@ export class ScrumboardFakeDb
                         'bad3.51be8ad33acaf.9540ecb37f7e8.6bee596cfe7d3.44c68bee289c4.b96ed0b9f0af7.e14846035'
                     ]
                 },
-                // {
-                //     'id'     : 'ad7d.9fffac5dff412.c83bca6853767.8fd7549b2b1ca.ceda8a01774c4.a5cf3976e87e4.ce79eeeea',
-                //     'name'   : 'Known Bugs',
-                //     'idCards': [
-                //         'acc6.9c673cd2f5e35.521e91d8d5991.4b2a95e0539d1.027930c0743c5.7ad1ea7bea476.e8fbe6347',
-                //         '3279.3d69b40cc0b75.690252b6bea08.1e1789b0b7c2e.2f264b8661ce2.84d5f56910e23.429be5e8a',
-                //         'ba01.8e1a43f92a03a.0022bd5cbb9ba.275c64d911d8c.880e0846a3966.f75ff43e53ad.48ad612e7'
-                //     ]
-                // }
+                {
+                    'id'     : 'ad7d.9fffac5dff412.c83bca6853767.8fd7549b2b1ca.ceda8a01774c4.a5cf3976e87e4.ce79eeeea',
+                    'name'   : 'Known Bugs',
+                    'idCards': [
+                        'acc6.9c673cd2f5e35.521e91d8d5991.4b2a95e0539d1.027930c0743c5.7ad1ea7bea476.e8fbe6347',
+                        '3279.3d69b40cc0b75.690252b6bea08.1e1789b0b7c2e.2f264b8661ce2.84d5f56910e23.429be5e8a',
+                        'ba01.8e1a43f92a03a.0022bd5cbb9ba.275c64d911d8c.880e0846a3966.f75ff43e53ad.48ad612e7'
+                    ]
+                }
             ],
             'cards'   : [
                 {
@@ -542,22 +542,22 @@ export class ScrumboardFakeDb
             'members' : [
                 {
                     'id'    : '56027c1930450d8bf7b10758',
-                    'name'  : 'Alice Freeman',
+                    'name'  : 'Lore Saez',
                     'avatar': 'assets/images/avatars/alice.jpg'
                 },
                 {
                     'id'    : '26027s1930450d8bf7b10828',
-                    'name'  : 'Danielle Obrien',
+                    'name'  : 'Jennifer Acosta',
                     'avatar': 'assets/images/avatars/danielle.jpg'
                 },
                 {
                     'id'    : '76027g1930450d8bf7b10958',
-                    'name'  : 'James Lewis',
+                    'name'  : 'Omar Jimenez',
                     'avatar': 'assets/images/avatars/james.jpg'
                 },
                 {
                     'id'    : '36027j1930450d8bf7b10158',
-                    'name'  : 'Vincent Munoz',
+                    'name'  : 'Joel Vallecillo',
                     'avatar': 'assets/images/avatars/vincent.jpg'
                 }
             ],
@@ -746,22 +746,22 @@ export class ScrumboardFakeDb
             'members' : [
                 {
                     'id'    : '56027c1930450d8bf7b10758',
-                    'name'  : 'Alice Freeman',
+                    'name'  : 'Lore Saez',
                     'avatar': 'assets/images/avatars/alice.jpg'
                 },
                 {
                     'id'    : '26027s1930450d8bf7b10828',
-                    'name'  : 'Danielle Obrien',
+                    'name'  : 'Jennifer Acosta',
                     'avatar': 'assets/images/avatars/danielle.jpg'
                 },
                 {
                     'id'    : '76027g1930450d8bf7b10958',
-                    'name'  : 'James Lewis',
+                    'name'  : 'Omar Jimenez',
                     'avatar': 'assets/images/avatars/james.jpg'
                 },
                 {
                     'id'    : '36027j1930450d8bf7b10158',
-                    'name'  : 'Vincent Munoz',
+                    'name'  : 'Joel Vallecillo',
                     'avatar': 'assets/images/avatars/vincent.jpg'
                 }
             ],
