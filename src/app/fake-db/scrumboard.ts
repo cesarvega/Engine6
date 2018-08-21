@@ -542,22 +542,22 @@ export class ScrumboardFakeDb
             'members' : [
                 {
                     'id'    : '56027c1930450d8bf7b10758',
-                    'name'  : 'Alice Freeman',
+                    'name'  : 'Lore Saez',
                     'avatar': 'assets/images/avatars/alice.jpg'
                 },
                 {
                     'id'    : '26027s1930450d8bf7b10828',
-                    'name'  : 'Danielle Obrien',
+                    'name'  : 'Jennifer Acosta',
                     'avatar': 'assets/images/avatars/danielle.jpg'
                 },
                 {
                     'id'    : '76027g1930450d8bf7b10958',
-                    'name'  : 'James Lewis',
+                    'name'  : 'Omar Jimenez',
                     'avatar': 'assets/images/avatars/james.jpg'
                 },
                 {
                     'id'    : '36027j1930450d8bf7b10158',
-                    'name'  : 'Vincent Munoz',
+                    'name'  : 'Joel Vallecillo',
                     'avatar': 'assets/images/avatars/vincent.jpg'
                 }
             ],
@@ -746,22 +746,22 @@ export class ScrumboardFakeDb
             'members' : [
                 {
                     'id'    : '56027c1930450d8bf7b10758',
-                    'name'  : 'Alice Freeman',
+                    'name'  : 'Lore Saez',
                     'avatar': 'assets/images/avatars/alice.jpg'
                 },
                 {
                     'id'    : '26027s1930450d8bf7b10828',
-                    'name'  : 'Danielle Obrien',
+                    'name'  : 'Jennifer Acosta',
                     'avatar': 'assets/images/avatars/danielle.jpg'
                 },
                 {
                     'id'    : '76027g1930450d8bf7b10958',
-                    'name'  : 'James Lewis',
+                    'name'  : 'Omar Jimenez',
                     'avatar': 'assets/images/avatars/james.jpg'
                 },
                 {
                     'id'    : '36027j1930450d8bf7b10158',
-                    'name'  : 'Vincent Munoz',
+                    'name'  : 'Joel Vallecillo',
                     'avatar': 'assets/images/avatars/vincent.jpg'
                 }
             ],
