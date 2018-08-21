@@ -231,14 +231,14 @@ export const navigation: FuseNavigation[] = [
     //                 fg   : '#FFFFFF'
     //             }
     //         },
-    //         {
-    //             id       : 'scrumboard',
-    //             title    : 'Scrumboard',
-    //             translate: 'NAV.SCRUMBOARD',
-    //             type     : 'item',
-    //             icon     : 'assessment',
-    //             url      : '/apps/scrumboard'
-    //         },
+            {
+                id       : 'scrumboard',
+                title    : 'Scrumboard',
+                translate: 'NAV.SCRUMBOARD',
+                type     : 'item',
+                icon     : 'assessment',
+                url      : '/apps/scrumboard'
+            },
     //          {
     //                         id   : 'profile',
     //                         title: 'Profile',

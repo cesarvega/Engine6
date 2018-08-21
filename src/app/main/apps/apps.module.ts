@@ -76,10 +76,10 @@ const routes = [
     //     path: 'contacts',
     //     loadChildren: './contacts/contacts.module#ContactsModule'
     // },
-    // {
-    //     path: 'scrumboard',
-    //     loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
-    // }
+    {
+        path: 'scrumboard',
+        loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
+    }
 ];
 
 @NgModule({
