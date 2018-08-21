@@ -53,8 +53,8 @@ export class ScrumboardFakeDb
             'cards'   : [
                 {
                     'id'               : '2837273da9b93dd84243s0f9',
-                    'name'             : 'Update generators',
-                    'description'      : 'Current generator doesn\'t support Node.js 6 and above.',
+                    'name'             : 'G11-1004BYY',
+                    'description'      : 'GLOSS BLACK EPOXY BAC 701',
                     'idAttachmentCover': '',
                     'idMembers'        : [
                         '26027s1930450d8bf7b10828'
@@ -79,9 +79,9 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '5603a2a3cab0c8300f6096b3',
-                    'name'             : 'Change background colors',
-                    'description'      : '',
-                    'idAttachmentCover': '67027cahbe3b52ecf2dc631c',
+                    'name'             : 'G31-1123C',
+                    'description'      : 'SW MATTERHORN WHITE',
+                    'idAttachmentCover': '',
                     'idMembers'        : [
                         '76027g1930450d8bf7b10958'
                     ],
@@ -205,7 +205,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : 'd9005a4b89ed2aadca48a6ad',
-                    'name'             : 'Add alternative authentication pages',
+                    'name'             : 'G11-1005BYY',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -455,8 +455,8 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '44d1.2b51ea6cc2b5d.21f4a3412e857.8ffa2d8b44ad9.ac87215ed53a1.67d4921ad8f8d.9f318bcb2',
-                    'name'             : 'Mail app new layout',
-                    'description'      : 'Current layout has lots of flaws in mobile. Outlook view should help with that.',
+                    'name'             : 'E4C11-1010B',
+                    'description'      : 'GLOSS BLACK EPOXY BAC 701',
                     'idAttachmentCover': '',
                     'idMembers'        : [
                         '56027c1930450d8bf7b10758',
@@ -564,7 +564,7 @@ export class ScrumboardFakeDb
             'labels'  : [
                 {
                     'id'   : '26022e4129ad3a5sc28b36cd',
-                    'name' : 'High Priority',
+                    'name' : 'Finished',
                     'color': 'mat-red-500-bg'
                 },
                 {
@@ -574,12 +574,22 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'   : '5640635e19ad3a5dc21416b2',
-                    'name' : 'App',
+                    'name' : 'AOE',
                     'color': 'mat-blue-600-bg'
                 },
                 {
+                    'id'   : '5640635e19ad3a5dc21416b2',
+                    'name' : 'Late',
+                    'color': 'mat-yellow-600-bg'
+                },
+                {
+                    'id'   : '5640635e19ad3a5dc21416b2',
+                    'name' : 'Do Not Relase',
+                    'color': 'mat-purple-600-bg'
+                },
+                {
                     'id'   : '6540635g19ad3s5dc31412b2',
-                    'name' : 'Feature',
+                    'name' : 'Missing Raw Mat',
                     'color': 'mat-green-400-bg'
                 }
             ]
