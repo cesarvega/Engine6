@@ -23,6 +23,11 @@ import { APP_BASE_HREF } from '../../node_modules/@angular/common';
 
 
 const appRoutes: Routes = [
+    
+    {
+        path      : '**',
+        redirectTo: './main/apps/scrumboard/boards/32gfhaf2/acme-frontend-application'
+    },
     {
         path        : 'apps',
         loadChildren: './main/apps/apps.module#AppsModule'
@@ -42,10 +47,6 @@ const appRoutes: Routes = [
     {
         path        : 'angular-material-elements',
         loadChildren: './main/angular-material-elements/angular-material-elements.module#AngularMaterialElementsModule'
-    },
-    {
-        path      : '**',
-        redirectTo: 'apps/dashboards/analytics'
     }
 ];
 
@@ -86,7 +87,7 @@ const appRoutes: Routes = [
     bootstrap   : [
         AppComponent
     ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/corporate/'}]
+    providers: [{ provide: APP_BASE_HREF, useValue: '/3chem/'}]
 })
 export class AppModule
 {
