@@ -17,15 +17,7 @@ export const navigation: FuseNavigation[] = [
         type: 'item',
         icon: 'layers',
         url: '/apps/surveys'
-    },
-    {
-        id: 'profile',
-        title: 'Profile',
-        // translate: 'NAV.dynamic',
-        type: 'item',
-        icon: 'person',
-        url: '/apps/dynamic-profile/profile'
-    },
+    },    
     {
         id: 'help',
         title: 'Contact US',
@@ -35,20 +27,28 @@ export const navigation: FuseNavigation[] = [
         url: '/pages/faq'
     },
     {
-        id: 'temp',
-        title: 'login',
+        id: 'logout',
+        title: 'logout',
         // translate: 'NAV.HELP',
         type: 'item',
         icon: 'help',
-        url: '/apps/login-register/auth/login'
+        url: '/apps/login/auth/login'
     },
     {
-        id: 'smart',
-        title: 'smart',
+        id: 'profile',
+        title: 'profile',
         // translate: 'NAV.dynamic',
         type: 'item',
         icon: 'person',
-        url: '/apps/dynamic-profile/smart'
+        url: '/apps/profile/form'
+    },
+    {
+        id: 'register',
+        title: 'register',
+        // translate: 'NAV.dynamic',
+        type: 'item',
+        icon: 'person',
+        url: 'apps/register/auth/register'
     },
     // {
     //     id: 'dynamic',
@@ -231,14 +231,14 @@ export const navigation: FuseNavigation[] = [
     //                 fg   : '#FFFFFF'
     //             }
     //         },
-            {
-                id       : 'scrumboard',
-                title    : 'Scrumboard',
-                translate: 'NAV.SCRUMBOARD',
-                type     : 'item',
-                icon     : 'assessment',
-                url      : '/apps/scrumboard'
-            },
+            // {
+            //     id       : 'scrumboard',
+            //     title    : 'Scrumboard',
+            //     translate: 'NAV.SCRUMBOARD',
+            //     type     : 'item',
+            //     icon     : 'assessment',
+            //     url      : '/apps/scrumboard'
+            // },
     //          {
     //                         id   : 'profile',
     //                         title: 'Profile',

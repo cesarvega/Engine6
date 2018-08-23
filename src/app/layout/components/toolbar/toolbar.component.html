@@ -4,8 +4,8 @@
 
         <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
 
-            <button mat-icon-button class="navbar-toggle-button"
-                    *ngIf="!hiddenNavbar && !rightNavbar" (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
+            <button mat-icon-button class="navbar-toggle-button" *ngIf="!hiddenNavbar && !rightNavbar" (click)="toggleSidebarOpen('navbar')"
+                fxHide.gt-md>
                 <mat-icon class="secondary-text">menu</mat-icon>
             </button>
 
@@ -13,23 +13,24 @@
 
             <div fxLayout="row" fxLayoutAlign="start center" *ngIf="horizontalNavbar">
                 <div class="logo ml-16">
-                     <img class="logo-icon" style="width: 90px;" src="assets/images/logos/logo.jpg">   
+                    <img class="logo-icon" style="width: 90px;" src="assets/images/logos/logo.jpg">
                 </div>
             </div>
 
             <!-- <div class="px-8 px-mat-16">
                 <fuse-shortcuts [navigation]="navigation"></fuse-shortcuts>
             </div> -->
-            <div class="logo ml-16" >
+            <div class="logo ml-16">
                 <!-- <img class="logo-icon" style="width: 90px;" src="assets/images/logos/logo.jpg">                 -->
-                <!-- <img class="logo-icon" style="width: 90px;" src="assets/images/logos/logo_sticky.png">                 -->
+                <img class="logo-icon" style="width: 50px;" src="assets/images/logos/bi-logo-with-tagline.svg">
             </div>
 
         </div>
-
+        <div class="toolbar-separator"></div>
         <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
-
-            <button mat-button [matMenuTriggerFor]="userMenu"
+            
+            <!-- <button mat-button [matMenuTriggerFor]="userMenu" -->
+            <button mat-button
                     class="user-button">
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/Velazquez.jpg">
@@ -38,7 +39,7 @@
                 </div>
             </button>
 
-            <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+            <!-- <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
 
                 <button mat-menu-item>
                     <mat-icon>account_circle</mat-icon>
@@ -55,24 +56,24 @@
                     <span>Logout</span>
                 </button>
 
-            </mat-menu>
+            </mat-menu> -->
 
             <div class="toolbar-separator"></div>
 
-            <fuse-search-bar (input)="search($event)"></fuse-search-bar>
+            <!-- <fuse-search-bar (input)="search($event)"></fuse-search-bar>
 
-            <div class="toolbar-separator"></div>
+            <div class="toolbar-separator"></div> -->
 
-            <button mat-button fxHide fxShow.gt-xs
+            <!-- <button mat-button fxHide fxShow.gt-xs
                     class="language-button"
                     [matMenuTriggerFor]="languageMenu">
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <img class="flag mr-8" [src]="'assets/images/flags/'+selectedLanguage.flag+'.png'">
                     <span class="iso text-uppercase">{{selectedLanguage.id}}</span>
                 </div>
-            </button>
+            </button> -->
 
-            <mat-menu #languageMenu="matMenu" [overlapTrigger]="false">
+            <!-- <mat-menu #languageMenu="matMenu" [overlapTrigger]="false">
 
                 <button mat-menu-item *ngFor="let lang of languages" (click)="setLanguage(lang)">
                     <span fxLayout="row" fxLayoutAlign="start center">
@@ -87,30 +88,27 @@
                     </div>
                 </button>
 
-            </mat-menu>
+            </mat-menu> -->
 
             <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
-
+            <!-- 
             <button mat-icon-button fxHide.gt-md
                     class="chat-panel-toggle-button"
                     (click)="toggleSidebarOpen('chatPanel')"
                     aria-label="Toggle chat panel">
                 <mat-icon class="icon">chat</mat-icon>
-            </button>
+            </button> -->
 
-            <div class="toolbar-separator" fxHide.gt-md></div>
+            <!-- <div class="toolbar-separator" fxHide.gt-md></div> -->
 
-            <button mat-icon-button
-                    class="quick-panel-toggle-button"
-                    (click)="toggleSidebarOpen('quickPanel')"
-                    aria-label="Toggle quick panel">
+            <button mat-icon-button class="quick-panel-toggle-button" (click)="toggleSidebarOpen('quickPanel')" aria-label="Toggle quick panel">
                 <mat-icon class="icon">format_list_bulleted</mat-icon>
             </button>
 
             <div class="toolbar-separator" *ngIf="!hiddenNavbar && rightNavbar" fxHide fxShow.gt-xs></div>
 
-            <button mat-icon-button class="navbar-toggle-button"
-                    *ngIf="!hiddenNavbar && rightNavbar" (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
+            <button mat-icon-button class="navbar-toggle-button" *ngIf="!hiddenNavbar && rightNavbar" (click)="toggleSidebarOpen('navbar')"
+                fxHide.gt-md>
                 <mat-icon class="secondary-text">menu</mat-icon>
             </button>
 

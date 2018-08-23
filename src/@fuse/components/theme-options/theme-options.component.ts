@@ -273,7 +273,7 @@ export class FuseThemeOptionsComponent implements OnInit, OnDestroy
                             variant   : 'vertical-style-1'
                         },
                         toolbar: {
-                            background: 'mat-white-500-bg',
+                            background: 'mat-fuse-dark-500-bg',
                             hidden    : false,
                             position  : 'above'
                         },

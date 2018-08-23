@@ -11,17 +11,21 @@ const routes = [
         path: 'surveys',
         loadChildren: './surveys/surveys.module#SurveysModule'
     },
+    // {
+    //     path: 'dynamic-profile',
+    //     loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+    // },
     {
-        path: 'dynamic-profile',
+        path: 'profile',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
     },
     {
-        path: 'smart',
-        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
-    },
-    {
-        path: 'login-register',
+        path: 'login',
         loadChildren: './login-register/login-register.module#LoginRegisterModule'
+    },
+    {
+        path: 'register',
+        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
     },
     // {
     //     path: 'dashboards/project',

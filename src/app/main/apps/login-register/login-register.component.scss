@@ -4,7 +4,8 @@
 
     #login {
         width: 100%;
-        background: url('/assets/images/backgrounds/dark-material-bg.jpg') no-repeat;
+        // background: url('/assets/images/backgrounds/dark-material-bg.jpg') no-repeat;
+        background-color: whitesmoke;
         background-size: cover;
 
         #login-form-wrapper {
@@ -16,8 +17,8 @@
             }
 
             #login-form {
-                width: 384px;
-                max-width: 384px;
+                width: 484px;
+                max-width: 484px;
                 padding: 32px;
                 background: #FFFFFF;
                 text-align: center;
@@ -26,6 +27,7 @@
                 @include media-breakpoint('xs') {
                     padding: 24px;
                     width: 100%;
+                    max-width: 384px;
                 }
 
                 .logo {

@@ -3,18 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { LoginRegisterComponent } from './login-register.component';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {
     path     : 'auth/login',
       component: LoginRegisterComponent
-  } ,
-  {
-    path     : 'auth/register',
-    component: RegistrationFormComponent
-  }
+  } 
   ,
   {
     path     : 'auth/contact',
@@ -33,6 +28,6 @@ const routes: Routes = [
 
     FuseSharedModule
   ],
-  declarations: [LoginRegisterComponent, RegistrationFormComponent, ContactUsComponent, ProfileComponent]
+  declarations: [LoginRegisterComponent, ContactUsComponent, ProfileComponent]
 })
 export class LoginRegisterModule { }
