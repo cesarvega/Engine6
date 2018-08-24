@@ -105,8 +105,20 @@ export class AppComponent implements OnInit, OnDestroy
                 {
                     this.document.body.classList.remove('boxed');
                 }
+                this.fuseConfig.layout.footer.hidden = true;                    
+                
             });
-    }
+
+            // this._fuseConfigService.config = {
+            //     layout: {                
+            //         footer: {
+            //             hidden: true
+            //         }
+            //     }
+            // };
+        }
+    
+    
 
     /**
      * On destroy

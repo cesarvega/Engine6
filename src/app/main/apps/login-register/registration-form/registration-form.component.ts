@@ -12,7 +12,31 @@ export class RegistrationFormComponent implements OnInit
   
   P_info_1: FieldConfig2[] = [
     {
-      labelValue: 'First name *',
+      labelValue: 'Email *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your First Name',
+      type: 'input',
+      label: 'Email *',
+      name: 'Email*',
+      value: '',
+      inputType: 'email',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Must enter first name'
+        }
+      ]
+    },
+    {
+      labelValue: 'Email*',
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-input-text',

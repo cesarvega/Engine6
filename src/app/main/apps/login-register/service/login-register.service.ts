@@ -80,7 +80,7 @@ export class LoginRegisterService {
   }
 
   signInAndRegistrationAuth(userData): string {
-      return this.executeGetSql(this.SP_verifyUser  + userData);
+      return this.executeGetSql(this.SP_verifyUser, userData);
   }
 
 
