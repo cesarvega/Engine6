@@ -3,7 +3,7 @@ import { FuseNavigation } from '@fuse/types';
 export const navigation: FuseNavigation[] = [
 
     {
-        id: 'dashboard',
+        id: 'Dashboard',
         title: 'Dashboard',
          // translate: 'NAV.Dashboard',
         type: 'item',
@@ -17,26 +17,10 @@ export const navigation: FuseNavigation[] = [
         type: 'item',
         icon: 'layers',
         url: '/apps/surveys'
-    },    
-    {
-        id: 'help',
-        title: 'Contact US',
-        // translate: 'NAV.HELP',
-        type: 'item',
-        icon: 'help',
-        url: '/pages/faq'
-    },
-    {
-        id: 'logout',
-        title: 'logout',
-        // translate: 'NAV.HELP',
-        type: 'item',
-        icon: 'help',
-        url: '/apps/login/auth/login'
-    },
+    },           
     {
         id: 'profile',
-        title: 'profile',
+        title: 'Profile',
         // translate: 'NAV.dynamic',
         type: 'item',
         icon: 'person',
@@ -44,11 +28,27 @@ export const navigation: FuseNavigation[] = [
     },
     {
         id: 'register',
-        title: 'register',
+        title: 'Register',
         // translate: 'NAV.dynamic',
         type: 'item',
         icon: 'person',
         url: 'apps/register/auth/register'
+    },
+    {
+        id: 'help',
+        title: 'Contact Us',
+        // translate: 'NAV.HELP',
+        type: 'item',
+        icon: 'help',
+        url: '/apps/login/contact-us'
+    },
+    {
+        id: 'Logout',
+        title: 'logout',
+        // translate: 'NAV.HELP',
+        type: 'item',
+        icon: 'help',
+        url: '/apps/login/auth/login'
     },
     // {
     //     id: 'dynamic',
@@ -744,12 +744,12 @@ export const navigation: FuseNavigation[] = [
     //                 }
     //             ]
     //         },
-            {
-                id      : 'layout',
-                title   : 'Layout',
-                type    : 'collapsable',
-                icon    : 'layers',
-                children: [
+            // {
+            //     id      : 'layout',
+            //     title   : 'Layout',
+            //     type    : 'collapsable',
+            //     icon    : 'layers',
+            //     children: [
                     // {
                     //     id   : 'badge',
                     //     title: 'Badge',
@@ -804,12 +804,12 @@ export const navigation: FuseNavigation[] = [
                     //     type : 'item',
                     //     url  : '/angular-material-elements/stepper'
                     // },
-                    {
-                        id   : 'tabs',
-                        title: 'Tabs',
-                        type : 'item',
-                        url  : '/angular-material-elements/tabs'
-                    }
+                    // {
+                    //     id   : 'tabs',
+                    //     title: 'Tabs',
+                    //     type : 'item',
+                    //     url  : '/angular-material-elements/tabs'
+                    // }
                     // ,
                     // {
                     //     id   : 'tree',
@@ -817,8 +817,8 @@ export const navigation: FuseNavigation[] = [
                     //     type : 'item',
                     //     url  : '/angular-material-elements/tree'
                     // }
-                ]
-            },
+                // ]
+            // },
     //         {
     //             id      : 'buttons-indicators',
     //             title   : 'Buttons & Indicators',

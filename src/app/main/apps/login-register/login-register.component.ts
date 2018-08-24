@@ -6,6 +6,7 @@ import { fuseAnimations } from '@fuse/animations';
 import { AuthService } from 'angularx-social-login';
 import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
+import { LoginRegisterService } from './service/login-register.service';
 @Component({
     selector: 'app-login-register',
     templateUrl: './login-register.component.html',
@@ -25,6 +26,7 @@ export class LoginRegisterComponent implements OnInit {
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
+        private _LoginRegisterService: LoginRegisterService,
         private _authService: AuthService) {
         // Configure the layout
         this._fuseConfigService.config = {
@@ -48,7 +50,7 @@ export class LoginRegisterComponent implements OnInit {
 
     signInWithBI(): void {
        console.log(this.loginForm.value);
-       
+       this._LoginRegisterService.getUserProfile(this.loginForm.value.email);
     }
 
     signInWithGoogle(): void {

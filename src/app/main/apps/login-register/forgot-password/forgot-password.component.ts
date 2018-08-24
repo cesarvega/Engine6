@@ -3,12 +3,12 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialUser, AuthService } from 'angularx-social-login';
 @Component({
-  selector: 'app-contact-us',
-  templateUrl: './contact-us.component.html',
-  styleUrls: ['./contact-us.component.scss'],
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss'],
   providers: [AuthService]
 })
-export class ContactUsComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
   loginForm: FormGroup;
   private user: SocialUser;
   private loggedIn: boolean;
@@ -34,14 +34,16 @@ export class ContactUsComponent implements OnInit {
       }
     };
   }
+
   retrievePassword(): void {
     console.log('forgot pwd');
+
   }
+
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]]
     });
   }
-}
 
+}
