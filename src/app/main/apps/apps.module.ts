@@ -11,10 +11,6 @@ const routes = [
         path: 'surveys',
         loadChildren: './surveys/surveys.module#SurveysModule'
     },
-    // {
-    //     path: 'dynamic-profile',
-    //     loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
-    // },
     {
         path: 'profile',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
@@ -27,11 +23,15 @@ const routes = [
         path: 'register',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
     },
+    {
+        path: 'scrumboard',
+        loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
+    }
     // {
     //     path: 'dashboards/project',
     //     loadChildren: './dashboards/project/project.module#ProjectDashboardModule'
     // },
-   
+
     // {
     //     path: 'dynamic-forms',
     //     loadChildren: './dynamic-forms/render-component/render.module#RenderModule'
@@ -80,17 +80,14 @@ const routes = [
     //     path: 'contacts',
     //     loadChildren: './contacts/contacts.module#ContactsModule'
     // },
-    {
-        path: 'scrumboard',
-        loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
-    }
+
 ];
 
 @NgModule({
     imports: [
         RouterModule.forChild(routes),
         FuseSharedModule
-        
+
     ]
 })
 export class AppsModule {

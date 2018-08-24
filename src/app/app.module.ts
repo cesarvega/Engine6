@@ -20,7 +20,7 @@ import { AppComponent } from 'app/app.component';
 import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
 import { APP_BASE_HREF } from '../../node_modules/@angular/common';
-import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { LoginOpt, SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
  
 const providers = {
@@ -36,7 +36,16 @@ const providers = {
       'apiVersion': 'v2.9' // like v2.4 
     }
   };
-
+const fbLoginOptions: LoginOpt = {
+  scope: 'pages_messaging,pages_messaging_subscriptions,email,pages_show_list,manage_pages',
+  return_scopes: true,
+  enable_profile_selector: true
+}; // https://developers.facebook.com/docs/reference/javascript/FB.login/v2.11
+ 
+const googleLoginOptions: LoginOpt = {
+  scope: 'profile email'
+}; // https://developers.google.com/api-client-library/javascript/reference/referencedocs#gapiauth2clientconfig
+ 
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -73,10 +82,10 @@ const appRoutes: Routes = [
     //     path        : 'documentation',
     //     loadChildren: './main/documentation/documentation.module#DocumentationModule'
     // },
-    {
-        path        : 'angular-material-elements',
-        loadChildren: './main/angular-material-elements/angular-material-elements.module#AngularMaterialElementsModule'
-    },
+    // {
+    //     path        : 'angular-material-elements',
+    //     loadChildren: './main/angular-material-elements/angular-material-elements.module#AngularMaterialElementsModule'
+    // },
     {
         path      : '**',
         redirectTo: 'apps/dashboards/analytics'
@@ -114,6 +123,7 @@ const appRoutes: Routes = [
         FuseThemeOptionsModule,
 
         // App modules
+        SocialLoginModule,
         LayoutModule,
         AppStoreModule
     ],

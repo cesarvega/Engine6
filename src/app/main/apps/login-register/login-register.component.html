@@ -44,7 +44,7 @@
                   </a>
               </div>
 
-              <button mat-raised-button color="accent" class="submit-button" aria-label="LOG IN"
+              <button mat-raised-button color="accent" (click)="signInWithBI()" class="submit-button" aria-label="LOG IN"
                       [disabled]="loginForm.invalid">
                   LOGIN
               </button>
@@ -55,11 +55,11 @@
               <span class="text">OR</span>
           </div>
 
-          <button mat-raised-button class="google mr-4">
+          <button mat-raised-button class="google mr-4" (click)="signInWithGoogle()">
               Log in with Google
           </button>
 
-          <button mat-raised-button class="facebook">
+          <button mat-raised-button class="facebook" (click)="signInWithFB()">
               Log in with Facebook
           </button>
 
