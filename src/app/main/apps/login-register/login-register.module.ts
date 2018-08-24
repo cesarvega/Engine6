@@ -4,7 +4,6 @@ import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { LoginRegisterComponent } from './login-register.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {
     path     : 'auth/login',
@@ -28,6 +27,6 @@ const routes: Routes = [
 
     FuseSharedModule
   ],
-  declarations: [LoginRegisterComponent, ContactUsComponent, ProfileComponent]
+  declarations: [LoginRegisterComponent, ContactUsComponent]
 })
 export class LoginRegisterModule { }

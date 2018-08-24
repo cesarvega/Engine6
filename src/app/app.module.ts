@@ -20,7 +20,41 @@ import { AppComponent } from 'app/app.component';
 import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
 import { APP_BASE_HREF } from '../../node_modules/@angular/common';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
+ 
+const providers = {
+    'google': {
+      'clientId': '602575723314-jdm4nunt3bl3kts5pt422dkfoecdqi70.apps.googleusercontent.com'
+    },
+    'linkedin': {
+      'clientId': '78boqsci07651u'
+    },
+    'facebook': {
+      'clientId': '412970612378155', // new api
+      // "clientId": "333641403720580",
+      'apiVersion': 'v2.9' // like v2.4 
+    }
+  };
 
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider(providers.google.clientId)
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider(providers.facebook.clientId)
+  },
+  {
+    id: LinkedInLoginProvider.PROVIDER_ID,
+    provider: new LinkedInLoginProvider(providers.linkedin.clientId, false, 'en_US')
+  }
+]);
+
+export function provideConfig(): AuthServiceConfig {
+    return config;
+  }
 
 const appRoutes: Routes = [
     {
@@ -86,7 +120,9 @@ const appRoutes: Routes = [
     bootstrap   : [
         AppComponent
     ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/corporate/'}]
+    providers: [{ provide: APP_BASE_HREF, useValue: '/corporate/'}, 
+                { provide: AuthServiceConfig, useFactory: provideConfig}
+            ]
 })
 export class AppModule
 {

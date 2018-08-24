@@ -40,7 +40,7 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.dynamic',
         type: 'item',
         icon: 'person',
-        url: '/apps/profile/form'
+        url: '/apps/profile/user/profile'
     },
     {
         id: 'register',
