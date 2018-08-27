@@ -8,9 +8,8 @@ import { Validators } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
-  private reposndatType  = 'NonHCP';
-  // private fieldOBJ: Array<any> = [];
-  // tabConfig = this.fieldData;
+  private reposndatType  = 'MD_PA_Lic_Info';
+
   P_info_1: FieldConfig2[] = [
     {
       labelValue: 'First name *',
@@ -2315,51 +2314,6 @@ export class ProfileComponent implements OnInit {
         }
       ]
     }
-
-  ];
-
-
-  fieldData2 = [
-    // {
-    //   item: this.P_info_1,
-    //   name: 'P_info_1'
-    // } ,
-    // {
-    //   item: this.NonHCP,
-    //   name: 'NonHCP'
-    // },
-    // {
-    //   item: this.OTHER_HCP,
-    //   name: 'OTHER_HCP'
-    // },
-    // {
-    //   item: this.MD_PA_Lic_Info,
-    //   name: 'MD_PA_Lic_Info'
-    // } ,
-    // {
-    //   item: this.Pharm_Lic_Info,
-    //   name: 'Pharm_Lic_Info'
-    // },
-    // {
-    //   item: this.Nurse_Lic_Info,
-    //   name: 'Nurse_Lic_Info'
-    // },
-    // {
-    //   item: this.Payment_Email_Type,
-    //   name: 'Payment_Email_Type'
-    // },
-    // {
-    //   item: this.acc_History,
-    //   name: 'acc_History'
-    // },
-    // {
-    //   item: this.profile_Info,
-    //   name: 'profile_Info'
-    // },
-    // {
-    //   item: this.Ext_Profile,
-    //   name: 'Ext_Profile'
-    // }
 
   ];
 
