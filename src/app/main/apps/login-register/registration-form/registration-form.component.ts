@@ -436,23 +436,6 @@ export class RegistrationFormComponent implements OnInit
               }
           }
       };
-      // width  : 'fullwidth',
-      // navbar : {
-      //     background: 'mat-fuse-dark-700-bg',
-      //     folded    : false,
-      //     hidden    : false,
-      //     position  : 'left',
-      //     variant   : 'vertical-style-1'
-      // },
-      // toolbar: {
-      //     background: 'mat-white-500-bg',
-      //     hidden    : false,
-      //     position  : 'below'
-      // },
-      // footer : {
-      //     background: 'mat-fuse-dark-900-bg',
-      //     hidden    : false,
-      //     position  : 'below'
   }
   fieldOBJ = this.fieldData2;
 

@@ -109,13 +109,6 @@ export class AppComponent implements OnInit, OnDestroy
                 
             });
 
-            // this._fuseConfigService.config = {
-            //     layout: {                
-            //         footer: {
-            //             hidden: true
-            //         }
-            //     }
-            // };
         }
     
     

@@ -13,19 +13,19 @@ export const fuseConfig: FuseConfig = {
         style    : 'vertical-layout-1',
         width    : 'fullwidth',
         navbar   : {
-            background: 'mat-fuse-dark-700-bg',
+            background: 'mat-fuse-dark-50-bg',
             folded    : false,
             hidden    : false,
             position  : 'left',
             variant   : 'vertical-style-1'
         },
         toolbar  : {
-            background: 'mat-white-500-bg',
+            background: 'mat-fuse-dark-50-bg',
             hidden    : false,
             position  : 'below-static'
         },
         footer   : {
-            background: 'mat-fuse-dark-900-bg',
+            background: 'mat-fuse-dark-50-bg',
             hidden    : false,
             position  : 'below-fixed'
         },
