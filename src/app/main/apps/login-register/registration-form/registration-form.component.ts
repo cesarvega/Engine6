@@ -7,9 +7,8 @@ import { FuseConfigService } from '@fuse/services/config.service';
   templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.scss']
 })
-export class RegistrationFormComponent implements OnInit 
-{
-  
+export class RegistrationFormComponent implements OnInit {
+
   P_info_1: FieldConfig2[] = [
     {
       labelValue: 'Email *',
@@ -416,26 +415,25 @@ export class RegistrationFormComponent implements OnInit
    * @param {FuseConfigService} _fuseConfigService
    */
   constructor(
-      private _fuseConfigService: FuseConfigService,
-  )
-  {
-      // Configure the layout
-      this._fuseConfigService.config = {
-          layout: {
-              navbar   : {
-                  hidden: true
-              },
-              toolbar  : {
-                  hidden: true
-              },
-              footer   : {
-                  hidden: true
-              },
-              sidepanel: {
-                  hidden: true
-              }
-          }
-      };
+    private _fuseConfigService: FuseConfigService,
+  ) {
+    // Configure the layout
+    this._fuseConfigService.config = {
+      layout: {
+        navbar: {
+          hidden: true
+        },
+        toolbar: {
+          hidden: true
+        },
+        footer: {
+          hidden: true
+        },
+        sidepanel: {
+          hidden: true
+        }
+      }
+    };
   }
   fieldOBJ = this.fieldData2;
 
@@ -443,11 +441,15 @@ export class RegistrationFormComponent implements OnInit
   // @ Lifecycle hooks
   // -----------------------------------------------------------------------------------------------------
 
+  countChange(event): void {
+    console.log(event);
+
+  }
+
   /**
    * On init
    */
-  ngOnInit(): void
-  {
-    setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);     
+  ngOnInit(): void {
+    setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
   }
 }

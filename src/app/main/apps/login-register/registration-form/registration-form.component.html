@@ -17,7 +17,7 @@
 
   </div>
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.xs="">
-    <dynamic-profile class="positioning" [fieldData]="fieldOBJ">
+    <dynamic-profile  (submitForm)="countChange($event)" class="positioning" [fieldData]="fieldOBJ">
     </dynamic-profile>
   </div>
 </div>

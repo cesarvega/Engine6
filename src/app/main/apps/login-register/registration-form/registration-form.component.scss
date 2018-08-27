@@ -1,29 +1,32 @@
 @import "src/@fuse/scss/fuse";
 
 :host {
+
     .logo {
         width: 128px;        
         background-color: white;
     }
     .positioning{
         position: relative; 
-        top: -100px;
+        top: -50px;
+        min-width: 500px;
         @include media-breakpoint-down('xs') {
-            top: -150px;
+            min-width: 300px;
         }
     }
     #price-tables {
 
         .header {
-            padding: 24px;
-            height: 350px;
-            min-height: 350px;
+            z-index: 999999;
+            padding: 14px;
+            height: 300px;
+            min-height: 300px;
             background: #1A237E;
             background: linear-gradient(to right, #0E2A3B 0%, #34306B 100%);
 
             @include media-breakpoint-down('xs') {
-                height: 350px;
-                min-height: 350px;
+                height: 250px;
+                min-height: 250px;
             }
 
             .hero-text {
@@ -61,13 +64,4 @@
             }
         }      
     }
-
-    //    #contai {        
-    //     @include mat-elevation(16);
-    //     @include media-breakpoint('xs') {            
-    //         // width: 100%;
-    //         max-width: 100px;
-    //     }
-
-    // }
 }

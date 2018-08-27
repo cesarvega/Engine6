@@ -1,7 +1,15 @@
 @import "src/@fuse/scss/fuse";
 
 #dashboard-analytics {
+    .mat-blue-bi-bg  {
 
+        background-color: #1e376d !important;
+        color: white !important;
+
+        .h5{
+        background-color: #1e376d !important;
+        color: whitesmoke !important; }
+    }
     .main-widget {
         display: flex;
         flex-direction: column;

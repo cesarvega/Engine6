@@ -8,6 +8,8 @@ import { Validators } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
+  private reposndatType  = 'NonHCP';
+  // private fieldOBJ: Array<any> = [];
   // tabConfig = this.fieldData;
   P_info_1: FieldConfig2[] = [
     {
@@ -2318,59 +2320,116 @@ export class ProfileComponent implements OnInit {
 
 
   fieldData2 = [
-    {
-      item: this.P_info_1,
-      name: 'P_info_1'
-    }
-    ,
-    {
-      item: this.NonHCP,
-      name: 'NonHCP'
-    },
-    {
-      item: this.OTHER_HCP,
-      name: 'OTHER_HCP'
-    }
-    ,
-    {
-      item: this.MD_PA_Lic_Info,
-      name: 'MD_PA_Lic_Info'
-    }
-    ,
-    {
-      item: this.Pharm_Lic_Info,
-      name: 'Pharm_Lic_Info'
-    }
-
-    ,
-    {
-      item: this.Nurse_Lic_Info,
-      name: 'Nurse_Lic_Info'
-    }
-    ,
-    {
-      item: this.Payment_Email_Type,
-      name: 'Payment_Email_Type'
-    },
-    {
-      item: this.acc_History,
-      name: 'acc_History'
-    },
-    {
-      item: this.profile_Info,
-      name: 'profile_Info'
-    },
-    {
-      item: this.Ext_Profile,
-      name: 'Ext_Profile'
-    }
+    // {
+    //   item: this.P_info_1,
+    //   name: 'P_info_1'
+    // } ,
+    // {
+    //   item: this.NonHCP,
+    //   name: 'NonHCP'
+    // },
+    // {
+    //   item: this.OTHER_HCP,
+    //   name: 'OTHER_HCP'
+    // },
+    // {
+    //   item: this.MD_PA_Lic_Info,
+    //   name: 'MD_PA_Lic_Info'
+    // } ,
+    // {
+    //   item: this.Pharm_Lic_Info,
+    //   name: 'Pharm_Lic_Info'
+    // },
+    // {
+    //   item: this.Nurse_Lic_Info,
+    //   name: 'Nurse_Lic_Info'
+    // },
+    // {
+    //   item: this.Payment_Email_Type,
+    //   name: 'Payment_Email_Type'
+    // },
+    // {
+    //   item: this.acc_History,
+    //   name: 'acc_History'
+    // },
+    // {
+    //   item: this.profile_Info,
+    //   name: 'profile_Info'
+    // },
+    // {
+    //   item: this.Ext_Profile,
+    //   name: 'Ext_Profile'
+    // }
 
   ];
 
+  fieldOBJ = [];
 
-  //   // fieldOBJ = JSON.stringify(this.fieldData2);
-  fieldOBJ = this.fieldData2;
   ngOnInit(): void {
+    switch (this.reposndatType) {
+      case 'P_info_1':
+      this.fieldOBJ.push( {
+        item: this.P_info_1,
+        name: 'P_info_1'
+      });      
+       break;  
+      case 'NonHCP':
+      this.fieldOBJ.push( {
+      item: this.NonHCP,
+      name: 'NonHCP'
+    });      
+       break;
+      case 'OTHER_HCP':
+      this.fieldOBJ.push( {
+      item: this.OTHER_HCP,
+      name: 'OTHER_HCP'
+    });      
+       break;    
+      case 'MD_PA_Lic_Info':
+      this.fieldOBJ.push( {
+      item: this.MD_PA_Lic_Info,
+      name: 'MD_PA_Lic_Info'
+    });      
+       break;
+      case 'Pharm_Lic_Info':
+      this.fieldOBJ.push( {
+      item: this.Pharm_Lic_Info,
+      name: 'Pharm_Lic_Info'
+    });      
+       break;    
+      case 'Nurse_Lic_Info':
+      this.fieldOBJ.push( {
+      item: this.Nurse_Lic_Info,
+      name: 'Nurse_Lic_Info'
+    });      
+       break;    
+      case 'Payment_Email_Type':
+      this.fieldOBJ.push( {
+      item: this.Payment_Email_Type,
+      name: 'Payment_Email_Type'
+    });      
+       break;
+      case 'acc_History':
+      this.fieldOBJ.push( {
+      item: this.acc_History,
+      name: 'acc_History'
+    });      
+       break;
+      case 'profile_Info':
+      this.fieldOBJ.push( {
+      item: this.profile_Info,
+      name: 'profile_Info'
+    });      
+       break;
+      case 'Ext_Profile':
+      this.fieldOBJ.push( {
+      item: this.Ext_Profile,
+      name: 'Ext_Profile'
+    });      
+       break;
+    
+  }
+  // this.fieldOBJ = this.fieldData2;
     setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
   }
 }

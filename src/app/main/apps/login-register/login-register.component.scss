@@ -32,12 +32,12 @@
 
                 .logo {
                     width: 128px;
-                    margin: 32px auto;
+                    margin: 12px auto;
                 }
 
                 .title {
                     font-size: 20px;
-                    margin: 16px 0 32px 0;
+                    margin: 22px 0 18px 0;
                 }
 
                 form {
@@ -57,19 +57,19 @@
                         margin-top: 8px;
 
                         .remember-me {
-                            margin-bottom: 16px
+                            margin-bottom: 8px
                         }
 
                         .forgot-password {
                             font-size: 13px;
                             font-weight: 500;
-                            margin-bottom: 16px
+                            margin-bottom: 8px
                         }
                     }
 
                     .submit-button {
                         width: 220px;
-                        margin: 16px auto;
+                        margin: 8px auto;
                         display: block;
 
                         @include media-breakpoint('xs') {
@@ -79,7 +79,7 @@
                 }
 
                 .register {
-                    margin: 32px auto 24px auto;
+                    margin: 22px auto 24px auto;
                     font-weight: 500;
 
                     .text {
@@ -90,7 +90,7 @@
                 .separator {
                     font-size: 15px;
                     font-weight: 600;
-                    margin: 24px auto;
+                    margin: 14px auto;
                     position: relative;
                     overflow: hidden;
                     width: 100px;

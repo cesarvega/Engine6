@@ -11,7 +11,7 @@ import { FieldConfig, Validator } from '../../field.interface';
 export class DynamicFormComponent implements OnInit {
   @Input() fields: FieldConfig[] = [];
 
-  @Output() submit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;
 
@@ -28,7 +28,7 @@ export class DynamicFormComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     if (this.form.valid) {
-      this.submit.emit(this.form.value);
+      this.submitForm.emit(this.form.value);
     } else {
       this.validateAllFormFields(this.form);
     }
