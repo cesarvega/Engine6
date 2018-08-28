@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FieldConfig2 } from '../../dynamic-profile/field.interface';
 import { Validators } from '@angular/forms';
 import { FuseConfigService } from '@fuse/services/config.service';
+import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider, AuthService } from 'angularx-social-login';
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -416,6 +417,7 @@ export class RegistrationFormComponent implements OnInit {
    */
   constructor(
     private _fuseConfigService: FuseConfigService,
+    private _authService: AuthService
   ) {
     // Configure the layout
     this._fuseConfigService.config = {
@@ -446,6 +448,13 @@ export class RegistrationFormComponent implements OnInit {
 
   }
 
+  signInWithGoogle(): void {
+    this._authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithFB(): void {
+    this._authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
   /**
    * On init
    */
