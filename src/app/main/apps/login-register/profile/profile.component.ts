@@ -2383,7 +2383,15 @@ export class ProfileComponent implements OnInit {
        break;
     
   }
+  
   // this.fieldOBJ = this.fieldData2;
     setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
   }
+
+  
+  countChange(event): void {
+    console.log(event);
+
+  }
+  
 }

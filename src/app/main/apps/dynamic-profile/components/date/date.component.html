@@ -1,5 +1,5 @@
 <mat-form-field  fxFlex="100" [formGroup]="group">
-    <input matInput [matDatepicker]="picker" [formControlName]="field.name" [placeholder]="field.label">
+    <input matInput [matDatepicker]="picker" [max]="(field.defaultInputValue === '1999-06-15')?maxDate:''"  [value]="field.value" [formControlName]="field.name"  [placeholder]="field.label">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
     <ng-container *ngFor="let validation of field.validations;" ngProjectAs="mat-error">

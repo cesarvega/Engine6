@@ -59,7 +59,6 @@
 
             .hero-text {
                 margin: 128px 24px;
-
                 @include media-breakpoint-down('xs') {
                     margin: 64px 24px;
                     position: relative; 

@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FieldConfig2 } from '../../dynamic-profile/field.interface';
 import { Validators } from '@angular/forms';
 import { FuseConfigService } from '@fuse/services/config.service';
-import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider, AuthService } from 'angularx-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider, AuthService, SocialUser } from 'angularx-social-login';
+import { RegistrationFormService } from './registration-form.service';
+import { Info } from './info-model';
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
-  styleUrls: ['./registration-form.component.scss']
+  styleUrls: ['./registration-form.component.scss'],
+  providers: [RegistrationFormService]
 })
 export class RegistrationFormComponent implements OnInit {
-
+  private user: SocialUser;
+  private loggedIn: boolean;
+  public _info: Info;
   P_info_1: FieldConfig2[] = [
     {
       labelValue: 'Email *',
@@ -21,22 +26,22 @@ export class RegistrationFormComponent implements OnInit {
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Enter your First Name',
+      placeHolder: 'Enter your email Address',
       type: 'input',
       label: 'Email *',
-      name: 'Email*',
+      name: 'Email *',
       value: '',
       inputType: 'email',
       validations: [
         {
           name: 'required',
-          validator: Validators.required,
-          message: 'Must enter first name'
+          validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+          message: 'please enter a valid email address'
         }
       ]
     },
     {
-      labelValue: 'Email*',
+      labelValue: 'First name *',
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-input-text',
@@ -54,8 +59,8 @@ export class RegistrationFormComponent implements OnInit {
       validations: [
         {
           name: 'required',
-          validator: Validators.required,
-          message: 'Must enter first name'
+          validator: Validators.minLength(3),
+          message: 'please enter first name'
         }
       ]
     },
@@ -74,14 +79,7 @@ export class RegistrationFormComponent implements OnInit {
       label: 'Middle name',
       name: 'Middle name',
       value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      inputType: 'text'
     },
     {
       labelValue: 'Last name *',
@@ -102,8 +100,8 @@ export class RegistrationFormComponent implements OnInit {
       validations: [
         {
           name: 'required',
-          validator: Validators.required,
-          message: 'Must enter last name'
+          validator: Validators.minLength(3),
+          message: 'please enter last name'
         }
       ]
     },
@@ -144,7 +142,7 @@ export class RegistrationFormComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'input',
+      type: 'date',
       label: 'Date of birth *',
       name: 'Date of birth *',
       value: '',
@@ -153,7 +151,7 @@ export class RegistrationFormComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must enter your date of birth is required'
+          message: 'please enter your date of birth is required'
         }
       ]
     },
@@ -162,7 +160,7 @@ export class RegistrationFormComponent implements OnInit {
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'bi-select',
-      options: ['Colombia', 'Espania', 'E.U'],
+      options: ['Colombia', 'Spain', 'E.U'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
@@ -192,8 +190,8 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Address 1',
       type: 'input',
-      label: 'Mailing street address 1 *',
-      name: 'Mailing street address 1 *',
+      label: 'Mailing street address *',
+      name: 'Mailing street address *',
       value: '',
       inputType: 'text',
       validations: [
@@ -215,17 +213,10 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Address 2',
       type: 'input',
-      label: 'Mailing street address 2',
-      name: 'Mailing street address 2',
+      label: 'Mailing street/#apto/unit',
+      name: 'Mailing street/#apto/unit',
       value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      inputType: 'text'
     }, {
       labelValue: 'Select State/Province *',
       icon: 'sql',
@@ -251,7 +242,7 @@ export class RegistrationFormComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Select your state/province of residency'
+          message: 'please select your state/province of residency'
         }
       ]
     },
@@ -291,8 +282,8 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cell Phone',
-      name: 'Cell Phone',
+      label: 'Cell Phone *',
+      name: 'Cell Phone *',
       value: '',
       inputType: 'text',
       validations: [
@@ -304,51 +295,11 @@ export class RegistrationFormComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Specify your profession or occupation in order to continue',
+      labelValue: 'Specify your profession or occupation',
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-dropdown',
       options: [
-        {
-          'names': 'Not related to Health Care',
-          'values': 'NonHCP'
-        },
-        {
-          'names': 'Physician/Doctor of Medicine (MD, DO)',
-          'values': 'MD_PA_lic_Info'
-        },
-        {
-          'names': 'Physician Assistant (PA)',
-          'values': 'MD_PA_lic_Info'
-        },
-        {
-          'names': 'Nurse',
-          'values': 'Nurse_Lic_Info'
-        },
-        {
-          'names': 'Pharmacist',
-          'values': 'Pharm_Lic_Info'
-        },
-        {
-          'names': 'Pharmacist Technician',
-          'values': 'Pharm_Lic_Info'
-        },
-        {
-          'names': 'Dentist',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Optometrist',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Veterinarian',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Allied Health Care Profession or Occupation',
-          'values': 'OTHER_HCP'
-        },
         'Not related to Health Care',
         'Physician/Doctor of Medicine (MD, DO)',
         'Physician Assistant (PA)',
@@ -366,8 +317,8 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select Profession/Occupation',
       type: 'select',
-      label: 'Specify your profession or occupation in order to continue',
-      name: 'Specify your profession or occupation in order to continue',
+      label: 'Specify your profession or occupation',
+      name: 'Specify your profession or occupation',
       value: '',
       inputType: '',
       validations: [
@@ -377,32 +328,7 @@ export class RegistrationFormComponent implements OnInit {
           message: 'Profession is required'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'Your profile information is used to match up with defined research specifications in order to determine which research studies you will be invited to participate. We need to collect some of your personal information to know who you are and where to send you the payment when the time arrives.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: '',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
-
   ];
   fieldData2 = [
     {
@@ -417,7 +343,8 @@ export class RegistrationFormComponent implements OnInit {
    */
   constructor(
     private _fuseConfigService: FuseConfigService,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _RegistrationFormService: RegistrationFormService
   ) {
     // Configure the layout
     this._fuseConfigService.config = {
@@ -444,21 +371,100 @@ export class RegistrationFormComponent implements OnInit {
   // -----------------------------------------------------------------------------------------------------
 
   countChange(event): void {
-    console.log(event);
-
+    this._info = new Info();
+    this._info.email =  (event['Email *'] ? event['Email *'] :  this.user.email),
+    this._info.firstName = (event['First name *'] ? event['First name *'] : this.user.firstName);
+    this._info.middleName = event['Middle name'];
+    this._info.lastName = (event['Last name *'] ? event['Last name *'] : this.user.lastName);
+    this._info.gender = event['Gender *'];
+    this._info.dateBirth = event['Date of birth *'];
+    this._info.countryRes = event['Select country of residency *'];
+    this._info.mailStreetAdd1 = event['Mailing street address *'];
+    this._info.mailStreetAdd2 = event['Mailing street/#apto/unit'];
+    this._info.state = event['Select State/Province *'];
+    this._info.zip = event['Zip Code *'];
+    this._info.cell = event['Cell Phone *'];
+    this._info.profession = event['Specify your profession or occupation'];
+    this._info.confirm = 'true';
+    this._RegistrationFormService.postInfo(this._info).subscribe(result => {
+      console.log(result);      
+     });
   }
 
   signInWithGoogle(): void {
-    this._authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this._authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(user => {
+      this.setFieldsWithSocialMedia(user);
+    });
+
   }
 
   signInWithFB(): void {
-    this._authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this._authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(user => {
+      this.setFieldsWithSocialMedia(user);
+    });
+
+  }
+
+  signOut(): void {
+    this._authService.signOut();
+  }
+
+  setFieldsWithSocialMedia(user): void {
+    this.fieldOBJ[0].item[0].value = user.email;
+    this.fieldOBJ[0].item[1].value = user.firstName;
+    this.fieldOBJ[0].item[3].value = user.lastName;
   }
   /**
    * On init
    */
   ngOnInit(): void {
+    // this.signOut();
+    this._authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
     setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
   }
 }
+
+        // {
+        //   'names': 'Not related to Health Care',
+        //   'values': 'NonHCP'
+        // },
+        // {
+        //   'names': 'Physician/Doctor of Medicine (MD, DO)',
+        //   'values': 'MD_PA_lic_Info'
+        // },
+        // {
+        //   'names': 'Physician Assistant (PA)',
+        //   'values': 'MD_PA_lic_Info'
+        // },
+        // {
+        //   'names': 'Nurse',
+        //   'values': 'Nurse_Lic_Info'
+        // },
+        // {
+        //   'names': 'Pharmacist',
+        //   'values': 'Pharm_Lic_Info'
+        // },
+        // {
+        //   'names': 'Pharmacist Technician',
+        //   'values': 'Pharm_Lic_Info'
+        // },
+        // {
+        //   'names': 'Dentist',
+        //   'values': 'OTHER_HCP'
+        // },
+        // {
+        //   'names': 'Optometrist',
+        //   'values': 'OTHER_HCP'
+        // },
+        // {
+        //   'names': 'Veterinarian',
+        //   'values': 'OTHER_HCP'
+        // },
+        // {
+        //   'names': 'Allied Health Care Profession or Occupation',
+        //   'values': 'OTHER_HCP'
+        // }
+        // ,
