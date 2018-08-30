@@ -2,21 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialUser, AuthService } from 'angularx-social-login';
-import { Router } from '@angular/router';
 @Component({
-  selector: 'app-unsubscribe',
-  templateUrl: './unsubscribe.component.html',
-  styleUrls: ['./unsubscribe.component.scss']
+  selector: 'app-thankyou',
+  templateUrl: './thankyou.component.html',
+  styleUrls: ['./thankyou.component.scss']
 })
-export class UnsubscribeComponent implements OnInit {
+export class ThankyouComponent implements OnInit {
   loginForm: FormGroup;
   private user: SocialUser;
   private loggedIn: boolean;
   constructor(
     private _fuseConfigService: FuseConfigService,
     private _formBuilder: FormBuilder,
-    private _authService: AuthService,
-    private router: Router
+    private _authService: AuthService
   ) {
     this._fuseConfigService.config = {
       layout: {
@@ -35,16 +33,13 @@ export class UnsubscribeComponent implements OnInit {
       }
     };
   }
-
-  unsubscribe(): void {
-    console.log('unsubscribed');
-    this.router.navigateByUrl('/apps/login/goodbay');
+  retrievePassword(): void {
+    console.log('contact us');
   }
-
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
+      email: [{value: 'cvega@brandinstitute.com', disabled: true}, [Validators.required, Validators.email]],
+      message: ['', Validators.required]
     });
   }
-
 }

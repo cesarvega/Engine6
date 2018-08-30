@@ -7,6 +7,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
+import { GoodbayComponent } from './goodbay/goodbay.component';
+import { SuccessfulPasswordResetComponent } from './successful-password-reset/successful-password-reset.component';
+import { ForgotPasswordThankyouComponent } from './forgot-password-thankyou/forgot-password-thankyou.component';
 const routes: Routes = [
   {
     path: 'auth/login',
@@ -27,8 +31,24 @@ const routes: Routes = [
     component: ChangePasswordComponent
   },
   {
+    path: 'thankyou',
+    component: ThankyouComponent
+  },
+  {
     path: 'unsubscribe',
     component: UnsubscribeComponent
+  },
+  {
+    path: 'successful-password-reset',
+    component: SuccessfulPasswordResetComponent
+  },
+  {
+    path: 'forgot-password-success',
+    component: ForgotPasswordThankyouComponent
+  },
+  {
+    path: 'goodbay',
+    component: GoodbayComponent
   }
 ];
 
@@ -46,7 +66,11 @@ const routes: Routes = [
     ContactUsComponent,
     ForgotPasswordComponent,
     ChangePasswordComponent,
-    UnsubscribeComponent
+    UnsubscribeComponent,
+    ThankyouComponent,
+    GoodbayComponent,
+    SuccessfulPasswordResetComponent,
+    ForgotPasswordThankyouComponent
   ]
 })
 export class LoginRegisterModule { }

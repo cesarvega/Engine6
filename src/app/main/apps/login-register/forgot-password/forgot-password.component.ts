@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialUser, AuthService } from 'angularx-social-login';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
@@ -15,7 +16,8 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private _fuseConfigService: FuseConfigService,
     private _formBuilder: FormBuilder,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private router: Router
   ) {
     this._fuseConfigService.config = {
       layout: {
@@ -37,7 +39,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   retrievePassword(): void {
     console.log('forgot pwd');
-
+    this.router.navigateByUrl('/apps/login/forgot-password-success');
   }
 
   ngOnInit(): void {

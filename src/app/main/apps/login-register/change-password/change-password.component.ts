@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { FuseConfigService } from '@fuse/services/config.service';
-import { fuseAnimations } from '@fuse/animations';
 import { AuthService } from 'angularx-social-login';
-import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
@@ -24,7 +22,8 @@ export class ChangePasswordComponent implements OnInit {
   constructor(
       private _fuseConfigService: FuseConfigService,
       private _formBuilder: FormBuilder,
-      private _authService: AuthService) {
+      private _authService: AuthService,
+      private router: Router) {
       // Configure the layout
       this._fuseConfigService.config = {
           layout: {
@@ -60,6 +59,8 @@ export class ChangePasswordComponent implements OnInit {
       this.loginForm.controls['newPassword'].setErrors({ 'same': true });
       this.loginForm.controls['oldPassword'].setErrors({ 'same': true });
     }
+
+    this.router.navigateByUrl('/apps/login/successful-password-reset');
   }
 
 

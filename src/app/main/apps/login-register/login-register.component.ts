@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { FuseConfigService } from '@fuse/services/config.service';
-import { fuseAnimations } from '@fuse/animations';
 import { AuthService } from 'angularx-social-login';
 import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';

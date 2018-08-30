@@ -1,6 +1,12 @@
 @import "src/@fuse/scss/fuse";
 
 :host {
+
+    .link{
+        position: relative;
+        top: -69px;
+        z-index: 1;
+    }
     button {
 
         &.google,
