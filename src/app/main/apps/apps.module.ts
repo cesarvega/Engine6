@@ -26,6 +26,18 @@ const routes = [
     {
         path: 'scrumboard',
         loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
+    },
+    {
+        path: 'change-password',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule'
+    },
+    {
+        path: 'unsubscribe',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule'
+    },
+    {
+        path: '**',
+        redirectTo: 'dashboards/analytics'
     }
     // {
     //     path: 'dashboards/project',

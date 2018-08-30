@@ -6,9 +6,8 @@ import { Observable } from 'rxjs';
 })
 export class RegistrationFormService {
 
-  protected API_URL = 'https://nodeapp-kothmsvnqv.now.sh/info';
+  protected API_URL = 'https://nodeapp-vvhqljanyq.now.sh/info';
   // protected API_URL = 'http://localhost:433/info';
-  // protected API_URL = 'https://nodeapp-bvnzwzwcil.now.sh/Infos';
   constructor(private httpClient: HttpClient) {}
 
  // get  all Infos 

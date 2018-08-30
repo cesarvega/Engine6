@@ -14,6 +14,7 @@ import { Info } from './info-model';
 export class RegistrationFormComponent implements OnInit {
   private user: SocialUser;
   private loggedIn: boolean;
+  private counter = 0;
   public _info: Info;
   P_info_1: FieldConfig2[] = [
     {
@@ -34,9 +35,62 @@ export class RegistrationFormComponent implements OnInit {
       inputType: 'email',
       validations: [
         {
-          name: 'required',
+          name: 'pattern',
           validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
           message: 'please enter a valid email address'
+        },
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'please enter an email address'
+        }
+      ]
+    },
+    {
+      labelValue: 'password *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your password',
+      type: 'input',
+      label: 'Password *',
+      name: 'Password *',
+      value: '',
+      inputType: 'password',
+      validations: [     
+        {
+          name: 'min',
+          validator:  Validators.minLength(6),
+          message: 'please enter 6 characters minimun'
+        }
+      ]
+    },
+    {
+      labelValue: 'confirm password *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your confirm password',
+      type: 'input',
+      label: 'confirm password *',
+      name: 'confirm password *',
+      value: '',
+      inputType: 'password',
+      validations: [     
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'password not matching'
         }
       ]
     },
@@ -59,7 +113,7 @@ export class RegistrationFormComponent implements OnInit {
       validations: [
         {
           name: 'required',
-          validator: Validators.minLength(3),
+          validator: Validators.required,
           message: 'please enter first name'
         }
       ]
@@ -100,7 +154,7 @@ export class RegistrationFormComponent implements OnInit {
       validations: [
         {
           name: 'required',
-          validator: Validators.minLength(3),
+          validator: Validators.required,
           message: 'please enter last name'
         }
       ]
@@ -129,6 +183,33 @@ export class RegistrationFormComponent implements OnInit {
           name: 'required',
           validator: Validators.required,
           message: 'Select your Gender is required'
+        }
+      ]
+    },
+    {
+      labelValue: 'Select preferred payment method *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-radio',
+      options: [
+        'Paypal',
+        'Check'
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: '',
+      type: 'radiobutton',
+      label: 'Select preferred payment method *',
+      name: 'Select preferred payment method *',
+      value: '',
+      inputType: 'bi-input-radio',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'please select payment method is required'
         }
       ]
     },
@@ -282,15 +363,15 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cell Phone *',
-      name: 'Cell Phone *',
+      label: 'Cellphone *',
+      name: 'Cellphone *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'cellphone number is required'
         }
       ]
     },
@@ -366,29 +447,27 @@ export class RegistrationFormComponent implements OnInit {
   }
   fieldOBJ = this.fieldData2;
 
-  // -----------------------------------------------------------------------------------------------------
-  // @ Lifecycle hooks
-  // -----------------------------------------------------------------------------------------------------
-
   countChange(event): void {
     this._info = new Info();
-    this._info.email =  (event['Email *'] ? event['Email *'] :  this.user.email),
-    this._info.firstName = (event['First name *'] ? event['First name *'] : this.user.firstName);
+    this._info.email = event['Email *'] ? event['Email *'] : this.user.email;
+    this._info.password = event['Password *'];
+    this._info.firstName = event['First name *'] ? event['First name *'] : this.user.firstName;
     this._info.middleName = event['Middle name'];
-    this._info.lastName = (event['Last name *'] ? event['Last name *'] : this.user.lastName);
+    this._info.lastName = event['Last name *'] ? event['Last name *'] : this.user.lastName;
     this._info.gender = event['Gender *'];
+    this._info.payment = event['Select preferred payment method *'];
     this._info.dateBirth = event['Date of birth *'];
     this._info.countryRes = event['Select country of residency *'];
     this._info.mailStreetAdd1 = event['Mailing street address *'];
     this._info.mailStreetAdd2 = event['Mailing street/#apto/unit'];
     this._info.state = event['Select State/Province *'];
     this._info.zip = event['Zip Code *'];
-    this._info.cell = event['Cell Phone *'];
+    this._info.cell = event['Cellphone *'];
     this._info.profession = event['Specify your profession or occupation'];
     this._info.confirm = 'true';
     this._RegistrationFormService.postInfo(this._info).subscribe(result => {
-      console.log(result);      
-     });
+      console.log(result);
+    });
   }
 
   signInWithGoogle(): void {
@@ -411,14 +490,18 @@ export class RegistrationFormComponent implements OnInit {
 
   setFieldsWithSocialMedia(user): void {
     this.fieldOBJ[0].item[0].value = user.email;
-    this.fieldOBJ[0].item[1].value = user.firstName;
-    this.fieldOBJ[0].item[3].value = user.lastName;
+    this.fieldOBJ[0].item[3].value = user.firstName;
+    this.fieldOBJ[0].item[5].value = user.lastName;
   }
+
+  // -----------------------------------------------------------------------------------------------------
+  // @ Lifecycle hooks
+  // -----------------------------------------------------------------------------------------------------
+
   /**
    * On init
    */
   ngOnInit(): void {
-    // this.signOut();
     this._authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);

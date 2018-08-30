@@ -5,27 +5,36 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { LoginRegisterComponent } from './login-register.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 const routes: Routes = [
   {
-    path     : 'auth/login',
-      component: LoginRegisterComponent
-  } 
+    path: 'auth/login',
+    component: LoginRegisterComponent
+  }
   ,
   {
-    path     : 'contact-us',
+    path: 'contact-us',
     component: ContactUsComponent
   }
   ,
   {
-    path     : 'forgot-password',
+    path: 'forgot-password',
     component: ForgotPasswordComponent
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent
+  },
+  {
+    path: 'unsubscribe',
+    component: UnsubscribeComponent
   }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -33,6 +42,11 @@ const routes: Routes = [
 
     FuseSharedModule
   ],
-  declarations: [LoginRegisterComponent, ContactUsComponent, ForgotPasswordComponent]
+  declarations: [LoginRegisterComponent,
+    ContactUsComponent,
+    ForgotPasswordComponent,
+    ChangePasswordComponent,
+    UnsubscribeComponent
+  ]
 })
 export class LoginRegisterModule { }
