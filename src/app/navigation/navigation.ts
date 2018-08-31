@@ -33,7 +33,8 @@ export const navigation: FuseNavigation[] = [
         type: 'item',
         icon: 'person',
         url: 'apps/register/auth/register'
-    },   
+    }
+    ,
     {
         id: 'settings',
         title: 'Settings',
@@ -78,9 +79,10 @@ export const navigation: FuseNavigation[] = [
                         icon: 'thumb_down',
                         url: '/apps/login/unsubscribe'
                     }
-
                 ]
-            }
+            }]
+    }
+];
             // {
             //     id: 'dynamic',
             //     title: 'dynamic',
@@ -1186,4 +1188,3 @@ export const navigation: FuseNavigation[] = [
             //     ]
             // }
 
-        ];

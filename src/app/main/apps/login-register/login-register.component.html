@@ -14,7 +14,7 @@
 
               <mat-form-field appearance="outline">
                    <mat-label>Email</mat-label>
-                  <input  matInput placeholder="Email" formControlName="email" [(ngModel)]="email" value="cesar@gmail.com">
+                  <input  matInput placeholder="Email" formControlName="email" value="cesar@gmail.com">
                   <mat-error *ngIf="loginForm.get('email').hasError('required')">
                       Email is required
                   </mat-error>
@@ -27,7 +27,7 @@
 
               <mat-form-field appearance="outline">
                    <mat-label>Password</mat-label>
-                  <input  matInput type="password" placeholder="Password" [(ngModel)]="password" formControlName="password" value="123123">
+                  <input  matInput type="password" placeholder="Password"  formControlName="password" value="123123">
                   <mat-error>
                       Password is required
                   </mat-error>
