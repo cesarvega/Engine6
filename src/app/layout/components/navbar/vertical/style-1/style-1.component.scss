@@ -82,7 +82,6 @@ navbar {
         flex: 1 1 auto;
         width: 100%;
         height: 100%;
-
         &.right-navbar {
 
             .toggle-sidebar-opened {
@@ -99,6 +98,8 @@ navbar {
         flex-direction: column;
         width: 100%;
         height: 100%;
+        background: white;
+        color: black;
 
         .navbar-top {
             display: flex;
@@ -122,8 +123,9 @@ navbar {
                 align-items: center;
 
                 .logo-icon {
-                    width: 24px;
-                    height: 24px;
+                    // width: 24px;
+                    // height: 24px;\
+                    background-color: white;
                 }
 
                 .logo-text {

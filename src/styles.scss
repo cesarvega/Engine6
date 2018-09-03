@@ -5,20 +5,27 @@
 // @ Multiple material themes example
 // -----------------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 // Define the Material palettes
 $yellow-theme-primary: mat-palette($mat-biblue);
 $yellow-theme-accent: mat-palette($mat-yellow, 600, 400, 700);
 $yellow-theme-warn: mat-palette($mat-pink,  400, 700);
+=======
+// // Define the Material palettes
+// $yellow-theme-primary: mat-palette($mat-fusedark);
+// $yellow-theme-accent: mat-palette($mat-yellow, 600, 400, 700);
+// $yellow-theme-warn: mat-palette($mat-red);
+>>>>>>> 73018e032b11b287df7b788222ebdbe58e1cfb74
 
-// Create the Material theme object
-$yellow-theme: mat-light-theme($yellow-theme-primary, $yellow-theme-accent, $yellow-theme-warn);
+// // Create the Material theme object
+// $yellow-theme: mat-light-theme($yellow-theme-primary, $yellow-theme-accent, $yellow-theme-warn);
 
-// Add ".yellow-theme" class to the body to activate this theme
-.yellow-theme {
+// // Add ".yellow-theme" class to the body to activate this theme
+// .yellow-theme {
 
-    // Generate the Angular Material theme
-    @include angular-material-theme($yellow-theme);
+//     // Generate the Angular Material theme
+//     @include angular-material-theme($yellow-theme);
 
-    // Generate the fuse color classes with the new colors...
-    @include generateFuseColorClasses($yellow-theme-primary, $yellow-theme-accent, $yellow-theme-warn);
-}
+//     // Generate the fuse color classes with the new colors...
+//     @include generateFuseColorClasses($yellow-theme-primary, $yellow-theme-accent, $yellow-theme-warn);
+// }

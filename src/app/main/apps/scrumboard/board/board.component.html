@@ -14,7 +14,7 @@
                             routerLink="/apps/scrumboard/boards"
                             aria-label="boards button">
                         <mat-icon class="mr-8">assessment</mat-icon>
-                        <span>BOARDS</span>
+                        <span>PROGRESS</span>
                     </button>
                 </div>
                 <!-- / BOARD SELECTION BUTTON -->
@@ -66,13 +66,17 @@
                     [list]="list"
                     [@animate]="{value:'*',params:{duration:'350ms',x:'100%'}}">
                 </scrumboard-board-list>
+
+          
+
+
                 <!-- / LIST -->
 
                 <!-- NEW LIST BUTTON-->
-                <scrumboard-board-add-list class="new-list-wrapper" (onListAdd)="onListAdd($event)"
+                <!-- <scrumboard-board-add-list class="new-list-wrapper" (onListAdd)="onListAdd($event)"
                                            ngxDraggable [moves]="false"
                                            [@animate]="{value:'*',params:{duration:'350ms',x:'100%'}}">
-                </scrumboard-board-add-list>
+                </scrumboard-board-add-list> -->
                 <!-- / NEW LIST BUTTON-->
 
             </div>

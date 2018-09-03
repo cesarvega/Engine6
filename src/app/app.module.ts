@@ -66,13 +66,30 @@ export function provideConfig(): AuthServiceConfig {
   }
 
 const appRoutes: Routes = [
+    
+    {
+        path      : '**',
+        redirectTo: './main/apps/scrumboard/boards/32gfhaf2/acme-frontend-application'
+    },
     {
         path        : 'apps',
         loadChildren: './main/apps/apps.module#AppsModule'
-    },    
+    },
     {
-        path      : '**',
-        redirectTo: 'apps/dashboards/analytics'
+        path        : 'pages',
+        loadChildren: './main/pages/pages.module#PagesModule'
+    },
+    // {
+    //     path        : 'ui',
+    //     loadChildren: './main/ui/ui.module#UIModule'
+    // },
+    // {
+    //     path        : 'documentation',
+    //     loadChildren: './main/documentation/documentation.module#DocumentationModule'
+    // },
+    {
+        path        : 'angular-material-elements',
+        loadChildren: './main/angular-material-elements/angular-material-elements.module#AngularMaterialElementsModule'
     }
 ];
 
@@ -114,10 +131,7 @@ const appRoutes: Routes = [
     bootstrap   : [
         AppComponent
     ],
-    // providers: [{ provide: APP_BASE_HREF, useValue: '/corporate/'}, 
-    providers: [{ provide: APP_BASE_HREF, useValue: '/unity/'}, 
-                { provide: AuthServiceConfig, useFactory: provideConfig}
-            ]
+    providers: [{ provide: APP_BASE_HREF, useValue: '/3chem/'}]
 })
 export class AppModule
 {
