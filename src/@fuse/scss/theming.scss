@@ -82,7 +82,7 @@ $mat-biblue: (
 
 // Define the Material palettes
 $primary: mat-palette($mat-biblue, 900);
-$accent: mat-palette($mat-biblue, 900);
+$accent: mat-palette($mat-fusedark, 300);
 $warn: mat-palette($mat-pink, 400);
 
 // Create the Material theme object

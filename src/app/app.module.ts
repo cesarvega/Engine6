@@ -21,31 +21,31 @@ import { AppStoreModule } from 'app/store/store.module';
 import { LayoutModule } from 'app/layout/layout.module';
 import { APP_BASE_HREF } from '../../node_modules/@angular/common';
 import { LoginOpt, SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
- 
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
+
 const providers = {
-    'google': {
-      'clientId': '602575723314-jdm4nunt3bl3kts5pt422dkfoecdqi70.apps.googleusercontent.com'
-    },
-    'linkedin': {
-      'clientId': '78boqsci07651u'
-    },
-    'facebook': {
-      'clientId': '412970612378155', // new api
-      // "clientId": "333641403720580",
-      'apiVersion': 'v2.9' // like v2.4 
-    }
-  };
+  'google': {
+    'clientId': '602575723314-jdm4nunt3bl3kts5pt422dkfoecdqi70.apps.googleusercontent.com'
+  },
+  'linkedin': {
+    'clientId': '78boqsci07651u'
+  },
+  'facebook': {
+    'clientId': '412970612378155', // new api
+    // "clientId": "333641403720580",
+    'apiVersion': 'v2.9' // like v2.4 
+  }
+};
 const fbLoginOptions: LoginOpt = {
   scope: 'pages_messaging,pages_messaging_subscriptions,email,pages_show_list,manage_pages',
   return_scopes: true,
   enable_profile_selector: true
 }; // https://developers.facebook.com/docs/reference/javascript/FB.login/v2.11
- 
+
 const googleLoginOptions: LoginOpt = {
   scope: 'profile email'
 }; // https://developers.google.com/api-client-library/javascript/reference/referencedocs#gapiauth2clientconfig
- 
+
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -62,63 +62,66 @@ const config = new AuthServiceConfig([
 ]);
 
 export function provideConfig(): AuthServiceConfig {
-    return config;
-  }
+  return config;
+}
 
 const appRoutes: Routes = [
-    {
-        path        : 'apps',
-        loadChildren: './main/apps/apps.module#AppsModule'
-    },    
-    {
-        path      : '**',
-        redirectTo: 'apps/dashboards/analytics'
-    }
+  // {
+  //   path: 'login',
+  //   loadChildren: './login-register/login-register.module#LoginRegisterModule'
+  // },
+  {
+    path: 'apps',
+    loadChildren: './main/apps/apps.module#AppsModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'apps'
+  }
 ];
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports     : [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        RouterModule.forRoot(appRoutes),
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
 
-        TranslateModule.forRoot(),
-        InMemoryWebApiModule.forRoot(FakeDbService, {
-            delay             : 0,
-            passThruUnknownUrl: true
-        }),
+    TranslateModule.forRoot(),
+    InMemoryWebApiModule.forRoot(FakeDbService, {
+      delay: 0,
+      passThruUnknownUrl: true
+    }),
 
-        // Material moment date module
-        MatMomentDateModule,
+    // Material moment date module
+    MatMomentDateModule,
 
-        // Material
-        MatButtonModule,
-        MatIconModule,
+    // Material
+    MatButtonModule,
+    MatIconModule,
 
-        // Fuse modules
-        FuseModule.forRoot(fuseConfig),
-        FuseProgressBarModule,
-        FuseSharedModule,
-        FuseSidebarModule,
-        FuseThemeOptionsModule,
+    // Fuse modules
+    FuseModule.forRoot(fuseConfig),
+    FuseProgressBarModule,
+    FuseSharedModule,
+    FuseSidebarModule,
+    FuseThemeOptionsModule,
 
-        // App modules
-        SocialLoginModule,
-        LayoutModule,
-        AppStoreModule
-    ],
-    bootstrap   : [
-        AppComponent
-    ],
-    // providers: [{ provide: APP_BASE_HREF, useValue: '/corporate/'}, 
-    providers: [{ provide: APP_BASE_HREF, useValue: '/unity/'}, 
-                { provide: AuthServiceConfig, useFactory: provideConfig}
-            ]
+    // App modules
+    SocialLoginModule,
+    LayoutModule,
+    AppStoreModule
+  ],
+  bootstrap: [
+    AppComponent
+  ],
+  // providers: [{ provide: APP_BASE_HREF, useValue: '/corporate/'}, 
+  providers: [{ provide: APP_BASE_HREF, useValue: '/unity/' },
+  { provide: AuthServiceConfig, useFactory: provideConfig}
+  ]
 })
-export class AppModule
-{
+export class AppModule {
 }

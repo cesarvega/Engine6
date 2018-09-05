@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatExpansionModule, MatIconModule } from '@angular/material';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { LoginRegisterComponent } from './login-register.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -11,6 +11,8 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import { GoodbayComponent } from './goodbay/goodbay.component';
 import { SuccessfulPasswordResetComponent } from './successful-password-reset/successful-password-reset.component';
 import { ForgotPasswordThankyouComponent } from './forgot-password-thankyou/forgot-password-thankyou.component';
+import { FaqComponent } from './faq/faq.component';
+import { FaqService } from './faq/faq.service';
 const routes: Routes = [
   {
     path: 'auth/login',
@@ -39,6 +41,13 @@ const routes: Routes = [
     component: UnsubscribeComponent
   },
   {
+    path: 'faq',
+    component: FaqComponent,
+    resolve  : {
+      faq: FaqService
+  }
+  },
+  {
     path: 'successful-password-reset',
     component: SuccessfulPasswordResetComponent
   },
@@ -49,6 +58,10 @@ const routes: Routes = [
   {
     path: 'goodbay',
     component: GoodbayComponent
+  },
+  {
+      path: '**',
+      redirectTo: 'auth/login'
   }
 ];
 
@@ -59,6 +72,9 @@ const routes: Routes = [
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
+    
+    MatExpansionModule,
+    MatIconModule,
 
     FuseSharedModule
   ],
@@ -70,7 +86,11 @@ const routes: Routes = [
     ThankyouComponent,
     GoodbayComponent,
     SuccessfulPasswordResetComponent,
-    ForgotPasswordThankyouComponent
+    ForgotPasswordThankyouComponent,
+    FaqComponent
+  ],
+  providers   : [
+      FaqService
   ]
 })
 export class LoginRegisterModule { }

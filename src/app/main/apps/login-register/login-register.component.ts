@@ -52,19 +52,19 @@ export class LoginRegisterComponent implements OnInit {
 
 
     signInWithBI(user?: SocialUser): void {
-        console.log(this.loginForm.value);
+        // console.log(this.loginForm.value);
         if (user){
             this.loginForm.value.email = user.email;
             this.loginForm.value.email = user.id;
         }
         this._biLoginService.signAndRegistrationAuth('\'' + this.loginForm.value.email + '\'' + ',' + '\'' + this.loginForm.value.password + '\'').subscribe(res => {
-            console.log(res[0]);
+            // console.log(res[0]);
             if (res[0].verified === 'True') {
                 this.router.navigateByUrl('/apps/dashboards/analytics');
             }
         });
         // this._biLoginService.postUser(this.loginForm.value.email).subscribe(res => {
-        //     console.log(JSON.parse(res[0].profile));            
+            // console.log(JSON.parse(res[0].profile));            
         // });
 
     }
@@ -93,7 +93,7 @@ export class LoginRegisterComponent implements OnInit {
      * On init
      */
     ngOnInit(): void {
-        this.signOut();
+        // this.signOut();
         this._authService.authState.subscribe((user) => {
             this.user = user;
             this.loggedIn = (user != null);

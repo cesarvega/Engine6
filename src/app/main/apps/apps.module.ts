@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FuseSharedModule } from '@fuse/shared.module';
+import { AuthGuard } from './login-register/service/auth-guard.service';
+import { AuthService } from './login-register/service/auth.service';
 
 const routes = [
+    {
+        path: 'login',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule'
+    },
     {
         path: 'dashboards/analytics',
         loadChildren: './dashboards/analytics/analytics.module#AnalyticsDashboardModule'
     },
     {
         path: 'surveys',
-        loadChildren: './surveys/surveys.module#SurveysModule'
-    },
+        loadChildren: './surveys/surveys.module#SurveysModule'        
+    },    
     {
         path: 'profile',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
-    },
-    {
-        path: 'login',
-        loadChildren: './login-register/login-register.module#LoginRegisterModule'
     },
     {
         path: 'register',
@@ -36,8 +38,12 @@ const routes = [
         loadChildren: './login-register/login-register.module#LoginRegisterModule'
     },
     {
+        path: 'faq',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule'
+    },
+    {
         path: '**',
-        redirectTo: 'dashboards/analytics'
+        redirectTo: 'login'
     }
     // {
     //     path: 'dashboards/project',
