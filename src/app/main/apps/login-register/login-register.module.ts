@@ -13,43 +13,49 @@ import { SuccessfulPasswordResetComponent } from './successful-password-reset/su
 import { ForgotPasswordThankyouComponent } from './forgot-password-thankyou/forgot-password-thankyou.component';
 import { FaqComponent } from './faq/faq.component';
 import { FaqService } from './faq/faq.service';
+import { AuthGuard } from './service/auth-guard.service';
+import { AuthGuardService } from './service/auth.service';
 const routes: Routes = [
   {
     path: 'auth/login',
     component: LoginRegisterComponent
-  }
-  ,
-  {
-    path: 'contact-us',
-    component: ContactUsComponent
-  }
-  ,
-  {
-    path: 'forgot-password',
-    component: ForgotPasswordComponent
   },
   {
+    path: 'contact-us',
+    component: ContactUsComponent,
+    canActivate: [AuthGuard]
+  },  
+  {
     path: 'change-password',
-    component: ChangePasswordComponent
+    component: ChangePasswordComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'thankyou',
-    component: ThankyouComponent
+    component: ThankyouComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'unsubscribe',
-    component: UnsubscribeComponent
+    component: UnsubscribeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'faq',
     component: FaqComponent,
     resolve  : {
       faq: FaqService
-  }
+  },
+  canActivate: [AuthGuard]
   },
   {
     path: 'successful-password-reset',
-    component: SuccessfulPasswordResetComponent
+    component: SuccessfulPasswordResetComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
   },
   {
     path: 'forgot-password-success',
@@ -90,7 +96,7 @@ const routes: Routes = [
     FaqComponent
   ],
   providers   : [
-      FaqService
+      FaqService, AuthGuard, AuthGuardService
   ]
 })
 export class LoginRegisterModule { }

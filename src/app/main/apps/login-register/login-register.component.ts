@@ -7,6 +7,7 @@ import { SocialUser } from 'angularx-social-login';
 import { LoginRegisterService } from './service/login-register.service';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import { AuthGuardService } from './service/auth.service';
 @Component({
     selector: 'app-login-register',
     templateUrl: './login-register.component.html',
@@ -28,6 +29,7 @@ export class LoginRegisterComponent implements OnInit {
         private _formBuilder: FormBuilder,
         private _LoginRegisterService: LoginRegisterService,
         private _authService: AuthService,
+        private _authGuardService: AuthGuardService,
         private _biLoginService: LoginService,
         private router: Router
     ) {
@@ -53,18 +55,22 @@ export class LoginRegisterComponent implements OnInit {
 
     signInWithBI(user?: SocialUser): void {
         // console.log(this.loginForm.value);
-        if (user){
+        if (user) {
             this.loginForm.value.email = user.email;
             this.loginForm.value.email = user.id;
         }
         this._biLoginService.signAndRegistrationAuth('\'' + this.loginForm.value.email + '\'' + ',' + '\'' + this.loginForm.value.password + '\'').subscribe(res => {
-            // console.log(res[0]);
+
             if (res[0].verified === 'True') {
-                this.router.navigateByUrl('/apps/dashboards/analytics');
+                if (this._authGuardService.login()) {
+                    this.router.navigateByUrl('/apps/dashboards/analytics');
+                } else {
+                    this._authGuardService.logout();
+                }
             }
         });
         // this._biLoginService.postUser(this.loginForm.value.email).subscribe(res => {
-            // console.log(JSON.parse(res[0].profile));            
+        // console.log(JSON.parse(res[0].profile));            
         // });
 
     }
@@ -93,11 +99,12 @@ export class LoginRegisterComponent implements OnInit {
      * On init
      */
     ngOnInit(): void {
-        // this.signOut();
+        this._authGuardService.logout();
         this._authService.authState.subscribe((user) => {
             this.user = user;
             this.loggedIn = (user != null);
-            if (this.loggedIn) {                
+
+            if (this.loggedIn) {
                 this.signInWithBI(user);
             }
         });

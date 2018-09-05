@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { AuthGuard } from './login-register/service/auth-guard.service';
-import { AuthService } from './login-register/service/auth.service';
+import { AuthGuardService } from './login-register/service/auth.service';
 
 const routes = [
     {
@@ -112,7 +112,7 @@ const routes = [
         RouterModule.forChild(routes),
         FuseSharedModule
 
-    ], providers: [ AuthGuard, AuthService]
+    ], providers: [ AuthGuard, AuthGuardService]
 })
 export class AppsModule {
 }

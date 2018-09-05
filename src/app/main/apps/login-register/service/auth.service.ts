@@ -4,20 +4,17 @@ import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 
 @Injectable()
-export class AuthService {
+export class AuthGuardService {
   isLoggedIn = false;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  login(): Observable<boolean> {
-    return of(true).pipe(
-      delay(1000),
-      tap(val => this.isLoggedIn = true)
-    );
+  login(): boolean {
+    return this.isLoggedIn = true;
   }
 
-  logout(): void {
-    this.isLoggedIn = false;
+  logout(): boolean {
+    return this.isLoggedIn = false;
   }
 }
