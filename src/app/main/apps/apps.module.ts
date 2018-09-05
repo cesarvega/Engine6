@@ -11,36 +11,42 @@ const routes = [
     },
     {
         path: 'dashboards/analytics',
-        loadChildren: './dashboards/analytics/analytics.module#AnalyticsDashboardModule'
+        loadChildren: './dashboards/analytics/analytics.module#AnalyticsDashboardModule',
+        canActivate: [AuthGuard]
     },
     {
         path: 'surveys',
-        loadChildren: './surveys/surveys.module#SurveysModule'        
+        loadChildren: './surveys/surveys.module#SurveysModule',
+        canActivate: [AuthGuard]        
     },    
     {
         path: 'profile',
-        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule',
+        canActivate: [AuthGuard]
     },
     {
-        path: 'register',
-        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+        path: 'change-password',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'unsubscribe',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'faq',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule',
+        canActivate: [AuthGuard]
     },
     {
         path: 'scrumboard',
         loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
     },
     {
-        path: 'change-password',
-        loadChildren: './login-register/login-register.module#LoginRegisterModule'
-    },
-    {
-        path: 'unsubscribe',
-        loadChildren: './login-register/login-register.module#LoginRegisterModule'
-    },
-    {
-        path: 'faq',
-        loadChildren: './login-register/login-register.module#LoginRegisterModule'
-    },
+        path: 'register',
+        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+    },      
     {
         path: '**',
         redirectTo: 'login'
@@ -106,7 +112,7 @@ const routes = [
         RouterModule.forChild(routes),
         FuseSharedModule
 
-    ]
+    ], providers: [ AuthGuard, AuthService]
 })
 export class AppsModule {
 }

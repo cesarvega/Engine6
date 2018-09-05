@@ -10,18 +10,15 @@ import { FuseWidgetModule } from '@fuse/components/widget/widget.module';
 
 import { AnalyticsDashboardComponent } from 'app/main/apps/dashboards/analytics/analytics.component';
 import { AnalyticsDashboardService } from 'app/main/apps/dashboards/analytics/analytics.service';
-import { AuthGuard } from '../../login-register/service/auth-guard.service';
-import { AuthService } from '../../login-register/service/auth.service';
 
 
 const routes: Routes = [
     {
-        path     : 'g',
+        path     : '**',
         component: AnalyticsDashboardComponent,
         resolve  : {
             data: AnalyticsDashboardService
-        },
-        canActivateChild: [AuthGuard]
+        }
     }
 ];
 
@@ -49,7 +46,7 @@ const routes: Routes = [
         FuseWidgetModule
     ],
     providers   : [
-        AnalyticsDashboardService, AuthGuard, AuthService
+        AnalyticsDashboardService
     ]
 })
 export class AnalyticsDashboardModule
