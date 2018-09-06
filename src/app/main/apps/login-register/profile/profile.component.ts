@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
 
   // private reposndatType  = localStorage.getItem('user') !== 'undefined' ? localStorage.getItem('user') : 'OTHER_HCP';
   private reposndatType  = 'MD_PA_Lic_Info';
+  private user: any  = localStorage.getItem('user');
 
   P_info_1: FieldConfig2[] = [
     {
@@ -355,32 +356,7 @@ export class ProfileComponent implements OnInit {
           message: 'Profession is required'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'Your profile information is used to match up with defined research specifications in order to determine which research studies you will be invited to participate. We need to collect some of your personal information to know who you are and where to send you the payment when the time arrives.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: '',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
-
   ];
 
   NonHCP: FieldConfig2[] = [
@@ -536,33 +512,6 @@ export class ProfileComponent implements OnInit {
       name: '',
       value: '',
       inputType: 'bi-help',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-button',
-      options: [
-        'Previous',
-        'Continue'
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'radiobutton',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-button',
       validations: [
         {
           name: 'required',
@@ -736,35 +685,6 @@ export class ProfileComponent implements OnInit {
       label: 'Anybody can register',
       name: '',
       value: 'Anybody can register',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-button',
-      options: [
-        'Previous',
-
-        'Continue'
-
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
       inputType: 'text',
       validations: [
         {
@@ -973,63 +893,6 @@ export class ProfileComponent implements OnInit {
           message: 'Upload up to 2 documents to proof your profession'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'Besides your current professional title we want to know what the fields of medicine you are specialized are. You can select at least one to a maximum of 3 different medical fields. We will select participants for projects based upon the fields select in this section. All Health care professionals will be asked to provide proof of their profession in order to be invited as a Health Care professional; if you don’t provide proof we will classify you as a None Health Care Professional. All this information will help you to increase your chances to receive more invitations to participate in our surveys.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-button',
-      options: [
-        {
-          'names': 'Previous',
-          'values': 'P_info_1'
-        },
-        {
-          'names': 'Continue',
-          'values': 'Payment_Email_Type'
-        }
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'button',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-button',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
   ];
 
@@ -1211,39 +1074,6 @@ export class ProfileComponent implements OnInit {
           message: 'Service time is required'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-button',
-      options: [
-        {
-          'names': 'Previous',
-          'values': 'P_info_1'
-        },
-        {
-          'names': 'Continue',
-          'values': 'Payment_Email_Type'
-        }
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'button',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-button',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
   ];
 
@@ -1390,39 +1220,6 @@ export class ProfileComponent implements OnInit {
       name: '',
       value: '',
       inputType: 'bi-help',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-button',
-      options: [
-        {
-          'names': 'Previous',
-          'values': 'P_info_1'
-        },
-        {
-          'names': 'Continue',
-          'values': 'Payment_Email_Type'
-        }
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-button',
       validations: [
         {
           name: 'required',
@@ -1746,39 +1543,6 @@ export class ProfileComponent implements OnInit {
           message: 'Service time is required'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-button',
-      options: [
-        {
-          'names': 'Previous',
-          'values': ''
-        },
-        {
-          'names': 'Continue',
-          'values': 'Ext_Profile'
-        }
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-button',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
   ];
 
@@ -1849,30 +1613,6 @@ export class ProfileComponent implements OnInit {
       name: 'paymentHistoryTitle',
       value: '',
       inputType: 'bi-table',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
-      labelValue: 'MyProfile',
-      icon: '',
-      defaultInputValue: 'http://url',
-      componentType: 'bi-label',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: 'Click to see profile information',
-      placeHolder: '',
-      type: 'radiobutton',
-      label: 'MyProfile',
-      name: 'MyProfile',
-      value: '',
-      inputType: 'bi-label',
       validations: [
         {
           name: 'required',
@@ -2282,46 +2022,33 @@ export class ProfileComponent implements OnInit {
           message: 'Service time is required'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-button',
-      options: [
-        {
-          'names': 'Previous',
-          'values': 'Payment_Email_Type'
-        },
-        {
-          'names': 'Submit',
-          'values': ''
-        }
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-button',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
-
   ];
 
   fieldOBJ = [];
 
+  
+
+
   ngOnInit(): void {
+    this.fieldOBJ.push( {
+      item: this.P_info_1,
+      name: 'P_info_1'
+    }); 
+    this.user = JSON.parse(this.user);
+    this.P_info_1[0].value = this.user[3].value;
+    this.P_info_1[1].value = this.user[6].value;
+    this.P_info_1[2].value = this.user[5].value;
+    this.P_info_1[3].value = this.user[4].value;
+    this.P_info_1[4].value = this.user[1].value;
+    this.P_info_1[5].value = this.user[12].value;
+    this.P_info_1[6].value = this.user[11].value;
+    this.P_info_1[7].value = '';
+    this.P_info_1[8].value = this.user[9].value;
+    this.P_info_1[9].value = this.user[14].value;
+    this.P_info_1[10].value = '';
+    this.P_info_1[11].value = this.user[10].value;
+  
     switch (this.reposndatType) {
       case 'P_info_1':
       this.fieldOBJ.push( {
