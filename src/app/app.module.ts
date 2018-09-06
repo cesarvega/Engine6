@@ -113,7 +113,7 @@ const appRoutes: Routes = [
     // App modules
     SocialLoginModule,
     LayoutModule,
-    AppStoreModule
+    AppStoreModule,
   ],
   bootstrap: [
     AppComponent
