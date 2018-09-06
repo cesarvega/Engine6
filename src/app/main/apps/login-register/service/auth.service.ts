@@ -11,10 +11,12 @@ export class AuthGuardService {
   redirectUrl: string;
 
   login(): boolean {
+    localStorage.setItem('isLoggedIn', 'true');
     return this.isLoggedIn = true;
   }
 
   logout(): boolean {
+    localStorage.setItem('isLoggedIn', 'false');
     return this.isLoggedIn = false;
   }
 }

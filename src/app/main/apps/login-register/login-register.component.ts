@@ -4,7 +4,6 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { AuthService } from 'angularx-social-login';
 import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
-import { LoginRegisterService } from './service/login-register.service';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 import { AuthGuardService } from './service/auth.service';
@@ -27,7 +26,6 @@ export class LoginRegisterComponent implements OnInit {
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
-        private _LoginRegisterService: LoginRegisterService,
         private _authService: AuthService,
         private _authGuardService: AuthGuardService,
         private _biLoginService: LoginService,
@@ -62,12 +60,16 @@ export class LoginRegisterComponent implements OnInit {
         this._biLoginService.signAndRegistrationAuth('\'' + this.loginForm.value.email + '\'' + ',' + '\'' + this.loginForm.value.password + '\'').subscribe(res => {
 
             if (res[0].verified === 'True') {
+                localStorage.setItem('user', res[0].message);
                 if (this._authGuardService.login()) {
                     this.router.navigateByUrl('/apps/dashboards/analytics');
                 } else {
                     this._authGuardService.logout();
                 }
+            }else {
+                
             }
+
         });
         // this._biLoginService.postUser(this.loginForm.value.email).subscribe(res => {
         // console.log(JSON.parse(res[0].profile));            
@@ -89,6 +91,7 @@ export class LoginRegisterComponent implements OnInit {
 
     signOut(): void {
         this._authService.signOut();
+        localStorage.setItem('user', '');
     }
 
     // -----------------------------------------------------------------------------------------------------
