@@ -2,62 +2,62 @@ import { FuseNavigation } from '@fuse/types';
 
 export const navigation: FuseNavigation[] = [
 
-    {
-        id: 'dashboard',
-        title: 'Dashboard',
-         // translate: 'NAV.Dashboard',
-        type: 'item',
-        icon: 'today',
-        url: '/apps/dashboards/analytics'
-    },
-    {
-        id: 'Surveys',
-        title: 'Surveys',
-        translate: 'NAV.SURVEYS',
-        type: 'item',
-        icon: 'layers',
-        url: '/apps/surveys'
-    },
-    {
-        id: 'profile',
-        title: 'Profile',
-        // translate: 'NAV.dynamic',
-        type: 'item',
-        icon: 'person',
-        url: '/apps/dynamic-profile'
-    },
-    {
-        id: 'dynamic',
-        title: 'dynamic',
-        // translate: 'NAV.dynamic',
-        type: 'item',
-        icon: 'attach_money',
-        url: '/apps/dynamic-forms'
-    },
-    {
-        id: 'payments',
-        title: 'Payments',
-        // translate: 'NAV.payments',
-        type: 'item',
-        icon: 'attach_money',
-        url: '/apps/payment'
-    },
-    {
-        id: 'settings',
-        title: 'Settings',
-        // translate: 'NAV.CALENDAR',
-        type: 'item',
-        icon: 'settings',
-        url: 'apps/todo/all'
-    },
-    {
-        id: 'help',
-        title: 'Help',
-        // translate: 'NAV.HELP',
-        type: 'item',
-        icon: 'help',
-        url: '/pages/faq'
-    },
+    // {
+    //     id: 'dashboard',
+    //     title: 'Dashboard',
+    //      // translate: 'NAV.Dashboard',
+    //     type: 'item',
+    //     icon: 'today',
+    //     url: '/apps/dashboards/analytics'
+    // },
+    // {
+    //     id: 'Surveys',
+    //     title: 'Surveys',
+    //     translate: 'NAV.SURVEYS',
+    //     type: 'item',
+    //     icon: 'layers',
+    //     url: '/apps/surveys'
+    // },
+    // {
+    //     id: 'profile',
+    //     title: 'Profile',
+    //     // translate: 'NAV.dynamic',
+    //     type: 'item',
+    //     icon: 'person',
+    //     url: '/apps/dynamic-profile'
+    // },
+    // {
+    //     id: 'dynamic',
+    //     title: 'dynamic',
+    //     // translate: 'NAV.dynamic',
+    //     type: 'item',
+    //     icon: 'attach_money',
+    //     url: '/apps/dynamic-forms'
+    // },
+    // {
+    //     id: 'payments',
+    //     title: 'Payments',
+    //     // translate: 'NAV.payments',
+    //     type: 'item',
+    //     icon: 'attach_money',
+    //     url: '/apps/payment'
+    // },
+    // {
+    //     id: 'settings',
+    //     title: 'Settings',
+    //     // translate: 'NAV.CALENDAR',
+    //     type: 'item',
+    //     icon: 'settings',
+    //     url: 'apps/todo/all'
+    // },
+    // {
+    //     id: 'help',
+    //     title: 'Help',
+    //     // translate: 'NAV.HELP',
+    //     type: 'item',
+    //     icon: 'help',
+    //     url: '/pages/faq'
+    // },
 
     {
         id       : 'applications',
