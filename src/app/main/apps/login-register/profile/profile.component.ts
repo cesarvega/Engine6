@@ -9,10 +9,86 @@ import { Validators } from '@angular/forms';
 export class ProfileComponent implements OnInit {
 
   // private reposndatType  = localStorage.getItem('user') !== 'undefined' ? localStorage.getItem('user') : 'OTHER_HCP';
-  private reposndatType  = 'MD_PA_Lic_Info';
-  private user: any  = localStorage.getItem('user');
-
+  private reposndatType = 'MD_PA_Lic_Info';
+  private user: any = localStorage.getItem('user');
   P_info_1: FieldConfig2[] = [
+    {
+      labelValue: 'Email *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'true',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your email Address',
+      type: 'input',
+      label: 'Email *',
+      name: 'Email *',
+      value: '',
+      inputType: 'email',
+      validations: [
+        {
+          name: 'pattern',
+          validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+          message: 'please enter a valid email address'
+        },
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'please enter an email address'
+        }
+      ]
+    },
+    // {
+    //   labelValue: 'password *',
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'bi-input-text',
+    //   options: [''],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: 'Enter your password',
+    //   type: 'input',
+    //   label: 'Password *',
+    //   name: 'Password *',
+    //   value: '',
+    //   inputType: 'password',
+    //   validations: [
+    //     {
+    //       name: 'min',
+    //       validator: Validators.minLength(6),
+    //       message: 'please enter 6 characters minimun'
+    //     }
+    //   ]
+    // },
+    // {
+    //   labelValue: 'confirm password *',
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'bi-input-text',
+    //   options: [''],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: 'Enter your confirm password',
+    //   type: 'input',
+    //   label: 'confirm password *',
+    //   name: 'confirm password *',
+    //   value: '',
+    //   inputType: 'password',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: 'password not matching'
+    //     }
+    //   ]
+    // },
     {
       labelValue: 'First name *',
       icon: '',
@@ -33,7 +109,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must enter first name'
+          message: 'please enter first name'
         }
       ]
     },
@@ -52,14 +128,7 @@ export class ProfileComponent implements OnInit {
       label: 'Middle name',
       name: 'Middle name',
       value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      inputType: 'text'
     },
     {
       labelValue: 'Last name *',
@@ -81,7 +150,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must enter last name'
+          message: 'please enter last name'
         }
       ]
     },
@@ -113,6 +182,33 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
+      labelValue: 'Select preferred payment method *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-radio',
+      options: [
+        'Paypal',
+        'Check'
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: '',
+      type: 'radiobutton',
+      label: 'Select preferred payment method *',
+      name: 'Select preferred payment method *',
+      value: '',
+      inputType: 'bi-input-radio',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'please select payment method is required'
+        }
+      ]
+    },
+    {
       labelValue: 'Date of birth *',
       icon: '',
       defaultInputValue: '1999-06-15',
@@ -122,7 +218,7 @@ export class ProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'input',
+      type: 'date',
       label: 'Date of birth *',
       name: 'Date of birth *',
       value: '',
@@ -131,7 +227,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must enter your date of birth is required'
+          message: 'please enter your date of birth is required'
         }
       ]
     },
@@ -141,7 +237,7 @@ export class ProfileComponent implements OnInit {
       defaultInputValue: '',
       componentType: 'bi-select',
       // tslint:disable-next-line:max-line-length
-      options: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia Herzegovina', 'Botswana', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire (Ivory Coast)', 'Croatia (Hrvatska)', 'Cuba', 'Curacao', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican', 'East Timor', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland Islands (Malvinas)', 'Faroe Islands', 'Federated States of Micronesia', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'Southern Territories', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Heard and McDonald Islands', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea (North)', 'Korea (South)', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand (Aotearoa)', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Qatar', 'Reunion', 'Romania', 'Russian Federation', 'Rwanda', 'S. Georgia S. Sandwich Isls.', 'Saint Kitts Nevis', 'Saint Lucia', 'Vincent the Grenadines', 'Samoa', 'San Marino', 'Sao Tome Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovak Republic', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'St. Helena', 'St. Pierre and Miquelon', 'Sudan', 'Suriname', 'Svalbard and Jan Mayen Islands', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tokelau', 'Tonga', 'Trinidad Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City (Holy See)', 'Venezuela', 'Viet Nam', 'Virgin (British)', 'Wallis and Futuna Islands', 'Western Sahara', 'Yemen', 'Zaire', 'Zambia', 'Zimbabwe', 'Zimbabwe' ],
+      options: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia Herzegovina', 'Botswana', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire (Ivory Coast)', 'Croatia (Hrvatska)', 'Cuba', 'Curacao', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican', 'East Timor', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland Islands (Malvinas)', 'Faroe Islands', 'Federated States of Micronesia', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'Southern Territories', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Heard and McDonald Islands', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea (North)', 'Korea (South)', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand (Aotearoa)', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Qatar', 'Reunion', 'Romania', 'Russian Federation', 'Rwanda', 'S. Georgia S. Sandwich Isls.', 'Saint Kitts Nevis', 'Saint Lucia', 'Vincent the Grenadines', 'Samoa', 'San Marino', 'Sao Tome Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovak Republic', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'St. Helena', 'St. Pierre and Miquelon', 'Sudan', 'Suriname', 'Svalbard and Jan Mayen Islands', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tokelau', 'Tonga', 'Trinidad Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City (Holy See)', 'Venezuela', 'Viet Nam', 'Virgin (British)', 'Wallis and Futuna Islands', 'Western Sahara', 'Yemen', 'Zaire', 'Zambia', 'Zimbabwe', 'Zimbabwe'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
@@ -171,8 +267,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Address 1',
       type: 'input',
-      label: 'Mailing street address 1 *',
-      name: 'Mailing street address 1 *',
+      label: 'Mailing street address *',
+      name: 'Mailing street address *',
       value: '',
       inputType: 'text',
       validations: [
@@ -194,28 +290,17 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Address 2',
       type: 'input',
-      label: 'Mailing street address 2',
-      name: 'Mailing street address 2',
+      label: 'Mailing street/#apto/unit',
+      name: 'Mailing street/#apto/unit',
       value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      inputType: 'text'
     }, {
       labelValue: 'Select State/Province *',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'bi-select-input',
-      options: [
-        'Catalunia',
-        'Valle',
-        'California'
-
-      ],
+      // tslint:disable-next-line:max-line-length
+      options: ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Federated states of Micronesia', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Lousiana', 'Maine', 'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
@@ -230,7 +315,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Select your state/province of residency'
+          message: 'please select your state/province of residency'
         }
       ]
     },
@@ -270,64 +355,24 @@ export class ProfileComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cell Phone',
-      name: 'Cell Phone',
+      label: 'Cellphone *',
+      name: 'Cellphone *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'cellphone number is required'
         }
       ]
     },
     {
-      labelValue: 'Specify your profession or occupation in order to continue',
+      labelValue: 'Specify your profession or occupation',
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-dropdown',
       options: [
-        {
-          'names': 'Not related to Health Care',
-          'values': 'NonHCP'
-        },
-        {
-          'names': 'Physician/Doctor of Medicine (MD, DO)',
-          'values': 'MD_PA_lic_Info'
-        },
-        {
-          'names': 'Physician Assistant (PA)',
-          'values': 'MD_PA_lic_Info'
-        },
-        {
-          'names': 'Nurse',
-          'values': 'Nurse_Lic_Info'
-        },
-        {
-          'names': 'Pharmacist',
-          'values': 'Pharm_Lic_Info'
-        },
-        {
-          'names': 'Pharmacist Technician',
-          'values': 'Pharm_Lic_Info'
-        },
-        {
-          'names': 'Dentist',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Optometrist',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Veterinarian',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Allied Health Care Profession or Occupation',
-          'values': 'OTHER_HCP'
-        },
         'Not related to Health Care',
         'Physician/Doctor of Medicine (MD, DO)',
         'Physician Assistant (PA)',
@@ -339,16 +384,16 @@ export class ProfileComponent implements OnInit {
         'Veterinarian',
         'Allied Health Care Profession or Occupation'
       ],
-      disabled: 'false',
+      disabled: 'true',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'Select Profession/Occupation',
-      type: 'select',
-      label: 'Specify your profession or occupation in order to continue',
-      name: 'Specify your profession or occupation in order to continue',
+      type: 'input',
+      label: 'Specify your profession or occupation',
+      name: 'Specify your profession or occupation',
       value: '',
-      inputType: '',
+      inputType: 'text',
       validations: [
         {
           name: 'required',
@@ -488,30 +533,6 @@ export class ProfileComponent implements OnInit {
       name: 'Employer name',
       value: '',
       inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'Anybody can register and participate in our surveys; but we need to know which your occupation is to know who you are and classify you in the right category to participate in our surveys. We look for people from different industries to have a wide variety opinions; your profession and level of education we will tell us what type of surveys we can qualify for. All this information will help you to increase your chances to receive more invitations to participate in our surveys.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-help',
       validations: [
         {
           name: 'required',
@@ -667,30 +688,6 @@ export class ProfileComponent implements OnInit {
           name: 'required',
           validator: Validators.required,
           message: 'Upload up to 2 documents to proof your profession'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'Anybody can register and participate in our surveys; as a health care professional your opinion is very valuable for us; we need your job title/position to know who you are and classify you in the right category. All Health care professionals will be asked to provide proof of their profession in order to be invited as a Health Care professional; if you don’t provide proof we will classify you as a None Health Care Professional. All this information will help you to increase your chances to receive more invitations to participate in our surveys.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: 'Anybody can register',
-      name: '',
-      value: 'Anybody can register',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
         }
       ]
     }
@@ -875,7 +872,6 @@ export class ProfileComponent implements OnInit {
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-input-upload',
-
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
@@ -1050,30 +1046,6 @@ export class ProfileComponent implements OnInit {
           message: 'Upload up to 2 documents to proof your profession'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'All Health care professionals will be asked to provide proof of their profession in order to be invited as a Health Care professional; if you don’t provide proof we will classify you as a None Health Care Professional. All this information will help you to increase your chances to receive more invitations to participate in our surveys.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-help',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
   ];
 
@@ -1201,30 +1173,6 @@ export class ProfileComponent implements OnInit {
           name: 'required',
           validator: Validators.required,
           message: 'Upload up to 2 documents to proof your profession'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'All Health care professionals will be asked to provide proof of their profession in order to be invited as a Health Care professional; if you don’t provide proof we will classify you as a None Health Care Professional. All this information will help you to increase your chances to receive more invitations to participate in our surveys.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-help',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
         }
       ]
     }
@@ -1512,30 +1460,6 @@ export class ProfileComponent implements OnInit {
       name: 'How did you hear about us?',
       value: '',
       inputType: 'bi-select',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: '<b>Preferred payment method:</b> We only offer payments by PayPal or check; below read what you should keep in mind before choosing your payment method for surveys:<br><b>Check:</b> If you are outside United States bank fees might apply when cashing a check. Those fees are not covered by Brand Institute. If you want to be paid by check make sure you provide your full mailing address to avoid delays in payments.<br><b>PayPal:</b> It is faster and cheaper; it is available almost everywhere. Your PayPal account should be your registration email if you have another PayPal account please enter here. PayPal account has to be unique; one PayPal account cannot be use for multiple users.<br>We <b>do not do</b> bank transfers or any other payment method besides check and PayPal. We are working on adding more payment options. We apologize if you cannot complete your registration because of payment. To participate in our surveys you have to be notified; right now we offer 2 ways to get those notifications.<br><br><b>Receive invitations for surveys</b><br><b>Email:</b> This is the most reliable way to know that you were invited to a survey.<br><b>SMS Text:</b> This is only available for U.S./Canada panelists who have provided their cellphone numbers to receive those texts; some extra charges might apply when receiving those texts.<br><br><b>Forgot password</b><br>Select two security questions from the list below and provide the answers to them; those answers will help you to recover your password later.<br><b>How did you hear about us? </b> We would like to know how you heard about for our records.<br><b>Refer friends and family</b><br>Provide emails if you want your family, friends or coworkers to be invited to registered in our panel.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-help',
       validations: [
         {
           name: 'required',
@@ -1998,129 +1922,109 @@ export class ProfileComponent implements OnInit {
           message: 'Service time is required'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'This section is completely optional, but all information provide here will help us better match you with current survey opportunities. You can answer some or all of the questions here. We do not share your profile information with any other third party.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'radiobutton',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-help',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
   ];
 
   fieldOBJ = [];
 
-  
+
 
 
   ngOnInit(): void {
-    this.fieldOBJ.push( {
+    if (this.user !== 'undefined') {
+      this.user = JSON.parse(this.user);
+      this.P_info_1[0].value = this.user[2].value;
+      this.P_info_1[1].value = this.user[3].value;
+      this.P_info_1[2].value = this.user[6].value;
+      this.P_info_1[3].value = this.user[5].value;
+      this.P_info_1[4].value = this.user[4].value;
+      this.P_info_1[5].value = this.user[13].value;
+      this.P_info_1[6].value = this.user[1].value;
+      this.P_info_1[7].value = this.user[12].value;
+      this.P_info_1[8].value = this.user[11].value;
+      // this.P_info_1[9].value = this.user[9].value;
+      this.P_info_1[10].value = this.user[9].value;
+      this.P_info_1[11].value = this.user[14].value;
+      // this.P_info_1[12].value = this.user[14].value;
+      this.P_info_1[13].value = this.user[13].value;
+    }
+
+    this.fieldOBJ.push({
       item: this.P_info_1,
       name: 'P_info_1'
-    }); 
-    this.user = JSON.parse(this.user);
-    this.P_info_1[0].value = this.user[3].value;
-    this.P_info_1[1].value = this.user[6].value;
-    this.P_info_1[2].value = this.user[5].value;
-    this.P_info_1[3].value = this.user[4].value;
-    this.P_info_1[4].value = this.user[1].value;
-    this.P_info_1[5].value = this.user[12].value;
-    this.P_info_1[6].value = this.user[11].value;
-    this.P_info_1[7].value = '';
-    this.P_info_1[8].value = this.user[9].value;
-    this.P_info_1[9].value = this.user[14].value;
-    this.P_info_1[10].value = '';
-    this.P_info_1[11].value = this.user[10].value;
-  
+    });
     switch (this.reposndatType) {
       case 'P_info_1':
-      this.fieldOBJ.push( {
-        item: this.P_info_1,
-        name: 'P_info_1'
-      });      
-       break;  
+        this.fieldOBJ.push({
+          item: this.P_info_1,
+          name: 'P_info_1'
+        });
+        break;
       case 'NonHCP':
-      this.fieldOBJ.push( {
-      item: this.NonHCP,
-      name: 'NonHCP'
-    });      
-       break;
+        this.fieldOBJ.push({
+          item: this.NonHCP,
+          name: 'NonHCP'
+        });
+        break;
       case 'OTHER_HCP':
-      this.fieldOBJ.push( {
-      item: this.OTHER_HCP,
-      name: 'OTHER_HCP'
-    });      
-       break;    
+        this.fieldOBJ.push({
+          item: this.OTHER_HCP,
+          name: 'OTHER_HCP'
+        });
+        break;
       case 'MD_PA_Lic_Info':
-      this.fieldOBJ.push( {
-      item: this.MD_PA_Lic_Info,
-      name: 'MD_PA_Lic_Info'
-    });      
-       break;
+        this.fieldOBJ.push({
+          item: this.MD_PA_Lic_Info,
+          name: 'MD_PA_Lic_Info'
+        });
+        break;
       case 'Pharm_Lic_Info':
-      this.fieldOBJ.push( {
-      item: this.Pharm_Lic_Info,
-      name: 'Pharm_Lic_Info'
-    });      
-       break;    
+        this.fieldOBJ.push({
+          item: this.Pharm_Lic_Info,
+          name: 'Pharm_Lic_Info'
+        });
+        break;
       case 'Nurse_Lic_Info':
-      this.fieldOBJ.push( {
-      item: this.Nurse_Lic_Info,
-      name: 'Nurse_Lic_Info'
-    });      
-       break;    
+        this.fieldOBJ.push({
+          item: this.Nurse_Lic_Info,
+          name: 'Nurse_Lic_Info'
+        });
+        break;
       case 'Payment_Email_Type':
-      this.fieldOBJ.push( {
-      item: this.Payment_Email_Type,
-      name: 'Payment_Email_Type'
-    });      
-       break;
+        this.fieldOBJ.push({
+          item: this.Payment_Email_Type,
+          name: 'Payment_Email_Type'
+        });
+        break;
       case 'acc_History':
-      this.fieldOBJ.push( {
-      item: this.acc_History,
-      name: 'acc_History'
-    });      
-       break;
+        this.fieldOBJ.push({
+          item: this.acc_History,
+          name: 'acc_History'
+        });
+        break;
       case 'profile_Info':
-      this.fieldOBJ.push( {
-      item: this.profile_Info,
-      name: 'profile_Info'
-    });      
-       break;
+        this.fieldOBJ.push({
+          item: this.profile_Info,
+          name: 'profile_Info'
+        });
+        break;
       case 'Ext_Profile':
-      this.fieldOBJ.push( {
-      item: this.Ext_Profile,
-      name: 'Ext_Profile'
-    });      
-       break;
-    
-  }
-  
-  // this.fieldOBJ = this.fieldData2;
+        this.fieldOBJ.push({
+          item: this.Ext_Profile,
+          name: 'Ext_Profile'
+        });
+        break;
+
+    }
+
+    // this.fieldOBJ = this.fieldData2;
     setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
   }
 
-  
+
   countChange(event): void {
     console.log(event);
 
   }
-  
+
 }
