@@ -7,6 +7,7 @@ import { SocialUser } from 'angularx-social-login';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 import { AuthGuardService } from './service/auth.service';
+import {MatDialog} from '@angular/material';
 @Component({
     selector: 'app-login-register',
     templateUrl: './login-register.component.html',
@@ -29,6 +30,7 @@ export class LoginRegisterComponent implements OnInit {
         private _authService: AuthService,
         private _authGuardService: AuthGuardService,
         private _biLoginService: LoginService,
+        public dialog: MatDialog,
         private router: Router
     ) {
         // Configure the layout
@@ -94,6 +96,15 @@ export class LoginRegisterComponent implements OnInit {
         localStorage.setItem('user', '');
     }
 
+    openDialog(): void {
+        const dialogRef = this.dialog.open(DialogContent);
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+
+
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
@@ -118,3 +129,12 @@ export class LoginRegisterComponent implements OnInit {
         });
     }
 }
+
+@Component({
+    selector: 'dialog-content-example-dialog',
+    templateUrl: 'dialog-content.html',
+  })
+  // tslint:disable-next-line:component-class-suffix
+  export class DialogContent {
+
+  }

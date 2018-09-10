@@ -187,7 +187,7 @@ export class ProfileComponent implements OnInit {
       defaultInputValue: '',
       componentType: 'bi-input-radio',
       options: [
-        'Paypal',
+        'PayPal',
         'Check'
       ],
       disabled: 'false',
@@ -1938,7 +1938,7 @@ export class ProfileComponent implements OnInit {
       this.P_info_1[2].value = this.user[6].value;
       this.P_info_1[3].value = this.user[5].value;
       this.P_info_1[4].value = this.user[4].value;
-      this.P_info_1[5].value = this.user[13].value;
+      this.P_info_1[5].value = this.user[8].value;
       this.P_info_1[6].value = this.user[1].value;
       this.P_info_1[7].value = this.user[12].value;
       this.P_info_1[8].value = this.user[11].value;
