@@ -1,0 +1,296 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["login-register-login-register-module"],{
+
+/***/ "./src/app/main/apps/login-register/contact-us/contact-us.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/main/apps/login-register/contact-us/contact-us.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  contact-us works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/contact-us/contact-us.component.scss":
+/*!*******************************************************************************!*\
+  !*** ./src/app/main/apps/login-register/contact-us/contact-us.component.scss ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/contact-us/contact-us.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/main/apps/login-register/contact-us/contact-us.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: ContactUsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactUsComponent", function() { return ContactUsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ContactUsComponent = /** @class */ (function () {
+    function ContactUsComponent() {
+    }
+    ContactUsComponent.prototype.ngOnInit = function () {
+    };
+    ContactUsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-contact-us',
+            template: __webpack_require__(/*! ./contact-us.component.html */ "./src/app/main/apps/login-register/contact-us/contact-us.component.html"),
+            styles: [__webpack_require__(/*! ./contact-us.component.scss */ "./src/app/main/apps/login-register/contact-us/contact-us.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ContactUsComponent);
+    return ContactUsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/login-register.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/main/apps/login-register/login-register.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"login\" fxLayout=\"column\">\n\n  <div id=\"login-form-wrapper\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\n\n      <div id=\"login-form\">\n\n          <div class=\"logo\">\n              <img src=\"assets/images/logos/bi-logo-with-tagline.svg\" style=\"border : blue 1px\">\n          </div>\n\n          <div class=\"title\">LOGIN TO YOUR ACCOUNT</div>\n\n          <form name=\"loginForm\" [formGroup]=\"loginForm\" novalidate>\n\n              <mat-form-field>\n                  <input matInput placeholder=\"Email\" formControlName=\"email\">\n                  <mat-error *ngIf=\"loginForm.get('email').hasError('required')\">\n                      Email is required\n                  </mat-error>\n                  <mat-error\n                      *ngIf=\"!loginForm.get('email').hasError('required') &&\n                              loginForm.get('email').hasError('email')\">\n                      Please enter a valid email address\n                  </mat-error>\n              </mat-form-field>\n\n              <mat-form-field>\n                  <input matInput type=\"password\" placeholder=\"Password\" formControlName=\"password\">\n                  <mat-error>\n                      Password is required\n                  </mat-error>\n              </mat-form-field>\n\n              <div class=\"remember-forgot-password\" fxLayout=\"row\" fxLayout.xs=\"column\"\n                   fxLayoutAlign=\"space-between center\">\n                  <mat-checkbox class=\"remember-me\" aria-label=\"Remember Me\">\n                      Remember Me\n                  </mat-checkbox>\n\n                  <a class=\"forgot-password\" [routerLink]=\"'/pages/auth/forgot-password'\">\n                      Forgot Password?\n                  </a>\n              </div>\n\n              <button mat-raised-button color=\"accent\" class=\"submit-button\" aria-label=\"LOG IN\"\n                      [disabled]=\"loginForm.invalid\">\n                  LOGIN\n              </button>\n\n          </form>\n\n          <div class=\"separator\">\n              <span class=\"text\">OR</span>\n          </div>\n\n          <button mat-raised-button class=\"google\">\n              Log in with Google\n          </button>\n\n          <button mat-raised-button class=\"facebook\">\n              Log in with Facebook\n          </button>\n\n          <div class=\"register\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\n              <span class=\"text\">Don't have an account?</span>\n              <a class=\"link\" [routerLink]=\"'/pages/auth/register'\">Create an account</a>\n          </div>\n\n      </div>\n\n  </div>\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/login-register.component.scss":
+/*!************************************************************************!*\
+  !*** ./src/app/main/apps/login-register/login-register.component.scss ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/**\n * Applies styles for users in high contrast mode. Note that this only applies\n * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`\n * attribute, however Chrome handles high contrast differently.\n * @param target Which kind of high contrast setting to target. Defaults to `active`, can be\n *    `white-on-black` or `black-on-white`.\n */\n/* Theme for the ripple elements.*/\n/* stylelint-disable material/no-prefixes */\n/* stylelint-enable */\n:host #login {\n  width: 100%;\n  background: url(\"/assets/images/backgrounds/dark-material-bg.jpg\") no-repeat;\n  background-size: cover; }\n:host #login #login-form-wrapper {\n    flex: 1 0 auto;\n    padding: 32px; }\n@media screen and (max-width: 599px) {\n      :host #login #login-form-wrapper {\n        padding: 16px; } }\n:host #login #login-form-wrapper #login-form {\n      width: 384px;\n      max-width: 384px;\n      padding: 32px;\n      background: #FFFFFF;\n      text-align: center;\n      box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12); }\n@media screen and (max-width: 599px) {\n        :host #login #login-form-wrapper #login-form {\n          padding: 24px;\n          width: 100%; } }\n:host #login #login-form-wrapper #login-form .logo {\n        width: 128px;\n        margin: 32px auto; }\n:host #login #login-form-wrapper #login-form .title {\n        font-size: 20px;\n        margin: 16px 0 32px 0; }\n:host #login #login-form-wrapper #login-form form {\n        width: 100%;\n        text-align: left; }\n:host #login #login-form-wrapper #login-form form mat-form-field {\n          width: 100%; }\n:host #login #login-form-wrapper #login-form form mat-checkbox {\n          margin: 0; }\n:host #login #login-form-wrapper #login-form form .remember-forgot-password {\n          font-size: 13px;\n          margin-top: 8px; }\n:host #login #login-form-wrapper #login-form form .remember-forgot-password .remember-me {\n            margin-bottom: 16px; }\n:host #login #login-form-wrapper #login-form form .remember-forgot-password .forgot-password {\n            font-size: 13px;\n            font-weight: 500;\n            margin-bottom: 16px; }\n:host #login #login-form-wrapper #login-form form .submit-button {\n          width: 220px;\n          margin: 16px auto;\n          display: block; }\n@media screen and (max-width: 599px) {\n            :host #login #login-form-wrapper #login-form form .submit-button {\n              width: 90%; } }\n:host #login #login-form-wrapper #login-form .register {\n        margin: 32px auto 24px auto;\n        font-weight: 500; }\n:host #login #login-form-wrapper #login-form .register .text {\n          margin-right: 8px; }\n:host #login #login-form-wrapper #login-form .separator {\n        font-size: 15px;\n        font-weight: 600;\n        margin: 24px auto;\n        position: relative;\n        overflow: hidden;\n        width: 100px;\n        color: rgba(0, 0, 0, 0.54); }\n:host #login #login-form-wrapper #login-form .separator .text {\n          display: inline-flex;\n          position: relative;\n          padding: 0 8px;\n          z-index: 9999; }\n:host #login #login-form-wrapper #login-form .separator .text:before, :host #login #login-form-wrapper #login-form .separator .text:after {\n            content: '';\n            display: block;\n            width: 30px;\n            position: absolute;\n            top: 10px;\n            border-top: 1px solid rgba(0, 0, 0, 0.12); }\n:host #login #login-form-wrapper #login-form .separator .text:before {\n            right: 100%; }\n:host #login #login-form-wrapper #login-form .separator .text:after {\n            left: 100%; }\n:host #login #login-form-wrapper #login-form button.google, :host #login #login-form-wrapper #login-form button.facebook {\n        width: 192px;\n        text-transform: none;\n        color: #FFFFFF;\n        font-size: 13px; }\n@media screen and (max-width: 599px) {\n        :host #login #login-form-wrapper #login-form button {\n          width: 80%; } }\n:host #login #login-form-wrapper #login-form button.google {\n        background-color: #D73D32;\n        margin-bottom: 8px; }\n:host #login #login-form-wrapper #login-form button.facebook {\n        background-color: #3f5c9a; }\n"
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/login-register.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/main/apps/login-register/login-register.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: LoginRegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginRegisterComponent", function() { return LoginRegisterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _fuse_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fuse/services/config.service */ "./src/@fuse/services/config.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LoginRegisterComponent = /** @class */ (function () {
+    /**
+     * Constructor
+     *
+     * @param {FuseConfigService} _fuseConfigService
+     * @param {FormBuilder} _formBuilder
+     */
+    function LoginRegisterComponent(_fuseConfigService, _formBuilder) {
+        this._fuseConfigService = _fuseConfigService;
+        this._formBuilder = _formBuilder;
+        // Configure the layout
+        this._fuseConfigService.config = {
+            layout: {
+                navbar: {
+                    hidden: true
+                },
+                toolbar: {
+                    hidden: true
+                },
+                footer: {
+                    hidden: true
+                },
+                sidepanel: {
+                    hidden: true
+                }
+            }
+        };
+    }
+    // -----------------------------------------------------------------------------------------------------
+    // @ Lifecycle hooks
+    // -----------------------------------------------------------------------------------------------------
+    /**
+     * On init
+     */
+    LoginRegisterComponent.prototype.ngOnInit = function () {
+        this.loginForm = this._formBuilder.group({
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].email]],
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    LoginRegisterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-login-register',
+            template: __webpack_require__(/*! ./login-register.component.html */ "./src/app/main/apps/login-register/login-register.component.html"),
+            styles: [__webpack_require__(/*! ./login-register.component.scss */ "./src/app/main/apps/login-register/login-register.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_fuse_services_config_service__WEBPACK_IMPORTED_MODULE_2__["FuseConfigService"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]])
+    ], LoginRegisterComponent);
+    return LoginRegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/login-register.module.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/main/apps/login-register/login-register.module.ts ***!
+  \*******************************************************************/
+/*! exports provided: LoginRegisterModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginRegisterModule", function() { return LoginRegisterModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _fuse_shared_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fuse/shared.module */ "./src/@fuse/shared.module.ts");
+/* harmony import */ var _login_register_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./login-register.component */ "./src/app/main/apps/login-register/login-register.component.ts");
+/* harmony import */ var _contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./contact-us/contact-us.component */ "./src/app/main/apps/login-register/contact-us/contact-us.component.ts");
+/* harmony import */ var _profile_profile_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./profile/profile.component */ "./src/app/main/apps/login-register/profile/profile.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var routes = [
+    {
+        path: 'auth/login',
+        component: _login_register_component__WEBPACK_IMPORTED_MODULE_4__["LoginRegisterComponent"]
+    },
+    {
+        path: 'auth/contact',
+        component: _contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_5__["ContactUsComponent"]
+    }
+];
+var LoginRegisterModule = /** @class */ (function () {
+    function LoginRegisterModule() {
+    }
+    LoginRegisterModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes),
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatInputModule"],
+                _fuse_shared_module__WEBPACK_IMPORTED_MODULE_3__["FuseSharedModule"]
+            ],
+            declarations: [_login_register_component__WEBPACK_IMPORTED_MODULE_4__["LoginRegisterComponent"], _contact_us_contact_us_component__WEBPACK_IMPORTED_MODULE_5__["ContactUsComponent"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_6__["ProfileComponent"]]
+        })
+    ], LoginRegisterModule);
+    return LoginRegisterModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/profile/profile.component.html":
+/*!*************************************************************************!*\
+  !*** ./src/app/main/apps/login-register/profile/profile.component.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  profile works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/profile/profile.component.scss":
+/*!*************************************************************************!*\
+  !*** ./src/app/main/apps/login-register/profile/profile.component.scss ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/main/apps/login-register/profile/profile.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/main/apps/login-register/profile/profile.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: ProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfileComponent", function() { return ProfileComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProfileComponent = /** @class */ (function () {
+    function ProfileComponent() {
+    }
+    ProfileComponent.prototype.ngOnInit = function () {
+    };
+    ProfileComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-profile',
+            template: __webpack_require__(/*! ./profile.component.html */ "./src/app/main/apps/login-register/profile/profile.component.html"),
+            styles: [__webpack_require__(/*! ./profile.component.scss */ "./src/app/main/apps/login-register/profile/profile.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ProfileComponent);
+    return ProfileComponent;
+}());
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=login-register-login-register-module.js.map

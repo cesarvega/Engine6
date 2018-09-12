@@ -1,8 +1,17 @@
 @import "src/@fuse/scss/fuse";
 
 fuse-sidebar {
+    .mat-blue-bi-bg  {
 
-    &.navbar-fuse-sidebar {
+        background-color: #1e376d !important;
+        color: white !important;
+
+        .h5{
+        background-color: #1e376d !important;
+        color: whitesmoke !important; }
+    }
+  
+     &.navbar-fuse-sidebar {
         overflow: hidden;
 
         &.folded:not(.unfolded) {
@@ -122,7 +131,7 @@ navbar {
                 .logo-text {
                     margin-left: 12px;
                     font-size: 16px;
-                    font-weight: 300;
+                    font-weight: 400;
                     letter-spacing: 0.4px;
                     line-height: normal;
                 }
@@ -151,11 +160,11 @@ navbar {
                 align-items: center;
                 justify-content: flex-start;
                 width: 100%;
-                padding: 24px 0 64px 0;
+                padding: 24px 0 70px 0;
 
                 .avatar-container {
                     position: absolute;
-                    top: 92px;
+                    top: 87px;
                     border-radius: 50%;
                     padding: 8px;
                     transform: translateX(-50%);

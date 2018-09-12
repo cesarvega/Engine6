@@ -179,7 +179,7 @@ export class FuseThemeOptionsComponent implements OnInit, OnDestroy
                     layout: {
                         width  : 'fullwidth',
                         navbar : {
-                            background: 'mat-fuse-dark-700-bg',
+                            background: 'mat-fuse-dark-50-bg',
                             folded    : false,
                             hidden    : false,
                             position  : 'left',
@@ -273,7 +273,7 @@ export class FuseThemeOptionsComponent implements OnInit, OnDestroy
                             variant   : 'vertical-style-1'
                         },
                         toolbar: {
-                            background: 'mat-white-500-bg',
+                            background: 'mat-fuse-dark-500-bg',
                             hidden    : false,
                             position  : 'above'
                         },

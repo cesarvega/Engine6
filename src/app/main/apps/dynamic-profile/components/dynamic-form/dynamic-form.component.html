@@ -1,13 +1,12 @@
 <mat-card >
-    <mat-card-content fxFlex="100">
-        <form class="p-18" fxFlex="100" fxLayoutAlign="start center" fxLayout="row wrap" [formGroup]="form" (submit)="onSubmit($event)">
-            <div>
+    <mat-card-content  fxLayout="column" fxFlex="100" >
+        <form  [formGroup]="form" (submit)="onSubmit($event)">
                 <ng-container *ngFor="let field of fields;" dynamicField [field]="field" [group]="form">
                 </ng-container>
-                <div class="form-row">
-                    <button type="submit" [disabled]="!form.valid">Save</button>
-                  </div>
-            </div>
+                <br>
+                <div style=" display: flex;align-items: center;align-items: center;justify-content: center;">
+                    <button  mat-raised-button color="primary"  type="submit" >Save</button>
+                </div> 
         </form>
     </mat-card-content>
 </mat-card>

@@ -3,29 +3,58 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { LoginRegisterComponent } from './login-register.component';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
+import { GoodbayComponent } from './goodbay/goodbay.component';
+import { SuccessfulPasswordResetComponent } from './successful-password-reset/successful-password-reset.component';
+import { ForgotPasswordThankyouComponent } from './forgot-password-thankyou/forgot-password-thankyou.component';
 const routes: Routes = [
   {
-    path     : 'auth/login',
-      component: LoginRegisterComponent
-  } ,
-  {
-    path     : 'auth/register',
-    component: RegistrationFormComponent
+    path: 'auth/login',
+    component: LoginRegisterComponent
   }
   ,
   {
-    path     : 'auth/contact',
+    path: 'contact-us',
     component: ContactUsComponent
+  }
+  ,
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
+  },
+  {
+    path: 'change-password',
+    component: ChangePasswordComponent
+  },
+  {
+    path: 'thankyou',
+    component: ThankyouComponent
+  },
+  {
+    path: 'unsubscribe',
+    component: UnsubscribeComponent
+  },
+  {
+    path: 'successful-password-reset',
+    component: SuccessfulPasswordResetComponent
+  },
+  {
+    path: 'forgot-password-success',
+    component: ForgotPasswordThankyouComponent
+  },
+  {
+    path: 'goodbay',
+    component: GoodbayComponent
   }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -33,6 +62,15 @@ const routes: Routes = [
 
     FuseSharedModule
   ],
-  declarations: [LoginRegisterComponent, RegistrationFormComponent, ContactUsComponent, ProfileComponent]
+  declarations: [LoginRegisterComponent,
+    ContactUsComponent,
+    ForgotPasswordComponent,
+    ChangePasswordComponent,
+    UnsubscribeComponent,
+    ThankyouComponent,
+    GoodbayComponent,
+    SuccessfulPasswordResetComponent,
+    ForgotPasswordThankyouComponent
+  ]
 })
 export class LoginRegisterModule { }

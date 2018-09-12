@@ -12,22 +12,38 @@ const routes = [
         loadChildren: './surveys/surveys.module#SurveysModule'
     },
     {
-        path: 'dynamic-profile',
+        path: 'profile',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
     },
     {
-        path: 'smart',
-        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
-    },
-    {
-        path: 'login-register',
+        path: 'login',
         loadChildren: './login-register/login-register.module#LoginRegisterModule'
     },
+    {
+        path: 'register',
+        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+    },
+    {
+        path: 'scrumboard',
+        loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
+    },
+    {
+        path: 'change-password',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule'
+    },
+    {
+        path: 'unsubscribe',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule'
+    },
+    {
+        path: '**',
+        redirectTo: 'dashboards/analytics'
+    }
     // {
     //     path: 'dashboards/project',
     //     loadChildren: './dashboards/project/project.module#ProjectDashboardModule'
     // },
-   
+
     // {
     //     path: 'dynamic-forms',
     //     loadChildren: './dynamic-forms/render-component/render.module#RenderModule'
@@ -76,17 +92,14 @@ const routes = [
     //     path: 'contacts',
     //     loadChildren: './contacts/contacts.module#ContactsModule'
     // },
-    {
-        path: 'scrumboard',
-        loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
-    }
+
 ];
 
 @NgModule({
     imports: [
         RouterModule.forChild(routes),
         FuseSharedModule
-        
+
     ]
 })
 export class AppsModule {

@@ -16,15 +16,22 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 import { FuseSharedModule } from '@fuse/shared.module';
 import { SmartComponent } from '../smart/smart.component';
 import { LabelComponent } from './components/textlabel/textlabel.component';
+import { RegistrationFormComponent } from '../login-register/registration-form/registration-form.component';
+import { ProfileComponent } from '../login-register/profile/profile.component';
 const routes: Routes = [
   {
-    path     : 'profile',
-      component: DynamicProfileComponent
+    path     : 'user/profile',
+      component: ProfileComponent
   }
   ,
   {
-    path     : 'smart',
+    path     : 'form',
       component: SmartComponent
+  }
+  ,
+  {
+    path     : 'auth/register',
+    component: RegistrationFormComponent
   }
 ];
 @NgModule({
@@ -37,7 +44,9 @@ const routes: Routes = [
     FuseSharedModule
   ],
   declarations:   [
+    ProfileComponent,
     SmartComponent,
+    RegistrationFormComponent,
     DynamicProfileComponent,
     InputComponent,
     ButtonComponent,
