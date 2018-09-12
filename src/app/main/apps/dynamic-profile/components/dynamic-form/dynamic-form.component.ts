@@ -27,11 +27,13 @@ export class DynamicFormComponent implements OnInit {
   onSubmit(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
-    if (this.form.value['Password *'].length < 6) {
-      this.form.controls['Password *'].setErrors({ 'min': true });
-    }
-    if (this.form.value['Password *'] !== this.form.value['confirm password *']) {
-      this.form.controls['confirm password *'].setErrors({ 'required': true });
+    if (this.form.value['Password *']) {
+      if (this.form.value['Password *'].length < 6) {
+        this.form.controls['Password *'].setErrors({ 'min': true });
+      }
+      if (this.form.value['Password *'] !== this.form.value['confirm password *']) {
+        this.form.controls['confirm password *'].setErrors({ 'required': true });
+      }
     }
     if (this.form.valid) {
       this.submitForm.emit(this.form.value);
@@ -46,7 +48,7 @@ export class DynamicFormComponent implements OnInit {
     this.fields.forEach(field => {
       if (field.type === 'button') { return; }
       const control = this.fb.control(
-        {value: field.value, disabled: (field.disabled === 'false') ? false : true},        
+        { value: field.value, disabled: (field.disabled === 'false') ? false : true },
         this.bindValidations(field.validations || [])
       );
       group.addControl(field.name, control);
