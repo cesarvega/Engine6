@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatExpansionModule, MatIconModule } from '@angular/material';
 import { FuseSharedModule } from '@fuse/shared.module';
-import { LoginRegisterComponent } from './login-register.component';
+import { LoginRegisterComponent, DialogContent } from './login-register.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
@@ -15,6 +15,7 @@ import { FaqComponent } from './faq/faq.component';
 import { FaqService } from './faq/faq.service';
 import { AuthGuard } from './service/auth-guard.service';
 import { AuthGuardService } from './service/auth.service';
+import {MatDialogModule} from '@angular/material/dialog';
 const routes: Routes = [
   {
     path: 'auth/login',
@@ -78,13 +79,14 @@ const routes: Routes = [
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    
+    MatDialogModule,
     MatExpansionModule,
     MatIconModule,
-
-    FuseSharedModule
+    FuseSharedModule,
   ],
-  declarations: [LoginRegisterComponent,
+  declarations: [
+    LoginRegisterComponent,
+    DialogContent,
     ContactUsComponent,
     ForgotPasswordComponent,
     ChangePasswordComponent,
@@ -97,6 +99,6 @@ const routes: Routes = [
   ],
   providers   : [
       FaqService, AuthGuard, AuthGuardService
-  ]
+  ], entryComponents: [DialogContent]
 })
 export class LoginRegisterModule { }

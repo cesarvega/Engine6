@@ -21,6 +21,83 @@ export class RegistrationFormComponent implements OnInit {
 
   P_info_1: FieldConfig2[] = [
     {
+      labelValue: 'Email *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your email Address',
+      type: 'input',
+      label: 'Email *',
+      name: 'Email *',
+      value: '',
+      inputType: 'email',
+      validations: [
+        {
+          name: 'pattern',
+          validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+          message: 'please enter a valid email address'
+        },
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'please enter an email address'
+        }
+      ]
+    },
+    {
+      labelValue: 'password *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your password',
+      type: 'input',
+      label: 'Password *',
+      name: 'Password *',
+      value: '',
+      inputType: 'password',
+      validations: [     
+        {
+          name: 'min',
+          validator:  Validators.minLength(6),
+          message: 'please enter 6 characters minimun'
+        }
+      ]
+    },
+    {
+      labelValue: 'confirm password *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your confirm password',
+      type: 'input',
+      label: 'confirm password *',
+      name: 'confirm password *',
+      value: '',
+      inputType: 'password',
+      validations: [     
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'password not matching'
+        }
+      ]
+    },
+    {
       labelValue: 'First name *',
       icon: '',
       defaultInputValue: '',
@@ -40,7 +117,7 @@ export class RegistrationFormComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must enter first name'
+          message: 'please enter first name'
         }
       ]
     },
@@ -59,14 +136,7 @@ export class RegistrationFormComponent implements OnInit {
       label: 'Middle name',
       name: 'Middle name',
       value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      inputType: 'text'
     },
     {
       labelValue: 'Last name *',
@@ -88,7 +158,7 @@ export class RegistrationFormComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must enter last name'
+          message: 'please enter last name'
         }
       ]
     },
@@ -120,6 +190,33 @@ export class RegistrationFormComponent implements OnInit {
       ]
     },
     {
+      labelValue: 'Select preferred payment method *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-radio',
+      options: [
+        'Paypal',
+        'Check'
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: '',
+      type: 'radiobutton',
+      label: 'Select preferred payment method *',
+      name: 'Select preferred payment method *',
+      value: '',
+      inputType: 'bi-input-radio',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'please select payment method is required'
+        }
+      ]
+    },
+    {
       labelValue: 'Date of birth *',
       icon: '',
       defaultInputValue: '1999-06-15',
@@ -129,7 +226,7 @@ export class RegistrationFormComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'input',
+      type: 'date',
       label: 'Date of birth *',
       name: 'Date of birth *',
       value: '',
@@ -138,7 +235,7 @@ export class RegistrationFormComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must enter your date of birth is required'
+          message: 'please enter your date of birth is required'
         }
       ]
     },
@@ -178,8 +275,8 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Address 1',
       type: 'input',
-      label: 'Mailing street address 1 *',
-      name: 'Mailing street address 1 *',
+      label: 'Mailing street address *',
+      name: 'Mailing street address *',
       value: '',
       inputType: 'text',
       validations: [
@@ -201,17 +298,10 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Address 2',
       type: 'input',
-      label: 'Mailing street address 2',
-      name: 'Mailing street address 2',
+      label: 'Mailing street/#apto/unit',
+      name: 'Mailing street/#apto/unit',
       value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      inputType: 'text'
     }, {
       labelValue: 'Select State/Province *',
       icon: 'sql',
@@ -233,7 +323,7 @@ export class RegistrationFormComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Select your state/province of residency'
+          message: 'please select your state/province of residency'
         }
       ]
     },
@@ -273,64 +363,24 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cell Phone',
-      name: 'Cell Phone',
+      label: 'Cellphone *',
+      name: 'Cellphone *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'cellphone number is required'
         }
       ]
     },
     {
-      labelValue: 'Specify your profession or occupation in order to continue',
+      labelValue: 'Specify your profession or occupation',
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-dropdown',
       options: [
-        {
-          'names': 'Not related to Health Care',
-          'values': 'NonHCP'
-        },
-        {
-          'names': 'Physician/Doctor of Medicine (MD, DO)',
-          'values': 'MD_PA_lic_Info'
-        },
-        {
-          'names': 'Physician Assistant (PA)',
-          'values': 'MD_PA_lic_Info'
-        },
-        {
-          'names': 'Nurse',
-          'values': 'Nurse_Lic_Info'
-        },
-        {
-          'names': 'Pharmacist',
-          'values': 'Pharm_Lic_Info'
-        },
-        {
-          'names': 'Pharmacist Technician',
-          'values': 'Pharm_Lic_Info'
-        },
-        {
-          'names': 'Dentist',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Optometrist',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Veterinarian',
-          'values': 'OTHER_HCP'
-        },
-        {
-          'names': 'Allied Health Care Profession or Occupation',
-          'values': 'OTHER_HCP'
-        },
         'Not related to Health Care',
         'Physician/Doctor of Medicine (MD, DO)',
         'Physician Assistant (PA)',
@@ -348,8 +398,8 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select Profession/Occupation',
       type: 'select',
-      label: 'Specify your profession or occupation in order to continue',
-      name: 'Specify your profession or occupation in order to continue',
+      label: 'Specify your profession or occupation',
+      name: 'Specify your profession or occupation',
       value: '',
       inputType: '',
       validations: [
@@ -359,34 +409,8 @@ export class RegistrationFormComponent implements OnInit {
           message: 'Profession is required'
         }
       ]
-    },
-    {
-      labelValue: '',
-      icon: 'question',
-      defaultInputValue: 'Your profile information is used to match up with defined research specifications in order to determine which research studies you will be invited to participate. We need to collect some of your personal information to know who you are and where to send you the payment when the time arrives.',
-      componentType: 'bi-help',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: '',
-      name: '',
-      value: '',
-      inputType: '',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
-
   ];
-
   fieldData2 = [
     {
       item: this.P_info_1,
