@@ -4,9 +4,10 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { AuthService } from 'angularx-social-login';
 import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
-import { LoginRegisterService } from './service/login-register.service';
 import { LoginService } from './login.service';
 import { Router } from '@angular/router';
+import { AuthGuardService } from './service/auth.service';
+import {MatDialog} from '@angular/material';
 @Component({
     selector: 'app-login-register',
     templateUrl: './login-register.component.html',
@@ -26,9 +27,10 @@ export class LoginRegisterComponent implements OnInit {
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
-        private _LoginRegisterService: LoginRegisterService,
         private _authService: AuthService,
+        private _authGuardService: AuthGuardService,
         private _biLoginService: LoginService,
+        public dialog: MatDialog,
         private router: Router
     ) {
         // Configure the layout
@@ -52,19 +54,27 @@ export class LoginRegisterComponent implements OnInit {
 
 
     signInWithBI(user?: SocialUser): void {
-        console.log(this.loginForm.value);
-        if (user){
+        // console.log(this.loginForm.value);
+        if (user) {
             this.loginForm.value.email = user.email;
             this.loginForm.value.email = user.id;
         }
         this._biLoginService.signAndRegistrationAuth('\'' + this.loginForm.value.email + '\'' + ',' + '\'' + this.loginForm.value.password + '\'').subscribe(res => {
-            console.log(res[0]);
+
             if (res[0].verified === 'True') {
-                this.router.navigateByUrl('/apps/dashboards/analytics');
+                localStorage.setItem('user', res[0].message);
+                if (this._authGuardService.login()) {
+                    this.router.navigateByUrl('/apps/dashboards/analytics');
+                } else {
+                    this._authGuardService.logout();
+                }
+            }else {
+                
             }
+
         });
         // this._biLoginService.postUser(this.loginForm.value.email).subscribe(res => {
-        //     console.log(JSON.parse(res[0].profile));            
+        // console.log(JSON.parse(res[0].profile));            
         // });
 
     }
@@ -83,7 +93,17 @@ export class LoginRegisterComponent implements OnInit {
 
     signOut(): void {
         this._authService.signOut();
+        localStorage.setItem('user', '');
     }
+
+    openDialog(): void {
+        const dialogRef = this.dialog.open(DialogContent);
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -93,11 +113,12 @@ export class LoginRegisterComponent implements OnInit {
      * On init
      */
     ngOnInit(): void {
-        this.signOut();
+        this._authGuardService.logout();
         this._authService.authState.subscribe((user) => {
             this.user = user;
             this.loggedIn = (user != null);
-            if (this.loggedIn) {                
+
+            if (this.loggedIn) {
                 this.signInWithBI(user);
             }
         });
@@ -108,3 +129,12 @@ export class LoginRegisterComponent implements OnInit {
         });
     }
 }
+
+@Component({
+    selector: 'dialog-content-example-dialog',
+    templateUrl: 'dialog-content.html',
+  })
+  // tslint:disable-next-line:component-class-suffix
+  export class DialogContent {
+
+  }

@@ -1,43 +1,55 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FuseSharedModule } from '@fuse/shared.module';
+import { AuthGuard } from './login-register/service/auth-guard.service';
+import { AuthGuardService } from './login-register/service/auth.service';
 
 const routes = [
-    {
-        path: 'dashboards/analytics',
-        loadChildren: './dashboards/analytics/analytics.module#AnalyticsDashboardModule'
-    },
-    {
-        path: 'surveys',
-        loadChildren: './surveys/surveys.module#SurveysModule'
-    },
-    {
-        path: 'profile',
-        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
-    },
     {
         path: 'login',
         loadChildren: './login-register/login-register.module#LoginRegisterModule'
     },
     {
-        path: 'register',
-        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+        path: 'dashboards/analytics',
+        loadChildren: './dashboards/analytics/analytics.module#AnalyticsDashboardModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'surveys',
+        loadChildren: './surveys/surveys.module#SurveysModule',
+        canActivate: [AuthGuard]        
+    },    
+    {
+        path: 'profile',
+        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'change-password',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'unsubscribe',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule',
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'faq',
+        loadChildren: './login-register/login-register.module#LoginRegisterModule',
+        canActivate: [AuthGuard]
     },
     {
         path: 'scrumboard',
         loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
     },
     {
-        path: 'change-password',
-        loadChildren: './login-register/login-register.module#LoginRegisterModule'
-    },
-    {
-        path: 'unsubscribe',
-        loadChildren: './login-register/login-register.module#LoginRegisterModule'
-    },
+        path: 'register',
+        loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+    },      
     {
         path: '**',
-        redirectTo: 'dashboards/analytics'
+        redirectTo: 'login'
     }
     // {
     //     path: 'dashboards/project',
@@ -100,7 +112,7 @@ const routes = [
         RouterModule.forChild(routes),
         FuseSharedModule
 
-    ]
+    ], providers: [ AuthGuard, AuthGuardService]
 })
 export class AppsModule {
 }
