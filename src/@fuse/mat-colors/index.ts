@@ -697,7 +697,7 @@ export class MatColors
 
     public static presets = matPresetColors;
 
-    public static getColor(colorName): boolean
+    public static getColor(colorName): any
     {
         if ( matColors[colorName] )
         {
