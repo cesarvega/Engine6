@@ -82,7 +82,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +119,7 @@ const appRoutes: Routes = [
     AppComponent
   ],
   // providers: [{ provide: APP_BASE_HREF, useValue: '/corporate/'}, 
-  providers: [{ provide: APP_BASE_HREF, useValue: '/unity/' },
+  providers: [{ provide: APP_BASE_HREF, useValue: '/3chem/' },
   { provide: AuthServiceConfig, useFactory: provideConfig}
   ]
 })
