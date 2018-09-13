@@ -191,7 +191,7 @@ export class FuseThemeOptionsComponent implements OnInit, OnDestroy
                             position  : 'below-static'
                         },
                         footer : {
-                            background: 'mat-fuse-dark-900-bg',
+                            background: 'mat-fuse-dark-50-bg',
                             hidden    : false,
                             position  : 'below-static'
                         }
