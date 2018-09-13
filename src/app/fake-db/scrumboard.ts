@@ -6,14 +6,14 @@ export class ScrumboardFakeDb
             'name'    : 'ACME Frontend Application',
             'uri'     : 'acme-frontend-application',
             'settings': {
-                'color'          : 'fuse-dark',
+                'color'          : 'mat-white',
                 'subscribed'     : false,
                 'cardCoverImages': true
             },
             'lists'   : [
                 {
                     'id'     : '56027cf5a2ca3839a5d36103',
-                    'name'   : 'Design',
+                    'name'   : 'LAB',
                     'idCards': [
                         '5603a2a3cab0c8300f6096b3',
                         '44d1.2b51ea6cc2b5d.21f4a3412e857.8ffa2d8b44ad9.ac87215ed53a1.67d4921ad8f8d.9f318bcb2'
@@ -21,7 +21,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'     : '56127cf2a2ca3539g7d36103',
-                    'name'   : 'Development',
+                    'name'   : 'SHIPPING',
                     'idCards': [
                         '2837273da9b93dd84243s0f9',
                         '5787b7e4740c57bf0dffd5b6',
@@ -31,7 +31,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'     : 'faf244627326f1249525763d',
-                    'name'   : 'Upcoming Features',
+                    'name'   : 'STOCK',
                     'idCards': [
                         'd9005a4b89ed2aadca48a6ad',
                         'f6b9d7a9247e5d794a081927',
@@ -42,7 +42,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'     : 'ad7d.9fffac5dff412.c83bca6853767.8fd7549b2b1ca.ceda8a01774c4.a5cf3976e87e4.ce79eeeea',
-                    'name'   : 'Known Bugs',
+                    'name'   : 'COMPLETED',
                     'idCards': [
                         'acc6.9c673cd2f5e35.521e91d8d5991.4b2a95e0539d1.027930c0743c5.7ad1ea7bea476.e8fbe6347',
                         '3279.3d69b40cc0b75.690252b6bea08.1e1789b0b7c2e.2f264b8661ce2.84d5f56910e23.429be5e8a',
@@ -53,8 +53,8 @@ export class ScrumboardFakeDb
             'cards'   : [
                 {
                     'id'               : '2837273da9b93dd84243s0f9',
-                    'name'             : 'Update generators',
-                    'description'      : 'Current generator doesn\'t support Node.js 6 and above.',
+                    'name'             : 'SO 29033 KLX AEROSPACE SOLUTIONS',
+                    'description'      : 'GLOSS BLACK EPOXY BAC 701',
                     'idAttachmentCover': '',
                     'idMembers'        : [
                         '26027s1930450d8bf7b10828'
@@ -79,9 +79,9 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '5603a2a3cab0c8300f6096b3',
-                    'name'             : 'Change background colors',
-                    'description'      : '',
-                    'idAttachmentCover': '67027cahbe3b52ecf2dc631c',
+                    'name'             : 'SO 29456 LOTUS AVIATION GROUP',
+                    'description'      : 'Order Description and comments, use this area to create instructions and updates on this order',
+                    'idAttachmentCover': '',
                     'idMembers'        : [
                         '76027g1930450d8bf7b10958'
                     ],
@@ -109,42 +109,64 @@ export class ScrumboardFakeDb
                     'checklists'       : [
                         {
                             'id'               : '63021cfdbe1x72wcf1fc451v',
-                            'name'             : 'Checklist',
+                            'name'             : 'ORDER ITEMS',
                             'checkItemsChecked': 1,
                             'checkItems'       : [
                                 {
-                                    'name'   : 'Implement a calendar library',
+                                    'name'   : 'C201-1083B                             Quantity                       4',
                                     'checked': false
                                 },
                                 {
-                                    'name'   : 'Replace event colors with Material Design colors',
+                                    'name'   : 'G11-1006X                             Quantity                        3',
                                     'checked': true
                                 },
                                 {
-                                    'name'   : 'Replace icons with Material Design icons',
+                                    'name'   : 'G11-1006X                             Quantity                        5',
                                     'checked': false
                                 },
                                 {
-                                    'name'   : 'Use moment.js',
+                                    'name'   : 'G11-1045B                             Quantity                        2',
                                     'checked': false
                                 }
                             ]
-                        },
+                        },                       
                         {
-                            'name'             : 'Checklist 2',
+                            'name'             : 'SHIPPING OPTIONS',
                             'id'               : '74031cfdbe1x72wcz1dc166z',
                             'checkItemsChecked': 1,
                             'checkItems'       : [
                                 {
-                                    'name'   : 'Replace event colors with Material Design colors',
+                                    'name'   : 'FEDEX GROUND',
                                     'checked': true
                                 },
                                 {
-                                    'name'   : 'Replace icons with Material Design icons',
+                                    'name'   : 'FEDEX P1',
                                     'checked': false
                                 },
                                 {
-                                    'name'   : 'Use moment.js',
+                                    'name'   : 'Custom Shipping',
+                                    'checked': false
+                                }
+                            ]
+                        }, {
+                            'id'               : '63021cfdbe1x72wcf1fc451z',
+                            'name'             : 'MISSING RAW MATERIALS',
+                            'checkItemsChecked': 1,
+                            'checkItems'       : [
+                                {
+                                    'name'   : 'C201-1083B',
+                                    'checked': false
+                                },
+                                {
+                                    'name'   : 'G11-1006X',
+                                    'checked': true
+                                },
+                                {
+                                    'name'   : 'G11-1006X',
+                                    'checked': false
+                                },
+                                {
+                                    'name'   : 'G11-1045B',
                                     'checked': false
                                 }
                             ]
@@ -155,12 +177,12 @@ export class ScrumboardFakeDb
                     'comments'         : [
                         {
                             'idMember': '56027c1930450d8bf7b10758',
-                            'message' : 'We should be able to add moment.js without any problems',
+                            'message' : 'We should be able to add comments without any problems',
                             'time'    : '12 mins. ago'
                         },
                         {
                             'idMember': '36027j1930450d8bf7b10158',
-                            'message' : 'I added a link for a page that might help us deciding the colors',
+                            'message' : 'I added all material yestarday',
                             'time'    : '30 mins. ago'
                         }
                     ],
@@ -185,7 +207,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '5637273da9b93bb84743a0f9',
-                    'name'             : 'Fix splash screen bugs',
+                    'name'             : 'SO 29765 H.A.S. AVIATION CORP',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -205,7 +227,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : 'd9005a4b89ed2aadca48a6ad',
-                    'name'             : 'Add alternative authentication pages',
+                    'name'             : 'SO 290389 SAFRAN LANDING SYST. WHEEL & BRAKE SERV',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -254,7 +276,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '5787b7e4740c57bf0dffd5b6',
-                    'name'             : 'Fix the console',
+                    'name'             : 'SO 34563 AVIATION REPAIR TECHNOLOGIES LLC',
                     'description'      : 'We need to fix the console asap!',
                     'idAttachmentCover': '',
                     'idMembers'        : [],
@@ -278,7 +300,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : 'f6b9d7a9247e5d794a081927',
-                    'name'             : 'New media player',
+                    'name'             : 'SO 34534 PROFESSIONAL TECHNOLOGY REPAIRS',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -301,7 +323,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : 'acc6.9c673cd2f5e35.521e91d8d5991.4b2a95e0539d1.027930c0743c5.7ad1ea7bea476.e8fbe6347',
-                    'name'             : 'Memory Leak',
+                    'name'             : 'SO 34523 R TOOLS AND SUPPLY CORP',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -322,7 +344,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '3279.3d69b40cc0b75.690252b6bea08.1e1789b0b7c2e.2f264b8661ce2.84d5f56910e23.429be5e8a',
-                    'name'             : 'Broken toolbar on profile page',
+                    'name'             : 'SO 34523 SILVER WINGS AEROSPACE',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -348,7 +370,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : 'ba01.8e1a43f92a03a.0022bd5cbb9ba.275c64d911d8c.880e0846a3966.f75ff43e53ad.48ad612e7',
-                    'name'             : 'Button hover style',
+                    'name'             : 'SO 34523 H.A.S. AVIATION CORP',
                     'description'      : 'If there are 3 or more buttons in certain page, weird flashing happens when you hover over the red ones.',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -369,7 +391,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '80ed.24ad3b18e2668.f28fbbceeeff9.5a834620a42f1.5909be19a2bf2.6c4a54947ce2d.da356b0c1',
-                    'name'             : 'New header designs',
+                    'name'             : 'SO 33323 SAFE FUEL SYSTEMS',
                     'description'      : '',
                     'idAttachmentCover': '12027cafbe3b52ecf2ef632c',
                     'idMembers'        : [],
@@ -410,7 +432,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '0ad2.7862f947bc456.f42b446df54cb.d1dd9e93601a1.9deb1406d1404.0b3c278fc7001.733341b42',
-                    'name'             : 'Fixed footer',
+                    'name'             : 'SO 34453',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -431,7 +453,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : 'bad3.51be8ad33acaf.9540ecb37f7e8.6bee596cfe7d3.44c68bee289c4.b96ed0b9f0af7.e14846035',
-                    'name'             : 'Collapsable navigation',
+                    'name'             : 'SO 35623',
                     'description'      : '',
                     'idAttachmentCover': '',
                     'idMembers'        : [],
@@ -455,8 +477,8 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '44d1.2b51ea6cc2b5d.21f4a3412e857.8ffa2d8b44ad9.ac87215ed53a1.67d4921ad8f8d.9f318bcb2',
-                    'name'             : 'Mail app new layout',
-                    'description'      : 'Current layout has lots of flaws in mobile. Outlook view should help with that.',
+                    'name'             : 'SO 29090',
+                    'description'      : 'GLOSS BLACK EPOXY BAC 701',
                     'idAttachmentCover': '',
                     'idMembers'        : [
                         '56027c1930450d8bf7b10758',
@@ -479,7 +501,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '7987.9740ba532b0d4.f9d12243f7362.507c0738dc561.87fba0a03df6e.75e6508cacf10.7a9835b54',
-                    'name'             : 'API recover and monitoring',
+                    'name'             : 'SO 23678',
                     'description'      : 'We need a service to monitor and recover failed APIs.',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -564,22 +586,32 @@ export class ScrumboardFakeDb
             'labels'  : [
                 {
                     'id'   : '26022e4129ad3a5sc28b36cd',
-                    'name' : 'High Priority',
+                    'name' : 'Finished',
                     'color': 'mat-red-500-bg'
                 },
                 {
                     'id'   : '56027e4119ad3a5dc28b36cd',
-                    'name' : 'Design',
+                    'name' : 'AOD',
                     'color': 'mat-orange-400-bg'
+                },
+                // {
+                //     'id'   : '5640635e19ad3a5dc21416b2',
+                //     'name' : 'AOD',
+                //     'color': 'mat-blue-600-bg'
+                // },
+                {
+                    'id'   : '5640635e19ad3a5dc21416b2',
+                    'name' : 'Late',
+                    'color': 'mat-yellow-600-bg'
                 },
                 {
                     'id'   : '5640635e19ad3a5dc21416b2',
-                    'name' : 'App',
-                    'color': 'mat-blue-600-bg'
+                    'name' : 'Do Not Relase',
+                    'color': 'mat-purple-600-bg'
                 },
                 {
                     'id'   : '6540635g19ad3s5dc31412b2',
-                    'name' : 'Feature',
+                    'name' : 'Missing Raw Mat',
                     'color': 'mat-green-400-bg'
                 }
             ]
@@ -612,7 +644,7 @@ export class ScrumboardFakeDb
             'cards'   : [
                 {
                     'id'               : '5603a2a3cab0c8300f6096b3',
-                    'name'             : 'Calendar App Design',
+                    'name'             : 'SO 23456 Company Name',
                     'description'      : '',
                     'idAttachmentCover': '56027cfcbe1b72ecf1fc452a',
                     'idMembers'        : [
@@ -718,7 +750,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '5637273da9b93bb84743a0f9',
-                    'name'             : 'Fix Splash Screen bugs',
+                    'name'             : 'SO 26523',
                     'description'      : '',
                     'idAttachmentCover': '5603a2ae2bbd55bb2db57478',
                     'idMembers'        : [

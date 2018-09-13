@@ -12,15 +12,9 @@ export class LoginService {
     })
   };
   private SP_verifyUser = '[BI_MEMBERS].[dbo].[pm_verify_username_and_password] ';
-  private _SP_verifyUserEmail = '[BI_MEMBERS].[dbo].[pm_verify_username] ';
-  private _SP_verifyIfRegistered = '[BI_MEMBERS].[dbo].[pm_verify_ifregistered] ';
-  private _SP_verifyUserPassword = '[RESPONDENTS].[dbo].[pm_verify_password] ';
-  private _SP_verifyUsersFirstAndLastName = '[RESPONDENTS].[dbo].[pm_verify_VERIFY_FIRST_N_LASTNAME] ';
-  private _SP_verifyDOB = '[RESPONDENTS].[dbo].[pm_verify_DOB] ';
-  private _SP_verifyCellPhone = '[RESPONDENTS].[dbo].[pm_verify_CELLPHONE] ';
-
   private _SP_saveUserProfile = '[BI_MEMBERS].[dbo].[pm_updProfile] ';
-  private _SP_getUserProfile = '[BI_MEMBERS].[dbo].[pm_GETProfile] ';
+  
+
 
   protected API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
   
