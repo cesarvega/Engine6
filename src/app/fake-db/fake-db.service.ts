@@ -15,6 +15,7 @@ import { InvoiceFakeDb } from 'app/fake-db/invoice';
 import { ProfileFakeDb } from 'app/fake-db/profile';
 import { SearchFakeDb } from 'app/fake-db/search';
 import { FaqFakeDb } from 'app/fake-db/faq';
+import { FaqBiDb } from 'app/fake-db/bi-faq';
 import { KnowledgeBaseFakeDb } from 'app/fake-db/knowledge-base';
 import { IconsFakeDb } from 'app/fake-db/icons';
 import { ChatPanelFakeDb } from 'app/fake-db/chat-panel';
@@ -83,6 +84,7 @@ export class FakeDbService implements InMemoryDbService
 
             // FAQ
             'faq': FaqFakeDb.data,
+            'bi-faq': FaqBiDb.data,
 
             // Knowledge base
             'knowledge-base': KnowledgeBaseFakeDb.data,

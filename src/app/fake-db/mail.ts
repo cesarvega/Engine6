@@ -4,7 +4,7 @@ export class MailFakeDb
         {
             'id'            : '15459251a6d6b397565',
             'from'          : {
-                'name'  : 'Alice Freeman',
+                'name'  : 'Cesar Vega',
                 'avatar': 'assets/images/avatars/alice.jpg',
                 'email' : 'alicefreeman@creapond.com'
             },

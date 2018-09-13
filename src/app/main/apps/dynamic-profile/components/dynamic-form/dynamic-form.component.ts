@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { FieldConfig, Validator } from '../../field.interface';
+import { FieldConfig2, Validator } from '../../field.interface';
 
 @Component({
   exportAs: 'dynamicForm',
@@ -9,7 +9,7 @@ import { FieldConfig, Validator } from '../../field.interface';
   styles: []
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() fields: FieldConfig[] = [];
+  @Input() fields: FieldConfig2[] = [];
 
   @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
 
@@ -27,11 +27,13 @@ export class DynamicFormComponent implements OnInit {
   onSubmit(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
-    if (this.form.value['Password *'].length < 6) {
-      this.form.controls['Password *'].setErrors({ 'min': true });
-    }
-    if (this.form.value['Password *'] !== this.form.value['confirm password *']) {
-      this.form.controls['confirm password *'].setErrors({ 'required': true });
+    if (this.form.value['Password *']) {
+      if (this.form.value['Password *'].length < 6) {
+        this.form.controls['Password *'].setErrors({ 'min': true });
+      }
+      if (this.form.value['Password *'] !== this.form.value['confirm password *']) {
+        this.form.controls['confirm password *'].setErrors({ 'required': true });
+      }
     }
     if (this.form.valid) {
       this.submitForm.emit(this.form.value);
@@ -46,7 +48,7 @@ export class DynamicFormComponent implements OnInit {
     this.fields.forEach(field => {
       if (field.type === 'button') { return; }
       const control = this.fb.control(
-        field.value,
+        { value: field.value, disabled: (field.disabled === 'false') ? false : true },
         this.bindValidations(field.validations || [])
       );
       group.addControl(field.name, control);

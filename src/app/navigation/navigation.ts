@@ -58,7 +58,15 @@ export const navigation: FuseNavigation[] = [
                 icon: 'settings',
                 children: [
                     {
-                        id: 'help',
+                        id: 'FAQ',
+                        title: 'FAQ',
+                        // translate: 'NAV.HELP',
+                        type: 'item',
+                        icon: 'help',
+                        url: '/apps/login/faq'
+                    },
+                    {
+                        id: 'Contact',
                         title: 'Contact Us',
                         // translate: 'NAV.HELP',
                         type: 'item',

@@ -11,6 +11,7 @@ import { FuseWidgetModule } from '@fuse/components/widget/widget.module';
 import { AnalyticsDashboardComponent } from 'app/main/apps/dashboards/analytics/analytics.component';
 import { AnalyticsDashboardService } from 'app/main/apps/dashboards/analytics/analytics.service';
 
+
 const routes: Routes = [
     {
         path     : '**',

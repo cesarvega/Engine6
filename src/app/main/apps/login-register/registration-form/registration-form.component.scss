@@ -43,7 +43,7 @@
     .positioning{
         position: relative; 
         top: -50px;
-        min-width: 500px;
+        min-width: 800px;
         @include media-breakpoint-down('xs') {
             min-width: 300px;
         }
