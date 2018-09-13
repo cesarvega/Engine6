@@ -11,7 +11,7 @@ import { EcommerceProductsService } from './products.service';
 import { takeUntil } from 'rxjs/internal/operators';
 
 @Component({
-    selector   : 'e-commerce-products',
+    selector   : 'products',
     templateUrl: './products.component.html',
     styleUrls  : ['./products.component.scss'],
     animations : fuseAnimations
@@ -30,24 +30,16 @@ export class EcommerceProductsComponent implements OnInit
     @ViewChild('filter')
     filter: ElementRef;
 
-    // Private
     private _unsubscribeAll: Subject<any>;
 
     constructor(
         private _ecommerceProductsService: EcommerceProductsService
     )
     {
-        // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * On init
-     */
     ngOnInit(): void
     {
         this.dataSource = new FilesDataSource(this._ecommerceProductsService, this.paginator, this.sort);
@@ -74,13 +66,6 @@ export class FilesDataSource extends DataSource<any>
     private _filterChange = new BehaviorSubject('');
     private _filteredDataChange = new BehaviorSubject('');
 
-    /**
-     * Constructor
-     *
-     * @param {EcommerceProductsService} _ecommerceProductsService
-     * @param {MatPaginator} _matPaginator
-     * @param {MatSort} _matSort
-     */
     constructor(
         private _ecommerceProductsService: EcommerceProductsService,
         private _matPaginator: MatPaginator,
@@ -92,11 +77,6 @@ export class FilesDataSource extends DataSource<any>
         this.filteredData = this._ecommerceProductsService.products;
     }
 
-    /**
-     * Connect function called by the table to retrieve one stream containing the data to render.
-     *
-     * @returns {Observable<any[]>}
-     */
     connect(): Observable<any[]>
     {
         const displayDataChanges = [
@@ -117,18 +97,13 @@ export class FilesDataSource extends DataSource<any>
 
                         data = this.sortData(data);
 
-                        // Grab the page's slice of data.
                         const startIndex = this._matPaginator.pageIndex * this._matPaginator.pageSize;
                         return data.splice(startIndex, this._matPaginator.pageSize);
                     }
                 ));
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Accessors
-    // -----------------------------------------------------------------------------------------------------
-
-    // Filtered data
+   
     get filteredData(): any
     {
         return this._filteredDataChange.value;
@@ -150,16 +125,6 @@ export class FilesDataSource extends DataSource<any>
         this._filterChange.next(filter);
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Filter data
-     *
-     * @param data
-     * @returns {any}
-     */
     filterData(data): any
     {
         if ( !this.filter )
@@ -169,12 +134,6 @@ export class FilesDataSource extends DataSource<any>
         return FuseUtils.filterArrayByString(data, this.filter);
     }
 
-    /**
-     * Sort data
-     *
-     * @param data
-     * @returns {any[]}
-     */
     sortData(data): any[]
     {
         if ( !this._matSort.active || this._matSort.direction === '' )
@@ -215,9 +174,6 @@ export class FilesDataSource extends DataSource<any>
         });
     }
 
-    /**
-     * Disconnect
-     */
     disconnect(): void
     {
     }
