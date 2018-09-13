@@ -26,15 +26,30 @@ export const navigation: FuseNavigation[] = [
         icon: 'person',
         url: '/apps/profile/user/profile'
     },
-    {
-        id: 'register',
-        title: 'Register',
-        // translate: 'NAV.dynamic',
+    // {
+    //     id: 'register',
+    //     title: 'Register',
+    //     // translate: 'NAV.dynamic',
+    //     type: 'item',
+    //     icon: 'person',
+    //     url: 'apps/register/auth/register'
+    // },
+    // {
+    //     id: 'scrumboard',
+    //     title: 'Scrumboard',
+    //     // translate: 'NAV.SCRUMBOARD',
+    //     type: 'item',
+    //     icon: 'assessment',
+    //     url: '/apps/scrumboard'
+    // },
+     {
+        id: 'crud',
+        title: 'crud',
+        // translate: 'NAV.crud',
         type: 'item',
-        icon: 'person',
-        url: 'apps/register/auth/register'
-    }
-    ,
+        icon: 'assessment',
+        url: '/apps/crud'
+    },
     {
         id: 'settings',
         title: 'Settings',
@@ -49,7 +64,7 @@ export const navigation: FuseNavigation[] = [
                 type: 'item',
                 icon: 'settings_power',
                 url: '/apps/login/auth/login'
-            },
+            },        
             {
                 id: 'Settings',
                 title: 'Help',

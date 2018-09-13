@@ -44,6 +44,10 @@ const routes = [
         loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
     },
     {
+        path: 'crud',
+        loadChildren: './crud/crud.module#CrudModule'
+    },
+    {
         path: 'register',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
     },      
