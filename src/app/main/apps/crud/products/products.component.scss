@@ -2,7 +2,13 @@
 
 :host {
 
-    #orders {
+    #products {
+
+        .top-bg {
+            @include media-breakpoint-down(xs) {
+                height: 240px;
+            }
+        }
 
         > .center {
 
@@ -13,23 +19,16 @@
                 }
 
                 @include media-breakpoint-down(xs) {
-                    margin: 24px 0;
-                    height: 128px !important;
-                    min-height: 128px !important;
-                    max-height: 128px !important;
+                    margin: 8px 0;
+                    height: 192px !important;
+                    min-height: 192px !important;
+                    max-height: 192px !important;
                 }
             }
         }
     }
 
-    .mat-tab-group,
-    .mat-tab-body-wrapper,
-    .tab-content {
-        flex: 1 1 auto;
-        max-width: 100%;
-    }
-
-    .orders-table {
+    .products-table {
         flex: 1 1 auto;
         border-bottom: 1px solid rgba(0, 0, 0, .12);
         overflow: auto;
@@ -39,7 +38,7 @@
             min-height: 64px;
         }
 
-        .order {
+        .product {
             position: relative;
             cursor: pointer;
             height: 84px;

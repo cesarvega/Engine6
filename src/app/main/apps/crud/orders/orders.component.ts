@@ -7,14 +7,17 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseUtils } from '@fuse/utils';
 
-import { EcommerceOrdersService } from 'app/main/apps/e-commerce/orders/orders.service';
+import { EcommerceOrdersService } from './orders.service';
 import { takeUntil } from 'rxjs/internal/operators';
+
 @Component({
-  selector: 'app-crud-item-list',
-  templateUrl: './crud-item-list.component.html',
-  styleUrls: ['./crud-item-list.component.scss']
+    selector   : 'e-commerce-orders',
+    templateUrl: './orders.component.html',
+    styleUrls  : ['./orders.component.scss'],
+    animations : fuseAnimations,
+    // providers: [EcommerceOrdersService]
 })
-export class CrudItemListComponent implements OnInit, OnDestroy
+export class EcommerceOrdersComponent implements OnInit, OnDestroy
 {
     dataSource: FilesDataSource | null;
     displayedColumns = ['id', 'reference', 'customer', 'total', 'payment', 'status', 'date'];
@@ -28,14 +31,8 @@ export class CrudItemListComponent implements OnInit, OnDestroy
     @ViewChild(MatSort)
     sort: MatSort;
 
-    // Private
     private _unsubscribeAll: Subject<any>;
 
-    /**
-     * Constructor
-     *
-     * @param {EcommerceOrdersService} _ecommerceOrdersService
-     */
     constructor(
         private _ecommerceOrdersService: EcommerceOrdersService
     )
@@ -44,13 +41,6 @@ export class CrudItemListComponent implements OnInit, OnDestroy
         this._unsubscribeAll = new Subject();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
     ngOnInit(): void
     {
         this.dataSource = new FilesDataSource(this._ecommerceOrdersService, this.paginator, this.sort);
@@ -70,9 +60,7 @@ export class CrudItemListComponent implements OnInit, OnDestroy
             });
     }
 
-    /**
-     * On destroy
-     */
+    
     ngOnDestroy(): void
     {
         // Unsubscribe from all subscriptions
@@ -87,13 +75,6 @@ export class FilesDataSource extends DataSource<any>
     private _filterChange = new BehaviorSubject('');
     private _filteredDataChange = new BehaviorSubject('');
 
-    /**
-     * Constructor
-     *
-     * @param {EcommerceOrdersService} _ecommerceOrdersService
-     * @param {MatPaginator} _matPaginator
-     * @param {MatSort} _matSort
-     */
     constructor(
         private _ecommerceOrdersService: EcommerceOrdersService,
         private _matPaginator: MatPaginator,
@@ -105,11 +86,7 @@ export class FilesDataSource extends DataSource<any>
         this.filteredData = this._ecommerceOrdersService.orders;
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Accessors
-    // -----------------------------------------------------------------------------------------------------
-
-    // Filtered data
+ 
     get filteredData(): any
     {
         return this._filteredDataChange.value;
@@ -131,15 +108,7 @@ export class FilesDataSource extends DataSource<any>
         this._filterChange.next(filter);
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Connect function called by the table to retrieve one stream containing the data to render.
-     *
-     * @returns {Observable<any[]>}
-     */
+   
     connect(): Observable<any[]>
     {
         const displayDataChanges = [
@@ -167,12 +136,7 @@ export class FilesDataSource extends DataSource<any>
 
     }
 
-    /**
-     * Filter data
-     *
-     * @param data
-     * @returns {any}
-     */
+    
     filterData(data): any
     {
         if ( !this.filter )
@@ -182,12 +146,6 @@ export class FilesDataSource extends DataSource<any>
         return FuseUtils.filterArrayByString(data, this.filter);
     }
 
-    /**
-     * Sort data
-     *
-     * @param data
-     * @returns {any[]}
-     */
     sortData(data): any[]
     {
         if ( !this._matSort.active || this._matSort.direction === '' )
@@ -231,9 +189,7 @@ export class FilesDataSource extends DataSource<any>
         });
     }
 
-    /**
-     * Disconnect
-     */
+
     disconnect(): void
     {
     }
