@@ -28,7 +28,7 @@ const routes = [
         MatIconModule,
 
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyD81ecsCj4yYpcXSLFcYU97PvRsE_X8Bx8'
+            apiKey: 'AIzaSyBoUI7xcOX0pZtzGxpYDoOBBcnPzpu-kng'
         }),
 
         FuseSharedModule,
