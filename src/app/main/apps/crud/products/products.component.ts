@@ -19,7 +19,7 @@ import { takeUntil } from 'rxjs/internal/operators';
 export class EcommerceProductsComponent implements OnInit
 {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['id', 'image', 'name', 'category', 'price', 'quantity', 'active'];
+    displayedColumns = ['productId', 'image', 'name', 'category', 'price', 'quantity', 'active'];
 
     @ViewChild(MatPaginator)
     paginator: MatPaginator;
@@ -147,7 +147,7 @@ export class FilesDataSource extends DataSource<any>
 
             switch ( this._matSort.active )
             {
-                case 'id':
+                case 'productId':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
                 case 'name':

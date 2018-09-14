@@ -100,7 +100,7 @@ export class EcommerceProductComponent implements OnInit, OnDestroy
     createProductForm(): FormGroup
     {
         return this._formBuilder.group({
-            id              : [this.product.id],
+            productId       : [this.product.productId],
             name            : [this.product.name],
             handle          : [this.product.handle],
             description     : [this.product.description],
@@ -165,7 +165,7 @@ export class EcommerceProductComponent implements OnInit, OnDestroy
                 });
 
                 // Change the location with new one
-                this._location.go('apps/e-commerce/products/' + this.product.id + '/' + this.product.handle);
+                this._location.go('apps/crud/products/' + this.product.productId + '/' + this.product.handle);
             });
     }
 }

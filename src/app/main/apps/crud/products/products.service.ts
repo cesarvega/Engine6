@@ -2,20 +2,23 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { CrudService } from '../crud.service';
 
 @Injectable()
 export class EcommerceProductsService implements Resolve<any>
 {
     products: any[];
     onProductsChanged: BehaviorSubject<any>;
-
+    webApiUrl = '';
+    apiCall = 'api/ims-products/';
     /**
      * Constructor
      *
      * @param {HttpClient} _httpClient
      */
     constructor(
-        private _httpClient: HttpClient
+        private _httpClient: HttpClient,
+        private _crudService: CrudService
     )
     {
         // Set the defaults
@@ -51,8 +54,9 @@ export class EcommerceProductsService implements Resolve<any>
      */
     getProducts(): Promise<any>
     {
+        this.webApiUrl = this._crudService.getWebApiUrl();
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/e-commerce-products')
+            this._httpClient.get(this.webApiUrl + this.apiCall)
                 .subscribe((response: any) => {
                     this.products = response;
                     this.onProductsChanged.next(this.products);

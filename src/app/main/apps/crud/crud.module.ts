@@ -18,6 +18,7 @@ import { EcommerceOrdersComponent } from './orders/orders.component';
 import { EcommerceOrdersService } from './orders/orders.service';
 import { EcommerceOrderComponent } from './order/order.component';
 import { EcommerceOrderService } from './order/order.service';
+import { CrudService } from './crud.service';
 
 const routes: Routes = [
     {
@@ -105,7 +106,8 @@ const routes: Routes = [
         EcommerceProductsService,
         EcommerceProductService,
         EcommerceOrdersService,
-        EcommerceOrderService
+        EcommerceOrderService,
+        CrudService
     ]
 })
 export class CrudModule

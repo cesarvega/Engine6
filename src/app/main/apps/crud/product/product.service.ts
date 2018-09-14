@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { CrudService } from '../crud.service';
 
 @Injectable()
 export class EcommerceProductService implements Resolve<any>
@@ -9,14 +10,16 @@ export class EcommerceProductService implements Resolve<any>
     routeParams: any;
     product: any;
     onProductChanged: BehaviorSubject<any>;
-
+    webApiUrl = '';
+    apiCall = 'api/ims-products/';
     /**
      * Constructor
      *
      * @param {HttpClient} _httpClient
      */
     constructor(
-        private _httpClient: HttpClient
+        private _httpClient: HttpClient,
+        private _crudService: CrudService
     )
     {
         // Set the defaults
@@ -54,6 +57,7 @@ export class EcommerceProductService implements Resolve<any>
      */
     getProduct(): Promise<any>
     {
+        this.webApiUrl = this._crudService.getWebApiUrl();
         return new Promise((resolve, reject) => {
             if ( this.routeParams.id === 'new' )
             {
@@ -62,7 +66,7 @@ export class EcommerceProductService implements Resolve<any>
             }
             else
             {
-                this._httpClient.get('api/e-commerce-products/' + this.routeParams.id)
+                this._httpClient.get(this.webApiUrl + this.apiCall + this.routeParams.id)
                     .subscribe((response: any) => {
                         this.product = response;
                         this.onProductChanged.next(this.product);
@@ -80,8 +84,9 @@ export class EcommerceProductService implements Resolve<any>
      */
     saveProduct(product): Promise<any>
     {
+        this.webApiUrl = this._crudService.getWebApiUrl();
         return new Promise((resolve, reject) => {
-            this._httpClient.post('api/e-commerce-products/' + product.id, product)
+            this._httpClient.put(this.webApiUrl + this.apiCall + this.routeParams.id, product)
                 .subscribe((response: any) => {
                     resolve(response);
                 }, reject);
@@ -95,9 +100,9 @@ export class EcommerceProductService implements Resolve<any>
      * @returns {Promise<any>}
      */
     addProduct(product): Promise<any>
-    {
+    {   this.webApiUrl = this._crudService.getWebApiUrl();
         return new Promise((resolve, reject) => {
-            this._httpClient.post('api/e-commerce-products/', product)
+            this._httpClient.post(this.webApiUrl + this.apiCall, product)
                 .subscribe((response: any) => {
                     resolve(response);
                 }, reject);

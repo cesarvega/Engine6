@@ -4,7 +4,7 @@ import { FuseUtils } from '@fuse/utils';
 
 export class Product
 {
-    id: string;
+    productId: string;
     name: string;
     handle: string;
     description: string;
@@ -37,7 +37,7 @@ export class Product
     constructor(product?)
     {
         product = product || {};
-        this.id = product.id || FuseUtils.generateGUID();
+        this.productId = product.productId || FuseUtils.generateGUID();
         this.name = product.name || '';
         this.handle = product.handle || FuseUtils.handleize(this.name);
         this.description = product.description || '';
