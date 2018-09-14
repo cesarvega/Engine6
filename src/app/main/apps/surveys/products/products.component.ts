@@ -19,7 +19,8 @@ import { takeUntil } from 'rxjs/internal/operators';
 export class EcommerceProductsComponent implements OnInit
 {
     dataSource: FilesDataSource | null;
-    displayedColumns = ['surveyid', 'image', 'surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
+    // displayedColumns = ['surveyid', 'image', 'surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
+    displayedColumns = ['surveyid', 'surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
 
     @ViewChild(MatPaginator)
     paginator: MatPaginator;
@@ -150,9 +151,9 @@ export class FilesDataSource extends DataSource<any>
                 case 'id':
                     [propertyA, propertyB] = [a.id, b.id];
                     break;
-                case 'name':
-                    [propertyA, propertyB] = [a.name, b.name];
-                    break;
+                // case 'name':
+                //     [propertyA, propertyB] = [a.name, b.name];
+                //     break;
                 case 'categories':
                     [propertyA, propertyB] = [a.categories[0], b.categories[0]];
                     break;
