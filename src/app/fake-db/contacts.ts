@@ -145,7 +145,7 @@ export class ContactsFakeDb
             'id'      : '5725a680ae1ae9a3c960d487',
             'name'    : 'Henderson',
             'lastName': 'Cambias',
-            'avatar'  : 'assets/images/avatars/Henderson.jpg',
+            'avatar'  : 'assets/images/avatars/Abbott.jpg',
             'nickname': 'Blizzard',
             'company' : 'Howcom',
             'jobTitle': 'Web Designer',

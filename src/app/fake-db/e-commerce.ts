@@ -2124,6 +2124,150 @@ export class ECommerceFakeDb
                     'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
                 },
                 {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
+                    'id'      : 2,
+                    'name'    : 'Green Skirt',
+                    'price'   : '24.62',
+                    'quantity': 1,
+                    'total'   : '24.62',
+                    'image'   : 'assets/images/ecommerce/product-image-placeholder.png'
+                },
+                {
                     'id'      : 3,
                     'name'    : 'Printed Dress',
                     'price'   : '49.29',
@@ -2148,7 +2292,7 @@ export class ECommerceFakeDb
             ],
             'payment'        : {
                 'transactionId': '2a894b9e',
-                'amount'       : '73.31',
+                'amount'       : '173.31',
                 'method'       : 'Credit Card',
                 'date'         : '2016/02/23 15:50:23'
             },

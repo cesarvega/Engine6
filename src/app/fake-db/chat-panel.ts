@@ -77,7 +77,7 @@ export class ChatPanelFakeDb
         {
             'id'    : '5725a680ae1ae9a3c960d487',
             'name'  : 'Henderson',
-            'avatar': 'assets/images/avatars/Henderson.jpg',
+            'avatar': 'assets/images/avatars/Abbott.jpg',
             'status': 'offline',
             'mood'  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...'
         },
