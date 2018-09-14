@@ -42,14 +42,14 @@ export const navigation: FuseNavigation[] = [
     //     icon: 'assessment',
     //     url: '/apps/scrumboard'
     // },
-     {
-        id: 'crud',
-        title: 'crud',
-        // translate: 'NAV.crud',
-        type: 'item',
-        icon: 'assessment',
-        url: '/apps/crud'
-    },
+    //  {
+    //     id: 'crud',
+    //     title: 'crud',
+    //     // translate: 'NAV.crud',
+    //     type: 'item',
+    //     icon: 'assessment',
+    //     url: '/apps/crud'
+    // },
     {
         id: 'settings',
         title: 'Settings',

@@ -452,7 +452,7 @@ export class RegistrationFormComponent implements OnInit {
   countChange(event): void {
     this._info = new Info();
     this._info.email = event['Email *'] ? event['Email *'] : this.user.email;
-    this._info.password = event['Password *'];
+    this._info.password = event['Password *'] + '|' + (this.user) ? this.user.id : '';
     this._info.firstName = event['First name *'] ? event['First name *'] : this.user.firstName;
     this._info.middleName = event['Middle name'];
     this._info.lastName = event['Last name *'] ? event['Last name *'] : this.user.lastName;

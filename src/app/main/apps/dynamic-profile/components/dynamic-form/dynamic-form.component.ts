@@ -14,6 +14,8 @@ export class DynamicFormComponent implements OnInit {
   @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;
+  noValid = false;
+  
 
   get value(): void {
     return this.form.value;
@@ -25,6 +27,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit(event: Event): void {
+    this.noValid = false;
     event.preventDefault();
     event.stopPropagation();
     if (this.form.value['Password *']) {
@@ -35,10 +38,10 @@ export class DynamicFormComponent implements OnInit {
         this.form.controls['confirm password *'].setErrors({ 'required': true });
       }
     }
-    if (this.form.valid) {
+    if (this.form.valid) {      
       this.submitForm.emit(this.form.value);
     } else {
-
+      this.noValid = true;
       this.validateAllFormFields(this.form);
     }
   }
