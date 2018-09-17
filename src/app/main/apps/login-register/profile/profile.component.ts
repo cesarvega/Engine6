@@ -1259,30 +1259,6 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-label',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'radiobutton',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-label',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
-    {
       labelValue: 'Choose 2 security questions to recover your password later and answer them',
       icon: '',
       defaultInputValue: '',
@@ -1411,30 +1387,6 @@ export class ProfileComponent implements OnInit {
           name: 'required',
           validator: Validators.required,
           message: 'Provide an answer'
-        }
-      ]
-    },
-    {
-      labelValue: '',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-label',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'radiobutton',
-      label: '',
-      name: '',
-      value: '',
-      inputType: 'bi-label',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
         }
       ]
     },

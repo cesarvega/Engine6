@@ -3,96 +3,707 @@
 
 :host {
 
-  #price-tables {
-
-      .header {
-          padding: 24px;
-          height: 600px;
-          min-height: 600px;
-          background: #1A237E;
-          background: linear-gradient(to right, #0E2A3B 0%, #34306B 100%);
-
-          @include media-breakpoint-down('xs') {
-              height: 400px;
-              min-height: 400px;
-          }
-
-          .hero-text {
-              margin: 128px 24px;
-
-              @include media-breakpoint-down('xs') {
-                  margin: 64px 24px;
-              }
-
-              .h1 {
-                  color: white;
-                  font-size: 48px;
-                  font-weight: 400;
-                  letter-spacing: 0.01em;
-                  text-align: center;
-
-                  @include media-breakpoint-down('xs') {
-                      font-size: 32px;
-                  }
-              }
-
-              .h3 {
-                  color: rgba(255, 255, 255, 0.75);
-                  max-width: 480px;
-                  text-align: center;
-                  margin-top: 16px;
-                  font-weight: 300;
-                  letter-spacing: 0.05em;
-
-                  @include media-breakpoint-down('xs') {
-                      font-size: 14px;
-                  }
-              }
-          }
-      }
-
-      .price-tables {
-          flex: 1 0 auto;
-          margin-top: -192px;
-
-          @include media-breakpoint-down('xs') {
-              margin-top: -128px;
-          }
-
-          .price-table {
-              margin: 12px;
-          }
-      }
-
-      .faq {
-          flex: 1 0 auto;
-          margin: 96px auto;
-          max-width: 840px;
-
-          .title {
-              font-size: 32px;
-              font-weight: 300;
-              text-align: center;
-              margin-bottom: 64px;
-              padding: 0 16px;
-          }
-
-          .item {
-              padding: 24px;
-
-              .question {
-                  font-size: 18px;
-                  margin-bottom: 8px;
-              }
-
-              .answer {
-                  font-size: 16px;
-                  line-height: 1.5;
-                  color: rgba(0, 0, 0, 0.54);
-              }
-          }
-      }
+/* You can add global styles to this file, and also import other style files */
+// * {
+//     margin: 0;
+//     padding: 0;
+//     font-family: 'Lato', sans-serif;
+//   }
+  
+//   body {
+//     width: 100%;
+//     overflow-x: hidden;
+//     background-color: #FFF;
+//   }
+  
+  .wrapper { width: 95%; max-width: 1100px; margin: 0 auto; }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 10px 0;
+    -webkit-box-shadow: 0 1px 3px 0 #B3B3B3;
+    box-shadow: 0 1px 3px 0 #B3B3B3;
   }
-
+  
+  header div.wrapper { max-width: 95%; }
+  
+  header a#smartwaxpr {
+    width: 300px;
+    height: 80px;
+    background-image: url('/assets/images/logos/logo_sticky.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  
+  header a#menuBtn {
+    display: none;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    background-image: url('/assets/icons/menu.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  header nav { margin-left: 100px; }
+  
+  header nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #777;
+    margin-right: 40px;
+    transition: 0.2s all linear;
+  }
+  
+  header nav a:last-child { margin-right: 0; }
+  
+  header nav a:hover { color: #128E0D; }
+  
+  div#headGap { height: 100px; background-color: #f00; }
+  
+  section#banner {
+    width: 100%;
+    background-image: url('/assets/images/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  section#banner div.overlay {
+    width: 100%;
+    height: 700px;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  section#banner h1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 55px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  
+  section#banner a {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    border: #fff solid 2px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 35px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    transition: 0.2s all linear;
+  }
+  
+  section#banner a:hover {
+    background-color: #168D14;
+    border-color: #168D14;
+  }
+  
+  section.appoSec {
+    background-color: #F5F5F5;
+    padding: 60px 0;
+  }
+  
+  section.appoSec h2 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  section.appoSec a {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: auto;
+    color: #138E0E;
+    border: #138E0E solid 2px;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    transition: 0.2s all linear;
+  }
+  
+  section.appoSec a:hover {
+    color: #fff;
+    background-color: #138E0E;
+  }
+  
+  section#process {
+    color: #fff;
+    text-align: center;
+    background-image: url('/assets/images/progress.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  section#process div.overlay {
+    background-color: rgba(0,0,0,0.5);
+    padding: 80px 0;
+  }
+  
+  section#process h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px
+  }
+  
+  section#process p {
+    font-family: 'PT Serif', serif;
+    font-size: 15px;
+    font-style: italic;
+    margin: 20px 0;
+  }
+  
+  section#process aside span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: rgba(255,255,255,0.3) solid thin;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 50%;
+    background-size: 50%;
+  }
+  
+  section#process aside.package span { background-image: url('/assets/icons/car-repair.svg'); }
+  
+  section#process aside.schedule span { background-image: url('/assets/icons/calendar.svg'); }
+  
+  section#process aside.pay span { background-image: url('/assets/icons/card.svg'); }
+  
+  section#process aside.cleaning span { background-image: url('/assets/icons/vacuum-machine.svg'); }
+  
+  section#process aside h3 {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 3px;
+  }
+  
+  section#process span.rghtArr {
+    width: 50px;
+    height: 45px;
+    border: rgba(255,255,255,0.3) solid thin;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background-image: url('/assets/icons/right-arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 50%;
+    background-size: 50%;
+  }
+  
+  section#package {
+    text-align: center;
+    padding: 80px 0;
+  }
+  
+  section#package h2,
+  section#services h2 {
+    color: #222;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  section#package p,
+  section#testimonials p.sml {
+    font-family: 'PT Serif', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: #128E0D;
+    margin: 50px 0;
+  }
+  
+  section#package nav#packageMenu {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  section#package nav#packageMenu a span {
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 50px;
+    background-size: 50px;
+    transition: 0.2s all linear;
+  }
+  
+  section#package nav#packageMenu a span.regular { background-image: url('/assets/icons/regular-car.svg'); }
+  
+  section#package nav#packageMenu a span.suv { background-image: url('/assets/icons/suv.svg'); }
+  
+  section#package nav#packageMenu a span.minivan { background-image: url('/assets/icons/minivan.svg'); }
+  
+  section#package nav#packageMenu a span.truck { background-image: url('/assets/icons/pickup.svg'); }
+  
+  section#package nav#packageMenu a {
+    color: #A8B1B6;
+    text-align: center;
+    width: 280px;
+    padding: 40px 0;
+    text-decoration: none;
+    transition: 0.2s all linear;
+    border-bottom: #ccc solid thin;
+  }
+  
+  section#package nav#packageMenu a:hover,
+  section#package nav#packageMenu a.active {
+    background-color: #138E10;
+    color: #fff;
+  }
+  
+  section#package nav#packageMenu a:hover span,
+  section#package nav#packageMenu a.active span { filter: brightness(400%); }
+  
+  section#package div#priceTable aside {
+    width: calc(89% / 3);
+    border: #ccc solid thin;
+    text-align: center;
+    padding: 10px;
+    margin: 0 20px;
+  }
+  
+  section#package div#priceTable aside ul li {
+    list-style: none;
+    margin: 30px 0;
+  }
+  
+  
+  section#package div#priceTable aside ul li h3 {
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  section#package div#priceTable aside ul li h4 {
+    font-size: 55px;
+    color: #148F11;
+    font-weight: lighter;
+  }
+  
+  section#package div#priceTable aside ul li h4 sup { font-size: 25px; }
+  
+  section#package div#priceTable aside ul li:nth-child(3) {
+    color: #ccc;
+    padding: 20px 0;
+    border-top: #E2E6E7 solid thin;
+    border-bottom: #E2E6E7 solid thin;
+  }
+  
+  
+  section#package div#priceTable aside ul li:nth-child(3) span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    background-image: url('/assets/icons/clock.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-right: 5px;
+  }
+  
+  section#package div#priceTable aside ul li:nth-child(4) {
+    min-height: 320px;
+  }
+  
+  section#package div#priceTable aside ul li:nth-child(4) p {
+    margin: 8px 0;
+    color: #999999;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+  }
+  
+  section#package div#priceTable aside ul li:last-child a {
+    display: inline-block;
+    color: #138F0E;
+    padding: 8px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: #138F0E solid 2px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #fff;
+    transition: 0.2s all linear;
+  }
+  
+  section#package div#priceTable aside ul li:last-child a span { transition: 0.2s all linear; }
+  
+  section#package div#priceTable aside ul li:last-child a:hover,
+  section#package div#priceTable aside.active ul li:last-child a {
+    background-color: #138F0E;
+    color: #fff;
+  }
+  
+  section#package div#priceTable aside.active ul li:last-child a span {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url('/assets/icons/checked.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-left: 5px;
+    width: 15px;
+    height: 15px;
+  }
+  
+  section#services { padding: 80px 0; text-align: center; }
+  
+  section#services h2 { margin-bottom: 30px; }
+  
+  section#services p {
+    font-size: 14px;
+    color: #777B7F;
+    margin: 10px 0;
+  }
+  
+  section#services div.serviceTab { margin: 50px 0; }
+  
+  section#services div.serviceTab aside {
+    width: 250px;
+    text-align: left;
+    margin: 10px;
+  }
+  
+  section#services div.serviceTab aside span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-bottom: 10px;
+  }
+  
+  section#services div.serviceTab aside span.leather { background-image: url('/assets/icons/leather.svg'); }
+  
+  section#services div.serviceTab aside span.odor { background-image: url('/assets/icons/cleaning-spray.svg'); }
+  
+  section#services div.serviceTab aside span.intShampoo { background-image: url('/assets/icons/vacuum-machine-green.svg'); }
+  
+  section#services div.serviceTab aside span.sealant { background-image: url('/assets/icons/drop.svg'); }
+  
+  section#services div.serviceTab aside span.pet { background-image: url('/assets/icons/dog-pet-allowed-hotel-signal.svg'); }
+  
+  section#services div.serviceTab aside span.wax { background-image: url('/assets/icons/car-with-oil-sign.svg'); }
+  
+  section#services div.serviceTab aside h3 {
+    font-size: 16px;
+    color: #3D3D3D;
+    letter-spacing: 3px;
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+  
+  section#services div.serviceTab aside p {
+    color: #777B7F;
+    margin: 0;
+    line-height: 28px;
+  }
+  
+  section#about-us aside,
+  section#testimonials aside {
+    width: 50%;
+    background-image: url('/assets/images/car-wash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  
+  section#testimonials aside { background-image: url('/assets/images/testimonials.jpg'); }
+  
+  section#about-us article,
+  section#testimonials article {
+    width: 50%;
+    background-color: #F5F5F5;
+    text-align: center;
+  }
+  
+  section#about-us article div.inner,
+  section#testimonials article div.inner {
+    padding: 80px 100px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  section#about-us article h2,
+  section#testimonials article h2,
+  section#contactSec aside h2 {
+    color: #222;
+    margin-bottom: 30px;
+    font-size: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  section#testimonials article h2 { margin-bottom: 10px; }
+  
+  section#about-us article p,
+  section#testimonials article p {
+    font-size: 15px;
+    color: #828686;
+    line-height: 30px;
+  }
+  
+  section#testimonials article p { font-family: 'PT Serif', serif; font-style: italic; }
+  
+  section#about-us article a {
+    margin-top: 50px;
+    color: #128E0D;
+    border: #128E0D solid 2px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 8px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s all linear;
+  }
+  
+  section#about-us article a:hover {
+    color: #fff;
+    background-color: #128E0D;
+  }
+  
+  section#contact-us { padding: 60px 0; }
+  
+  section#contact-us aside {
+    width: 300px;
+    margin: 0 30px;
+  }
+  
+  section#contact-us aside span {
+    width: 60px;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  
+  section#contact-us aside h3 {
+    margin-left: auto;
+    width: calc(100% - 80px);
+    text-transform: uppercase;
+    color: #222;
+    font-size: 22px;
+  }
+  
+  section#contact-us aside h3 span,
+  section#contact-us aside h3 small {
+    font-weight: normal;
+    font-size: 15px;
+    color: #898989;
+  }
+  
+  section#contact-us aside h3 span { color: #128E0D; }
+  
+  section#contactSec aside { width: 50%; }
+  
+  section#contactSec aside iframe { width: 100%; height: 100%; }
+  
+  section#contactSec aside div.inner { padding: 80px; }
+  
+  section#contactSec aside p { color: #898989; }
+  
+  section#contactSec aside form { margin: 30px 0; }
+  
+  section#contactSec aside form h4 {
+    margin: 20px 0 10px 0;
+    color: #787878;
+  }
+  
+  input[type=text], input[type=email], input[type=tel], textarea {
+    width: 95%;
+    border: #ccc solid thin;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 5px 20px;
+    font-size: 15px;
+  }
+  
+  textarea { resize: vertical; height: 100px; }
+  
+  button[type=submit] {
+    display: inline-block;
+    margin: 40px auto 0 auto;
+    padding: 8px 30px;
+    border: #128E0D solid 2px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #128E0D;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s all linear;
+  }
+  
+  button[type=submit]:hover {
+    background-color: #128E0D;
+    color: #fff;
+  }
+  
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 50px 0;
+  }
+  
+  footer aside {
+    width: 250px;
+    margin-right: 30px;
+  }
+  
+  footer aside:last-child { margin-right: 0; }
+  
+  footer aside h3 {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  
+  footer aside p {
+    line-height: 30px;
+    font-size: 14px;
+    color: #e6e6e6;
+    margin: 5px 0;
+  }
+  
+  footer aside p a { text-decoration: none; color: #e6e6e6; }
+  
+  
+  footer aside p a:hover { text-decoration: underline; color: #fff; }
+  
+  footer div.copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: #898989 solid thin;
+    font-size: 13px;
+    color: #e6e6e6;
+  }
+  
+  @media screen
+  and (max-width: 1100px)
+  and (min-width: 300px) {
+    header nav a { margin-right: 20px; }
+  }
+  
+  @media screen
+  and (max-width: 960px)
+  and (min-width: 300px) {
+    header a#menuBtn { display: block; }
+  
+    header nav {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      top: 80px;
+      margin-left: 0;
+    }
+  
+    header nav a {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
+      padding: 20px 0;
+      text-indent: 20px;
+      border-bottom: #ccc solid thin;
+    }
+  
+    section#banner h1 { font-size: 45px; }
+  
+    section.appoSec a { margin-left: 0; margin-top: 30px; }
+  
+    section#process span.rghtArr {
+      margin: 30px 0;
+      height: 50px;
+      background-image: url('/assets/icons/down-arrow.svg');
+    }
+  
+    section#about-us aside,
+    section#testimonials aside,
+    section#contactSec aside { width: 100%; min-height: 550px; }
+  
+    section#about-us article div.inner,
+    section#testimonials article div.inner { padding: 40px; }
+  
+    section#contactSec aside div.inner { padding: 20px; }
+  
+    input[type=text], input[type=email], input[type=tel], textarea { width: 88%; }
+  
+    section#about-us article,
+    section#testimonials article { width: 100%; }
+  
+    section#contact-us aside { margin: 30px; }
+  
+    section#services div.serviceTab aside { width: calc(88% / 2); }
+  
+    section#package nav#packageMenu a { width: calc(90% / 2); }
+  
+    section#package div#priceTable aside { width: 40%; margin: 0; }
+  
+    section#package div#priceTable aside:last-child { width: 84%; margin-top: 20px; }
+  }
+  
+  
+  @media screen
+  and (max-width: 600px)
+  and (min-width: 300px) {
+  
+    header a#smartwaxpr { width: 230px; }
+  
+    section#banner h1 { font-size: 30px; }
+  
+    section.appoSec h2 { text-align: center; }
+  
+    section#package nav#packageMenu a { width: 85%; }
+  
+    section#package div#priceTable aside,
+    section#package div#priceTable aside:last-child { width: 80%; margin: 20px auto; }
+  
+    section#package div#priceTable aside ul li:nth-child(4) { min-height: auto; }
+  
+    footer aside { width: 100%; margin: 20px 0; }
+  
+    section#contact-us aside { width: 100%; margin: 30px 0; }
+  
+    section#services div.serviceTab aside { width: 100%; margin: 10px 0;}
+  }
+  
       
 }

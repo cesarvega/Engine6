@@ -1,13 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { FieldConfig2, FieldGroupConfig } from '../dynamic-profile/field.interface';
 import { Validators } from '@angular/forms';
+import { FuseConfigService } from '@fuse/services/config.service';
 @Component({
   selector: 'app-smart',
   templateUrl: './smart.component.html',
   styleUrls: ['./smart.component.scss']
 })
 export class SmartComponent implements OnInit {
-
+  constructor(
+    private _fuseConfigService: FuseConfigService
+  ) {
+    this._fuseConfigService.config = {
+      layout: {
+        navbar: {
+          hidden: true
+        },
+        toolbar: {
+          hidden: true
+        },
+        footer: {
+          hidden: true
+        },
+        sidepanel: {
+          hidden: true
+        }
+      }
+    };
+  }
 // tabConfig = this.fieldData;
     P_info_1: FieldConfig2[]  = [   
       {
@@ -2330,39 +2350,38 @@ export class SmartComponent implements OnInit {
       item: this.OTHER_HCP,
       name: 'OTHER_HCP'
     }
-    ,
-    {
-      item: this.MD_PA_Lic_Info,
-      name: 'MD_PA_Lic_Info'
-    }
-    ,
-    {
-      item: this.Pharm_Lic_Info,
-      name: 'Pharm_Lic_Info'
-    }
-
-    ,
-    {
-      item: this.Nurse_Lic_Info,
-      name: 'Nurse_Lic_Info'
-    }
-    ,
-    {
-      item: this.Payment_Email_Type,
-      name: 'Payment_Email_Type'
-    },
-    {
-      item: this.acc_History,
-      name: 'acc_History'
-    },
-    {
-      item: this.profile_Info,
-      name: 'profile_Info'
-    },
-    {
-      item: this.Ext_Profile,
-      name: 'Ext_Profile'
-    }
+    // ,
+    // {
+    //   item: this.MD_PA_Lic_Info,
+    //   name: 'MD_PA_Lic_Info'
+    // }
+    // ,
+    // {
+    //   item: this.Pharm_Lic_Info,
+    //   name: 'Pharm_Lic_Info'
+    // }
+    // ,
+    // {
+    //   item: this.Nurse_Lic_Info,
+    //   name: 'Nurse_Lic_Info'
+    // }
+    // ,
+    // {
+    //   item: this.Payment_Email_Type,
+    //   name: 'Payment_Email_Type'
+    // },
+    // {
+    //   item: this.acc_History,
+    //   name: 'acc_History'
+    // },
+    // {
+    //   item: this.profile_Info,
+    //   name: 'profile_Info'
+    // },
+    // {
+    //   item: this.Ext_Profile,
+    //   name: 'Ext_Profile'
+    // }
 
   ];
 

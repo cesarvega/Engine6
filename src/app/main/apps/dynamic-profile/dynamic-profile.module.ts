@@ -32,6 +32,10 @@ const routes: Routes = [
   {
     path     : 'auth/register',
     component: RegistrationFormComponent
+  },      
+  {
+      path: '**',
+      redirectTo: 'form'
   }
 ];
 @NgModule({

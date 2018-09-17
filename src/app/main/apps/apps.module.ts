@@ -52,6 +52,10 @@ const routes = [
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
     },      
     {
+        path: 'smart',
+        loadChildren:  './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
+    },      
+    {
         path: '**',
         redirectTo: 'login'
     }

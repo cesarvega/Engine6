@@ -57,7 +57,7 @@ export class LoginRegisterComponent implements OnInit {
         // console.log(this.loginForm.value);
         if (user) {
             this.loginForm.value.email = user.email;
-            this.loginForm.value.email = user.id;
+            this.loginForm.value.password = user.id;
         }
         this._biLoginService.signAndRegistrationAuth('\'' + this.loginForm.value.email + '\'' + ',' + '\'' + this.loginForm.value.password + '\'').subscribe(res => {
 
