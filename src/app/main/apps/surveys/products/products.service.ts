@@ -9,7 +9,7 @@ export class EcommerceProductsService implements Resolve<any>
 {
     products: any[];
     now = false;
-    webApiUrl = 'https://ng6-node-app-qwochshrgx.now.sh/';
+    webApiUrl = 'https://ng6-node-app-boldepvhqf.now.sh/';
     apiCall = 'api/bi-surveys';
     API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
     api_call = '[RESPONDENTS].[dbo].[pm_GetSurveyHistory] ' + '\'antoniostiriti@libero.it\',' + '\'2\'';

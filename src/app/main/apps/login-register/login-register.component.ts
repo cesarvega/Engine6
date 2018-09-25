@@ -18,6 +18,7 @@ export class LoginRegisterComponent implements OnInit {
     loginForm: FormGroup;
     private user: SocialUser;
     private loggedIn: boolean;
+    private isUser = false;
     /**
      * Constructor
      *
@@ -57,11 +58,12 @@ export class LoginRegisterComponent implements OnInit {
         // console.log(this.loginForm.value);
         if (user) {
             this.loginForm.value.email = user.email;
-            this.loginForm.value.email = user.id;
+            this.loginForm.value.password = user.id;
         }
         this._biLoginService.signAndRegistrationAuth('\'' + this.loginForm.value.email + '\'' + ',' + '\'' + this.loginForm.value.password + '\'').subscribe(res => {
 
             if (res[0].verified === 'True') {
+                localStorage.removeItem('user');
                 localStorage.setItem('user', res[0].message);
                 if (this._authGuardService.login()) {
                     this.router.navigateByUrl('/apps/dashboards/analytics');
@@ -69,7 +71,7 @@ export class LoginRegisterComponent implements OnInit {
                     this._authGuardService.logout();
                 }
             }else {
-                
+                this.isUser = true;
             }
 
         });
@@ -80,21 +82,17 @@ export class LoginRegisterComponent implements OnInit {
     }
 
     signInWithGoogle(): void {
-        this._authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+        this._authService.signIn(GoogleLoginProvider.PROVIDER_ID).then( user => {
+            this.signInWithBI(user);
+        });
     }
 
     signInWithFB(): void {
-        this._authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+        this._authService.signIn(FacebookLoginProvider.PROVIDER_ID).then( user => {
+            this.signInWithBI(user);
+        });
     }
 
-    signInWithLinkedIn(): void {
-        this._authService.signIn(LinkedInLoginProvider.PROVIDER_ID);
-    }
-
-    signOut(): void {
-        this._authService.signOut();
-        localStorage.setItem('user', '');
-    }
 
     openDialog(): void {
         const dialogRef = this.dialog.open(DialogContent);
@@ -112,17 +110,7 @@ export class LoginRegisterComponent implements OnInit {
     /**
      * On init
      */
-    ngOnInit(): void {
-        this._authGuardService.logout();
-        this._authService.authState.subscribe((user) => {
-            this.user = user;
-            this.loggedIn = (user != null);
-
-            if (this.loggedIn) {
-                this.signInWithBI(user);
-            }
-        });
-
+    ngOnInit(): void {        
         this.loginForm = this._formBuilder.group({
             email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]

@@ -23,6 +23,8 @@ import { APP_BASE_HREF } from '../../node_modules/@angular/common';
 import { LoginOpt, SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from 'angularx-social-login';
 
+import { ToastrModule } from 'ngx-toastr';
+
 const providers = {
   'google': {
     'clientId': '602575723314-jdm4nunt3bl3kts5pt422dkfoecdqi70.apps.googleusercontent.com'
@@ -105,6 +107,7 @@ const appRoutes: Routes = [
 
     // Fuse modules
     FuseModule.forRoot(fuseConfig),
+    ToastrModule.forRoot(),
     FuseProgressBarModule,
     FuseSharedModule,
     FuseSidebarModule,

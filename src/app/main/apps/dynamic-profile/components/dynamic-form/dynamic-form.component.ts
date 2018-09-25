@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { FieldConfig2, Validator } from '../../field.interface';
+import { LoginService } from '../../../login-register/login.service';
 
 @Component({
   exportAs: 'dynamicForm',
@@ -12,15 +13,16 @@ export class DynamicFormComponent implements OnInit {
   @Input() fields: FieldConfig2[] = [];
 
   @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
+  @Output() emailTaken: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;
   noValid = false;
-  
+
 
   get value(): void {
     return this.form.value;
   }
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private _biLoginService: LoginService) { }
 
   ngOnInit(): void {
     this.form = this.createControl();
@@ -30,20 +32,43 @@ export class DynamicFormComponent implements OnInit {
     this.noValid = false;
     event.preventDefault();
     event.stopPropagation();
-    if (this.form.value['Password *']) {
+
+
+
+    if (this.form.value['Password *']) { // if coming from registration it will be a password
       if (this.form.value['Password *'].length < 6) {
         this.form.controls['Password *'].setErrors({ 'min': true });
       }
       if (this.form.value['Password *'] !== this.form.value['confirm password *']) {
         this.form.controls['confirm password *'].setErrors({ 'required': true });
       }
+
+      this._biLoginService.verifyEmail(this.form.controls['Email *'].value).subscribe((x: any) => {
+        // if (true) {
+          if (x[0].verified === 'False') {
+          this.emailTaken.emit('the email ' + this.form.controls['Email *'].value + ' is already taken');
+          this.noValid = true;
+          return true;         
+        } 
+        else {
+          if (this.form.valid) {
+            this.submitForm.emit(this.form.getRawValue());
+          } else {
+            this.noValid = true;
+            this.validateAllFormFields(this.form);
+          }
+        }
+      });
     }
-    if (this.form.valid) {      
-      this.submitForm.emit(this.form.value);
-    } else {
-      this.noValid = true;
-      this.validateAllFormFields(this.form);
+    else {
+      if (this.form.valid) {
+        this.submitForm.emit(this.form.getRawValue());
+      } else {
+        this.noValid = true;
+        this.validateAllFormFields(this.form);
+      }
     }
+   
   }
 
   createControl(): FormGroup {

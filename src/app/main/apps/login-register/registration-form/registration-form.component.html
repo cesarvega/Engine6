@@ -25,7 +25,7 @@
     </div>
   </div>
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.xs="">
-    <dynamic-profile (submitForm)="countChange($event)" class="positioning" [fieldData]="fieldOBJ">
+    <dynamic-profile (submitForm)="countChange($event)" (taken)="taken($event)" class="positioning" [fieldData]="fieldOBJ">
     </dynamic-profile>
     <a class="link" [routerLink]="'/apps/login/auth/login'">go back to login?</a>
   </div>

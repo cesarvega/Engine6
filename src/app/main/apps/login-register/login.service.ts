@@ -15,7 +15,7 @@ export class LoginService {
   private _SP_saveUserProfile = '[BI_MEMBERS].[dbo].[pm_updProfile] ';
   
 
-
+  private _SP_verifyUserEmail = '[BI_MEMBERS].[dbo].[pm_verify_username] ';
   protected API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
   
   constructor(private httpClient: HttpClient) {}
@@ -34,6 +34,13 @@ export class LoginService {
    // register un nuevo User 
   postUser(data: any): Observable<any> {
     const bodyString = JSON.stringify(this._SP_saveUserProfile + '\'' + data + '\'');
+    const url = `${this.API_URL}`;
+    return this.httpClient.post(url, bodyString, this.httpOptions);
+  }
+
+   // register un nuevo User 
+  verifyEmail(data: any): Observable<any> {
+    const bodyString = JSON.stringify(this._SP_verifyUserEmail + '\'' + data + '\'');
     const url = `${this.API_URL}`;
     return this.httpClient.post(url, bodyString, this.httpOptions);
   }

@@ -85,7 +85,7 @@ const routes: Routes = [
     FuseSharedModule,
   ],
   declarations: [
-    LoginRegisterComponent,
+    LoginRegisterComponent,    
     DialogContent,
     ContactUsComponent,
     ForgotPasswordComponent,
@@ -96,7 +96,7 @@ const routes: Routes = [
     SuccessfulPasswordResetComponent,
     ForgotPasswordThankyouComponent,
     FaqComponent
-  ],
+  ], 
   providers   : [
       FaqService, AuthGuard, AuthGuardService
   ], entryComponents: [DialogContent]

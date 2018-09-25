@@ -8,7 +8,7 @@
               <img src="assets/images/logos/bi-logo-with-tagline.svg" >
           </div>
 
-          <div class="mat-subheading-1 secondary-text">retype email and password 123456789! </div>
+          <div class="mat-subheading-1 secondary-text">Welcome to panel members </div>
 
           <form name="loginForm" [formGroup]="loginForm" novalidate>
 
@@ -68,7 +68,9 @@
               <a class="link" [routerLink]="'/apps/register/auth/register'">Create an account</a>
           </div>
 
-       
+          <mat-error  *ngIf="isUser">
+            Username or password incorrect or not register
+        </mat-error>
 
       </div>
 
