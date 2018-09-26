@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
     private _loginService: LoginService,
   ) { }
   // private respondantType  = localStorage.getItem('user') !== 'undefined' ? localStorage.getItem('user') : 'OTHER_HCP';
-  private respondantType = 'OTHER_HCP';
+  private respondantType = 'MD_PA_Lic_Info';
   private user: any = localStorage.getItem('user');
   public counter = 0;
   public _finalObj: Array<any> = [];
@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
     { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'Select State/Province *' },
     { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code *' },
     { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone *' },
-    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation' },
+    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your professional or occupation' },
     { key: 'efcfa33d-efb0-43e8-8e51-23508ddedc39', labelValue: 'Type of industry *' },
     { key: '81d74098-5efd-4fc9-afce-88b98f745a23', labelValue: 'Title position *' },
     { key: 'bcf8eea5-1b82-4452-8304-8c588c490ef9', labelValue: 'Level of Education' },
@@ -353,7 +353,7 @@ export class ProfileComponent implements OnInit {
 
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       // tslint:disable-next-line:max-line-length
       options: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia Herzegovina', 'Botswana', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire (Ivory Coast)', 'Croatia (Hrvatska)', 'Cuba', 'Curacao', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican', 'East Timor', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland Islands (Malvinas)', 'Faroe Islands', 'Federated States of Micronesia', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'Southern Territories', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Heard and McDonald Islands', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea (North)', 'Korea (South)', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand (Aotearoa)', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Qatar', 'Reunion', 'Romania', 'Russian Federation', 'Rwanda', 'S. Georgia S. Sandwich Isls.', 'Saint Kitts Nevis', 'Saint Lucia', 'Vincent the Grenadines', 'Samoa', 'San Marino', 'Sao Tome Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovak Republic', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'St. Helena', 'St. Pierre and Miquelon', 'Sudan', 'Suriname', 'Svalbard and Jan Mayen Islands', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tokelau', 'Tonga', 'Trinidad Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City (Holy See)', 'Venezuela', 'Viet Nam', 'Virgin (British)', 'Wallis and Futuna Islands', 'Western Sahara', 'Yemen', 'Zaire', 'Zambia', 'Zimbabwe', 'Zimbabwe'],
       disabled: 'false',
@@ -365,7 +365,7 @@ export class ProfileComponent implements OnInit {
       label: 'Select country of residency *',
       name: 'Select country of residency *',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -416,7 +416,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Select State/Province *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select-input',
+      componentType: 'select-input',
       // tslint:disable-next-line:max-line-length
       options: ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Federated states of Micronesia', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Lousiana', 'Maine', 'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'],
       disabled: 'false',
@@ -527,7 +527,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Type of industry *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       // tslint:disable-next-line:max-line-length
       options: ['Accounting', 'Advertising / Public Relations', 'Agriculture', 'Automotive', 'Aviation', 'Banking', 'Biopharmaceutical manufacturing', 'Biotechnology', 'Chemicals', 'Computers', 'Construction', 'Consulting', 'Education', 'Education / Academia', 'Electric Power', 'Employment / Human Resources', 'Financial Services', 'Government / Military', 'Health Care / Health Insurance', 'Horticulture ', 'Hotels / Restaurants / Entertainment', 'housewife', 'Industrial Automation', 'Insurance', 'Law', 'Management', 'Manufacturing', 'Marine', 'Marketing', 'Media / Journalism', 'Media and Entertainment / Show Business', 'Medical Devices', 'Medical research', 'Non-Profit Organization', 'Oil and Gas Production', 'Other', 'Owner / Proprietor / Principal', 'Packaging Industry', 'Pet Services', 'Pharmaceutical', 'Professional Services', 'Real Estate', 'Research engineer', 'Retail Sales', 'Science', 'Telecommunications', 'Transportation', 'Travel / Tourism', 'Utilities (Power, Gas, Water)',
       ],
@@ -540,7 +540,7 @@ export class ProfileComponent implements OnInit {
       label: 'Type of industry *',
       name: 'Type of industry *',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -553,7 +553,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Title position *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'Meeting Management',
         'Office Support',
@@ -581,7 +581,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Level of Education',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'Secondary Education',
         'Professional'
@@ -595,7 +595,7 @@ export class ProfileComponent implements OnInit {
       label: 'Level of Education',
       name: 'Level of Education',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -608,7 +608,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Spoken Languages',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         {
           'sql': '[BI_MEMBERS].[dbo].[pm_getLanguageList]'
@@ -663,7 +663,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Profession or Occupation *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
@@ -686,7 +686,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Practice type *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'Hospital', 'Retail', 'Clinic'
       ],
@@ -815,7 +815,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Primary specialty *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       // tslint:disable-next-line:max-line-length
       options: [ 'Acupuncture Medicine', 'Adolescent Medicine', 'Adult Hospitalist', 'Allergy & Immunology Medicine', 'Andrology Medicine', 'Anesthesiology/Anesthesiologist', 'Anesthesiology/Pain Management', 'Biological Engineering', 'Cardiology/Cardiologist', 'Chiropractor', 'Critical Care Medicine', 'Dentistry', 'Dermatology/Dermatologist', 'Diabetology/Diabetologist', 'Dialysis Technician', 'Dietitian,  Registered (RD)', 'Electrophysiology', 'Emergency Medicine', 'Endocrinology/Endocrinologist', 'Family Practice Medicine', 'Forensic Science Medicine', 'Gastroenterology', 'General Practitioner', 'Genetic Medicine', 'Geriatric Medicine/Gerontology', 'Gynecologic Oncology', 'Gynecology', 'Hematology', 'Hepatology', 'Hospice and Palliative Medicine', 'Hyperbaric Medicine', 'Infectious Disease Medicine', 'Internal Medicine', 'Interventional Cardiology', 'Interventional Radiology', 'Maternal & Fetal Medicine', 'Molecular Medicine', 'Neonatology/Neonatologist', 'Nephrology/Nephrologist', 'Neurology/Neurologist', 'Neurophysiology', 'Neuroscientist', 'Neurosurgery', 'Nuclear Medicine', 'Nurse,  Advanced Registered Nurse Practitioner (ARNP)', 'Nurse,  Registered (RN)', 'Nutritionist', 'Obstetrics/Gynecology', 'Occupational Medicine', 'Oncology', 'Oncology - Medical', 'Oncology - Radiation', 'Ophthalmology/Ophthalmologist', 'Ophthalmology/Retinal Specialist', 'Optometrist', 'Oral & Maxillofacial Surgery', 'Organic Chemist', 'Orthopedics Medicine', 'Osteopathic Medicine', 'Otolaryngology/ENT Medicine', 'Pain Management Specialist', 'Pathology/Pathologist', 'Pediatric Medicine', 'Pharmacist (Pharm.D.)', 'Pharmacology', 'Physical & Rehabilitation Medicine', 'Physical Therapist', 'Physiology/Physiologist', 'Plastic Surgery', 'Podiatry/Podiatrist', 'Proctology', 'Psychiatry/Psychiatrist', 'Psychology/Licenced Mental Health Practitioner', 'Public Health & Epidemiology Medicine', 'Pulmonary Medicine', 'Radiology,  Interventional/Vascular Radiologist', 'Radiology,  Nuclear Radiologist', 'Radiology/Radiologist', 'Reproductive Medicine', 'Respiratory Therapist', 'Rheumatology/Rheumatologist', 'Sleep Medicine', 'Speech Therapist', 'Sports Medicine', 'Surgery,  Bariatric', 'Surgery,  Breast/Breast Cancer', 'Surgery,  Cardiothoracic/Vascular', 'Surgery,  Cerebrovascular', 'Surgery,  Colon/Rectal', 'Surgery,  Gastrointestinal', 'Surgery,  General', 'Surgery,  Hand', 'Surgery,  Oncology', 'Surgery,  Orthopedics', 'Surgery,  Podiatry', 'Surgery,  Reconstructive', 'Surgery,  Thoracic', 'Surgery,  Transplant', 'Surgery,  Urology', 'Toxicology', 'Transplant Medicine', 'Urology/Urologist', 'Veterinary Medicine']
       ,
@@ -828,15 +828,13 @@ export class ProfileComponent implements OnInit {
       label: 'Primary specialty *',
       name: 'Primary specialty *',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
 
     },
     {
-
-
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       // tslint:disable-next-line:max-line-length
       options: [ 'Acupuncture Medicine', 'Adolescent Medicine', 'Adult Hospitalist', 'Allergy & Immunology Medicine', 'Andrology Medicine', 'Anesthesiology/Anesthesiologist', 'Anesthesiology/Pain Management', 'Biological Engineering', 'Cardiology/Cardiologist', 'Chiropractor', 'Critical Care Medicine', 'Dentistry', 'Dermatology/Dermatologist', 'Diabetology/Diabetologist', 'Dialysis Technician', 'Dietitian,  Registered (RD)', 'Electrophysiology', 'Emergency Medicine', 'Endocrinology/Endocrinologist', 'Family Practice Medicine', 'Forensic Science Medicine', 'Gastroenterology', 'General Practitioner', 'Genetic Medicine', 'Geriatric Medicine/Gerontology', 'Gynecologic Oncology', 'Gynecology', 'Hematology', 'Hepatology', 'Hospice and Palliative Medicine', 'Hyperbaric Medicine', 'Infectious Disease Medicine', 'Internal Medicine', 'Interventional Cardiology', 'Interventional Radiology', 'Maternal & Fetal Medicine', 'Molecular Medicine', 'Neonatology/Neonatologist', 'Nephrology/Nephrologist', 'Neurology/Neurologist', 'Neurophysiology', 'Neuroscientist', 'Neurosurgery', 'Nuclear Medicine', 'Nurse,  Advanced Registered Nurse Practitioner (ARNP)', 'Nurse,  Registered (RN)', 'Nutritionist', 'Obstetrics/Gynecology', 'Occupational Medicine', 'Oncology', 'Oncology - Medical', 'Oncology - Radiation', 'Ophthalmology/Ophthalmologist', 'Ophthalmology/Retinal Specialist', 'Optometrist', 'Oral & Maxillofacial Surgery', 'Organic Chemist', 'Orthopedics Medicine', 'Osteopathic Medicine', 'Otolaryngology/ENT Medicine', 'Pain Management Specialist', 'Pathology/Pathologist', 'Pediatric Medicine', 'Pharmacist (Pharm.D.)', 'Pharmacology', 'Physical & Rehabilitation Medicine', 'Physical Therapist', 'Physiology/Physiologist', 'Plastic Surgery', 'Podiatry/Podiatrist', 'Proctology', 'Psychiatry/Psychiatrist', 'Psychology/Licenced Mental Health Practitioner', 'Public Health & Epidemiology Medicine', 'Pulmonary Medicine', 'Radiology,  Interventional/Vascular Radiologist', 'Radiology,  Nuclear Radiologist', 'Radiology/Radiologist', 'Reproductive Medicine', 'Respiratory Therapist', 'Rheumatology/Rheumatologist', 'Sleep Medicine', 'Speech Therapist', 'Sports Medicine', 'Surgery,  Bariatric', 'Surgery,  Breast/Breast Cancer', 'Surgery,  Cardiothoracic/Vascular', 'Surgery,  Cerebrovascular', 'Surgery,  Colon/Rectal', 'Surgery,  Gastrointestinal', 'Surgery,  General', 'Surgery,  Hand', 'Surgery,  Oncology', 'Surgery,  Orthopedics', 'Surgery,  Podiatry', 'Surgery,  Reconstructive', 'Surgery,  Thoracic', 'Surgery,  Transplant', 'Surgery,  Urology', 'Toxicology', 'Transplant Medicine', 'Urology/Urologist', 'Veterinary Medicine']
       ,
@@ -862,7 +860,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Terciary specialty',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       // tslint:disable-next-line:max-line-length
       options: [ 'Acupuncture Medicine', 'Adolescent Medicine', 'Adult Hospitalist', 'Allergy & Immunology Medicine', 'Andrology Medicine', 'Anesthesiology/Anesthesiologist', 'Anesthesiology/Pain Management', 'Biological Engineering', 'Cardiology/Cardiologist', 'Chiropractor', 'Critical Care Medicine', 'Dentistry', 'Dermatology/Dermatologist', 'Diabetology/Diabetologist', 'Dialysis Technician', 'Dietitian,  Registered (RD)', 'Electrophysiology', 'Emergency Medicine', 'Endocrinology/Endocrinologist', 'Family Practice Medicine', 'Forensic Science Medicine', 'Gastroenterology', 'General Practitioner', 'Genetic Medicine', 'Geriatric Medicine/Gerontology', 'Gynecologic Oncology', 'Gynecology', 'Hematology', 'Hepatology', 'Hospice and Palliative Medicine', 'Hyperbaric Medicine', 'Infectious Disease Medicine', 'Internal Medicine', 'Interventional Cardiology', 'Interventional Radiology', 'Maternal & Fetal Medicine', 'Molecular Medicine', 'Neonatology/Neonatologist', 'Nephrology/Nephrologist', 'Neurology/Neurologist', 'Neurophysiology', 'Neuroscientist', 'Neurosurgery', 'Nuclear Medicine', 'Nurse,  Advanced Registered Nurse Practitioner (ARNP)', 'Nurse,  Registered (RN)', 'Nutritionist', 'Obstetrics/Gynecology', 'Occupational Medicine', 'Oncology', 'Oncology - Medical', 'Oncology - Radiation', 'Ophthalmology/Ophthalmologist', 'Ophthalmology/Retinal Specialist', 'Optometrist', 'Oral & Maxillofacial Surgery', 'Organic Chemist', 'Orthopedics Medicine', 'Osteopathic Medicine', 'Otolaryngology/ENT Medicine', 'Pain Management Specialist', 'Pathology/Pathologist', 'Pediatric Medicine', 'Pharmacist (Pharm.D.)', 'Pharmacology', 'Physical & Rehabilitation Medicine', 'Physical Therapist', 'Physiology/Physiologist', 'Plastic Surgery', 'Podiatry/Podiatrist', 'Proctology', 'Psychiatry/Psychiatrist', 'Psychology/Licenced Mental Health Practitioner', 'Public Health & Epidemiology Medicine', 'Pulmonary Medicine', 'Radiology,  Interventional/Vascular Radiologist', 'Radiology,  Nuclear Radiologist', 'Radiology/Radiologist', 'Reproductive Medicine', 'Respiratory Therapist', 'Rheumatology/Rheumatologist', 'Sleep Medicine', 'Speech Therapist', 'Sports Medicine', 'Surgery,  Bariatric', 'Surgery,  Breast/Breast Cancer', 'Surgery,  Cardiothoracic/Vascular', 'Surgery,  Cerebrovascular', 'Surgery,  Colon/Rectal', 'Surgery,  Gastrointestinal', 'Surgery,  General', 'Surgery,  Hand', 'Surgery,  Oncology', 'Surgery,  Orthopedics', 'Surgery,  Podiatry', 'Surgery,  Reconstructive', 'Surgery,  Thoracic', 'Surgery,  Transplant', 'Surgery,  Urology', 'Toxicology', 'Transplant Medicine', 'Urology/Urologist', 'Veterinary Medicine']
       ,
@@ -1024,22 +1022,18 @@ export class ProfileComponent implements OnInit {
 
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
-      options: [
-        {
-          'sql': '[BI_MEMBERS].[dbo].[pm_getPharmacistTypeList]'
-        }
-      ],
+      componentType: 'select',
+      options: ['Clinic', 'Hospital', 'Mail-Order', 'Other', 'Retail', 'Specialty'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'Select Practice Type',
-      type: 'input',
+      type: 'select',
       label: 'Practice type *',
       name: 'Practice type *',
       value: '',
-      inputType: 'text',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1062,7 +1056,7 @@ export class ProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'input',
+      type: 'date',
       label: 'Degree date *',
       name: 'Degree date *',
       value: '',
@@ -1179,45 +1173,83 @@ export class ProfileComponent implements OnInit {
 
   Nurse_Lic_Info: FieldConfig2[] = [
     {
-      labelValue: 'Practice type *',
+      labelValue: 'Primary specialty *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
-      options: [
-        {
-          'sql': '[BI_MEMBERS].[dbo].[pm_getPharmacistTypeList]'
-        }
-      ],
+      componentType: 'select',
+      // tslint:disable-next-line:max-line-length
+      options: [ 'Acupuncture Medicine', 'Adolescent Medicine', 'Adult Hospitalist', 'Allergy & Immunology Medicine', 'Andrology Medicine', 'Anesthesiology/Anesthesiologist', 'Anesthesiology/Pain Management', 'Biological Engineering', 'Cardiology/Cardiologist', 'Chiropractor', 'Critical Care Medicine', 'Dentistry', 'Dermatology/Dermatologist', 'Diabetology/Diabetologist', 'Dialysis Technician', 'Dietitian,  Registered (RD)', 'Electrophysiology', 'Emergency Medicine', 'Endocrinology/Endocrinologist', 'Family Practice Medicine', 'Forensic Science Medicine', 'Gastroenterology', 'General Practitioner', 'Genetic Medicine', 'Geriatric Medicine/Gerontology', 'Gynecologic Oncology', 'Gynecology', 'Hematology', 'Hepatology', 'Hospice and Palliative Medicine', 'Hyperbaric Medicine', 'Infectious Disease Medicine', 'Internal Medicine', 'Interventional Cardiology', 'Interventional Radiology', 'Maternal & Fetal Medicine', 'Molecular Medicine', 'Neonatology/Neonatologist', 'Nephrology/Nephrologist', 'Neurology/Neurologist', 'Neurophysiology', 'Neuroscientist', 'Neurosurgery', 'Nuclear Medicine', 'Nurse,  Advanced Registered Nurse Practitioner (ARNP)', 'Nurse,  Registered (RN)', 'Nutritionist', 'Obstetrics/Gynecology', 'Occupational Medicine', 'Oncology', 'Oncology - Medical', 'Oncology - Radiation', 'Ophthalmology/Ophthalmologist', 'Ophthalmology/Retinal Specialist', 'Optometrist', 'Oral & Maxillofacial Surgery', 'Organic Chemist', 'Orthopedics Medicine', 'Osteopathic Medicine', 'Otolaryngology/ENT Medicine', 'Pain Management Specialist', 'Pathology/Pathologist', 'Pediatric Medicine', 'Pharmacist (Pharm.D.)', 'Pharmacology', 'Physical & Rehabilitation Medicine', 'Physical Therapist', 'Physiology/Physiologist', 'Plastic Surgery', 'Podiatry/Podiatrist', 'Proctology', 'Psychiatry/Psychiatrist', 'Psychology/Licenced Mental Health Practitioner', 'Public Health & Epidemiology Medicine', 'Pulmonary Medicine', 'Radiology,  Interventional/Vascular Radiologist', 'Radiology,  Nuclear Radiologist', 'Radiology/Radiologist', 'Reproductive Medicine', 'Respiratory Therapist', 'Rheumatology/Rheumatologist', 'Sleep Medicine', 'Speech Therapist', 'Sports Medicine', 'Surgery,  Bariatric', 'Surgery,  Breast/Breast Cancer', 'Surgery,  Cardiothoracic/Vascular', 'Surgery,  Cerebrovascular', 'Surgery,  Colon/Rectal', 'Surgery,  Gastrointestinal', 'Surgery,  General', 'Surgery,  Hand', 'Surgery,  Oncology', 'Surgery,  Orthopedics', 'Surgery,  Podiatry', 'Surgery,  Reconstructive', 'Surgery,  Thoracic', 'Surgery,  Transplant', 'Surgery,  Urology', 'Toxicology', 'Transplant Medicine', 'Urology/Urologist', 'Veterinary Medicine']
+      ,
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Select Practice Type',
-      type: 'input',
-      label: 'Practice type *',
-      name: 'Practice type *',
+      placeHolder: 'Select a Specialty',
+      type: 'select',
+      label: 'Primary specialty *',
+      name: 'Primary specialty *',
+      value: '',
+      inputType: 'select',
+
+    },
+    {
+      icon: 'sql',
+      defaultInputValue: '',
+      componentType: 'select',
+      // tslint:disable-next-line:max-line-length
+      options: [ 'Acupuncture Medicine', 'Adolescent Medicine', 'Adult Hospitalist', 'Allergy & Immunology Medicine', 'Andrology Medicine', 'Anesthesiology/Anesthesiologist', 'Anesthesiology/Pain Management', 'Biological Engineering', 'Cardiology/Cardiologist', 'Chiropractor', 'Critical Care Medicine', 'Dentistry', 'Dermatology/Dermatologist', 'Diabetology/Diabetologist', 'Dialysis Technician', 'Dietitian,  Registered (RD)', 'Electrophysiology', 'Emergency Medicine', 'Endocrinology/Endocrinologist', 'Family Practice Medicine', 'Forensic Science Medicine', 'Gastroenterology', 'General Practitioner', 'Genetic Medicine', 'Geriatric Medicine/Gerontology', 'Gynecologic Oncology', 'Gynecology', 'Hematology', 'Hepatology', 'Hospice and Palliative Medicine', 'Hyperbaric Medicine', 'Infectious Disease Medicine', 'Internal Medicine', 'Interventional Cardiology', 'Interventional Radiology', 'Maternal & Fetal Medicine', 'Molecular Medicine', 'Neonatology/Neonatologist', 'Nephrology/Nephrologist', 'Neurology/Neurologist', 'Neurophysiology', 'Neuroscientist', 'Neurosurgery', 'Nuclear Medicine', 'Nurse,  Advanced Registered Nurse Practitioner (ARNP)', 'Nurse,  Registered (RN)', 'Nutritionist', 'Obstetrics/Gynecology', 'Occupational Medicine', 'Oncology', 'Oncology - Medical', 'Oncology - Radiation', 'Ophthalmology/Ophthalmologist', 'Ophthalmology/Retinal Specialist', 'Optometrist', 'Oral & Maxillofacial Surgery', 'Organic Chemist', 'Orthopedics Medicine', 'Osteopathic Medicine', 'Otolaryngology/ENT Medicine', 'Pain Management Specialist', 'Pathology/Pathologist', 'Pediatric Medicine', 'Pharmacist (Pharm.D.)', 'Pharmacology', 'Physical & Rehabilitation Medicine', 'Physical Therapist', 'Physiology/Physiologist', 'Plastic Surgery', 'Podiatry/Podiatrist', 'Proctology', 'Psychiatry/Psychiatrist', 'Psychology/Licenced Mental Health Practitioner', 'Public Health & Epidemiology Medicine', 'Pulmonary Medicine', 'Radiology,  Interventional/Vascular Radiologist', 'Radiology,  Nuclear Radiologist', 'Radiology/Radiologist', 'Reproductive Medicine', 'Respiratory Therapist', 'Rheumatology/Rheumatologist', 'Sleep Medicine', 'Speech Therapist', 'Sports Medicine', 'Surgery,  Bariatric', 'Surgery,  Breast/Breast Cancer', 'Surgery,  Cardiothoracic/Vascular', 'Surgery,  Cerebrovascular', 'Surgery,  Colon/Rectal', 'Surgery,  Gastrointestinal', 'Surgery,  General', 'Surgery,  Hand', 'Surgery,  Oncology', 'Surgery,  Orthopedics', 'Surgery,  Podiatry', 'Surgery,  Reconstructive', 'Surgery,  Thoracic', 'Surgery,  Transplant', 'Surgery,  Urology', 'Toxicology', 'Transplant Medicine', 'Urology/Urologist', 'Veterinary Medicine']
+      ,
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Select a Specialty (optional)',
+      type: 'select',
+      label: 'Secondary specialty',
+      name: 'Secondary specialty',
       value: '',
       inputType: 'select',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Must select your practice type'
+          message: 'Service time is required'
         }
       ]
+    },
+    {
+      labelValue: 'Terciary specialty',
+      icon: 'sql',
+      defaultInputValue: '',
+      componentType: 'select',
+      // tslint:disable-next-line:max-line-length
+      options: [ 'Acupuncture Medicine', 'Adolescent Medicine', 'Adult Hospitalist', 'Allergy & Immunology Medicine', 'Andrology Medicine', 'Anesthesiology/Anesthesiologist', 'Anesthesiology/Pain Management', 'Biological Engineering', 'Cardiology/Cardiologist', 'Chiropractor', 'Critical Care Medicine', 'Dentistry', 'Dermatology/Dermatologist', 'Diabetology/Diabetologist', 'Dialysis Technician', 'Dietitian,  Registered (RD)', 'Electrophysiology', 'Emergency Medicine', 'Endocrinology/Endocrinologist', 'Family Practice Medicine', 'Forensic Science Medicine', 'Gastroenterology', 'General Practitioner', 'Genetic Medicine', 'Geriatric Medicine/Gerontology', 'Gynecologic Oncology', 'Gynecology', 'Hematology', 'Hepatology', 'Hospice and Palliative Medicine', 'Hyperbaric Medicine', 'Infectious Disease Medicine', 'Internal Medicine', 'Interventional Cardiology', 'Interventional Radiology', 'Maternal & Fetal Medicine', 'Molecular Medicine', 'Neonatology/Neonatologist', 'Nephrology/Nephrologist', 'Neurology/Neurologist', 'Neurophysiology', 'Neuroscientist', 'Neurosurgery', 'Nuclear Medicine', 'Nurse,  Advanced Registered Nurse Practitioner (ARNP)', 'Nurse,  Registered (RN)', 'Nutritionist', 'Obstetrics/Gynecology', 'Occupational Medicine', 'Oncology', 'Oncology - Medical', 'Oncology - Radiation', 'Ophthalmology/Ophthalmologist', 'Ophthalmology/Retinal Specialist', 'Optometrist', 'Oral & Maxillofacial Surgery', 'Organic Chemist', 'Orthopedics Medicine', 'Osteopathic Medicine', 'Otolaryngology/ENT Medicine', 'Pain Management Specialist', 'Pathology/Pathologist', 'Pediatric Medicine', 'Pharmacist (Pharm.D.)', 'Pharmacology', 'Physical & Rehabilitation Medicine', 'Physical Therapist', 'Physiology/Physiologist', 'Plastic Surgery', 'Podiatry/Podiatrist', 'Proctology', 'Psychiatry/Psychiatrist', 'Psychology/Licenced Mental Health Practitioner', 'Public Health & Epidemiology Medicine', 'Pulmonary Medicine', 'Radiology,  Interventional/Vascular Radiologist', 'Radiology,  Nuclear Radiologist', 'Radiology/Radiologist', 'Reproductive Medicine', 'Respiratory Therapist', 'Rheumatology/Rheumatologist', 'Sleep Medicine', 'Speech Therapist', 'Sports Medicine', 'Surgery,  Bariatric', 'Surgery,  Breast/Breast Cancer', 'Surgery,  Cardiothoracic/Vascular', 'Surgery,  Cerebrovascular', 'Surgery,  Colon/Rectal', 'Surgery,  Gastrointestinal', 'Surgery,  General', 'Surgery,  Hand', 'Surgery,  Oncology', 'Surgery,  Orthopedics', 'Surgery,  Podiatry', 'Surgery,  Reconstructive', 'Surgery,  Thoracic', 'Surgery,  Transplant', 'Surgery,  Urology', 'Toxicology', 'Transplant Medicine', 'Urology/Urologist', 'Veterinary Medicine']
+      ,
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Select a Specialty (optional)',
+      type: 'select',
+      label: 'Terciary specialty',
+      name: 'Terciary specialty',
+      value: '',
+      inputType: 'select'
     },
     {
       labelValue: 'Nurse Class *',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
-
+      componentType: 'select',
+      options: [
+        'Register Nurse', 'Nurse Practitioner'
+      ],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'Select a Nurse Class',
-      type: 'input',
+      type: 'select',
       label: 'Nurse Class *',
       name: 'Nurse Class *',
       value: '',
@@ -1351,13 +1383,13 @@ export class ProfileComponent implements OnInit {
       name: 'Enter your PayPal account',
       value: '',
       inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'If PayPal must enter your PayPal account'
-        }
-      ]
+      // validations: [
+      //   {
+      //     name: 'required',
+      //     validator: Validators.required,
+      //     message: 'If PayPal must enter your PayPal account'
+      //   }
+      // ]
     },
     {
       labelValue: 'Select how you want to receive our invitations for surveys *',
@@ -1415,7 +1447,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Choose a security questions to recover your password later and answer them',
       icon: '',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'What is your mothers maiden name?',
         'What is the name of your favorite pet?',
@@ -1432,7 +1464,7 @@ export class ProfileComponent implements OnInit {
       label: 'Choose a security questions to recover your password later and answer them',
       name: 'Choose a security questions to recover your password later and answer them',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1469,7 +1501,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Choose a security questions to recover your password later and answer them',
       icon: '',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'What is your mothers maiden name?',
         'What is the name of your favorite pet?',
@@ -1486,7 +1518,7 @@ export class ProfileComponent implements OnInit {
       label: 'Choose a security questions to recover your password later and answer them',
       name: 'Choose a security questions to recover your password later and answer them',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1524,7 +1556,7 @@ export class ProfileComponent implements OnInit {
 
       icon: '',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'Google or other search',
         'Word of mouth',
@@ -1541,7 +1573,7 @@ export class ProfileComponent implements OnInit {
       label: 'How did you hear about us?',
       name: 'How did you hear about us?',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1551,7 +1583,7 @@ export class ProfileComponent implements OnInit {
       ]
     }
   ];
-
+// no go
   acc_History: FieldConfig2[] = [
     {
       labelValue: 'surveyHistoryTitle',
@@ -1628,7 +1660,7 @@ export class ProfileComponent implements OnInit {
       ]
     }
   ];
-
+// no go
   profile_Info: FieldConfig2[] = [
     {
       labelValue: 'accHistory',
@@ -1745,22 +1777,24 @@ export class ProfileComponent implements OnInit {
   ];
 
   Ext_Profile: FieldConfig2[] = [
-    {
-      labelValue: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.',
+    {     
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-label',
-      options: [''],
+      options: [ 
+      'Microphone built-in or attached to a computer',
+      'Scanner attached to a computer',
+      'Webcam attached to a computer'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'radiobutton',
+      type: 'select',
       label: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.',
-      name: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.',
+      name: 'This section is completely optional',
       value: '',
-      inputType: 'bi-label',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1770,41 +1804,36 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Medical history. Do you, anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
-
         'Hypertension.',
         'Cancer',
         'Coronary Heart Disease'
-
       ],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
-      tooltip: 'Select up to 5 medical conditions',
-      placeHolder: '5',
+      tooltip: '',
+      placeHolder: 'Select an Ethnicity',
       type: 'select',
-      label: 'Medical history. Do you, anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
-      name: 'Medical history. Do you, anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
+      label:  'Medical history. Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
+      name: 'Medical history',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Select up to 5 medical conditions'
+          message: 'Service time is required'
         }
       ]
     },
     {
-
-
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'Manchu',
         'latin'
@@ -1818,7 +1847,7 @@ export class ProfileComponent implements OnInit {
       label: 'Ethnic: For clasification purposes select the ethnic group you belong',
       name: 'Ethnic: For clasification purposes select the ethnic group you belong',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1828,16 +1857,12 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-
-
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
-
         'secundary',
         'professional'
-
       ],
       disabled: 'false',
       componentId: '0',
@@ -1848,7 +1873,7 @@ export class ProfileComponent implements OnInit {
       label: 'Level of Education: Select the maximum level of education you have',
       name: 'Level of Education: Select the maximum level of education you have',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1861,12 +1886,10 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Marital Status',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
-
         'soltero',
         'casado'
-
       ],
       disabled: 'false',
       componentId: '0',
@@ -1877,7 +1900,7 @@ export class ProfileComponent implements OnInit {
       label: 'Marital Status',
       name: 'Marital Status',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1887,11 +1910,9 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-
-
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
 
         '5000',
@@ -1907,7 +1928,7 @@ export class ProfileComponent implements OnInit {
       label: 'Household income',
       name: 'Household income',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1920,7 +1941,7 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Number of children',
       icon: '',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         '0',
         '1',
@@ -1938,7 +1959,7 @@ export class ProfileComponent implements OnInit {
       label: 'Number of children',
       name: 'Number of children',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1948,11 +1969,9 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-
-
       icon: '',
       defaultInputValue: '',
-      componentType: 'bi-select',
+      componentType: 'select',
       options: [
         'Do you or any member of your immediate family work in any of the following areas?',
         'Advertising',
@@ -1973,7 +1992,7 @@ export class ProfileComponent implements OnInit {
       label: 'Marketing Affiliated: Do you or any member of your immediate family work in any of the following areas?',
       name: 'Marketing Affiliated: Do you or any member of your immediate family work in any of the following areas?',
       value: '',
-      inputType: 'bi-select',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
@@ -1983,8 +2002,6 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-
-
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-input-checkbox',
@@ -2078,74 +2095,50 @@ export class ProfileComponent implements OnInit {
     }
     this.fieldOBJ.push({
       item: this.P_info_1,
-      name: 'P_info_1'
+      name: 'Profile Information'
     });
+  
     switch (this.respondantType) {
-      case 'P_info_1':
-        this.fieldOBJ.push({
-          item: this.P_info_1,
-          name: 'P_info_1'
-        });
-        break;
       case 'NonHCP':
         this.fieldOBJ.push({
           item: this.NonHCP,
-          name: 'NonHCP'
+          name: 'Professional Details'
         });
         break;
       case 'OTHER_HCP':
         this.fieldOBJ.push({
           item: this.OTHER_HCP,
-          name: 'OTHER_HCP'
+          name: 'Professional Details'
         });
         break;
       case 'MD_PA_Lic_Info':
         this.fieldOBJ.push({
           item: this.MD_PA_Lic_Info,
-          name: 'MD_PA_Lic_Info'
+          name: 'Professional Details'
         });
         break;
       case 'Pharm_Lic_Info':
         this.fieldOBJ.push({
           item: this.Pharm_Lic_Info,
-          name: 'Pharm_Lic_Info'
+          name: 'Professional Details'
         });
         break;
       case 'Nurse_Lic_Info':
         this.fieldOBJ.push({
           item: this.Nurse_Lic_Info,
-          name: 'Nurse_Lic_Info'
+          name: 'Professional Details'
         });
-        break;
-      case 'Payment_Email_Type':
-        this.fieldOBJ.push({
-          item: this.Payment_Email_Type,
-          name: 'Payment_Email_Type'
-        });
-        break;
-      case 'acc_History':
-        this.fieldOBJ.push({
-          item: this.acc_History,
-          name: 'acc_History'
-        });
-        break;
-      case 'profile_Info':
-        this.fieldOBJ.push({
-          item: this.profile_Info,
-          name: 'profile_Info'
-        });
-        break;
-      case 'Ext_Profile':
-        this.fieldOBJ.push({
-          item: this.Ext_Profile,
-          name: 'Ext_Profile'
-        });
-        break;
-
+        break;   
     }
+    this.fieldOBJ.push({
+      item: this.Payment_Email_Type,
+      name: 'Payment/Security'
+    });
+    this.fieldOBJ.push({
+      item: this.Ext_Profile,
+      name: 'Extended Profile'
+    });
 
-    // this.fieldOBJ = this.fieldData2;
-    setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 20);
   }
 
 

@@ -65,6 +65,9 @@ export class LoginRegisterComponent implements OnInit {
             if (res[0].verified === 'True') {
                 localStorage.removeItem('user');
                 localStorage.setItem('user', res[0].message);
+                const  ocupattion: any = JSON.parse(res[0].message);
+                localStorage.setItem('userName', this.loginForm.value.email);
+                localStorage.setItem('profession', ocupattion[ocupattion.length - 1].answer);
                 if (this._authGuardService.login()) {
                     this.router.navigateByUrl('/apps/dashboards/analytics');
                 } else {

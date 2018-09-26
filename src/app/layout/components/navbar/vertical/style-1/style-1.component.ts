@@ -19,9 +19,8 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     fuseConfig: any;
     fusePerfectScrollbarUpdateTimeout: any;
     navigation: any;
-    counter = 0;
-    user: any = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : 'NO Username';
-    // username = if(this.user){ this.user[0].answer};
+    counter = 0;  
+    username = '';
     title = 'Doctor MD.';
     avatar = 'assets/images/avatars/Abbott.jpg';
     avatars = [ 'assets/images/avatars/Barrera.jpg', 'assets/images/avatars/Abbott.jpg', 'assets/images/avatars/Velazquez.jpg'];
@@ -104,6 +103,8 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
+        this.username = localStorage.getItem('userName') ? localStorage.getItem('userName') : 'NO Username';
+        this.title = localStorage.getItem('profession') ? localStorage.getItem('profession') : 'NO title';
         this._router.events
             .pipe(
                 filter((event) => event instanceof NavigationEnd),
