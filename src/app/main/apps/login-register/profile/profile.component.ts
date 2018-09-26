@@ -67,10 +67,10 @@ export class ProfileComponent implements OnInit {
     { key: '230baf4b-b903-46c7-a579-25b45b4068ef', labelValue: 'Select preferred payment method *' },
     { key: '0ba5d120-83cd-454a-84ac-bbad7db4d702', labelValue: 'Enter your PayPal account' },
     { key: 'a6d17228-a2a5-47c6-9537-fd4c606a27bf', labelValue: 'Select how you want to receive our invitations for surveys *' },
-    { key: '3e943c0f-f081-42df-a3c0-8cc372d97266', labelValue: 'Choose 2 security questions to recover your password later and answer them' },
-    { key: '45726a73-595a-45f7-9094-21993160cb02', labelValue: 'Choose a security questions to recover your password later and answer them' },
-    { key: 'a67ec2b1-7482-446c-92ed-1771249b85b6', labelValue: 'Answer the question you selected 2' },
-    { key: 'f7388c73-1f37-416a-910a-8c80dd3c96ad', labelValue: 'Choose a security questions to recover your password later and answer them' },
+    { key: '3e943c0f-f081-42df-a3c0-8cc372d97266', labelValue: 'to recover your password' },
+    { key: '45726a73-595a-45f7-9094-21993160cb02', labelValue: 'Choose a second security question to recover your password' },
+    { key: 'a67ec2b1-7482-446c-92ed-1771249b85b6', labelValue: 'Answer the second security question you selected' },
+    { key: 'f7388c73-1f37-416a-910a-8c80dd3c96ad', labelValue: 'Choose a security question to recover your password' },
     { key: '1e64873c-4977-415f-813d-c78cd9600d9c', labelValue: 'Answer the question you selected' },
     { key: '715e9115-1769-40a4-8c96-9ee7f2811006', labelValue: 'How did you hear about us?' },
     { key: 'd0566e92-8fc6-47b1-87f0-87a5597fc40c', labelValue: 'surveyHistoryTitle' },
@@ -90,9 +90,9 @@ export class ProfileComponent implements OnInit {
     { key: '2ba0c798-4db5-41c5-a597-16e9da8dd182', labelValue: 'Number of children' },
     { key: '08b20841-5e1b-465c-b2ca-b2271617517a', labelValue: 'Marketing Affiliated: Do you or any member of your immediate family work in any of the following areas?' },
     { key: '79e746d9-e454-453c-85bd-a007969c7ff5', labelValue: 'Other information: Some questions about your current system configurations' },
-    { key: 'd5139a3d-ac03-4732-b62c-7e41d67fd90e', labelValue: '' },
-    { key: '68dc6fa3-8a88-4e3f-acc4-ede4eb4e798b', labelValue: '' },
-    { key: 'd840e65b-9794-4eed-9f2d-8f9ea3d2609e', labelValue: '' },
+    { key: 'd5139a3d-ac03-4732-b62c-7e41d67fd90e', labelValue: 'BI App' },
+    { key: '68dc6fa3-8a88-4e3f-acc4-ede4eb4e798b', labelValue: 'SMS/Text' },
+    { key: 'd840e65b-9794-4eed-9f2d-8f9ea3d2609e', labelValue: 'Email' },
     { key: '2659adc0-cee0-4e15-8cff-baa2ecc78a7a', labelValue: '' },
     { key: '342838eb-0104-4537-beb8-b6183cb4fa36', labelValue: '' },
     { key: '26ca81d8-5640-40b1-8d0d-c9ef74355f03', labelValue: '' },
@@ -1018,8 +1018,6 @@ export class ProfileComponent implements OnInit {
 
   Pharm_Lic_Info: FieldConfig2[] = [
     {
-
-
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'select',
@@ -1043,8 +1041,6 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-
-
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-input-date',
@@ -1392,7 +1388,7 @@ export class ProfileComponent implements OnInit {
       // ]
     },
     {
-      labelValue: 'Select how you want to receive our invitations for surveys *',
+      labelValue: 'BI App',
       icon: '',
       defaultInputValue: '',
       componentType: 'bi-input-checkbox',
@@ -1406,45 +1402,56 @@ export class ProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'radiobutton',
-      label: 'Select how you want to receive our invitations for surveys *',
-      name: 'Select how you want to receive our invitations for surveys *',
+      type: 'checkbox',
+      label: 'BI App',
+      name: 'BI App',
       value: '',
-      inputType: 'bi-input-checkbox',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Select at least one option'
-        }
-      ]
+      inputType: 'checkbox',
     },
     {
-      labelValue: 'Choose 2 security questions to recover your password later and answer them',
+      labelValue: 'SMS/Text',
       icon: '',
       defaultInputValue: '',
-      componentType: 'bi-label',
-      options: [''],
+      componentType: 'bi-input-checkbox',
+      options: [
+        'Email',
+        'SMS/Text',
+        'BI App'
+      ],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'radiobutton',
-      label: 'Choose 2 security questions to recover your password later and answer them',
-      name: 'Choose 2 security questions to recover your password later and answer them',
+      type: 'checkbox',
+      label:  'SMS/Text',
+      name:  'SMS/Text',
       value: '',
-      inputType: 'bi-label',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      inputType: 'checkbox',
     },
     {
-      labelValue: 'Choose a security questions to recover your password later and answer them',
+      labelValue: 'Email',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-checkbox',
+      options: [
+        'Email',
+        'SMS/Text',
+        'BI App'
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: '',
+      type: 'checkbox',
+      label: 'Email',
+      name: 'Email',
+      value: '',
+      inputType: 'checkbox',
+    },
+    {
+      labelValue: 'Choose a security questions to recover your password',
       icon: '',
       defaultInputValue: '',
       componentType: 'select',
@@ -1460,63 +1467,9 @@ export class ProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'Select a Security Question',
-      type: 'radiobutton',
-      label: 'Choose a security questions to recover your password later and answer them',
-      name: 'Choose a security questions to recover your password later and answer them',
-      value: '',
-      inputType: 'select',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Choose only 2'
-        }
-      ]
-    },
-    {
-      labelValue: 'Answer the question you selected 2',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-input-text',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: 'Enter Answer for the Security Question Selected above',
-      type: 'input',
-      label: 'Answer the question you selected 2',
-      name: 'Answer the question you selected 2',
-      value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Provide an answer'
-        }
-      ]
-    },
-    {
-      labelValue: 'Choose a security questions to recover your password later and answer them',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'select',
-      options: [
-        'What is your mothers maiden name?',
-        'What is the name of your favorite pet?',
-        'What is your favorite travel destination?',
-        'What is the name of your first school?',
-        'What is the name of your first grade teacher?'
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: 'Select a different Security Question',
-      type: 'radiobutton',
-      label: 'Choose a security questions to recover your password later and answer them',
-      name: 'Choose a security questions to recover your password later and answer them',
+      type: 'select',
+      label: 'Choose a security questions to recover your password',
+      name: 'Choose a security questions to recover your password',
       value: '',
       inputType: 'select',
       validations: [
@@ -1552,8 +1505,60 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-
-
+      labelValue: 'Choose a second security question to recover your password',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'select',
+      options: [
+        'What is your mothers maiden name?',
+        'What is the name of your favorite pet?',
+        'What is your favorite travel destination?',
+        'What is the name of your first school?',
+        'What is the name of your first grade teacher?'
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Select a different Security Question',
+      type: 'select',
+      label: 'Choose a second security question to recover your password',
+      name: 'Choose a second security question to recover your password',
+      value: '',
+      inputType: 'select',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Choose only 2'
+        }
+      ]
+    },
+    {
+      labelValue: 'Answer the second security question you selected',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'bi-input-text',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter Answer for the Security Question Selected above',
+      type: 'input',
+      label: 'Answer the second security question you selected',
+      name: 'Answer the second security question you selected',
+      value: '',
+      inputType: 'text',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'Provide an answer'
+        }
+      ]
+    },
+    {
       icon: '',
       defaultInputValue: '',
       componentType: 'select',
@@ -1569,7 +1574,7 @@ export class ProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: '',
-      type: 'radiobutton',
+      type: 'select',
       label: 'How did you hear about us?',
       name: 'How did you hear about us?',
       value: '',
@@ -1777,46 +1782,44 @@ export class ProfileComponent implements OnInit {
   ];
 
   Ext_Profile: FieldConfig2[] = [
-    {     
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'bi-label',
-      options: [ 
-      'Microphone built-in or attached to a computer',
-      'Scanner attached to a computer',
-      'Webcam attached to a computer'],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'select',
-      label: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.',
-      name: 'This section is completely optional',
-      value: '',
-      inputType: 'select',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
+    // {     
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'bi-label',
+    //   options: [ 
+    //   'Microphone built-in or attached to a computer',
+    //   'Scanner attached to a computer',
+    //   'Webcam attached to a computer'],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: '',
+    //   type: 'select',
+    //   label: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.',
+    //   name: 'This section is completely optional',
+    //   value: '',
+    //   inputType: 'select',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: 'Service time is required'
+    //     }
+    //   ]
+    // },
     {
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'select',
-      options: [
-        'Hypertension.',
-        'Cancer',
-        'Coronary Heart Disease'
+      // tslint:disable-next-line:max-line-length
+      options: [ 'Allergies Hypertension / High Blood Pressure ', 'Asthma or Respiratory Ailments  Infectious Diseases ', 'Blood Disorders  Kidney or Bladder Problems ', 'Bone or Joint Conditions  Men`s Health Conditions ', 'Cancer or Cancer-Related  Musculoskeletal diseases', 'Cardiovascular diseases Neurological or Mental Health Conditions ', 'Chronic Pain (Head / Joint / Muscular)  Neuropsychiatric conditions', 'Depression Osteoarthritis / Rheumatoid Arthritis', 'Diabetes, Metabolic & Thyroid Conditions  Primary Immune Deficiencies (PID)', 'Digestive diseases Sensory organ disorders', 'Eye or Vision Impairments  Skin Conditions ', 'Heart or Cardiovascular Conditions  Sleep Disorders ', 'Hepatitis A STDs', 'Hepatitis B Stomach, Bowel or Digestion Problems ', 'Hepatitis C Women`s Health Issues ', 'High Cholesterol  Other Medical Condition', 'HIV / AIDS Non', 'Hypertension / High Blood Pressur', 'Infectious Disease', 'Kidney or Bladder Problem', 'Men`s Health Condition', 'Musculoskeletal disease', 'Neurological or Mental Health Condition', 'Neuropsychiatric condition', 'Osteoarthritis / Rheumatoid Arthriti', 'Primary Immune Deficiencies (PID', 'Sensory organ disorder', 'Skin Condition', 'Sleep Disorder', 'STD', 'Stomach, Bowel or Digestion Problem', 'Women`s Health Issue', 'Other Medical Conditio',        
       ],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Select an Ethnicity',
+      placeHolder: 'Select an Medical',
       type: 'select',
       label:  'Medical history. Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
       name: 'Medical history',
@@ -1834,9 +1837,7 @@ export class ProfileComponent implements OnInit {
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'select',
-      options: [
-        'Manchu',
-        'latin'
+      options: [ 'African American / Black', 'Asian / Pacific Islander', 'Caucasian / White', 'Hispanic Origin', 'Native American / Eskimo', 'Other',
       ],
       disabled: 'false',
       componentId: '0',
@@ -1888,8 +1889,10 @@ export class ProfileComponent implements OnInit {
       defaultInputValue: '',
       componentType: 'select',
       options: [
-        'soltero',
-        'casado'
+        'Single',
+        'Married',
+        'Divorce',
+        'Widower',
       ],
       disabled: 'false',
       componentId: '0',
@@ -2032,9 +2035,6 @@ export class ProfileComponent implements OnInit {
 
   fieldOBJ = [];
 
-
-
-
   ngOnInit(): void {
     if (this.user) {
       this.user = JSON.parse(this.user);
@@ -2156,12 +2156,12 @@ export class ProfileComponent implements OnInit {
         }
       }
     }
-    this._finalObj.push(username);
-    this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
-      localStorage.setItem('user', '');
-      localStorage.setItem('user', result[0].Msg);
-      console.log(event);
-    });
+    // this._finalObj.push(username);
+    // this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
+    //   localStorage.setItem('user', '');
+    //   localStorage.setItem('user', result[0].Msg);
+    //   console.log(event);
+    // });
 
   }
 }
