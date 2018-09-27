@@ -18,6 +18,7 @@ import { SmartComponent } from '../smart/smart.component';
 import { LabelComponent } from './components/textlabel/textlabel.component';
 import { RegistrationFormComponent } from '../login-register/registration-form/registration-form.component';
 import { ProfileComponent } from '../login-register/profile/profile.component';
+import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 const routes: Routes = [
   {
     path     : 'user/profile',
@@ -45,6 +46,7 @@ const routes: Routes = [
   ],
   declarations:   [
     ProfileComponent,
+    AutocompleteComponent,
     SmartComponent,
     RegistrationFormComponent,
     DynamicProfileComponent,
@@ -59,6 +61,7 @@ const routes: Routes = [
     DynamicFormComponent
   ],
    entryComponents: [
+    AutocompleteComponent,
     InputComponent,
     ButtonComponent,
     SelectComponent,

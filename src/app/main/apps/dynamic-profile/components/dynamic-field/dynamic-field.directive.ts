@@ -15,6 +15,7 @@ import { DateComponent } from '../date/date.component';
 import { RadiobuttonComponent } from '../radiobutton/radiobutton.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { LabelComponent } from '../textlabel/textlabel.component';
+import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
 
 const componentMapper = {
   input: InputComponent,
@@ -23,7 +24,8 @@ const componentMapper = {
   date: DateComponent,
   radiobutton: RadiobuttonComponent,
   checkbox: CheckboxComponent,
-  label: LabelComponent
+  label: LabelComponent,
+  auto: AutocompleteComponent
 };
 @Directive({
   selector: '[dynamicField]'
