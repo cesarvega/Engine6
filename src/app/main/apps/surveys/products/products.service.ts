@@ -12,7 +12,7 @@ export class EcommerceProductsService implements Resolve<any>
     webApiUrl = 'https://ng6-node-app-boldepvhqf.now.sh/';
     apiCall = 'api/bi-surveys';
     API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
-    api_call = '[RESPONDENTS].[dbo].[pm_GetSurveyHistory] ' + '\'antoniostiriti@libero.it\',' + '\'2\'';
+    api_call = '[RESPONDENTS].[dbo].[pm_GetSurveyHistory] ';
     private headers = { headers: new HttpHeaders().set('content-type', 'application/json').set('Accept', 'application/json') };
     onProductsChanged: BehaviorSubject<any>;
 
@@ -66,7 +66,8 @@ export class EcommerceProductsService implements Resolve<any>
                     }, reject);
             } else {               
                 const api_call = JSON.stringify(this.api_call);
-                return this._httpClient.post(this.API_URL, api_call, this.headers)
+                const user = localStorage.getItem('username');
+                return this._httpClient.post(this.API_URL, api_call   + '\'' + user + '\',' + '\'2\'' , this.headers)
                     .subscribe((response: any) => {
                         this.products = response;
                         this.onProductsChanged.next(this.products);

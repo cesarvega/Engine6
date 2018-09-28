@@ -70,7 +70,7 @@ export class ProfileComponent implements OnInit {
     { key: '3e943c0f-f081-42df-a3c0-8cc372d97266', labelValue: 'to recover your password' },
     { key: '45726a73-595a-45f7-9094-21993160cb02', labelValue: 'Choose a second security question to recover your password' },
     { key: 'a67ec2b1-7482-446c-92ed-1771249b85b6', labelValue: 'Answer the second security question you selected' },
-    { key: 'f7388c73-1f37-416a-910a-8c80dd3c96ad', labelValue: 'Choose a security question to recover your password' },
+    { key: 'f7388c73-1f37-416a-910a-8c80dd3c96ad', labelValue: 'Choose a security questions to recover your password' },
     { key: '1e64873c-4977-415f-813d-c78cd9600d9c', labelValue: 'Answer the question you selected' },
     { key: '715e9115-1769-40a4-8c96-9ee7f2811006', labelValue: 'How did you hear about us?' },
     { key: 'd0566e92-8fc6-47b1-87f0-87a5597fc40c', labelValue: 'surveyHistoryTitle' },
@@ -424,11 +424,11 @@ export class ProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'State/Province',
-      type: 'select',
+      type: 'auto',
       label: 'Select State/Province *',
       name: 'Select State/Province *',
       value: '',
-      inputType: 'select',
+      inputType: 'auto',
       validations: [
         {
           name: 'required',
@@ -2120,12 +2120,18 @@ export class ProfileComponent implements OnInit {
         }
       }
     }
-    // this._finalObj.push(username);
-    // this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
-    //   localStorage.setItem('user', '');
-    //   localStorage.setItem('user', result[0].Msg);
-    //   console.log(event);
-    // });
+    this._finalObj.push(username);
+    this._finalObj.forEach(element => {
+      if (Array.isArray(element.answer)) {        
+        element.answer =  element.answer.join('|');
+        element.answer = '[' + element.answer + ']';
+      }
+    });
+    this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
+      localStorage.setItem('user', '');
+      localStorage.setItem('user', result[0].Msg);
+      console.log(event);
+    });
 
   }
 }
