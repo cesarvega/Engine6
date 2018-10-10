@@ -8,17 +8,30 @@ import { LoginService } from './login.service';
 import { Router } from '@angular/router';
 import { AuthGuardService } from './service/auth.service';
 import {MatDialog} from '@angular/material';
+import { trigger, transition, useAnimation, state, style} from '@angular/animations';
+import { shake } from 'ng-animate';
 @Component({
     selector: 'app-login-register',
     templateUrl: './login-register.component.html',
     styleUrls: ['./login-register.component.scss'],
-    providers: [AuthService, LoginService]
+    providers: [AuthService, LoginService],
+    animations: [
+        trigger('bounce',
+         [   transition('nobounce => bounce',  useAnimation(shake)),
+             transition('bounce => nobounce',  useAnimation(shake, {
+            params: { timing: 0.2, delay: 0 }
+         })),
+        ])
+      ],
 })
+
 export class LoginRegisterComponent implements OnInit {
     loginForm: FormGroup;
     private user: SocialUser;
     private loggedIn: boolean;
     private isUser = false;
+    private harlemShake = true;
+    private myTiming = 0;
     /**
      * Constructor
      *
@@ -55,6 +68,7 @@ export class LoginRegisterComponent implements OnInit {
 
 
     signInWithBI(user?: SocialUser): void {
+        this.harlemShake = false;
         // console.log(this.loginForm.value);
         if (user) {
             this.loginForm.value.email = user.email;
@@ -67,13 +81,19 @@ export class LoginRegisterComponent implements OnInit {
                 localStorage.setItem('user', res[0].message);
                 const  ocupattion: any = JSON.parse(res[0].message);
                 localStorage.setItem('userName', this.loginForm.value.email);
-                localStorage.setItem('profession', ocupattion[ocupattion.length - 1].answer);
+                ocupattion.forEach(element => {
+                    if (element.question === 'Specify your profession or occupation') {                        
+                        localStorage.setItem('profession', element.answer);
+                    }
+                });
                 if (this._authGuardService.login()) {
                     this.router.navigateByUrl('/apps/dashboards/analytics');
                 } else {
                     this._authGuardService.logout();
                 }
             }else {
+                this.harlemShake = true;
+                this.myTiming = 1;
                 this.isUser = true;
             }
 

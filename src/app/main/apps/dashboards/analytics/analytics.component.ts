@@ -3,13 +3,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fuseAnimations } from '@fuse/animations';
 
 import { AnalyticsDashboardService } from 'app/main/apps/dashboards/analytics/analytics.service';
+import { LoginService } from '../../login-register/login.service';
 
 @Component({
     selector     : 'analytics-dashboard',
     templateUrl  : './analytics.component.html',
     styleUrls    : ['./analytics.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+    animations   : fuseAnimations,
+    providers: [LoginService],
 })
 export class AnalyticsDashboardComponent implements OnInit
 {
@@ -23,7 +25,8 @@ export class AnalyticsDashboardComponent implements OnInit
      * @param {AnalyticsDashboardService} _analyticsDashboardService
      */
     constructor(
-        private _analyticsDashboardService: AnalyticsDashboardService
+        private _analyticsDashboardService: AnalyticsDashboardService,
+        private _biLoginService: LoginService
     )
     {
         // Register the custom chart.js plugin
@@ -41,6 +44,10 @@ export class AnalyticsDashboardComponent implements OnInit
     {
         // Get the widgets from the service
         this.widgets = this._analyticsDashboardService.widgets;
+        this._biLoginService.getSurveySummary('cvega@1.com').subscribe(arg => {
+           const property = arg;
+        });
+        
     }
 
     // -----------------------------------------------------------------------------------------------------

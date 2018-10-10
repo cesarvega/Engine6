@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FieldConfig2 } from '../../dynamic-profile/field.interface';
 import { Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -9,7 +10,8 @@ import { LoginService } from '../login.service';
 })
 export class ProfileComponent implements OnInit {
   constructor(
-    private _loginService: LoginService,
+    private _loginService: LoginService,      
+    private toastr: ToastrService
   ) { }
   // private respondantType  = localStorage.getItem('user') !== 'undefined' ? localStorage.getItem('user') : 'OTHER_HCP';
   private respondantType = 'MD_PA_Lic_Info';
@@ -2130,8 +2132,51 @@ export class ProfileComponent implements OnInit {
     this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
       localStorage.setItem('user', '');
       localStorage.setItem('user', result[0].Msg);
+      this.toastr.success('profile saved');
       console.log(event);
     });
 
   }
 }
+
+        // {
+        //   'names': 'Not related to Health Care',
+        //   'values': 'NonHCP'
+        // },
+        // {
+        //   'names': 'Physician/Doctor of Medicine (MD, DO)',
+        //   'values': 'MD_PA_lic_Info'
+        // },
+        // {
+        //   'names': 'Physician Assistant (PA)',
+        //   'values': 'MD_PA_lic_Info'
+        // },
+        // {
+        //   'names': 'Nurse',
+        //   'values': 'Nurse_Lic_Info'
+        // },
+        // {
+        //   'names': 'Pharmacist',
+        //   'values': 'Pharm_Lic_Info'
+        // },
+        // {
+        //   'names': 'Pharmacist Technician',
+        //   'values': 'Pharm_Lic_Info'
+        // },
+        // {
+        //   'names': 'Dentist',
+        //   'values': 'OTHER_HCP'
+        // },
+        // {
+        //   'names': 'Optometrist',
+        //   'values': 'OTHER_HCP'
+        // },
+        // {
+        //   'names': 'Veterinarian',
+        //   'values': 'OTHER_HCP'
+        // },
+        // {
+        //   'names': 'Allied Health Care Profession or Occupation',
+        //   'values': 'OTHER_HCP'
+        // }
+        // ,
