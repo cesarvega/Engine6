@@ -20,7 +20,7 @@ export class EcommerceProductsComponent implements OnInit
 {
     dataSource: FilesDataSource | null;
     // displayedColumns = ['surveyid', 'image', 'surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
-    displayedColumns = ['surveyid', 'surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
+    displayedColumns = ['surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
 
     @ViewChild(MatPaginator)
     paginator: MatPaginator;

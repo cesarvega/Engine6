@@ -51,16 +51,16 @@
             <mat-table class="products-table"
                        #table [dataSource]="dataSource"
                        matSort
-                       [@animateStagger]="{value:'50'}"
+                       
                        fusePerfectScrollbar>
 
                 <!-- ID Column -->
-                <ng-container matColumnDef="surveyid">
+                <!-- <ng-container matColumnDef="surveyid">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
                     <mat-cell *matCellDef="let product">
                         <p class="text-truncate">{{product.surveyid}}</p>
                     </mat-cell>
-                </ng-container>
+                </ng-container> -->
 
                 <!-- Image Column -->
                 <!-- <ng-container matColumnDef="image">

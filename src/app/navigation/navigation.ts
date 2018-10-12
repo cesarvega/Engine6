@@ -56,15 +56,7 @@ export const navigation: FuseNavigation[] = [
         // translate: 'NAV.APPLICATIONS',
         type: 'group',
         icon: 'settings',
-        children: [
-            {
-                id: 'Logout',
-                title: 'logout',
-                // translate: 'NAV.HELP',
-                type: 'item',
-                icon: 'settings_power',
-                url: '/apps/login/auth/login'
-            },        
+        children: [                   
             {
                 id: 'Settings',
                 title: 'Help',
@@ -103,6 +95,14 @@ export const navigation: FuseNavigation[] = [
                         url: '/apps/login/unsubscribe'
                     }
                 ]
+            },
+            {
+                id: 'Logout',
+                title: 'logout',
+                // translate: 'NAV.HELP',
+                type: 'item',
+                icon: 'settings_power',
+                url: '/apps/login/auth/login'
             }]
     }
 ];

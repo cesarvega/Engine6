@@ -149,3 +149,71 @@ export class LoginRegisterComponent implements OnInit {
   export class DialogContent {
 
   }
+
+
+  interface FsDocument extends HTMLDocument {
+    mozFullScreenElement?: Element;
+    msFullscreenElement?: Element;
+    msExitFullscreen?: () => void;
+    mozCancelFullScreen?: () => void;
+  }
+  interface FsDocumentElement extends HTMLElement {
+    msRequestFullscreen?: () => void;
+    mozRequestFullScreen?: () => void;
+  }
+
+@Component({
+    selector: 'full-screen'
+  })
+  // tslint:disable-next-line:component-class-suffix
+  export class FullScreen implements OnInit {
+    ngOnInit(): void {
+        this.setFullScreen(true);
+    }
+
+    isFullScreen(): boolean {
+        const fsDoc = <FsDocument> document;
+      
+        return !!(fsDoc.fullscreenElement || fsDoc.mozFullScreenElement || fsDoc.webkitFullscreenElement || fsDoc.msFullscreenElement);
+      }
+
+      toggleFullScreen(): void {
+        const fsDoc = <FsDocument> document;
+      
+        if (!this.isFullScreen()) {
+          const fsDocElem = <FsDocumentElement> document.documentElement;
+      
+          if (fsDocElem.requestFullscreen) {
+            fsDocElem.requestFullscreen();
+          }
+          else if (fsDocElem.msRequestFullscreen) {
+            fsDocElem.msRequestFullscreen();
+               }
+          else if (fsDocElem.mozRequestFullScreen) {
+            fsDocElem.mozRequestFullScreen();
+               }
+          else if (fsDocElem.webkitRequestFullscreen) {
+            fsDocElem.webkitRequestFullscreen();
+               }
+        }
+        else if (fsDoc.exitFullscreen) {
+          fsDoc.exitFullscreen();
+             }
+        else if (fsDoc.msExitFullscreen) {
+          fsDoc.msExitFullscreen();
+             }
+        else if (fsDoc.mozCancelFullScreen) {
+          fsDoc.mozCancelFullScreen();
+             }
+        else if (fsDoc.webkitExitFullscreen) {
+          fsDoc.webkitExitFullscreen();
+             }
+      }
+
+      setFullScreen(full: boolean): void {
+        if (full !== this.isFullScreen()) {
+          this.toggleFullScreen();
+        }
+      }
+    
+  }
