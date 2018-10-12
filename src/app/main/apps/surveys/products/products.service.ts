@@ -8,7 +8,7 @@ import { RequestOptions } from '@angular/http';
 export class EcommerceProductsService implements Resolve<any>
 {
     products: any[];
-    now = false;
+    now = true;
     webApiUrl = 'https://ng6-node-app-boldepvhqf.now.sh/';
     apiCall = 'api/bi-surveys';
     API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';

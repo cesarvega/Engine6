@@ -29,8 +29,8 @@ export class LoginRegisterComponent implements OnInit {
     loginForm: FormGroup;
     private user: SocialUser;
     private loggedIn: boolean;
-    private isUser = false;
-    private harlemShake = true;
+    public isUser = false;
+    public harlemShake = true;
     private myTiming = 0;
     /**
      * Constructor

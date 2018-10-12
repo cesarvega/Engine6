@@ -6,24 +6,24 @@ export class AnalyticsDashboardDb
             datasets : {
                 '2016': [
                     {
-                        label: 'surveys',
-                        data : [4.0, 5, 3.0, 7.0, 2.0, 3.0, 2.0, 8.0, 4.0, 3.0, 3.0, 2.0],
+                        label: 'amount $',
+                        data : [4.0, 5, 3.0, 7.0, 2.0, 3.0, 2.0, 2.0],
                         fill : 'start'
 
                     }
                 ],
                 '2017': [
                     {
-                        label: 'surveys',
-                        data : [2.0, 2.0, 3.0, 2.0, 3.0, 3.0, 2.0, 1.0, 3, 3.0, 4.0, 3.0],
+                        label: 'amount $',
+                        data : [2.0, 2.0, 3.0, 2.0, 3.3, 3.0, 4.0, 3.0],
                         fill : 'start'
 
                     }
                 ],
                 '2018': [
                     {
-                        label: 'surveys',
-                        data : [3.0, 2.0, 3.0, 4.0, 1.0, 3, 3.0, 3.0, 2.0, 3.0, 2.0, 2.0],
+                        label: 'amount $',
+                        data : [3.0, 2.0, 3.0, 4.0, 1.0, 3, 2.0, 2.0],
                         fill : 'start'
 
                     }
@@ -42,6 +42,9 @@ export class AnalyticsDashboardDb
                 }
             ],
             options  : {
+                tooltips: {
+                     displayColors : false
+                    },
                 spanGaps           : false,
                 legend             : {
                     display: false
@@ -62,15 +65,15 @@ export class AnalyticsDashboardDb
                         hoverBorderWidth: 2
                     },
                     line : {
-                        tension: 0
+                        tension: 0.1
                     }
                 },
                 scales             : {
                     xAxes: [
                         {
                             gridLines: {
-                                display       : false,
-                                drawBorder    : false,
+                                display       : true,
+                                drawBorder    : true,
                                 tickMarkLength: 18
                             },
                             ticks    : {
@@ -80,11 +83,12 @@ export class AnalyticsDashboardDb
                     ],
                     yAxes: [
                         {
-                            display: false,
+                            display: true,
                             ticks  : {
-                                min     : 1.5,
-                                max     : 5,
-                                stepSize: 0.5
+                                min     : 0,
+                                max     : 300,
+                                stepSize: 50,
+                                fontColor: '#ffffff'
                             }
                         }
                     ]

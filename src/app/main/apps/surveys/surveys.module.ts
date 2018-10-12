@@ -18,6 +18,7 @@ import { EcommerceOrdersComponent } from './orders/orders.component';
 import { EcommerceOrdersService } from './orders/orders.service';
 import { EcommerceOrderComponent } from './order/order.component';
 import { EcommerceOrderService } from './order/order.service';
+import { SurveysComponent } from './surveys.component';
 
 const routes: Routes = [
     {
@@ -74,7 +75,8 @@ const routes: Routes = [
         EcommerceProductsComponent,
         EcommerceProductComponent,
         EcommerceOrdersComponent,
-        EcommerceOrderComponent
+        EcommerceOrderComponent,
+        SurveysComponent
     ],
     imports     : [
         RouterModule.forChild(routes),

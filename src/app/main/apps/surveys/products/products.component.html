@@ -103,9 +103,9 @@
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>paymentStatus</mat-header-cell>
                     <mat-cell *matCellDef="let product" fxHide fxShow.gt-sm>
 
-                        <span class="quantity-indicator text-truncate">
-                        </span>
-                        <span>
+                        <!-- <span class="quantity-indicator text-truncate">
+                        </span> -->
+                        <span style="color:whitesmoke" [ngClass]="(product.paymentStatus==='PAID')?'mat-green-600-bg':'mat-red-500-bg'">
                             {{product.paymentStatus}}
                         </span>
 
@@ -115,10 +115,8 @@
                 <!-- Active Column -->
                 <ng-container matColumnDef="surveyStatus">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>surveyStatus</mat-header-cell>
-                    <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>
-                        <mat-icon *ngIf="product.active" class="active-icon mat-green-600-bg s-16">check</mat-icon>
-                        <mat-icon *ngIf="!product.active" class="active-icon mat-red-500-bg s-16">close</mat-icon>
-                        <span>
+                    <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>                      
+                        <span style="color:whitesmoke" [ngClass]="(product.surveyStatus==='OPEN')?'mat-yellow-500-bg':'mat-blue-500-bg'">
                             {{product.surveyStatus}}
                         </span>
                     </mat-cell>
