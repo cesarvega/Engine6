@@ -1,4 +1,5 @@
 <mat-form-field fxFlex="100" appearance="outline" [formGroup]="group">
+    <mat-label>{{field.label}}</mat-label>
     <mat-select [placeholder]="field.label"  [value]="field.value" [formControlName]="field.name" [multiple]="field.componentType">
         <mat-option *ngFor="let item of field.options" [value]="item">{{item}}</mat-option>
     </mat-select>

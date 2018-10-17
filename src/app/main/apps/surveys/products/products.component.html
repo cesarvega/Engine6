@@ -1,20 +1,52 @@
-<div id="products" class="page-layout carded fullwidth inner-scroll">
-
-    <!-- TOP BACKGROUND -->
-    <div class="top-bg mat-accent-bg"></div>
-    <!-- / TOP BACKGROUND -->
-
-    <!-- CENTER -->
-    <div class="center">
-
+<div fxFlexFill>
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center space-between" class="m-8">
+        <!-- Widget 2 -->
+        <div class="widget" fxFlex="100">
+            <div class="fuse-card auto-width" [ngClass.gt-xs]="'mb-10 mr-10'" style="background: #04b904; color:whitesmoke; min-height: 250px; padding-top: 70px">
+                <div class="p-16 pb-10 mat-green-900" fxLayout="column wrap" fxLayoutAlign="center center">
+                    <div class="h3 pb-10 text-center">Total Surveys Earnings</div>
+                    <div class="font-size-54 font-weight-300 line-height-1 ">
+                        ${{totalAmount}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Widget 2 -->
+        <!-- Widget 3 -->
+        <div class="widget" fxFlex="100">
+            <div class="fuse-card auto-width" [ngClass.gt-xs]="'mb-10 mr-10'" style="background: #1E376D; color:whitesmoke; min-height: 250px; padding-top: 70px">
+                <div class="p-16 pb-10" fxLayout="column wrap" fxLayoutAlign="center center">
+                    <div class="pr-16">
+                        <div class="h3 pb-10">Average per month amount</div>
+                        <div class="font-size-54 font-weight-300 line-height-1 ">
+                            ${{avg}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Widget 3 -->
+        <!-- Widget 4 -->
+        <div class="widget" fxFlex="100">
+            <div class="fuse-card auto-width" [ngClass.gt-xs]="'mb-10 mr-10'" style="background: #42A5F5; color:whitesmoke; min-height: 250px; padding-top: 70px">
+                <div class="p-16 pb-10" fxLayout="column wrap" fxLayoutAlign="center center">
+                    <div class="pr-16">
+                        <div class="h3 pb-10 text-center">Current Monthly Surveys</div>
+                        <div class="font-size-54 font-weight-300 line-height-1 text-center">
+                            {{totalAmountSurveys}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="products" class="page-layout carded fullwidth inner-scroll">
         <!-- HEADER -->
-        <div class="header mat-accent-bg"
-             fxLayout="column" fxLayoutAlign="center center"
-             fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="space-between center">
+        <div class="header mat-accent-bg" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+            fxLayoutAlign.gt-xs="space-between center">
 
             <!-- APP TITLE -->
-            <div class="logo my-12 m-sm-0"
-                 fxLayout="row" fxLayoutAlign="start center">
+            <div class="logo my-12 m-sm-0" fxLayout="row" fxLayoutAlign="start center">
                 <mat-icon class="logo-icon mr-16" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
                     assignment
                 </mat-icon>
@@ -25,10 +57,9 @@
             <!-- / APP TITLE -->
 
             <!-- SEARCH -->
-            <div class="search-input-wrapper mx-24 m-md-0"
-                 fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
-                <label for="search" class="mr-8">
-                    <mat-icon class="secondary-text">search</mat-icon>
+            <div class="search-input-wrapper mx-24 m-md-0" fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+                <label for="search" class="ml-8  pl-10">
+                    <mat-icon class="secondary-text "></mat-icon>
                 </label>
                 <mat-form-field floatLabel="never" fxFlex="1 0 auto">
                     <input id="search" matInput #filter placeholder="Search">
@@ -44,43 +75,21 @@
 
         </div>
         <!-- / HEADER -->
-
         <!-- CONTENT CARD -->
-        <div class="content-card mat-white-bg">
+        <div class="content-card mat-white-bg" fxFlex="100">
 
-            <mat-table class="products-table"
-                       #table [dataSource]="dataSource"
-                       matSort
-                       
-                       fusePerfectScrollbar>
-
-                <!-- ID Column -->
-                <!-- <ng-container matColumnDef="surveyid">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
-                    <mat-cell *matCellDef="let product">
-                        <p class="text-truncate">{{product.surveyid}}</p>
-                    </mat-cell>
-                </ng-container> -->
-
-                <!-- Image Column -->
-                <!-- <ng-container matColumnDef="image">
-                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                    <mat-cell *matCellDef="let product">
-                        <img class="product-image" [src]="'assets/images/ecommerce/product-image-placeholder.png'">
-                    </mat-cell>
-                </ng-container> -->
-
+            <mat-table class="products-table" #table [dataSource]="dataSource" matSort fusePerfectScrollbar>
                 <!-- Name Column -->
-                <ng-container matColumnDef="surveyName">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>surveyName</mat-header-cell>
+                <ng-container matColumnDef="Survey Name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Survey Name</mat-header-cell>
                     <mat-cell *matCellDef="let product">
                         <p class="text-truncate">{{product.surveyName}}</p>
                     </mat-cell>
                 </ng-container>
 
                 <!-- Category Column -->
-                <ng-container matColumnDef="surveyStarted">
-                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>surveyStarted</mat-header-cell>
+                <ng-container matColumnDef="Survey Started">
+                    <mat-header-cell *matHeaderCellDef fxHide mat-sort-header fxShow.gt-md>Survey Started</mat-header-cell>
                     <mat-cell *matCellDef="let product" fxHide fxShow.gt-md>
                         <p class="category text-truncate">
                             {{product.surveyStarted}}
@@ -89,8 +98,8 @@
                 </ng-container>
 
                 <!-- Price Column -->
-                <ng-container matColumnDef="amountPaid">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>amountPaid</mat-header-cell>
+                <ng-container matColumnDef="Amount Paid">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Amount Paid</mat-header-cell>
                     <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>
                         <p class="price text-truncate">
                             {{product.amountPaid | currency:'USD':'symbol'}}
@@ -99,13 +108,13 @@
                 </ng-container>
 
                 <!-- Quantity Column -->
-                <ng-container matColumnDef="paymentStatus">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-sm>paymentStatus</mat-header-cell>
-                    <mat-cell *matCellDef="let product" fxHide fxShow.gt-sm>
+                <ng-container matColumnDef="Payment Status">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Payment Status</mat-header-cell>
+                    <mat-cell style="float: right;" *matCellDef="let product">
 
                         <!-- <span class="quantity-indicator text-truncate">
                         </span> -->
-                        <span style="color:whitesmoke" [ngClass]="(product.paymentStatus==='PAID')?'mat-green-600-bg':'mat-red-500-bg'">
+                        <span [ngClass]="(product.paymentStatus==='PAID')?'mat-green-600-bg':'mat-red-500-bg'">
                             {{product.paymentStatus}}
                         </span>
 
@@ -113,9 +122,9 @@
                 </ng-container>
 
                 <!-- Active Column -->
-                <ng-container matColumnDef="surveyStatus">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>surveyStatus</mat-header-cell>
-                    <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>                      
+                <ng-container matColumnDef="Survey Status">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Survey Status</mat-header-cell>
+                    <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>
                         <span style="color:whitesmoke" [ngClass]="(product.surveyStatus==='OPEN')?'mat-yellow-500-bg':'mat-blue-500-bg'">
                             {{product.surveyStatus}}
                         </span>
@@ -124,22 +133,15 @@
 
                 <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
 
-                <mat-row *matRowDef="let product; columns: displayedColumns;"
-                         class="product"
-                         matRipple>
+                <mat-row *matRowDef="let product; columns: displayedColumns;" class="product" matRipple>
                 </mat-row>
 
             </mat-table>
 
-            <mat-paginator #paginator
-                           [length]="dataSource.filteredData.length"
-                           [pageIndex]="0"
-                           [pageSize]="10"
-                           [pageSizeOptions]="[5, 10, 25, 100]">
+            <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]">
             </mat-paginator>
 
         </div>
-        <!-- / CONTENT CARD -->
     </div>
-    <!-- / CENTER -->
 </div>

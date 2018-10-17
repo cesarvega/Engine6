@@ -10,6 +10,19 @@ import { AuthGuardService } from './service/auth.service';
 import {MatDialog} from '@angular/material';
 import { trigger, transition, useAnimation, state, style} from '@angular/animations';
 import { shake } from 'ng-animate';
+
+interface FsDocument extends HTMLDocument {
+    mozFullScreenElement?: Element;
+    msFullscreenElement?: Element;
+    msExitFullscreen?: () => void;
+    mozCancelFullScreen?: () => void;
+  }
+  interface FsDocumentElement extends HTMLElement {
+    msRequestFullscreen?: () => void;
+    mozRequestFullScreen?: () => void;
+  }
+
+
 @Component({
     selector: 'app-login-register',
     templateUrl: './login-register.component.html',
@@ -17,10 +30,9 @@ import { shake } from 'ng-animate';
     providers: [AuthService, LoginService],
     animations: [
         trigger('bounce',
-         [   transition('nobounce => bounce',  useAnimation(shake)),
-             transition('bounce => nobounce',  useAnimation(shake, {
-            params: { timing: 0.2, delay: 0 }
-         })),
+         [   transition('nobounce => bounce',  useAnimation(shake, {
+            params: { timing: 0.2, delay: 0.3 }
+         }))
         ])
       ],
 })
@@ -32,12 +44,7 @@ export class LoginRegisterComponent implements OnInit {
     public isUser = false;
     public harlemShake = true;
     private myTiming = 0;
-    /**
-     * Constructor
-     *
-     * @param {FuseConfigService} _fuseConfigService
-     * @param {FormBuilder} _formBuilder
-     */
+   
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
@@ -125,20 +132,59 @@ export class LoginRegisterComponent implements OnInit {
         });
       }
 
-
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
     ngOnInit(): void {        
         this.loginForm = this._formBuilder.group({
             email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });
+
+        // this.setFullScreen(true);
     }
+    // isFullScreen(): boolean {
+    //     const fsDoc = <FsDocument> document;
+      
+    //     return !!(fsDoc.fullscreenElement || fsDoc.mozFullScreenElement || fsDoc.webkitFullscreenElement || fsDoc.msFullscreenElement);
+    //   }
+
+    //   toggleFullScreen(): void {
+    //     const fsDoc = <FsDocument> document;
+      
+    //     if (!this.isFullScreen()) {
+    //       const fsDocElem = <FsDocumentElement> document.documentElement;
+    //       if (fsDocElem.requestFullscreen) {
+      
+    //         fsDocElem.requestFullscreen();
+    //       }
+    //       else if (fsDocElem.msRequestFullscreen) {
+    //         fsDocElem.msRequestFullscreen();
+    //            }
+    //       else if (fsDocElem.mozRequestFullScreen) {
+    //         fsDocElem.mozRequestFullScreen();
+    //            }
+    //       else if (fsDocElem.webkitRequestFullscreen) {
+    //         fsDocElem.webkitRequestFullscreen();
+    //            }
+    //     }
+    //     else if (fsDoc.exitFullscreen) {
+    //       fsDoc.exitFullscreen();
+    //          }
+    //     else if (fsDoc.msExitFullscreen) {
+    //       fsDoc.msExitFullscreen();
+    //          }
+    //     else if (fsDoc.mozCancelFullScreen) {
+    //       fsDoc.mozCancelFullScreen();
+    //          }
+    //     else if (fsDoc.webkitExitFullscreen) {
+    //       fsDoc.webkitExitFullscreen();
+    //          }
+    //   }
+
+    //   setFullScreen(full: boolean): void {
+    //     if (full !== this.isFullScreen()) {
+    //       this.toggleFullScreen();
+    //     }
+    //   }
+    
 }
 
 @Component({
@@ -150,70 +196,3 @@ export class LoginRegisterComponent implements OnInit {
 
   }
 
-
-  interface FsDocument extends HTMLDocument {
-    mozFullScreenElement?: Element;
-    msFullscreenElement?: Element;
-    msExitFullscreen?: () => void;
-    mozCancelFullScreen?: () => void;
-  }
-  interface FsDocumentElement extends HTMLElement {
-    msRequestFullscreen?: () => void;
-    mozRequestFullScreen?: () => void;
-  }
-
-@Component({
-    selector: 'full-screen'
-  })
-  // tslint:disable-next-line:component-class-suffix
-  export class FullScreen implements OnInit {
-    ngOnInit(): void {
-        this.setFullScreen(true);
-    }
-
-    isFullScreen(): boolean {
-        const fsDoc = <FsDocument> document;
-      
-        return !!(fsDoc.fullscreenElement || fsDoc.mozFullScreenElement || fsDoc.webkitFullscreenElement || fsDoc.msFullscreenElement);
-      }
-
-      toggleFullScreen(): void {
-        const fsDoc = <FsDocument> document;
-      
-        if (!this.isFullScreen()) {
-          const fsDocElem = <FsDocumentElement> document.documentElement;
-      
-          if (fsDocElem.requestFullscreen) {
-            fsDocElem.requestFullscreen();
-          }
-          else if (fsDocElem.msRequestFullscreen) {
-            fsDocElem.msRequestFullscreen();
-               }
-          else if (fsDocElem.mozRequestFullScreen) {
-            fsDocElem.mozRequestFullScreen();
-               }
-          else if (fsDocElem.webkitRequestFullscreen) {
-            fsDocElem.webkitRequestFullscreen();
-               }
-        }
-        else if (fsDoc.exitFullscreen) {
-          fsDoc.exitFullscreen();
-             }
-        else if (fsDoc.msExitFullscreen) {
-          fsDoc.msExitFullscreen();
-             }
-        else if (fsDoc.mozCancelFullScreen) {
-          fsDoc.mozCancelFullScreen();
-             }
-        else if (fsDoc.webkitExitFullscreen) {
-          fsDoc.webkitExitFullscreen();
-             }
-      }
-
-      setFullScreen(full: boolean): void {
-        if (full !== this.isFullScreen()) {
-          this.toggleFullScreen();
-        }
-      }
-    
-  }

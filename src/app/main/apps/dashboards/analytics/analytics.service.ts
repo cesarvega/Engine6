@@ -6,7 +6,7 @@ import { Observable, ObjectUnsubscribedError } from 'rxjs';
 @Injectable()
 export class AnalyticsDashboardService implements Resolve<any>
 {
-    widgets: any[];
+    public widgets: any[];
     private httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',

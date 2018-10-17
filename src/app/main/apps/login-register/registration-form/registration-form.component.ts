@@ -179,7 +179,12 @@ export class RegistrationFormComponent implements OnInit {
           name: 'min',
           validator: Validators.minLength(6),
           message: 'please enter 6 characters minimun'
-        }
+        },
+        {
+          name: 'pattern',
+          validator: Validators.pattern('^[a-zA-Z0-9]{6,10}$'),
+          message: 'please enter a valid password no especial characters, 6 characters minimun (|,/,*,", ...etc)'
+        },
       ]
     },
     {
@@ -203,7 +208,12 @@ export class RegistrationFormComponent implements OnInit {
           name: 'required',
           validator: Validators.required,
           message: 'password not matching'
-        }
+        },
+        {
+          name: 'pattern',
+          validator: Validators.pattern('^[a-zA-Z0-9]{6,10}$'),
+          message: 'please enter a valid password no especial characters, 6 characters minimun (|,/,*,", ...etc)'
+        },
       ]
     },
     {

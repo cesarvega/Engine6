@@ -20,8 +20,14 @@ export class EcommerceProductsComponent implements OnInit
 {
     dataSource: FilesDataSource | null;
     // displayedColumns = ['surveyid', 'image', 'surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
-    displayedColumns = ['surveyName', 'surveyStarted', 'amountPaid', 'paymentStatus', 'surveyStatus'];
-
+    displayedColumns = ['Survey Name', 'Survey Started', 'Amount Paid', 'Payment Status', 'Survey Status'];
+    totalAmount;
+    avg;
+    totalAmountSurveys;   
+    widgets: any;
+    widget1SelectedYear = '2018';
+    widget5SelectedDay = 'today';
+    yearDataWidget;
     @ViewChild(MatPaginator)
     paginator: MatPaginator;
 
@@ -42,7 +48,14 @@ export class EcommerceProductsComponent implements OnInit
 
 
     ngOnInit(): void
-    {
+    {  
+        this.widgets = this._ecommerceProductsService.getWidgets().then(x => {
+        this.yearDataWidget  =  Object.keys(x.widget1.datasets);    
+        this.totalAmount = x.widget1.totalAmount;         
+        this.avg = x.widget1.avg;
+        this.totalAmountSurveys = x.widget1.totalAmountSurveys;
+    });
+       
         this.dataSource = new FilesDataSource(this._ecommerceProductsService, this.paginator, this.sort);
 
         fromEvent(this.filter.nativeElement, 'keyup')
