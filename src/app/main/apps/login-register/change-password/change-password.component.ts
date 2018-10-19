@@ -4,6 +4,8 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
@@ -11,8 +13,6 @@ import { Router } from '@angular/router';
 })
 export class ChangePasswordComponent implements OnInit {
   loginForm: FormGroup;
-  private user: SocialUser;
-  private loggedIn: boolean;
   /**
    * Constructor
    *
@@ -23,6 +23,8 @@ export class ChangePasswordComponent implements OnInit {
       private _fuseConfigService: FuseConfigService,
       private _formBuilder: FormBuilder,
       private _authService: AuthService,
+      private _loginService: LoginService,
+      private toastr: ToastrService,
       private router: Router) {
       // Configure the layout
       this._fuseConfigService.config = {
@@ -42,16 +44,12 @@ export class ChangePasswordComponent implements OnInit {
           }
       };
   }
-
-
   resetPassword(): void {
     // Validation settings
     if (this.loginForm.value['newPassword'].length < 6) {
       this.loginForm.controls['newPassword'].setErrors({ 'required': true });
     }
-    if (this.loginForm.value['oldPassword'] === '123456') {
-      this.loginForm.controls['oldPassword'].setErrors({ 'wrongdpassword': true });
-    }
+
     if (this.loginForm.value['newPassword'] !== this.loginForm.value['confirmPassword']) {
       this.loginForm.controls['confirmPassword'].setErrors({ 'required': true });
     }
@@ -60,7 +58,20 @@ export class ChangePasswordComponent implements OnInit {
       this.loginForm.controls['oldPassword'].setErrors({ 'same': true });
     }
 
-    this.router.navigateByUrl('/apps/login/successful-password-reset');
+
+    if (this.loginForm.valid) {  
+        const data =  {username: this.loginForm.value.email, oldpassword: this.loginForm.value.oldPassword, newpassword: this.loginForm.value.newPassword };
+        this._loginService.changePassword(data).subscribe(x => {        
+                if (JSON.parse(x.d)[0].verified) {                    
+                    this.toastr.success('password changed');
+                    this.router.navigateByUrl('/apps/login/successful-password-reset');
+                }
+                else {                   
+                    this.toastr.warning('Wrong username or password');                    
+                }
+            });        
+        }
+   
   }
 
 
@@ -72,13 +83,13 @@ export class ChangePasswordComponent implements OnInit {
    * On init
    */
   ngOnInit(): void {
-      this._authService.authState.subscribe((user) => {
-          this.user = user;
-          this.loggedIn = (user != null);
-      });
+    //   this._authService.authState.subscribe((user) => {
+    //       this.user = user;
+    //       this.loggedIn = (user != null);
+    //   });
       
       this.loginForm = this._formBuilder.group({
-          email: [{value: 'cvega@brandinstitute.com', disabled: true}, [Validators.required, Validators.email]],
+          email: ['', [Validators.required, Validators.email]],
           oldPassword: ['', Validators.required],
           newPassword: ['', Validators.required],
           confirmPassword: ['', Validators.required]

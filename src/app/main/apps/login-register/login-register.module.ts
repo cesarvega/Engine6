@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatExpansionModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatExpansionModule, MatIconModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { LoginRegisterComponent, DialogContent } from './login-register.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -82,6 +82,8 @@ const routes: Routes = [
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
+    MatOptionModule,
+    MatSelectModule,
     FuseSharedModule,
   ],
   declarations: [

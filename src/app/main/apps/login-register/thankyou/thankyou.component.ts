@@ -19,10 +19,10 @@ export class ThankyouComponent implements OnInit {
     this._fuseConfigService.config = {
       layout: {
         navbar: {
-          hidden: false
+          hidden: true
         },
         toolbar: {
-          hidden: false
+          hidden: true
         },
         footer: {
           hidden: true

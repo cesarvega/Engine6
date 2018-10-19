@@ -426,11 +426,11 @@ export class ProfileComponent implements OnInit {
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'State/Province',
-      type: 'auto',
+      type: 'input',
       label: 'Select State/Province *',
       name: 'Select State/Province *',
       value: '',
-      inputType: 'auto',
+      inputType: 'text',
       validations: [
         {
           name: 'required',
@@ -786,30 +786,30 @@ export class ProfileComponent implements OnInit {
         }
       ]
     },
-    {
-      labelValue: 'You must provide proof of your medical profession',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'false',
+    // {
+    //   labelValue: 'You must provide proof of your medical profession',
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'false',
 
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: 'You must provide proof of your medical profession',
-      name: 'You must provide proof of your medical profession',
-      value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Upload up to 2 documents to proof your profession'
-        }
-      ]
-    }
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: '',
+    //   type: 'input',
+    //   label: 'You must provide proof of your medical profession',
+    //   name: 'You must provide proof of your medical profession',
+    //   value: '',
+    //   inputType: 'text',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: 'Upload up to 2 documents to proof your profession'
+    //     }
+    //   ]
+    // }
   ];
 
   MD_PA_Lic_Info: FieldConfig2[] = [
@@ -993,29 +993,29 @@ export class ProfileComponent implements OnInit {
         }
       ]
     },
-    {
-      labelValue: 'You must provide proof of your medical profession',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'false',
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: 'You must provide proof of your medical profession',
-      name: 'You must provide proof of your medical profession',
-      value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Upload up to 2 documents to proof your profession'
-        }
-      ]
-    }
+    // {
+    //   labelValue: 'You must provide proof of your medical profession',
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'false',
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: '',
+    //   type: 'input',
+    //   label: 'You must provide proof of your medical profession',
+    //   name: 'You must provide proof of your medical profession',
+    //   value: '',
+    //   inputType: 'text',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: 'Upload up to 2 documents to proof your profession'
+    //     }
+    //   ]
+    // }
   ];
 
   Pharm_Lic_Info: FieldConfig2[] = [
@@ -1143,30 +1143,30 @@ export class ProfileComponent implements OnInit {
         }
       ]
     },
-    {
-      labelValue: 'You must provide proof of your medical profession',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'false',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'input',
-      label: 'You must provide proof of your medical profession',
-      name: 'You must provide proof of your medical profession',
-      value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Upload up to 2 documents to proof your profession'
-        }
-      ]
-    }
+    // {
+    //   labelValue: 'You must provide proof of your medical profession',
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'false',
+    //   options: [''],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: '',
+    //   type: 'input',
+    //   label: 'You must provide proof of your medical profession',
+    //   name: 'You must provide proof of your medical profession',
+    //   value: '',
+    //   inputType: 'text',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: 'Upload up to 2 documents to proof your profession'
+    //     }
+    //   ]
+    // }
   ];
 
   Nurse_Lic_Info: FieldConfig2[] = [
@@ -2130,8 +2130,9 @@ export class ProfileComponent implements OnInit {
       }
     });
     this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
+      const data  =  JSON.parse(result.d)[0].Msg;
       localStorage.setItem('user', '');
-      localStorage.setItem('user', result[0].Msg);
+      localStorage.setItem('user', data);
       this.toastr.success('profile saved');
       console.log(event);
     });

@@ -66,7 +66,6 @@ export class EcommerceProductsService implements Resolve<any>
         return this._httpClient.post(url, bodyString, this.httpOptions);
     }
 
-
     getWidgets(): Promise<any> {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/analytics-dashboard-widgets')

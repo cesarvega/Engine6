@@ -57,10 +57,10 @@ const config = new AuthServiceConfig([
     id: FacebookLoginProvider.PROVIDER_ID,
     provider: new FacebookLoginProvider(providers.facebook.clientId)
   },
-  {
-    id: LinkedInLoginProvider.PROVIDER_ID,
-    provider: new LinkedInLoginProvider(providers.linkedin.clientId, false, 'en_US')
-  }
+  // {
+  //   id: LinkedInLoginProvider.PROVIDER_ID,
+  //   provider: new LinkedInLoginProvider(providers.linkedin.clientId, false, 'en_US')
+  // }
 ]);
 
 export function provideConfig(): AuthServiceConfig {

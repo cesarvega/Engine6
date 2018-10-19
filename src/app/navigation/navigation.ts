@@ -12,7 +12,7 @@ export const navigation: FuseNavigation[] = [
     },
     {
         id: 'Surveys',
-        title: 'Surveys',
+        title: 'Dashboard',
         translate: 'NAV.SURVEYS',
         type: 'item',
         icon: 'layers',

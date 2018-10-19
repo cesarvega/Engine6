@@ -567,11 +567,7 @@ export class RegistrationFormComponent implements OnInit {
   fieldOBJ = this.fieldData2;
 
   taken(event): void {
-
-    console.log(event);
     this.showSuccess(event);
-
-
   }
 
   showSuccess(event): void {

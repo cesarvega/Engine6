@@ -39,14 +39,18 @@ const routes = [
         loadChildren: './login-register/login-register.module#LoginRegisterModule',
         canActivate: [AuthGuard]
     },
-    {
-        path: 'scrumboard',
-        loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
-    },
+    // {
+    //     path: 'scrumboard',
+    //     loadChildren: './scrumboard/scrumboard.module#ScrumboardModule'
+    // },
     {
         path: 'crud',
         loadChildren: './crud/crud.module#CrudModule'
     },
+    {
+        path: 'contacts',
+        loadChildren: './contact-us-external/contact-us-external.module#ContactUsExternalModule'
+    },      
     {
         path: 'register',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'

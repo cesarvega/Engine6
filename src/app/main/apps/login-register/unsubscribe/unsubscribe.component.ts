@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class UnsubscribeComponent implements OnInit {
   loginForm: FormGroup;
   private user: SocialUser;
-  private loggedIn: boolean;
+  formErrors: any;
   constructor(
     private _fuseConfigService: FuseConfigService,
     private _formBuilder: FormBuilder,
@@ -34,6 +34,10 @@ export class UnsubscribeComponent implements OnInit {
         }
       }
     };
+    this.formErrors = {
+      emailFrom: {},
+      Message: {}    
+    };
   }
 
   unsubscribe(): void {
@@ -43,7 +47,8 @@ export class UnsubscribeComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
-      email: ['', [Validators.required, Validators.email]]
+      emailFrom: ['', [Validators.required, Validators.email]],
+      Message: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 

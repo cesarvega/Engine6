@@ -7,21 +7,23 @@ import { Observable } from 'rxjs';
 export class LoginService {
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': ''
+      'Content-Type': 'application/json'
     })
   };
   private SP_verifyUser = '[BI_MEMBERS].[dbo].[pm_verify_username_and_password] ';
   private _SP_saveUserProfile = '[BI_MEMBERS].[dbo].[pm_updProfile] ';
-  
+
   // [pm_getSummary] 'cvega@1.com' 
   private _SP_verifyUserEmail = '[BI_MEMBERS].[dbo].[pm_verify_username] ';
   private _SP_getSurveySummary = '[BI_MEMBERS].[dbo].[pm_getSummary] ';
   protected API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
-  
-  constructor(private httpClient: HttpClient) {}
+  protected ASMX_URL_UpdateProfile = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_updProfile';
+  protected ASMX_URL_VerifyUserName = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_verify_username';
+  protected asmxURL = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_changePassword';
 
- // get  all Users 
+  constructor(private httpClient: HttpClient) { }
+
+  // get  all Users 
   getUsers(): Observable<any> {
     return this.httpClient.get(`${this.API_URL}`);
   }
@@ -32,28 +34,27 @@ export class LoginService {
     return this.httpClient.get(url);
   }
 
-   // register un nuevo User 
-   getSurveySummary(username: string): Observable<any> {
+  // register un nuevo User 
+  getSurveySummary(username: string): Observable<any> {
     const bodyString = JSON.stringify(this._SP_getSurveySummary + '\'' + username + '\'');
     const url = `${this.API_URL}`;
     return this.httpClient.post(url, bodyString, this.httpOptions);
   }
+
   postUser(data: any): Observable<any> {
-    const bodyString = JSON.stringify(this._SP_saveUserProfile + '\'' + data + '\'');
-    const url = `${this.API_URL}`;
-    return this.httpClient.post(url, bodyString, this.httpOptions);
+    const bodyString = JSON.stringify({fields: data});
+    return this.httpClient.post(this.ASMX_URL_UpdateProfile, bodyString, this.httpOptions);
   }
 
-   // register un nuevo User 
-  verifyEmail(data: any): Observable<any> {
-    const bodyString = JSON.stringify(this._SP_verifyUserEmail + '\'' + data + '\'');
-    const url = `${this.API_URL}`;
-    return this.httpClient.post(url, bodyString, this.httpOptions);
+  // register un nuevo User 
+  verifyEmail(data: any): Observable<any> {    
+    const bodyString = JSON.stringify({username: data});
+    return this.httpClient.post(this.ASMX_URL_VerifyUserName, bodyString, this.httpOptions);
   }
 
   // update Users by id 
-  // remplazar any por el tipo de variable para esto creamos un modeloose aun clase que represente eld ata que vamos update
-  updateUser(id: string,  data: any): Observable<any> {
+  // remplazar any por el tipo de variable para esto creamos un model clase que represente el data que vamos update
+  updateUser(id: string, data: any): Observable<any> {
     const url = `${this.API_URL}/update/${id}`;
     return this.httpClient.post(url, data);
   }
@@ -70,10 +71,10 @@ export class LoginService {
     return this.httpClient.post(url, bodyString, this.httpOptions);
   }
 
-
-
-
-
-
+  changePassword(data: any): Observable<any> {
+    const bodyString = JSON.stringify(data);
+    const url = `${this.API_URL}`;
+    return this.httpClient.post(this.asmxURL, bodyString, this.httpOptions);
+  }
 }
 
