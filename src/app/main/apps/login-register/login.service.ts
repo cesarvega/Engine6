@@ -19,7 +19,8 @@ export class LoginService {
   protected API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
   protected ASMX_URL_UpdateProfile = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_updProfile';
   protected ASMX_URL_VerifyUserName = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_verify_username';
-  protected asmxURL = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_changePassword';
+  protected ASMX_URL_ChangePassword = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_changePassword';
+  protected ASMX_URL_Verify_username_and_password = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_verify_username_and_password';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -66,15 +67,16 @@ export class LoginService {
   }
 
   signAndRegistrationAuth(data: any): Observable<any> {
-    const bodyString = JSON.stringify(this.SP_verifyUser + data);
+    data = data.split(',');
+    const bodyString = JSON.stringify( {username: data[0], password: data[1]});
     const url = `${this.API_URL}`;
-    return this.httpClient.post(url, bodyString, this.httpOptions);
+    return this.httpClient.post(this.ASMX_URL_Verify_username_and_password, bodyString, this.httpOptions);
   }
 
   changePassword(data: any): Observable<any> {
     const bodyString = JSON.stringify(data);
     const url = `${this.API_URL}`;
-    return this.httpClient.post(this.asmxURL, bodyString, this.httpOptions);
+    return this.httpClient.post(this.ASMX_URL_ChangePassword, bodyString, this.httpOptions);
   }
 }
 

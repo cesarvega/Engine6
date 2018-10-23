@@ -33,8 +33,6 @@ export class DynamicFormComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
 
-
-
     if (this.form.value['Password *']) { // if coming from registration it will be a password
       if (this.form.value['Password *'].length < 6) {
         this.form.controls['Password *'].setErrors({ 'min': true });
@@ -42,10 +40,9 @@ export class DynamicFormComponent implements OnInit {
       if (this.form.value['Password *'] !== this.form.value['confirm password *']) {
         this.form.controls['confirm password *'].setErrors({ 'required': true });
       }
-
       this._biLoginService.verifyEmail(this.form.controls['Email *'].value).subscribe((x: any) => {
         // if (true) {
-          if (x[0].verified === 'False') {
+          if (!JSON.parse(x.d)[0].verified) {
           this.emailTaken.emit('the email ' + this.form.controls['Email *'].value + ' is already taken');
           this.noValid = true;
           return true;         

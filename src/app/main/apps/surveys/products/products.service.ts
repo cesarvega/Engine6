@@ -10,11 +10,11 @@ export class EcommerceProductsService implements Resolve<any>
     public widgets: any[];
     private httpOptions = {
         headers: new HttpHeaders({
-          'Content-Type':  'application/json',
-          'Authorization': ''
+          'Content-Type':  'application/json'
         })
       };
     private _SP_getSurveySummary = '[BI_MEMBERS].[dbo].[pm_getSummary] ';
+    private ASMX_URL_GetSurveySummary = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_getSummary';
     
 
     products: any[];
@@ -61,9 +61,9 @@ export class EcommerceProductsService implements Resolve<any>
 
        // get survey summary by username
        private getSurveySummary(username: string): Observable<any> {
-        const bodyString = JSON.stringify(this._SP_getSurveySummary + '\'' + username + '\'');
+        const bodyString = JSON.stringify({username: username});
         const url = `${this.API_URL}`;
-        return this._httpClient.post(url, bodyString, this.httpOptions);
+        return this._httpClient.post(this.ASMX_URL_GetSurveySummary, bodyString, this.httpOptions);
     }
 
     getWidgets(): Promise<any> {
@@ -71,11 +71,12 @@ export class EcommerceProductsService implements Resolve<any>
             this._httpClient.get('api/analytics-dashboard-widgets')
                 .subscribe((response: any) => {
                     this.getSurveySummary('cvega@1.com').subscribe( res => {
-                        if (res) {                     
-                            let amount  =  JSON.parse(res[0].json).maxamount;
+                        if (res) {  
+                            const jsonData  = JSON.parse(res.d)[0].json;                   
+                            let amount  =  JSON.parse(jsonData).maxamount;
                             amount =  Math.ceil(amount / 100) * 100;
                             response.widget1.options.scales.yAxes[0].ticks.max = amount;                                                                                    
-                            const parseData = JSON.parse(res[0].json);   
+                            const parseData = JSON.parse(jsonData);   
                             response.widget1.datasets = parseData.DataSet;   
                             response.widget1.totalAmount  = parseData.Summary[0].Amount;   
                             response.widget1.totalAmountSurveys  = parseData.Detail.length;   

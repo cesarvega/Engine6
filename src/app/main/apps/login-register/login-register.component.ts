@@ -11,18 +11,6 @@ import {MatDialog} from '@angular/material';
 import { trigger, transition, useAnimation, state, style} from '@angular/animations';
 import { shake } from 'ng-animate';
 
-interface FsDocument extends HTMLDocument {
-    mozFullScreenElement?: Element;
-    msFullscreenElement?: Element;
-    msExitFullscreen?: () => void;
-    mozCancelFullScreen?: () => void;
-  }
-  interface FsDocumentElement extends HTMLElement {
-    msRequestFullscreen?: () => void;
-    mozRequestFullScreen?: () => void;
-  }
-
-
 @Component({
     selector: 'app-login-register',
     templateUrl: './login-register.component.html',
@@ -81,12 +69,12 @@ export class LoginRegisterComponent implements OnInit {
             this.loginForm.value.email = user.email;
             this.loginForm.value.password = user.id;
         }
-        this._biLoginService.signAndRegistrationAuth('\'' + this.loginForm.value.email + '\'' + ',' + '\'' + this.loginForm.value.password + '\'').subscribe(res => {
-
-            if (res[0].verified === 'True') {
+        this._biLoginService.signAndRegistrationAuth(this.loginForm.value.email + ',' +  this.loginForm.value.password).subscribe(res => {
+                const userData = JSON.parse(res.d)[0];
+            if (userData.verified) {
                 localStorage.removeItem('user');
-                localStorage.setItem('user', res[0].message);
-                const  ocupattion: any = JSON.parse(res[0].message);
+                localStorage.setItem('user', userData.message);
+                const  ocupattion: any = JSON.parse(userData.message);
                 localStorage.setItem('userName', this.loginForm.value.email);
                 ocupattion.forEach(element => {
                     if (element.question === 'Specify your profession or occupation') {                        
@@ -140,50 +128,6 @@ export class LoginRegisterComponent implements OnInit {
 
         // this.setFullScreen(true);
     }
-    // isFullScreen(): boolean {
-    //     const fsDoc = <FsDocument> document;
-      
-    //     return !!(fsDoc.fullscreenElement || fsDoc.mozFullScreenElement || fsDoc.webkitFullscreenElement || fsDoc.msFullscreenElement);
-    //   }
-
-    //   toggleFullScreen(): void {
-    //     const fsDoc = <FsDocument> document;
-      
-    //     if (!this.isFullScreen()) {
-    //       const fsDocElem = <FsDocumentElement> document.documentElement;
-    //       if (fsDocElem.requestFullscreen) {
-      
-    //         fsDocElem.requestFullscreen();
-    //       }
-    //       else if (fsDocElem.msRequestFullscreen) {
-    //         fsDocElem.msRequestFullscreen();
-    //            }
-    //       else if (fsDocElem.mozRequestFullScreen) {
-    //         fsDocElem.mozRequestFullScreen();
-    //            }
-    //       else if (fsDocElem.webkitRequestFullscreen) {
-    //         fsDocElem.webkitRequestFullscreen();
-    //            }
-    //     }
-    //     else if (fsDoc.exitFullscreen) {
-    //       fsDoc.exitFullscreen();
-    //          }
-    //     else if (fsDoc.msExitFullscreen) {
-    //       fsDoc.msExitFullscreen();
-    //          }
-    //     else if (fsDoc.mozCancelFullScreen) {
-    //       fsDoc.mozCancelFullScreen();
-    //          }
-    //     else if (fsDoc.webkitExitFullscreen) {
-    //       fsDoc.webkitExitFullscreen();
-    //          }
-    //   }
-
-    //   setFullScreen(full: boolean): void {
-    //     if (full !== this.isFullScreen()) {
-    //       this.toggleFullScreen();
-    //     }
-    //   }
     
 }
 
