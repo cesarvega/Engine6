@@ -125,9 +125,19 @@
                 <ng-container matColumnDef="Survey Status">
                     <mat-header-cell *matHeaderCellDef mat-sort-header fxHide fxShow.gt-xs>Survey Status</mat-header-cell>
                     <mat-cell *matCellDef="let product" fxHide fxShow.gt-xs>
-                        <span style="color:whitesmoke" [ngClass]="(product.surveyStatus==='OPEN')?'mat-yellow-500-bg':'mat-blue-500-bg'">
-                            {{product.surveyStatus}}
+                        <span *ngIf="product.surveyStatus === 'COMPLETED'" style="color:whitesmoke" >
+                         <mat-icon class="secondary-text s-24 mat-icon material-icons" role="img" style="color: green !important">album</mat-icon>
                         </span>
+                        <span *ngIf="product.surveyStatus === 'CLOSED'" style="color:whitesmoke" >
+                         <mat-icon class="secondary-text s-24 mat-icon material-icons" role="img" style="color: grey !important">album</mat-icon>
+                        </span>
+                        <span *ngIf="product.surveyStatus === 'INCOMPLETE'" style="color:whitesmoke" >
+                         <mat-icon class="secondary-text s-24 mat-icon material-icons" role="img" style="color: rgb(201, 172, 12) !important">warning</mat-icon>
+                        </span>
+                        <span *ngIf="product.surveyStatus === 'AVAILABLE'" style="color:whitesmoke" >
+                         <mat-icon class="secondary-text s-24 mat-icon material-icons" role="img" style="color: red !important">warning</mat-icon>
+                        </span>
+                        {{product.surveyStatus}}
                     </mat-cell>
                 </ng-container>
 

@@ -12,11 +12,10 @@ export class LoginService {
   };
   private SP_verifyUser = '[BI_MEMBERS].[dbo].[pm_verify_username_and_password] ';
   private _SP_saveUserProfile = '[BI_MEMBERS].[dbo].[pm_updProfile] ';
-
-  // [pm_getSummary] 'cvega@1.com' 
   private _SP_verifyUserEmail = '[BI_MEMBERS].[dbo].[pm_verify_username] ';
   private _SP_getSurveySummary = '[BI_MEMBERS].[dbo].[pm_getSummary] ';
   protected API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
+
   protected ASMX_URL_UpdateProfile = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_updProfile';
   protected ASMX_URL_VerifyUserName = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_verify_username';
   protected ASMX_URL_ChangePassword = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_changePassword';

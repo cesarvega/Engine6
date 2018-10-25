@@ -30,12 +30,12 @@
         <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
             
             <!-- <button mat-button [matMenuTriggerFor]="userMenu" -->
-            <button mat-button
+            <button mat-button 
                     class="user-button">
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/VIP.png">
                     <span class="username mr-12" fxHide fxShow.gt-sm>{{username}}</span>
-                    <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                    <!-- <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon> -->
                 </div>
             </button>
 
@@ -101,9 +101,9 @@
 
             <!-- <div class="toolbar-separator" fxHide.gt-md></div> -->
 
-            <button mat-icon-button class="quick-panel-toggle-button" (click)="toggleSidebarOpen('quickPanel')" aria-label="Toggle quick panel">
+            <!-- <button mat-icon-button class="quick-panel-toggle-button" (click)="toggleSidebarOpen('quickPanel')" aria-label="Toggle quick panel">
                 <mat-icon class="icon">format_list_bulleted</mat-icon>
-            </button>
+            </button> -->
 
             <div class="toolbar-separator" *ngIf="!hiddenNavbar && rightNavbar" fxHide fxShow.gt-xs></div>
 

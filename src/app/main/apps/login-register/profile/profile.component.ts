@@ -13,8 +13,8 @@ export class ProfileComponent implements OnInit {
     private _loginService: LoginService,      
     private toastr: ToastrService
   ) { }
-  // private respondantType  = localStorage.getItem('user') !== 'undefined' ? localStorage.getItem('user') : 'OTHER_HCP';
-  private respondantType = 'MD_PA_Lic_Info';
+  private respondantType  = localStorage.getItem('profession') !== 'undefined' ? localStorage.getItem('profession') : 'OTHER_HCP';
+  // private respondantType = 'MD_PA_Lic_Info';
   private user: any = localStorage.getItem('user');
   public counter = 0;
   public _finalObj: Array<any> = [];
@@ -31,10 +31,10 @@ export class ProfileComponent implements OnInit {
     { key: '092f310f-b639-4ab5-822b-d0bdee9910c3', labelValue: 'Select country of residency *' },
     { key: '7da874b7-ee7a-4e74-a627-30d70f598494', labelValue: 'Mailing street address *' },
     { key: '0d1d3494-4939-49d7-bdbe-15eb48e923ab', labelValue: 'Mailing street/#apto/unit' },
-    { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'Select State/Province *' },
-    { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code *' },
+    { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'State/Province' },
+    { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code' },
     { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone *' },
-    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your professional or occupation' },
+    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation' },
     { key: 'efcfa33d-efb0-43e8-8e51-23508ddedc39', labelValue: 'Type of industry *' },
     { key: '81d74098-5efd-4fc9-afce-88b98f745a23', labelValue: 'Title position *' },
     { key: 'bcf8eea5-1b82-4452-8304-8c588c490ef9', labelValue: 'Level of Education' },
@@ -336,7 +336,7 @@ export class ProfileComponent implements OnInit {
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: '',
+      placeHolder: 'MM DD YYYY',
       type: 'date',
       label: 'Date of birth *',
       name: 'Date of birth *',
@@ -415,7 +415,7 @@ export class ProfileComponent implements OnInit {
       value: '',
       inputType: 'text'
     }, {
-      labelValue: 'Select State/Province *',
+      labelValue: 'State/Province',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'false',
@@ -427,20 +427,20 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'State/Province',
       type: 'input',
-      label: 'Select State/Province *',
-      name: 'Select State/Province *',
+      label: 'State/Province',
+      name: 'State/Province',
       value: '',
       inputType: 'text',
       validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'please select your state/province of residency'
-        }
+        // {
+        //   name: 'required',
+        //   validator: Validators.required,
+        //   message: 'please select your state/province of residency'
+        // }
       ]
     },
     {
-      labelValue: 'Zip Code *',
+      labelValue: 'Zip Code',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -451,16 +451,16 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'ZipCode',
       type: 'input',
-      label: 'Zip Code *',
-      name: 'Zip Code *',
+      label: 'Zip Code',
+      name: 'Zip Code',
       value: '',
       inputType: 'text',
       validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'zip code is required'
-        }
+        // {
+        //   name: 'required',
+        //   validator: Validators.required,
+        //   message: 'zip code is required'
+        // }
       ]
     },
     {
@@ -1773,7 +1773,7 @@ export class ProfileComponent implements OnInit {
       defaultInputValue: '',
       componentType: 'true',
       // tslint:disable-next-line:max-line-length
-      options: [ 'Allergies Hypertension / High Blood Pressure ', 'Asthma or Respiratory Ailments  Infectious Diseases ', 'Blood Disorders  Kidney or Bladder Problems ', 'Bone or Joint Conditions  Men`s Health Conditions ', 'Cancer or Cancer-Related  Musculoskeletal diseases', 'Cardiovascular diseases Neurological or Mental Health Conditions ', 'Chronic Pain (Head / Joint / Muscular)  Neuropsychiatric conditions', 'Depression Osteoarthritis / Rheumatoid Arthritis', 'Diabetes, Metabolic & Thyroid Conditions  Primary Immune Deficiencies (PID)', 'Digestive diseases Sensory organ disorders', 'Eye or Vision Impairments  Skin Conditions ', 'Heart or Cardiovascular Conditions  Sleep Disorders ', 'Hepatitis A STDs', 'Hepatitis B Stomach, Bowel or Digestion Problems ', 'Hepatitis C Women`s Health Issues ', 'High Cholesterol  Other Medical Condition', 'HIV / AIDS Non', 'Hypertension / High Blood Pressur', 'Infectious Disease', 'Kidney or Bladder Problem', 'Men`s Health Condition', 'Musculoskeletal disease', 'Neurological or Mental Health Condition', 'Neuropsychiatric condition', 'Osteoarthritis / Rheumatoid Arthriti', 'Primary Immune Deficiencies (PID', 'Sensory organ disorder', 'Skin Condition', 'Sleep Disorder', 'STD', 'Stomach, Bowel or Digestion Problem', 'Women`s Health Issue', 'Other Medical Conditio',        
+      options: [ 'Allergies Hypertension / High Blood Pressure ', 'Asthma or Respiratory Ailments  Infectious Diseases ', 'Blood Disorders  Kidney or Bladder Problems ', 'Bone or Joint Conditions  Men`s Health Conditions ', 'Cancer or Cancer-Related  Musculoskeletal Diseases', 'Cardiovascular Diseases Neurological or Mental Health Conditions ', 'Chronic Pain (Head / Joint / Muscular)  Neuropsychiatric Conditions', 'Depression Osteoarthritis / Rheumatoid Arthritis', 'Diabetes, Metabolic & Thyroid Conditions  Primary Immune Deficiencies (PID)', 'Digestive Diseases Sensory Organ Disorders', 'Eye or Vision Impairments  Skin Conditions ', 'Heart or Cardiovascular Conditions  Sleep Disorders ', 'Hepatitis A STDs', 'Hepatitis B Stomach, Bowel or Digestion Problems ', 'Hepatitis C Women`s Health Issues ', 'High Cholesterol  Other Medical Condition', 'HIV / AIDS Non', 'Hypertension / High Blood Pressur', 'Infectious Disease', 'Kidney or Bladder Problem', 'Men`s Health Condition', 'Musculoskeletal Disease', 'Neurological or Mental Health Condition', 'Neuropsychiatric condition', 'Osteoarthritis / Rheumatoid Arthriti', 'Primary Immune Deficiencies (PID', 'Sensory organ disorder', 'Skin Condition', 'Sleep Disorder', 'STD', 'Stomach, Bowel or Digestion Problem', 'Women`s Health Issue', 'Other Medical Conditions', 'None Of The Above'
       ],
       disabled: 'false',
       componentId: '0',
@@ -1941,16 +1941,35 @@ export class ProfileComponent implements OnInit {
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
-      options: [
-        'Do you or any member of your immediate family work in any of the following areas?',
-        'Advertising',
-        'Emea',
-        'Public Relations',
-        'Marketing',
-        'Market Research',
-        'Sales Promotion',
-        'Brand Institute or any of its affiliates',
-        'A Company that manufactures, distributes, or sells medicine/medical devices'
+      options: [       
+       'Advertising ',
+       'Public Relations',
+       'Marketing/Marketing Research',
+       'Sales Promotion',
+       'A company that manufactures, distributes, or sells medicine/medical devices                                                      ',
+       'FDA',
+       'HC',
+       'EMA',
+       'Agência Nacional de Vigilância Sanitária of Brazil (ANVISA)',
+       'State Food and Drug Administration (SFDA) of China',
+       'Ministry of Health, Labour, and Welfare (MHLW)',
+       'the Drug Administration of Vietnam (DAV)',
+       'ANMAT: the Argentinean Health Authority ',
+       'Therapeutic Goods Administration ',
+       'Instituto Nacional de Vigilancia de Medicamentos y Alimentos or Colombia National Food and Drug Surveillance Institute',
+       'Indonesia National Agency of Drug and Food Control (NA-DFC)',
+       'The Pharmaceutical Administration, the Medical Devices Department, and the Food & Nutrition Services of the Israel Ministry of Health (the administration)  ',
+       'The Drug Control Agency (DCA) ',
+       'Comision Federal para la Protección contra Riesgos Sanitarios (COFEPRIS)',
+       'New Zealand Medicines and Medical Devices Safety Authority (medsafe)',
+       'Food And Drug Administration Philippines ',
+       'Saudi Food and Drug Authority (SFDA) ',
+       'Health Sciences Authority (HSA)',
+       'The Swiss Agency for Therapeutic Products (Swissmedic)',
+       'Thai FDA (TFDA)',
+       'CENTRAL DRUGS STANDARD CONTROL ORGANIZATION (CDSCO) ',
+       'The Federal Service on Surveillance in Healthcare and Social Development of the Russian Federation (ROSZDRAVNADZOR)',
+       'None of the above' 
       ],
       disabled: 'false',
       componentId: '0',
@@ -1970,33 +1989,33 @@ export class ProfileComponent implements OnInit {
         }
       ]
     },
-    {
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'true',
-      options: [
-        'Microphone built-in or attached to a computer',
-        'Scanner attached to a computer',
-        'Webcam attached to a computer'
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'select',
-      label: 'Other information: Some questions about your current system configurations',
-      name: 'Other information: Some questions about your current system configurations',
-      value: '',
-      inputType: 'bi-input-checkbox',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    }
+    // {
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'true',
+    //   options: [
+    //     'Microphone built-in or attached to a computer',
+    //     'Scanner attached to a computer',
+    //     'Webcam attached to a computer'
+    //   ],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: '',
+    //   type: 'select',
+    //   label: 'Other information: Some questions about your current system configurations',
+    //   name: 'Other information: Some questions about your current system configurations',
+    //   value: '',
+    //   inputType: 'bi-input-checkbox',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: 'Service time is required'
+    //     }
+    //   ]
+    // }
   ];
 
   fieldOBJ = [];
@@ -2063,33 +2082,64 @@ export class ProfileComponent implements OnInit {
       item: this.P_info_1,
       name: 'Profile Information'
     });
-  
+
+ 
     switch (this.respondantType) {
-      case 'NonHCP':
+      case 'Not related to Health Care':
         this.fieldOBJ.push({
           item: this.NonHCP,
           name: 'Professional Details'
         });
         break;
-      case 'OTHER_HCP':
+      case 'Dentist':
         this.fieldOBJ.push({
           item: this.OTHER_HCP,
           name: 'Professional Details'
         });
         break;
-      case 'MD_PA_Lic_Info':
+      case 'Optometrist':
+        this.fieldOBJ.push({
+          item: this.OTHER_HCP,
+          name: 'Professional Details'
+        });
+        break;
+      case 'Veterinarian':
+        this.fieldOBJ.push({
+          item: this.OTHER_HCP,
+          name: 'Professional Details'
+        });
+        break;
+      case 'Allied Health Care Profession or Occupation':
+        this.fieldOBJ.push({
+          item: this.OTHER_HCP,
+          name: 'Professional Details'
+        });
+        break;
+      case 'Physician/Doctor of Medicine (MD, DO)':
         this.fieldOBJ.push({
           item: this.MD_PA_Lic_Info,
           name: 'Professional Details'
         });
         break;
-      case 'Pharm_Lic_Info':
+      case 'Physician Assistant (PA)':
+        this.fieldOBJ.push({
+          item: this.MD_PA_Lic_Info,
+          name: 'Professional Details'
+        });
+        break;
+      case 'Pharmacist Technician':
         this.fieldOBJ.push({
           item: this.Pharm_Lic_Info,
           name: 'Professional Details'
         });
         break;
-      case 'Nurse_Lic_Info':
+      case 'Pharmacist':
+        this.fieldOBJ.push({
+          item: this.Pharm_Lic_Info,
+          name: 'Professional Details'
+        });
+        break;
+      case 'Nurse':
         this.fieldOBJ.push({
           item: this.Nurse_Lic_Info,
           name: 'Professional Details'
@@ -2139,45 +2189,3 @@ export class ProfileComponent implements OnInit {
 
   }
 }
-
-        // {
-        //   'names': 'Not related to Health Care',
-        //   'values': 'NonHCP'
-        // },
-        // {
-        //   'names': 'Physician/Doctor of Medicine (MD, DO)',
-        //   'values': 'MD_PA_lic_Info'
-        // },
-        // {
-        //   'names': 'Physician Assistant (PA)',
-        //   'values': 'MD_PA_lic_Info'
-        // },
-        // {
-        //   'names': 'Nurse',
-        //   'values': 'Nurse_Lic_Info'
-        // },
-        // {
-        //   'names': 'Pharmacist',
-        //   'values': 'Pharm_Lic_Info'
-        // },
-        // {
-        //   'names': 'Pharmacist Technician',
-        //   'values': 'Pharm_Lic_Info'
-        // },
-        // {
-        //   'names': 'Dentist',
-        //   'values': 'OTHER_HCP'
-        // },
-        // {
-        //   'names': 'Optometrist',
-        //   'values': 'OTHER_HCP'
-        // },
-        // {
-        //   'names': 'Veterinarian',
-        //   'values': 'OTHER_HCP'
-        // },
-        // {
-        //   'names': 'Allied Health Care Profession or Occupation',
-        //   'values': 'OTHER_HCP'
-        // }
-        // ,

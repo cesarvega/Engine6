@@ -34,10 +34,10 @@ export class RegistrationFormComponent implements OnInit {
     { key: '092f310f-b639-4ab5-822b-d0bdee9910c3', labelValue: 'Select country of residency *' },
     { key: '7da874b7-ee7a-4e74-a627-30d70f598494', labelValue: 'Mailing street address *' },
     { key: '0d1d3494-4939-49d7-bdbe-15eb48e923ab', labelValue: 'Mailing street/#apto/unit' },
-    { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'Select State/Province *' },
+    { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'State/Province' },
     { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code *' },
     { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone *' },
-    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your professional or occupation' },
+    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation' },
     { key: 'efcfa33d-efb0-43e8-8e51-23508ddedc39', labelValue: 'Type of industry *' },
     { key: '81d74098-5efd-4fc9-afce-88b98f745a23', labelValue: 'Title position *' },
     { key: 'bcf8eea5-1b82-4452-8304-8c588c490ef9', labelValue: 'Level of Education' },
@@ -182,8 +182,8 @@ export class RegistrationFormComponent implements OnInit {
         },
         {
           name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z0-9]{6,10}$'),
-          message: 'please enter a valid password no especial characters, 6 characters minimun (|,/,*,", ...etc)'
+          validator: Validators.pattern('^[a-zA-Z0-9]{6,20}$'),
+          message: 'please enter a valid password no special characters, 6 characters minimun (|,/,*,", ...etc)'
         },
       ]
     },
@@ -211,8 +211,8 @@ export class RegistrationFormComponent implements OnInit {
         },
         {
           name: 'pattern',
-          validator: Validators.pattern('^[a-zA-Z0-9]{6,10}$'),
-          message: 'please enter a valid password no especial characters, 6 characters minimun (|,/,*,", ...etc)'
+          validator: Validators.pattern('^[a-zA-Z0-9]{6,20}$'),
+          message: 'please enter a valid password no special characters, 6 characters minimun (|,/,*,", ...etc)'
         },
       ]
     },
@@ -417,7 +417,7 @@ export class RegistrationFormComponent implements OnInit {
       value: '',
       inputType: 'text'
     }, {
-      labelValue: 'Select State/Province *',
+      labelValue: 'State/Province',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'false',
@@ -429,16 +429,16 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'State/Province',
       type: 'input',
-      label: 'Select State/Province *',
-      name: 'Select State/Province *',
+      label: 'State/Province',
+      name: 'State/Province',
       value: '',
       inputType: 'text',
       validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'please select your state/province of residency'
-        }
+        // {
+        //   name: 'required',
+        //   validator: Validators.required,
+        //   message: 'please select your state/province of residency'
+        // }
       ]
     },
     {
@@ -453,16 +453,16 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'ZipCode',
       type: 'input',
-      label: 'Zip Code *',
+      label: 'Zip Code ',
       name: 'Zip Code *',
       value: '',
       inputType: 'text',
       validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'zip code is required'
-        }
+        // {
+        //   name: 'required',
+        //   validator: Validators.required,
+        //   message: 'zip code is required'
+        // }
       ]
     },
     {
@@ -599,12 +599,11 @@ export class RegistrationFormComponent implements OnInit {
     // });
 
     this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
-      console.log(result);
-      localStorage.setItem('user', JSON.stringify(this._finalObj));
-      localStorage.setItem('isLoggedIn', 'true');
-      this._route.navigateByUrl('/apps/surveys');
+      this.toastr.success('Thank you for registering; you will be redirect to login with your new username and password or social media');
+      setTimeout(() => {        
+        this._route.navigateByUrl('/apps/login/auth/login');
+      }, 6000);
     });
-
   }
 
   signInWithGoogle(): void {
