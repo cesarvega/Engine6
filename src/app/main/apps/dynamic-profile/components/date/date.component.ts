@@ -8,7 +8,7 @@ import { FieldConfig2 } from '../../field.interface';
 })
 export class DateComponent implements OnInit {
   // over 18 yrs old
-  maxDate = new Date(1999, 8, 28);
+  maxDate = new Date(2000, 8, 28);
   field: FieldConfig2;
   group: FormGroup;
   constructor() {}

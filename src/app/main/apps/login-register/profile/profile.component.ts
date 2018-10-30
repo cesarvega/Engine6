@@ -330,7 +330,7 @@ export class ProfileComponent implements OnInit {
 
 
       icon: '',
-      defaultInputValue: '1999-06-15',
+      defaultInputValue: '2000-06-15',
       componentType: 'false',
       disabled: 'false',
       componentId: '0',
