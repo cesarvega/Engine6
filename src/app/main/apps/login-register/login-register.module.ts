@@ -16,6 +16,8 @@ import { FaqService } from './faq/faq.service';
 import { AuthGuard } from './service/auth-guard.service';
 import { AuthGuardService } from './service/auth.service';
 import {MatDialogModule} from '@angular/material/dialog';
+import { TellAFriendComponent } from './tell-a-friend/tell-a-friend.component';
+
 const routes: Routes = [
   {
     path: 'auth/login',
@@ -67,6 +69,10 @@ const routes: Routes = [
     component: GoodbayComponent
   },
   {
+    path: 'tell-a-friend',
+    component: TellAFriendComponent
+  },
+  {
       path: '**',
       redirectTo: 'auth/login'
   }
@@ -97,7 +103,8 @@ const routes: Routes = [
     GoodbayComponent,
     SuccessfulPasswordResetComponent,
     ForgotPasswordThankyouComponent,
-    FaqComponent
+    FaqComponent,
+    TellAFriendComponent
   ], 
   providers   : [
       FaqService, AuthGuard, AuthGuardService

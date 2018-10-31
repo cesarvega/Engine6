@@ -54,7 +54,7 @@ const routes = [
     {
         path: 'register',
         loadChildren: './dynamic-profile/dynamic-profile.module#DynamicProfileModule'
-    },      
+    },         
     {
         path: '**',
         redirectTo: 'login'

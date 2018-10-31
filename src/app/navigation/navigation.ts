@@ -93,6 +93,13 @@ export const navigation: FuseNavigation[] = [
                         type: 'item',
                         icon: 'thumb_down',
                         url: '/apps/login/unsubscribe'
+                    },
+                    {
+                        id: 'tell-a-friend',
+                        title: 'tell-a-friend',
+                        type: 'item',
+                        icon: 'child_care',
+                        url: '/apps/login/tell-a-friend'
                     }
                 ]
             },

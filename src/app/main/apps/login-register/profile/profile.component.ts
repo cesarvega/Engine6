@@ -1389,27 +1389,27 @@ export class ProfileComponent implements OnInit {
       //   }
       // ]
     },
-    {
-      labelValue: 'Please select how would you like to receive survey invitations',
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'true',
-      options: [
-        'Email',
-        'SMS/Text',
-        'BI App'
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: 'Please select how would you like to receive survey invitations',
-      type: 'select',
-      label: 'Please select how would you like to receive survey invitations',
-      name: 'Please select how would you like to receive survey invitations',
-      value: '',
-      inputType: 'select',
-    },
+    // {
+    //   labelValue: 'Please select how would you like to receive survey invitations',
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'true',
+    //   options: [
+    //     'Email',
+    //     'SMS/Text',
+    //     'BI App'
+    //   ],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: 'Please select how would you like to receive survey invitations',
+    //   type: 'select',
+    //   label: 'Please select how would you like to receive survey invitations',
+    //   name: 'Please select how would you like to receive survey invitations',
+    //   value: '',
+    //   inputType: 'select',
+    // },
     {
       labelValue: 'Choose a security questions to recover your password',
       icon: '',
@@ -1938,9 +1938,9 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      icon: '',
+      icon: 'sql',
       defaultInputValue: '',
-      componentType: 'false',
+      componentType: 'true',
       options: [       
        'Advertising ',
        'Public Relations',
@@ -1988,7 +1988,7 @@ export class ProfileComponent implements OnInit {
           message: 'Service time is required'
         }
       ]
-    },
+    }
     // {
     //   icon: '',
     //   defaultInputValue: '',
