@@ -10,9 +10,8 @@ import { ContactUsExternalService } from '../../contact-us-external/contact-us-e
   styleUrls: ['./tell-a-friend.component.scss']
 })
 export class TellAFriendComponent implements OnInit {
-  reasons = ['Survey Technical Questions/Comments', 'Payment Questions', 
-              'Website Questions/Comments', 'Profile/Registration Questions Comments']; 
-
+  reasons = ['Dr.',	'Mr.',	'Mrs.',	'Ms.', 'Prof.']; 
+  fileds = ['Doctor', 'Nurse', 'Pharmacist', 'Paramedic', 'Other', 'Consumer', ]; 
   loginForm: FormGroup;
   formErrors: any;
   constructor(
@@ -39,11 +38,12 @@ export class TellAFriendComponent implements OnInit {
     }; 
     
     this.formErrors = {
-      emailFrom: {},
-      Message: {},
-      TypeOfInquiry: {},
-      SurveyName: {},
-      senderName: {}
+      email: {},
+      title: {},
+      firstName: {},
+      lastName: {},
+      field: {},
+      message: {}
     };
   }
 
@@ -56,11 +56,12 @@ export class TellAFriendComponent implements OnInit {
   }
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
-      emailFrom: ['', [Validators.required, Validators.email]],
-      TypeOfInquiry: ['', Validators.required],
-      SurveyName: [''],
-      senderName: ['', [Validators.required, Validators.minLength(4)]],
-      Message: ['', [Validators.required, Validators.minLength(5)]]
+      email: ['', [Validators.required, Validators.email]],
+      title: ['', Validators.required],
+      firstName:  ['', Validators.required],
+      lastName:  ['', Validators.required],
+      field: ['', [Validators.required, Validators.minLength(4)]],
+      message: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 }

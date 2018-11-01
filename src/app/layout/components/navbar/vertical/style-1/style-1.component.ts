@@ -22,8 +22,9 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     counter = 0;  
     username = '';
     title = 'Doctor MD.';
-    avatar = 'assets/images/avatars/Abbott.jpg';
-    avatars = [ 'assets/images/avatars/Barrera.jpg', 'assets/images/avatars/Abbott.jpg', 'assets/images/avatars/Velazquez.jpg'];
+    avatar = 'assets/images/avatars/bi/Vet.jpg';
+    // tslint:disable-next-line:max-line-length
+    avatars = [ 'assets/images/avatars/bi/Dentist.jpg', 'assets/images/avatars/bi/DrOfMedicine.jpg', 'assets/images/avatars/bi/GeneralRespondent.jpg', 'assets/images/avatars/bi/HealthcareProf.jpg', 'assets/images/avatars/bi/Nurse.jpg', 'assets/images/avatars/bi/Optometrist.jpg', 'assets/images/avatars/bi/Pharmacist Technician.jpg', 'assets/images/avatars/bi/Pharmacist.jpg', 'assets/images/avatars/bi/PhysicianAss.jpg', 'assets/images/avatars/bi/Vet.jpg'];
     // Private
     private _fusePerfectScrollbar: FusePerfectScrollbarDirective;
     private _unsubscribeAll: Subject<any>;
@@ -172,7 +173,7 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     }
 
     changeAvatar(): void{
-        if (this.counter < 3){
+        if (this.counter < 10){
             this.avatar = this.avatars[this.counter];
             this.counter++;
         }else{

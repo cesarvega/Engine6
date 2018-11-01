@@ -96,7 +96,7 @@ export const navigation: FuseNavigation[] = [
                     },
                     {
                         id: 'tell-a-friend',
-                        title: 'tell-a-friend',
+                        title: 'Tell-a-friend',
                         type: 'item',
                         icon: 'child_care',
                         url: '/apps/login/tell-a-friend'
