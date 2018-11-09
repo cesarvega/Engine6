@@ -8,7 +8,7 @@
       <div class="h2 mt-20">
         Welcome to Brand Institute Registration Panel
       </div>
-      <div class="h3">
+      <!-- <div class="h3">
           Associate your account with 
         </div>
       <div  fxLayout="row"  fxLayoutAlign="center center">
@@ -21,11 +21,11 @@
         <button mat-raised-button class="facebook m-4" (click)="signInWithFB()">
           Facebook
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.xs="">
-    <dynamic-profile (submitForm)="countChange($event)" (taken)="taken($event)" class="positioning" [fieldData]="fieldOBJ">
+    <dynamic-profile (submitForm)="countChange($event)" (taken)="taken($event)"  (paypal)="paypalVerify($event)" class="positioning" [fieldData]="fieldOBJ">
     </dynamic-profile>
     <a class="link" [routerLink]="'/apps/login/auth/login'">go back to login?</a>
   </div>

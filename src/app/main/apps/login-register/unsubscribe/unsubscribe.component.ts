@@ -12,6 +12,8 @@ export class UnsubscribeComponent implements OnInit {
   loginForm: FormGroup;
   private user: SocialUser;
   formErrors: any;
+  reasons = ['Lack of surveys', 'I do not have the time', 'Compensation too low', 'Other -- please specify']; 
+
   constructor(
     private _fuseConfigService: FuseConfigService,
     private _formBuilder: FormBuilder,
@@ -36,6 +38,7 @@ export class UnsubscribeComponent implements OnInit {
     };
     this.formErrors = {
       emailFrom: {},
+      reasonwhy: {},
       Message: {}    
     };
   }
@@ -48,7 +51,8 @@ export class UnsubscribeComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
       emailFrom: ['', [Validators.required, Validators.email]],
-      Message: ['', [Validators.required, Validators.minLength(5)]]
+      reasonwhy: ['', Validators.required],
+      Message: ['']
     });
   }
 

@@ -2,6 +2,17 @@
 
 :host {
 
+    .mobile{
+        min-height: 150px;
+        padding-top: 35px;
+    }
+
+    .desktop{
+        min-height: 250px;
+        padding-top: 80px;
+    }
+
+
     #products {
 
         .top-bg {

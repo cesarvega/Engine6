@@ -814,7 +814,7 @@ export class SmartComponent implements OnInit {
           ]
         },
         {
-          labelValue: 'Terciary specialty',
+          labelValue: 'Tertiary specialty',
           icon: 'sql',
           defaultInputValue: '',
           componentType: 'bi-select',
@@ -825,8 +825,8 @@ export class SmartComponent implements OnInit {
           tooltip: '',
           placeHolder: 'Select a Specialty (optional)',
           type: 'checkbox',
-          label: 'Terciary specialty',
-          name: 'Terciary specialty',
+          label: 'Tertiary specialty',
+          name: 'Tertiary specialty',
           value: '',
           inputType: 'bi-select'         
         },

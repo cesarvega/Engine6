@@ -12,7 +12,7 @@ import { ContactUsExternalService } from '../../contact-us-external/contact-us-e
 })
 export class ContactUsComponent implements OnInit {
   reasons = ['Survey Technical Questions/Comments', 'Payment Questions', 
-              'Website Questions/Comments', 'Profile/Registration Questions Comments']; 
+              'Website Questions/Comments', 'Profile/Registration Questions Comments', 'Change Username']; 
 
   loginForm: FormGroup;
   formErrors: any;

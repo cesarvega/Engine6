@@ -51,7 +51,7 @@ export class RegistrationFormComponent implements OnInit {
     { key: '0cd19633-9baf-4d39-9cff-b61cea58d5f2', labelValue: 'You must provide proof of your medical profession' },
     { key: 'a1689b67-c51e-422a-8b87-1df5d9990a77', labelValue: 'Primary specialty *' },
     { key: '39da4b11-c640-434b-b336-041a4bb723ee', labelValue: 'Secondary specialty' },
-    { key: 'b50131a1-b728-4bf4-ad36-bcc35c6fdc27', labelValue: 'Terciary specialty' },
+    { key: 'b50131a1-b728-4bf4-ad36-bcc35c6fdc27', labelValue: 'Tertiary specialty' },
     { key: '52381c41-f118-4d74-83e6-4930078a5530', labelValue: 'Degree date *' },
     { key: 'df40615d-6c77-46cf-be05-f182ee8a35b7', labelValue: 'University/College' },
     { key: '23366508-c9a6-472d-bbb5-72d95ebca444', labelValue: 'License number' },
@@ -143,7 +143,7 @@ export class RegistrationFormComponent implements OnInit {
       validations: [
         {
           name: 'pattern',
-          validator: Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+          validator: Validators.pattern('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$'),
           message: 'please enter a valid email address'
         },
         {
@@ -442,7 +442,7 @@ export class RegistrationFormComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Zip Code *',
+      labelValue: 'Zip Code',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -453,8 +453,8 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'ZipCode',
       type: 'input',
-      label: 'Zip Code ',
-      name: 'Zip Code *',
+      label: 'Zip Code',
+      name: 'Zip Code',
       value: '',
       inputType: 'text',
       validations: [
@@ -566,6 +566,10 @@ export class RegistrationFormComponent implements OnInit {
   }
   fieldOBJ = this.fieldData2;
 
+  paypalVerify(event): void{
+    this.toastr.warning(event);
+  }
+  
   taken(event): void {
     this.showSuccess(event);
   }
@@ -599,7 +603,7 @@ export class RegistrationFormComponent implements OnInit {
     // });
 
     this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
-      this.toastr.success('Thank you for registering; you will be redirect to login with your new username and password or social media');
+      this.toastr.success('Account successfully created. Please log in to your new account.');
       setTimeout(() => {        
         this._route.navigateByUrl('/apps/login/auth/login');
       }, 6000);

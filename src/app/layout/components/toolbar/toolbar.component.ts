@@ -10,13 +10,12 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { navigation } from 'app/navigation/navigation';
 
 @Component({
-    selector   : 'toolbar',
+    selector: 'toolbar',
     templateUrl: './toolbar.component.html',
-    styleUrls  : ['./toolbar.component.scss']
+    styleUrls: ['./toolbar.component.scss']
 })
 
-export class ToolbarComponent implements OnInit, OnDestroy
-{
+export class ToolbarComponent implements OnInit, OnDestroy {
     horizontalNavbar: boolean;
     rightNavbar: boolean;
     hiddenNavbar: boolean;
@@ -25,6 +24,13 @@ export class ToolbarComponent implements OnInit, OnDestroy
     selectedLanguage: any;
     userStatusOptions: any[];
     username = '';
+    avatar = '';
+    title = '';
+    vip = false;
+    toolbarLogo = '';
+    // tslint:disable-next-line:max-line-length
+    // avatars = ['assets/images/avatars/bi/Dentist.jpg', 'assets/images/avatars/bi/DrOfMedicine.jpg', 'assets/images/avatars/bi/GeneralRespondent.jpg', 'assets/images/avatars/bi/HealthcareProf.jpg', 'assets/images/avatars/bi/Nurse.jpg', 'assets/images/avatars/bi/Optometrist.jpg', 'assets/images/avatars/bi/Pharmacist Technician.jpg', 'assets/images/avatars/bi/Pharmacist.jpg', 'assets/images/avatars/bi/PhysicianAss.jpg', 'assets/images/avatars/bi/Vet.jpg'];
+
     // Private
     private _unsubscribeAll: Subject<any>;
 
@@ -39,47 +45,46 @@ export class ToolbarComponent implements OnInit, OnDestroy
         private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
         private _translateService: TranslateService
-    )
-    {
+    ) {
         // Set the defaults
         this.userStatusOptions = [
             {
                 'title': 'Online',
-                'icon' : 'icon-checkbox-marked-circle',
+                'icon': 'icon-checkbox-marked-circle',
                 'color': '#4CAF50'
             },
             {
                 'title': 'Away',
-                'icon' : 'icon-clock',
+                'icon': 'icon-clock',
                 'color': '#FFC107'
             },
             {
                 'title': 'Do not Disturb',
-                'icon' : 'icon-minus-circle',
+                'icon': 'icon-minus-circle',
                 'color': '#F44336'
             },
             {
                 'title': 'Invisible',
-                'icon' : 'icon-checkbox-blank-circle-outline',
+                'icon': 'icon-checkbox-blank-circle-outline',
                 'color': '#BDBDBD'
             },
             {
                 'title': 'Offline',
-                'icon' : 'icon-checkbox-blank-circle-outline',
+                'icon': 'icon-checkbox-blank-circle-outline',
                 'color': '#616161'
             }
         ];
 
         this.languages = [
             {
-                id   : 'en',
+                id: 'en',
                 title: 'English',
-                flag : 'us'
+                flag: 'us'
             },
             {
-                id   : 'tr',
+                id: 'tr',
                 title: 'Turkish',
-                flag : 'tr'
+                flag: 'tr'
             }
         ];
 
@@ -96,10 +101,52 @@ export class ToolbarComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         // Subscribe to the config changes
         this.username = localStorage.getItem('userName') ? localStorage.getItem('userName') : 'NO Username';
+        this.title = localStorage.getItem('profession') ? localStorage.getItem('profession') : 'NO title';
+        switch (this.title) {
+            case 'Not related to Health Care':
+                this.avatar = 'assets/images/avatars/bi/GeneralRespondent.jpg';
+                break;
+            case 'Dentist':
+                this.avatar = 'assets/images/avatars/bi/Dentist.jpg';
+                break;
+            case 'Optometrist':
+                this.avatar = 'assets/images/avatars/bi/Optometrist.jpg';
+                break;
+            case 'Veterinarian':
+                this.avatar = 'assets/images/avatars/bi/Vet.jpg';
+                break;
+            case 'Allied Health Care Profession or Occupation':
+                this.avatar = 'assets/images/avatars/bi/HealthcareProf.jpg';
+                break;
+            case 'Physician/Doctor of Medicine (MD, DO)':
+                this.avatar = 'assets/images/avatars/bi/DrOfMedicine.jpg';
+                break;
+            case 'Physician Assistant (PA)':
+                this.avatar = 'assets/images/avatars/bi/PhysicianAss.jpg';
+                break;
+            case 'Pharmacist Technician':
+                this.avatar = 'assets/images/avatars/bi/PharmacistTechnician.jpg';
+                break;
+            case 'Pharmacist':
+                this.avatar = 'assets/images/avatars/bi/Pharmacist.jpg';
+                break;
+            case 'Nurse':
+                this.avatar = 'assets/images/avatars/bi/Nurse.jpg';
+                break;
+            case 'Vip':
+                this.avatar = 'assets/images/avatars/VIP.jpg';
+                break;
+        }
+
+        this.toolbarLogo = 'assets/images/avatars/VIP.jpg';
+        // this.toolbarLogo = this.avatar;
+
+        
+
+
         this._fuseConfigService.config
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((settings) => {
@@ -109,14 +156,13 @@ export class ToolbarComponent implements OnInit, OnDestroy
             });
 
         // Set the selected language from default languages
-        this.selectedLanguage = _.find(this.languages, {'id': this._translateService.currentLang});
+        this.selectedLanguage = _.find(this.languages, { 'id': this._translateService.currentLang });
     }
 
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
+    ngOnDestroy(): void {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
@@ -131,8 +177,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
      *
      * @param key
      */
-    toggleSidebarOpen(key): void
-    {
+    toggleSidebarOpen(key): void {
         this._fuseSidebarService.getSidebar(key).toggleOpen();
     }
 
@@ -141,8 +186,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
      *
      * @param value
      */
-    search(value): void
-    {
+    search(value): void {
         // Do your search here...
         console.log(value);
     }
@@ -152,8 +196,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
      *
      * @param lang
      */
-    setLanguage(lang): void
-    {
+    setLanguage(lang): void {
         // Set the selected language for the toolbar
         this.selectedLanguage = lang;
 

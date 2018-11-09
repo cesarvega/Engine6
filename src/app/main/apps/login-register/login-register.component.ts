@@ -82,7 +82,7 @@ export class LoginRegisterComponent implements OnInit {
                     }
                 });
                 if (this._authGuardService.login()) {
-                    this.router.navigateByUrl('/apps/dashboards/analytics');
+                    this.router.navigateByUrl('/apps/surveys/products');
                 } else {
                     this._authGuardService.logout();
                 }

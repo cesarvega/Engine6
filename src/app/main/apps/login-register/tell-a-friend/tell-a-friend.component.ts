@@ -39,11 +39,11 @@ export class TellAFriendComponent implements OnInit {
     
     this.formErrors = {
       email: {},
-      title: {},
-      firstName: {},
-      lastName: {},
-      field: {},
       message: {}
+      // title: {},
+      // firstName: {},
+      // lastName: {},
+      // field: {},
     };
   }
 
@@ -57,11 +57,11 @@ export class TellAFriendComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      title: ['', Validators.required],
-      firstName:  ['', Validators.required],
-      lastName:  ['', Validators.required],
-      field: ['', [Validators.required, Validators.minLength(4)]],
-      message: ['', [Validators.required, Validators.minLength(5)]]
+      message: ['']
+      // title: ['', Validators.required],
+      // firstName:  ['', Validators.required],
+      // lastName:  ['', Validators.required],
+      // field: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 }

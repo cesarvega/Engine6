@@ -14,6 +14,7 @@ export class DynamicFormComponent implements OnInit {
 
   @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
   @Output() emailTaken: EventEmitter<any> = new EventEmitter<any>();
+  @Output() paypal: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;
   noValid = false;
@@ -33,20 +34,28 @@ export class DynamicFormComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
 
+    if (this.form.value['Select country of residency *'] === 'United States' || this.form.value['Select country of residency *'] === 'Canada') {
+      if (this.form.value['State/Province'].length === 0 || this.form.value['Zip Code'].length === 0) {
+        this.paypal.emit('You must provide a state and zip-code if you are in USA or Canada');
+        return;
+      }
+    }
+
     if (this.form.value['Password *']) { // if coming from registration it will be a password
       if (this.form.value['Password *'].length < 6) {
         this.form.controls['Password *'].setErrors({ 'min': true });
       }
       if (this.form.value['Password *'] !== this.form.value['confirm password *']) {
         this.form.controls['confirm password *'].setErrors({ 'required': true });
+        
       }
       this._biLoginService.verifyEmail(this.form.controls['Email *'].value).subscribe((x: any) => {
         // if (true) {
-          if (!JSON.parse(x.d)[0].verified) {
+        if (!JSON.parse(x.d)[0].verified) {
           this.emailTaken.emit('the email ' + this.form.controls['Email *'].value + ' is already taken');
           this.noValid = true;
-          return true;         
-        } 
+          return true;
+        }
         else {
           if (this.form.valid) {
             this.submitForm.emit(this.form.getRawValue());
@@ -59,13 +68,20 @@ export class DynamicFormComponent implements OnInit {
     }
     else {
       if (this.form.valid) {
+        if (this.form.value['Select preferred payment method *'] === 'PayPal') {
+          this.paypal.emit('Please double-check and confirm that your PayPal account email is spelled correctly');
+          if (this.form.value['Enter your PayPal account'].length === 0) {
+            this.paypal.emit('Please enter a valid account');
+            return;
+          }
+        }
         this.submitForm.emit(this.form.getRawValue());
       } else {
         this.noValid = true;
         this.validateAllFormFields(this.form);
       }
     }
-   
+
   }
 
   createControl(): FormGroup {

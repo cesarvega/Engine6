@@ -9,22 +9,21 @@ import { FusePerfectScrollbarDirective } from '@fuse/directives/fuse-perfect-scr
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
-    selector     : 'navbar-vertical-style-1',
-    templateUrl  : './style-1.component.html',
-    styleUrls    : ['./style-1.component.scss'],
+    selector: 'navbar-vertical-style-1',
+    templateUrl: './style-1.component.html',
+    styleUrls: ['./style-1.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
-{
+export class NavbarVerticalStyle1Component implements OnInit, OnDestroy {
     fuseConfig: any;
     fusePerfectScrollbarUpdateTimeout: any;
     navigation: any;
-    counter = 0;  
+    counter = 0;
     username = '';
     title = 'Doctor MD.';
     avatar = 'assets/images/avatars/bi/Vet.jpg';
     // tslint:disable-next-line:max-line-length
-    avatars = [ 'assets/images/avatars/bi/Dentist.jpg', 'assets/images/avatars/bi/DrOfMedicine.jpg', 'assets/images/avatars/bi/GeneralRespondent.jpg', 'assets/images/avatars/bi/HealthcareProf.jpg', 'assets/images/avatars/bi/Nurse.jpg', 'assets/images/avatars/bi/Optometrist.jpg', 'assets/images/avatars/bi/Pharmacist Technician.jpg', 'assets/images/avatars/bi/Pharmacist.jpg', 'assets/images/avatars/bi/PhysicianAss.jpg', 'assets/images/avatars/bi/Vet.jpg'];
+    // avatars = ['assets/images/avatars/bi/Dentist.jpg', 'assets/images/avatars/bi/DrOfMedicine.jpg', 'assets/images/avatars/bi/GeneralRespondent.jpg', 'assets/images/avatars/bi/HealthcareProf.jpg', 'assets/images/avatars/bi/Nurse.jpg', 'assets/images/avatars/bi/Optometrist.jpg', 'assets/images/avatars/bi/Pharmacist Technician.jpg', 'assets/images/avatars/bi/Pharmacist.jpg', 'assets/images/avatars/bi/PhysicianAss.jpg', 'assets/images/avatars/bi/Vet.jpg'];
     // Private
     private _fusePerfectScrollbar: FusePerfectScrollbarDirective;
     private _unsubscribeAll: Subject<any>;
@@ -42,8 +41,7 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
         private _fuseNavigationService: FuseNavigationService,
         private _fuseSidebarService: FuseSidebarService,
         private _router: Router
-    )
-    {
+    ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -54,10 +52,8 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
 
     // Directive
     @ViewChild(FusePerfectScrollbarDirective)
-    set directive(theDirective: FusePerfectScrollbarDirective)
-    {
-        if ( !theDirective )
-        {
+    set directive(theDirective: FusePerfectScrollbarDirective) {
+        if (!theDirective) {
             return;
         }
 
@@ -79,19 +75,18 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
                 take(1)
             )
             .subscribe(() => {
-                    setTimeout(() => {
-                        const activeNavItem: any = document.querySelector('navbar .nav-link.active');
+                setTimeout(() => {
+                    const activeNavItem: any = document.querySelector('navbar .nav-link.active');
 
-                        if ( activeNavItem )
-                        {
-                            const activeItemOffsetTop       = activeNavItem.offsetTop,
-                                  activeItemOffsetParentTop = activeNavItem.offsetParent.offsetTop,
-                                  scrollDistance            = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3) - 168;
+                    if (activeNavItem) {
+                        const activeItemOffsetTop = activeNavItem.offsetTop,
+                            activeItemOffsetParentTop = activeNavItem.offsetParent.offsetTop,
+                            scrollDistance = activeItemOffsetTop - activeItemOffsetParentTop - (48 * 3) - 168;
 
-                            this._fusePerfectScrollbar.scrollToTop(scrollDistance);
-                        }
-                    });
-                }
+                        this._fusePerfectScrollbar.scrollToTop(scrollDistance);
+                    }
+                });
+            }
             );
     }
 
@@ -102,21 +97,52 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit(): void {
         this.username = localStorage.getItem('userName') ? localStorage.getItem('userName') : 'NO Username';
         this.title = localStorage.getItem('profession') ? localStorage.getItem('profession') : 'NO title';
+        switch (this.title) {
+            case 'Not related to Health Care':
+                this.avatar = 'assets/images/avatars/bi/GeneralRespondent.jpg';
+                break;
+            case 'Dentist':
+                this.avatar = 'assets/images/avatars/bi/Dentist.jpg';
+                break;
+            case 'Optometrist':
+                this.avatar = 'assets/images/avatars/bi/Optometrist.jpg';
+                break;
+            case 'Veterinarian':
+                this.avatar = 'assets/images/avatars/bi/Vet.jpg';
+                break;
+            case 'Allied Health Care Profession or Occupation':
+                this.avatar = 'assets/images/avatars/bi/HealthcareProf.jpg';
+                break;
+            case 'Physician/Doctor of Medicine (MD, DO)':
+                this.avatar = 'assets/images/avatars/bi/DrOfMedicine.jpg';
+                break;
+            case 'Physician Assistant (PA)':
+                this.avatar = 'assets/images/avatars/bi/PhysicianAss.jpg';
+                break;
+            case 'Pharmacist Technician':
+                this.avatar = 'assets/images/avatars/bi/PharmacistTechnician.jpg';
+                break;
+            case 'Pharmacist':
+                this.avatar = 'assets/images/avatars/bi/Pharmacist.jpg';
+                break;
+            case 'Nurse':
+                this.avatar = 'assets/images/avatars/bi/Nurse.jpg';
+                break;
+        }
+
         this._router.events
             .pipe(
                 filter((event) => event instanceof NavigationEnd),
                 takeUntil(this._unsubscribeAll)
             )
             .subscribe(() => {
-                    if ( this._fuseSidebarService.getSidebar('navbar') )
-                    {
-                        this._fuseSidebarService.getSidebar('navbar').close();
-                    }
+                if (this._fuseSidebarService.getSidebar('navbar')) {
+                    this._fuseSidebarService.getSidebar('navbar').close();
                 }
+            }
             );
 
         // Subscribe to the config changes
@@ -140,10 +166,8 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     /**
      * On destroy
      */
-    ngOnDestroy(): void
-    {
-        if ( this.fusePerfectScrollbarUpdateTimeout )
-        {
+    ngOnDestroy(): void {
+        if (this.fusePerfectScrollbarUpdateTimeout) {
             clearTimeout(this.fusePerfectScrollbarUpdateTimeout);
         }
 
@@ -159,25 +183,23 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     /**
      * Toggle sidebar opened status
      */
-    toggleSidebarOpened(): void
-    {
+    toggleSidebarOpened(): void {
         this._fuseSidebarService.getSidebar('navbar').toggleOpen();
     }
 
     /**
      * Toggle sidebar folded status
      */
-    toggleSidebarFolded(): void
-    {
+    toggleSidebarFolded(): void {
         this._fuseSidebarService.getSidebar('navbar').toggleFold();
     }
 
-    changeAvatar(): void{
-        if (this.counter < 10){
-            this.avatar = this.avatars[this.counter];
-            this.counter++;
-        }else{
-            this.counter = 0;
-        }    
-    }
+    // changeAvatar(): void {
+    //     if (this.counter < 10) {
+    //         this.avatar = this.avatars[this.counter];
+    //         this.counter++;
+    //     } else {
+    //         this.counter = 0;
+    //     }
+    // }
 }

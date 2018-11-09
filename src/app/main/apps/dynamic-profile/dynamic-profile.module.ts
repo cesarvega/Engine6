@@ -19,6 +19,7 @@ import { LabelComponent } from './components/textlabel/textlabel.component';
 import { RegistrationFormComponent } from '../login-register/registration-form/registration-form.component';
 import { ProfileComponent } from '../login-register/profile/profile.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 const routes: Routes = [
   {
     path     : 'user/profile',
@@ -42,7 +43,8 @@ const routes: Routes = [
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    FuseSharedModule
+    FuseSharedModule,
+    MatTooltipModule
   ],
   declarations:   [
     ProfileComponent,

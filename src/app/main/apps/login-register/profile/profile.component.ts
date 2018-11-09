@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
     { key: '0cd19633-9baf-4d39-9cff-b61cea58d5f2', labelValue: 'You must provide proof of your medical profession' },
     { key: 'a1689b67-c51e-422a-8b87-1df5d9990a77', labelValue: 'Primary specialty *' },
     { key: '39da4b11-c640-434b-b336-041a4bb723ee', labelValue: 'Secondary specialty' },
-    { key: 'b50131a1-b728-4bf4-ad36-bcc35c6fdc27', labelValue: 'Terciary specialty' },
+    { key: 'b50131a1-b728-4bf4-ad36-bcc35c6fdc27', labelValue: 'Tertiary specialty' },
     { key: '52381c41-f118-4d74-83e6-4930078a5530', labelValue: 'Degree date *' },
     { key: 'df40615d-6c77-46cf-be05-f182ee8a35b7', labelValue: 'University/College' },
     { key: '23366508-c9a6-472d-bbb5-72d95ebca444', labelValue: 'License number' },
@@ -488,6 +488,35 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'false',
+      options: [
+        'Google or other search',
+        'Word of mouth',
+        'Advertisement',
+        'Article or blog post',
+        'Social media'
+      ],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: '',
+      type: 'select',
+      label: 'How did you hear about us?',
+      name: 'How did you hear about us?',
+      value: '',
+      inputType: 'select',
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'How did you hear about us is required'
+        }
+      ]
+    },
+    {
       labelValue: 'Specify your profession or occupation',
       icon: '',
       defaultInputValue: '',
@@ -602,7 +631,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Level of Education is required'
         }
       ]
     },
@@ -610,27 +639,23 @@ export class ProfileComponent implements OnInit {
       labelValue: 'Spoken Languages',
       icon: 'sql',
       defaultInputValue: '',
-      componentType: 'false',
-      options: [
-        {
-          'sql': '[BI_MEMBERS].[dbo].[pm_getLanguageList]'
-        }
-      ],
+      componentType: 'true',
+      options: [ 'English', 'Spanish', 'Chinese', 'Portuguese', 'French', 'German', 'Italian', 'Other'],
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
       placeHolder: 'Select Language(s)',
-      type: 'input',
+      type: 'select',
       label: 'Spoken Languages',
       name: 'Spoken Languages',
       value: '',
-      inputType: 'text',
+      inputType: 'select',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Spoken Languages is required'
         }
       ]
     },
@@ -650,47 +675,47 @@ export class ProfileComponent implements OnInit {
       name: 'Employer name',
       value: '',
       inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
+      // validations: [
+      //   {
+      //     name: 'required',
+      //     validator: Validators.required,
+      //     message: ' is required'
+      //   }
+      // ]
     }
   ];
 
   OTHER_HCP: FieldConfig2[] = [
-    {
-      labelValue: 'Profession or Occupation *',
-      icon: 'sql',
-      defaultInputValue: '',
-      componentType: 'false',
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: 'Select Pofession/Occupation',
-      type: 'input',
-      label: 'Profession or Occupation *',
-      name: 'Profession or Occupation *',
-      value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Must select your profession/occupation',
-        }
-      ]
-    },
+    // {
+    //   labelValue: 'Profession or Occupation *',
+    //   icon: 'sql',
+    //   defaultInputValue: '',
+    //   componentType: 'false',
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: 'Select Pofession/Occupation',
+    //   type: 'input',
+    //   label: 'Profession or Occupation *',
+    //   name: 'Profession or Occupation *',
+    //   value: '',
+    //   inputType: 'text',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: 'Must select your profession/occupation',
+    //     }
+    //   ]
+    // },
     {
       labelValue: 'Practice type *',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'false',
       options: [
-        'Hospital', 'Retail', 'Clinic'
+        'Hospital', 'Clinic'
       ],
       disabled: 'false',
       componentId: '0',
@@ -732,7 +757,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'University/College is required'
         }
       ]
     },
@@ -758,7 +783,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License number is required'
         }
       ]
     },
@@ -782,7 +807,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License State/Province is required'
         }
       ]
     },
@@ -854,12 +879,12 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Secondary specialty is required'
         }
       ]
     },
     {
-      labelValue: 'Terciary specialty',
+      labelValue: 'Tertiary specialty',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'false',
@@ -872,8 +897,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select a Specialty (optional)',
       type: 'select',
-      label: 'Terciary specialty',
-      name: 'Terciary specialty',
+      label: 'Tertiary specialty',
+      name: 'Tertiary specialty',
       value: '',
       inputType: 'select'
     },
@@ -913,7 +938,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'University/College is required'
         }
       ]
     },
@@ -939,7 +964,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License number is required'
         }
       ]
     },
@@ -964,35 +989,35 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License State/Province is required'
         }
       ]
     },
-    {
+    // {
 
 
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'false',
-      options: [''],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: 'Enter Board Name',
-      type: 'input',
-      label: 'Enter Board name (if applies)',
-      name: 'Enter Board name (if applies)',
-      value: '',
-      inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
-    },
+    //   icon: '',
+    //   defaultInputValue: '',
+    //   componentType: 'false',
+    //   options: [''],
+    //   disabled: 'false',
+    //   componentId: '0',
+    //   sortOrder: '0',
+    //   tooltip: '',
+    //   placeHolder: 'Enter Board Name',
+    //   type: 'input',
+    //   label: 'Enter Board name (if applies)',
+    //   name: 'Enter Board name (if applies)',
+    //   value: '',
+    //   inputType: 'text',
+    //   validations: [
+    //     {
+    //       name: 'required',
+    //       validator: Validators.required,
+    //       message: ' is required'
+    //     }
+    //   ]
+    // },
     // {
     //   labelValue: 'You must provide proof of your medical profession',
     //   icon: '',
@@ -1089,7 +1114,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'University/College is required'
         }
       ]
     },
@@ -1115,7 +1140,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License number is required'
         }
       ]
     },
@@ -1139,7 +1164,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License State/Province is required'
         }
       ]
     },
@@ -1211,12 +1236,12 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Secondary specialty is required'
         }
       ]
     },
     {
-      labelValue: 'Terciary specialty',
+      labelValue: 'Tertiary specialty',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'false',
@@ -1229,8 +1254,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select a Specialty (optional)',
       type: 'select',
-      label: 'Terciary specialty',
-      name: 'Terciary specialty',
+      label: 'Tertiary specialty',
+      name: 'Tertiary specialty',
       value: '',
       inputType: 'select'
     },
@@ -1240,7 +1265,7 @@ export class ProfileComponent implements OnInit {
       defaultInputValue: '',
       componentType: 'false',
       options: [
-        'Register Nurse', 'Nurse Practitioner'
+        'Registered Nurse', 'Nurse Practitioner'
       ],
       disabled: 'false',
       componentId: '0',
@@ -1282,7 +1307,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License number is required'
         }
       ]
     },
@@ -1306,7 +1331,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'License State/Province is required'
         }
       ]
     },
@@ -1381,13 +1406,13 @@ export class ProfileComponent implements OnInit {
       name: 'Enter your PayPal account',
       value: '',
       inputType: 'text',
-      // validations: [
-      //   {
-      //     name: 'required',
-      //     validator: Validators.required,
-      //     message: 'If PayPal must enter your PayPal account'
-      //   }
-      // ]
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.email,
+          message: 'If PayPal must enter your PayPal account'
+        }
+      ]
     },
     // {
     //   labelValue: 'Please select how would you like to receive survey invitations',
@@ -1517,41 +1542,12 @@ export class ProfileComponent implements OnInit {
           message: 'Provide an answer'
         }
       ]
-    },
-    {
-      icon: '',
-      defaultInputValue: '',
-      componentType: 'false',
-      options: [
-        'Google or other search',
-        'Word of mouth',
-        'Advertisement',
-        'Article or blog post',
-        'Social media'
-      ],
-      disabled: 'false',
-      componentId: '0',
-      sortOrder: '0',
-      tooltip: '',
-      placeHolder: '',
-      type: 'select',
-      label: 'How did you hear about us?',
-      name: 'How did you hear about us?',
-      value: '',
-      inputType: 'select',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Service time is required'
-        }
-      ]
     }
   ];
 // no go
   acc_History: FieldConfig2[] = [
     {
-      labelValue: 'surveyHistoryTitle',
+      labelValue: 'survey History Title',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1575,15 +1571,15 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: '',
       type: 'radiobutton',
-      label: 'surveyHistoryTitle',
-      name: 'surveyHistoryTitle',
+      label: 'survey History Title',
+      name: 'survey History Title',
       value: '',
       inputType: 'bi-table',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'survey History Title is required'
         }
       ]
     },
@@ -1620,7 +1616,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'paymentHistoryTitle is required'
         }
       ]
     }
@@ -1647,7 +1643,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'accHistory is required'
         }
       ]
     },
@@ -1687,7 +1683,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'accDetails is required'
         }
       ]
     },
@@ -1711,7 +1707,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'updateInfo is required'
         }
       ]
     },
@@ -1735,7 +1731,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Contact Us is required'
         }
       ]
     }
@@ -1764,7 +1760,7 @@ export class ProfileComponent implements OnInit {
     //     {
     //       name: 'required',
     //       validator: Validators.required,
-    //       message: 'Service time is required'
+    //       message: ' is required'
     //     }
     //   ]
     // },
@@ -1773,8 +1769,7 @@ export class ProfileComponent implements OnInit {
       defaultInputValue: '',
       componentType: 'true',
       // tslint:disable-next-line:max-line-length
-      options: [ 'Allergies Hypertension / High Blood Pressure ', 'Asthma or Respiratory Ailments  Infectious Diseases ', 'Blood Disorders  Kidney or Bladder Problems ', 'Bone or Joint Conditions  Men`s Health Conditions ', 'Cancer or Cancer-Related  Musculoskeletal Diseases', 'Cardiovascular Diseases Neurological or Mental Health Conditions ', 'Chronic Pain (Head / Joint / Muscular)  Neuropsychiatric Conditions', 'Depression Osteoarthritis / Rheumatoid Arthritis', 'Diabetes, Metabolic & Thyroid Conditions  Primary Immune Deficiencies (PID)', 'Digestive Diseases Sensory Organ Disorders', 'Eye or Vision Impairments  Skin Conditions ', 'Heart or Cardiovascular Conditions  Sleep Disorders ', 'Hepatitis A STDs', 'Hepatitis B Stomach, Bowel or Digestion Problems ', 'Hepatitis C Women`s Health Issues ', 'High Cholesterol  Other Medical Condition', 'HIV / AIDS Non', 'Hypertension / High Blood Pressur', 'Infectious Disease', 'Kidney or Bladder Problem', 'Men`s Health Condition', 'Musculoskeletal Disease', 'Neurological or Mental Health Condition', 'Neuropsychiatric condition', 'Osteoarthritis / Rheumatoid Arthriti', 'Primary Immune Deficiencies (PID', 'Sensory organ disorder', 'Skin Condition', 'Sleep Disorder', 'STD', 'Stomach, Bowel or Digestion Problem', 'Women`s Health Issue', 'Other Medical Conditions', 'None Of The Above'
-      ],
+      options: [ 'Allergies', 'Asthma or Respiratory Ailments  ', 'Blood Disorders  ', 'Bone or Joint Conditions  ', 'Cancer or Cancer-Related  ', 'Cardiovascular diseases', 'Chronic Pain (Head / Joint / Muscular)', 'Depression', 'Diabetes', 'Digestive diseases', 'Drink alcohol regularly', 'Eye or Vision Impairments  ', 'Glasses/contacts', 'Heart or Cardiovascular Conditions  ', 'Hepatitis A', 'Hepatitis B', 'Hepatitis C', 'High Cholesterol  ', 'HIV / AIDS', 'Hypertension / High Blood Pressure  ', 'Infectious Diseases', 'Kidney or Bladder Problems  ', 'Men`s Health Conditions', 'Men`s Health Conditions  ', 'Musculoskeletal diseases', 'Neurological or Mental Health Conditions  ', 'Neuropsychiatric conditions', 'None', 'Osteoarthritis / Rheumatoid Arthritis', 'Other Medical Condition', 'Sensory organ disorders', 'Skin condition', 'Sleep Disorder', 'Smoke regularly', 'STDs', 'Stomach, Digestive or Bowel Problems', 'Women`s Health Issues'     ],      
       disabled: 'false',
       componentId: '0',
       sortOrder: '0',
@@ -1789,7 +1784,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Select at least one option, is required'
         }
       ]
     },
@@ -1813,7 +1808,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Ethnicity is required'
         }
       ]
     },
@@ -1838,7 +1833,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Education Level is required'
         }
       ]
     },
@@ -1867,7 +1862,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Marital Status is required'
         }
       ]
     },
@@ -1902,7 +1897,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Household income is required'
         }
       ]
     },
@@ -1933,7 +1928,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Number of children is required'
         }
       ]
     },
@@ -1985,7 +1980,7 @@ export class ProfileComponent implements OnInit {
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Service time is required'
+          message: 'Select an option, is required'
         }
       ]
     }
@@ -2012,7 +2007,7 @@ export class ProfileComponent implements OnInit {
     //     {
     //       name: 'required',
     //       validator: Validators.required,
-    //       message: 'Service time is required'
+    //       message: ' is required'
     //     }
     //   ]
     // }
@@ -2157,6 +2152,9 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  paypalVerify(event): void{
+    this.toastr.warning(event);
+  }
 
   countChange(event): void {
     this._finalObj = [];

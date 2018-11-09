@@ -13,11 +13,16 @@ export class DynamicProfileComponent implements OnInit {
   @Input() fieldData: any;
   @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
   @Output() taken: EventEmitter<any> = new EventEmitter<any>();
+  @Output() paypal: EventEmitter<any> = new EventEmitter<any>();
   countChange(event): void {
     this.submitForm.emit(event);
   }
   emailtaken(event): void {
     this.taken.emit(event);
+  }
+
+  paypalveryfication(event): void {
+    this.paypal.emit(event);
   }
 
   ngOnInit(): void {
