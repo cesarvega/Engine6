@@ -33,48 +33,48 @@ export class ProfileComponent implements OnInit {
     { key: '0d1d3494-4939-49d7-bdbe-15eb48e923ab', labelValue: 'Mailing street/#apto/unit' },
     { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'State/Province' },
     { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code' },
-    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone *' },
-    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation' },
+    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone' },
+    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation *' },
     { key: 'efcfa33d-efb0-43e8-8e51-23508ddedc39', labelValue: 'Type of industry *' },
     { key: '81d74098-5efd-4fc9-afce-88b98f745a23', labelValue: 'Title position *' },
-    { key: 'bcf8eea5-1b82-4452-8304-8c588c490ef9', labelValue: 'Level of Education' },
-    { key: '1af4efa7-e4cb-469a-80ed-5220822eb025', labelValue: 'Spoken Languages' },
+    { key: 'bcf8eea5-1b82-4452-8304-8c588c490ef9', labelValue: 'Level of Education *' },
+    { key: '1af4efa7-e4cb-469a-80ed-5220822eb025', labelValue: 'Spoken Languages *' },
     { key: 'aaf1817d-e859-4302-805a-4938c47f1bb5', labelValue: 'Employer name' },
     { key: '2782cff3-b858-49e9-ba2a-ac578eaa8529', labelValue: 'Profession or Occupation *' },
     { key: '610db51c-fbf8-48d9-ba2d-25815c80a459', labelValue: 'Practice type *' },
-    { key: '38cf04f2-5b63-4f6d-936e-d8e82ab0ef6a', labelValue: 'University/College' },
-    { key: '10cdd4cd-d5b9-4301-b643-099f40c5a69d', labelValue: 'License number' },
-    { key: '8f6233f8-5893-4bdc-8caa-cb67a6339c68', labelValue: 'License State/Province' },
+    { key: '38cf04f2-5b63-4f6d-936e-d8e82ab0ef6a', labelValue: 'University/College *' },
+    { key: '10cdd4cd-d5b9-4301-b643-099f40c5a69d', labelValue: 'License number *' },
+    { key: '8f6233f8-5893-4bdc-8caa-cb67a6339c68', labelValue: 'License State/Province *' },
     { key: '0cd19633-9baf-4d39-9cff-b61cea58d5f2', labelValue: 'You must provide proof of your medical profession' },
     { key: 'a1689b67-c51e-422a-8b87-1df5d9990a77', labelValue: 'Primary specialty *' },
     { key: '39da4b11-c640-434b-b336-041a4bb723ee', labelValue: 'Secondary specialty' },
     { key: 'b50131a1-b728-4bf4-ad36-bcc35c6fdc27', labelValue: 'Tertiary specialty' },
     { key: '52381c41-f118-4d74-83e6-4930078a5530', labelValue: 'Degree date *' },
-    { key: 'df40615d-6c77-46cf-be05-f182ee8a35b7', labelValue: 'University/College' },
-    { key: '23366508-c9a6-472d-bbb5-72d95ebca444', labelValue: 'License number' },
-    { key: '590ee3b5-6827-4582-8ac1-704f4506f967', labelValue: 'License State/Province' },
+    { key: 'df40615d-6c77-46cf-be05-f182ee8a35b7', labelValue: 'University/College *' },
+    { key: '23366508-c9a6-472d-bbb5-72d95ebca444', labelValue: 'License number *' },
+    { key: '590ee3b5-6827-4582-8ac1-704f4506f967', labelValue: 'License State/Province *' },
     { key: 'a6f1b8d1-a0ea-420a-9ad2-12e77cb0100d', labelValue: 'Enter Board name (if applies)' },
     { key: '55235e14-e438-45cf-99bd-789773c0c697', labelValue: 'You must provide proof of your medical profession' },
     { key: 'fa7c5a61-0bc0-48e2-a5e9-f6814d661971', labelValue: 'Practice type *' },
     { key: '609b81c9-2d37-4a87-a071-5e8de1f06ee2', labelValue: 'Degree date *' },
-    { key: '6595ff08-7458-4209-ab61-37768d3061fe', labelValue: 'University/College' },
-    { key: '6bb8aa1c-03fd-44db-a1a3-10bd1c5d08fd', labelValue: 'License number' },
-    { key: 'db5a3520-3eda-43ea-93c3-f3242b586779', labelValue: 'License State/Province' },
+    { key: '6595ff08-7458-4209-ab61-37768d3061fe', labelValue: 'University/College *' },
+    { key: '6bb8aa1c-03fd-44db-a1a3-10bd1c5d08fd', labelValue: 'License number *' },
+    { key: 'db5a3520-3eda-43ea-93c3-f3242b586779', labelValue: 'License State/Province *' },
     { key: 'c9f8e903-2fd7-479b-a0dc-9b29bcdc60be', labelValue: 'You must provide proof of your medical profession' },
     { key: '49cccba9-257a-47e9-b5dd-45621d78af02', labelValue: 'Practice type *' },
     { key: '558ff75b-6f41-42db-87ad-c4c9a46c33dd', labelValue: 'Nurse Class *' },
-    { key: 'bfa1c2f5-e9a9-4137-8f35-a4a73602644b', labelValue: 'License number' },
-    { key: 'e1e62fd2-38bf-4838-91f7-9c12f4a9987b', labelValue: 'License State/Province' },
+    { key: 'bfa1c2f5-e9a9-4137-8f35-a4a73602644b', labelValue: 'License number *' },
+    { key: 'e1e62fd2-38bf-4838-91f7-9c12f4a9987b', labelValue: 'License State/Province *' },
     { key: '1e7ad2f7-39e4-4265-a894-c312d59a2f9f', labelValue: 'You must provide proof of your Nursing profession' },
     { key: '230baf4b-b903-46c7-a579-25b45b4068ef', labelValue: 'Select preferred payment method *' },
     { key: '0ba5d120-83cd-454a-84ac-bbad7db4d702', labelValue: 'Enter your PayPal account' },
     { key: 'a6d17228-a2a5-47c6-9537-fd4c606a27bf', labelValue: 'Select how you want to receive our invitations for surveys *' },
     { key: '3e943c0f-f081-42df-a3c0-8cc372d97266', labelValue: 'to recover your password' },
-    { key: '45726a73-595a-45f7-9094-21993160cb02', labelValue: 'Choose a second security question to recover your password' },
-    { key: 'a67ec2b1-7482-446c-92ed-1771249b85b6', labelValue: 'Answer the second security question you selected' },
-    { key: 'f7388c73-1f37-416a-910a-8c80dd3c96ad', labelValue: 'Choose a security questions to recover your password' },
-    { key: '1e64873c-4977-415f-813d-c78cd9600d9c', labelValue: 'Answer the question you selected' },
-    { key: '715e9115-1769-40a4-8c96-9ee7f2811006', labelValue: 'How did you hear about us?' },
+    { key: '45726a73-595a-45f7-9094-21993160cb02', labelValue: 'Choose a second security question to recover your password *' },
+    { key: 'a67ec2b1-7482-446c-92ed-1771249b85b6', labelValue: 'Answer the second security question you selected *' },
+    { key: 'f7388c73-1f37-416a-910a-8c80dd3c96ad', labelValue: 'Choose a security questions to recover your password *' },
+    { key: '1e64873c-4977-415f-813d-c78cd9600d9c', labelValue: 'Answer the question you selected *' },
+    { key: '715e9115-1769-40a4-8c96-9ee7f2811006', labelValue: 'How did you hear about us? *' },
     { key: 'd0566e92-8fc6-47b1-87f0-87a5597fc40c', labelValue: 'surveyHistoryTitle' },
     { key: 'a008ba18-96ab-4df0-9a25-de6f21e4f45f', labelValue: 'paymentHistoryTitle' },
     { key: '1b577495-cd7a-4527-8d8a-61b06714958f', labelValue: 'accHistory' },
@@ -84,13 +84,13 @@ export class ProfileComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     { key: '5816f764-df23-4315-83b7-d0104ecde1ab', labelValue: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.' },
     // tslint:disable-next-line:max-line-length
-    { key: '35e2b5b7-425c-4696-a706-a5be2c1f1243', labelValue: 'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?'},
-    { key: '320c9e9a-65da-4fc0-bf87-d64468992572', labelValue: 'Ethnicity' },
-    { key: '04f9afe7-7786-4bfa-b7f1-2fc5fdeea20e', labelValue: 'Education Level' },
-    { key: '849d790e-a764-40c5-9099-e36ea5406d0b', labelValue: 'Marital Status' },
-    { key: '5fdc3adb-a1c3-4194-8a49-ebc61c15ee25', labelValue: 'Household income' },
-    { key: '2ba0c798-4db5-41c5-a597-16e9da8dd182', labelValue: 'Number of children' },
-    { key: '08b20841-5e1b-465c-b2ca-b2271617517a', labelValue: 'Do you or any member of your immediate family work in any of the following areas?' },
+    { key: '35e2b5b7-425c-4696-a706-a5be2c1f1243', labelValue: 'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions? *'},
+    { key: '320c9e9a-65da-4fc0-bf87-d64468992572', labelValue: 'Ethnicity *' },
+    { key: '04f9afe7-7786-4bfa-b7f1-2fc5fdeea20e', labelValue: 'Education Level *' },
+    { key: '849d790e-a764-40c5-9099-e36ea5406d0b', labelValue: 'Marital Status *' },
+    { key: '5fdc3adb-a1c3-4194-8a49-ebc61c15ee25', labelValue: 'Household income *' },
+    { key: '2ba0c798-4db5-41c5-a597-16e9da8dd182', labelValue: 'Number of children *' },
+    { key: '08b20841-5e1b-465c-b2ca-b2271617517a', labelValue: 'Do you or any member of your immediate family work in any of the following areas? *' },
     { key: '79e746d9-e454-453c-85bd-a007969c7ff5', labelValue: 'Other information: Some questions about your current system configurations' },
     { key: 'd5139a3d-ac03-4732-b62c-7e41d67fd90e', labelValue: 'Please select how would you like to receive survey invitations' },
     { key: '68dc6fa3-8a88-4e3f-acc4-ede4eb4e798b', labelValue: '' },
@@ -124,7 +124,7 @@ export class ProfileComponent implements OnInit {
   P_info_1: FieldConfig2[] = [
     {
       labelValue: 'Email *',
-      icon: '',
+      icon: 'edit',
       defaultInputValue: '',
       componentType: 'false',
       options: [''],
@@ -475,17 +475,17 @@ export class ProfileComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cellphone *',
-      name: 'Cellphone *',
+      label: 'Cellphone',
+      name: 'Cellphone',
       value: '',
       inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'cellphone number is required'
-        }
-      ]
+      // validations: [
+      //   {
+      //     name: 'required',
+      //     validator: Validators.required,
+      //     message: 'cellphone number is required'
+      //   }
+      // ]
     },
     {
       icon: '',
@@ -504,8 +504,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: '',
       type: 'select',
-      label: 'How did you hear about us?',
-      name: 'How did you hear about us?',
+      label: 'How did you hear about us? *',
+      name: 'How did you hear about us? *',
       value: '',
       inputType: 'select',
       validations: [
@@ -517,8 +517,8 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Specify your profession or occupation',
-      icon: '',
+      labelValue: 'Specify your profession or occupation *',
+      icon: 'edit',
       defaultInputValue: '',
       componentType: 'false',
       options: [
@@ -539,8 +539,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select Profession/Occupation',
       type: 'input',
-      label: 'Specify your profession or occupation',
-      name: 'Specify your profession or occupation',
+      label: 'Specify your profession or occupation *',
+      name: 'Specify your profession or occupation *',
       value: '',
       inputType: 'text',
       validations: [
@@ -623,8 +623,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select Education Level',
       type: 'select',
-      label: 'Level of Education',
-      name: 'Level of Education',
+      label: 'Level of Education *',
+      name: 'Level of Education *',
       value: '',
       inputType: 'select',
       validations: [
@@ -636,7 +636,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Spoken Languages',
+      labelValue: 'Spoken Languages *',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'true',
@@ -647,8 +647,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select Language(s)',
       type: 'select',
-      label: 'Spoken Languages',
-      name: 'Spoken Languages',
+      label: 'Spoken Languages *',
+      name: 'Spoken Languages *',
       value: '',
       inputType: 'select',
       validations: [
@@ -736,7 +736,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'University/College',
+      labelValue: 'University/College *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -747,10 +747,10 @@ export class ProfileComponent implements OnInit {
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Enter University/College',
+      placeHolder: 'Enter University/College ',
       type: 'input',
-      label: 'University/College',
-      name: 'University/College',
+      label: 'University/College *',
+      name: 'University/College *',
       value: '',
       inputType: 'text',
       validations: [
@@ -762,7 +762,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'License number',
+      labelValue: 'License number *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -775,20 +775,20 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter License Number',
       type: 'input',
-      label: 'License number',
-      name: 'License number',
+      label: 'License number *',
+      name: 'License number *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'License number is required'
+          message: 'License number  is required'
         }
       ]
     },
     {
-      labelValue: 'License State/Province',
+      labelValue: 'License State/Province *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -799,8 +799,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter State/Province where License was Obtained',
       type: 'input',
-      label: 'License State/Province',
-      name: 'License State/Province',
+      label: 'License State/Province *',
+      name: 'License State/Province *',
       value: '',
       inputType: 'text',
       validations: [
@@ -875,13 +875,13 @@ export class ProfileComponent implements OnInit {
       name: 'Secondary specialty',
       value: '',
       inputType: 'select',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'Secondary specialty is required'
-        }
-      ]
+      // validations: [
+      //   {
+      //     name: 'required',
+      //     validator: Validators.required,
+      //     message: 'Secondary specialty is required'
+      //   }
+      // ]
     },
     {
       labelValue: 'Tertiary specialty',
@@ -919,7 +919,7 @@ export class ProfileComponent implements OnInit {
       inputType: 'date',
     },
     {
-      labelValue: 'University/College',
+      labelValue: 'University/College *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -930,8 +930,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter University/College',
       type: 'input',
-      label: 'University/College',
-      name: 'University/College',
+      label: 'University/College *',
+      name: 'University/College *',
       value: '',
       inputType: 'text',
       validations: [
@@ -943,7 +943,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'License number',
+      labelValue: 'License number *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -956,15 +956,15 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter License Number',
       type: 'input',
-      label: 'License number',
-      name: 'License number',
+      label: 'License number *',
+      name: 'License number *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'License number is required'
+          message: 'License number  is required'
         }
       ]
     },
@@ -981,8 +981,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter State/Province were License was Obtained',
       type: 'input',
-      label: 'License State/Province',
-      name: 'License State/Province',
+      label: 'License State/Province *',
+      name: 'License State/Province *',
       value: '',
       inputType: 'text',
       validations: [
@@ -1093,7 +1093,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'University/College',
+      labelValue: 'University/College *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1104,10 +1104,10 @@ export class ProfileComponent implements OnInit {
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Enter University/College',
+      placeHolder: 'Enter University/College ',
       type: 'input',
-      label: 'University/College',
-      name: 'University/College',
+      label: 'University/College *',
+      name: 'University/College *',
       value: '',
       inputType: 'text',
       validations: [
@@ -1119,7 +1119,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'License number',
+      labelValue: 'License number *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1132,20 +1132,20 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter License Number',
       type: 'input',
-      label: 'License number',
-      name: 'License number',
+      label: 'License number *',
+      name: 'License number *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'License number is required'
+          message: 'License number  is required'
         }
       ]
     },
     {
-      labelValue: 'License State/Province',
+      labelValue: 'License State/Province *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1156,8 +1156,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter State/Province were License was Obtained',
       type: 'input',
-      label: 'License State/Province',
-      name: 'License State/Province',
+      label: 'License State/Province *',
+      name: 'License State/Province *',
       value: '',
       inputType: 'text',
       validations: [
@@ -1286,7 +1286,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'License number',
+      labelValue: 'License number *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1299,20 +1299,20 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter License Number',
       type: 'input',
-      label: 'License number',
-      name: 'License number',
+      label: 'License number *',
+      name: 'License number *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'License number is required'
+          message: 'License number  is required'
         }
       ]
     },
     {
-      labelValue: 'License State/Province',
+      labelValue: 'License State/Province *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1323,15 +1323,15 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter State/Province were License was Obtained',
       type: 'input',
-      label: 'License State/Province',
-      name: 'License State/Province',
+      label: 'License State/Province *',
+      name: 'License State/Province *',
       value: '',
       inputType: 'text',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'License State/Province is required'
+          message: 'License State/Province  is required'
         }
       ]
     },
@@ -1436,7 +1436,7 @@ export class ProfileComponent implements OnInit {
     //   inputType: 'select',
     // },
     {
-      labelValue: 'Choose a security questions to recover your password',
+      labelValue: 'Choose a security questions to recover your password *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1453,20 +1453,20 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select a Security Question',
       type: 'select',
-      label: 'Choose a security questions to recover your password',
-      name: 'Choose a security questions to recover your password',
+      label: 'Choose a security questions to recover your password *',
+      name: 'Choose a security questions to recover your password *',
       value: '',
       inputType: 'select',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Choose only 2'
+          message: 'Choose one'
         }
       ]
     },
     {
-      labelValue: 'Answer the question you selected',
+      labelValue: 'Answer the question you selected *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1477,8 +1477,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter Answer for the Security Question Selected above',
       type: 'input',
-      label: 'Answer the question you selected',
-      name: 'Answer the question you selected',
+      label: 'Answer the question you selected *',
+      name: 'Answer the question you selected *',
       value: '',
       inputType: 'text',
       validations: [
@@ -1490,7 +1490,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Choose a second security question to recover your password',
+      labelValue: 'Choose a second security question to recover your password *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1507,20 +1507,20 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select a different Security Question',
       type: 'select',
-      label: 'Choose a second security question to recover your password',
-      name: 'Choose a second security question to recover your password',
+      label: 'Choose a second security question to recover your password *',
+      name: 'Choose a second security question to recover your password *',
       value: '',
       inputType: 'select',
       validations: [
         {
           name: 'required',
           validator: Validators.required,
-          message: 'Choose only 2'
+          message: 'Choose one'
         }
       ]
     },
     {
-      labelValue: 'Answer the second security question you selected',
+      labelValue: 'Answer the second security question you selected *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1531,8 +1531,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Enter Answer for the Security Question Selected above',
       type: 'input',
-      label: 'Answer the second security question you selected',
-      name: 'Answer the second security question you selected',
+      label: 'Answer the second security question you selected *',
+      name: 'Answer the second security question you selected *',
       value: '',
       inputType: 'text',
       validations: [
@@ -1776,8 +1776,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select an Medical',
       type: 'select',
-      label:  'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
-      name: 'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?',
+      label:  'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions? *',
+      name: 'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions? *',
       value: '',
       inputType: 'select',
       validations: [
@@ -1798,10 +1798,10 @@ export class ProfileComponent implements OnInit {
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Ethnicity',
+      placeHolder: 'Ethnicity *',
       type: 'select',
-      label: 'Ethnicity',
-      name: 'Ethnicity',
+      label: 'Ethnicity *',
+      name: 'Ethnicity *',
       value: '',
       inputType: 'select',
       validations: [
@@ -1823,10 +1823,10 @@ export class ProfileComponent implements OnInit {
       componentId: '0',
       sortOrder: '0',
       tooltip: '',
-      placeHolder: 'Select Highest Education Level',
+      placeHolder: 'Select Highest Education Level *',
       type: 'select',
-      label: 'Education Level',
-      name: 'Education Level',
+      label: 'Education Level *',
+      name: 'Education Level *',
       value: '',
       inputType: 'select',
       validations: [
@@ -1838,7 +1838,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Marital Status',
+      labelValue: 'Marital Status *',
       icon: 'sql',
       defaultInputValue: '',
       componentType: 'false',
@@ -1854,8 +1854,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: '',
       type: 'select',
-      label: 'Marital Status',
-      name: 'Marital Status',
+      label: 'Marital Status *',
+      name: 'Marital Status *',
       value: '',
       inputType: 'select',
       validations: [
@@ -1889,8 +1889,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Household Income',
       type: 'select',
-      label: 'Household income',
-      name: 'Household income',
+      label: 'Household income *',
+      name: 'Household income *',
       value: '',
       inputType: 'select',
       validations: [
@@ -1902,7 +1902,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Number of children',
+      labelValue: 'Number of children *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -1920,8 +1920,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select Number of Children',
       type: 'select',
-      label: 'Number of children',
-      name: 'Number of children',
+      label: 'Number of children *',
+      name: 'Number of children *',
       value: '',
       inputType: 'select',
       validations: [
@@ -1972,8 +1972,8 @@ export class ProfileComponent implements OnInit {
       tooltip: '',
       placeHolder: '',
       type: 'select',
-      label: 'Do you or any member of your immediate family work in any of the following areas?',
-      name: 'Do you or any member of your immediate family work in any of the following areas?',
+      label: 'Do you or any member of your immediate family work in any of the following areas? *',
+      name: 'Do you or any member of your immediate family work in any of the following areas? *',
       value: '',
       inputType: 'select',
       validations: [

@@ -16,7 +16,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class ContactUsExternalComponent implements OnInit {
   reasons = ['Survey Technical Questions/Comments', 'Payment Questions',
-    'Website Questions/Comments', 'Profile/Registration Questions Comments', 'Change Username'];
+    'Website Questions/Comments', 'Profile/Registration Questions Comments', 'Change Username', 'Change profession'];
 
   loginForm: FormGroup;
   formErrors: any;

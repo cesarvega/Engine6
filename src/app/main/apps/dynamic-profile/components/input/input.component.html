@@ -5,5 +5,5 @@
     <ng-container *ngFor="let validation of field.validations" ngProjectAs="mat-error">
         <mat-error *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</mat-error>      
     </ng-container>
-    <a *ngIf="field.name === 'Email *'" style="float: right;" mat-raised-button routerLink="/apps/login/contact-us">edit</a>
+    <a *ngIf="field.icon === 'edit'" style="float: right;" mat-raised-button routerLink="/apps/login/contact-us">edit</a>
 </mat-form-field>

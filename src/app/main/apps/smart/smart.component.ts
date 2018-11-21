@@ -2105,7 +2105,7 @@ export class SmartComponent implements OnInit {
           ]
         },
         {
-          labelValue: 'Marital Status',
+          labelValue: 'Marital Status *',
           icon: 'sql',
           defaultInputValue: '',
           componentType: 'bi-select',
@@ -2121,8 +2121,8 @@ export class SmartComponent implements OnInit {
           tooltip: '',
           placeHolder: '',
           type: 'select',
-          label: 'Marital Status',
-          name: 'Marital Status',
+          label: 'Marital Status *',
+          name: 'Marital Status *',
           value: '',
           inputType: 'bi-select',
           validations: [
@@ -2134,15 +2134,13 @@ export class SmartComponent implements OnInit {
           ]
         },
         {
-          labelValue: 'Household income',
+          labelValue: 'Household income *',
           icon: 'sql',
           defaultInputValue: '',
           componentType: 'bi-select',
           options: [
-
               '5000',
               '6000'
-
           ],
           disabled: 'false',
           componentId: '0',
@@ -2150,8 +2148,8 @@ export class SmartComponent implements OnInit {
           tooltip: '',
           placeHolder: 'Select a Household Income',
           type: 'select',
-          label: 'Household income',
-          name: 'Household income',
+          label: 'Household income *',
+          name: 'Household income *',
           value: '',
           inputType: 'bi-select',
           validations: [

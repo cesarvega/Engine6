@@ -36,8 +36,8 @@ export class RegistrationFormComponent implements OnInit {
     { key: '0d1d3494-4939-49d7-bdbe-15eb48e923ab', labelValue: 'Mailing street/#apto/unit' },
     { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'State/Province' },
     { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code *' },
-    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone *' },
-    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation' },
+    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone' },
+    { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation *' },
     { key: 'efcfa33d-efb0-43e8-8e51-23508ddedc39', labelValue: 'Type of industry *' },
     { key: '81d74098-5efd-4fc9-afce-88b98f745a23', labelValue: 'Title position *' },
     { key: 'bcf8eea5-1b82-4452-8304-8c588c490ef9', labelValue: 'Level of Education' },
@@ -87,13 +87,13 @@ export class RegistrationFormComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     { key: '5816f764-df23-4315-83b7-d0104ecde1ab', labelValue: 'This section is completely optional, all information provided here will help us better match you with current survey opportunities.' },
     // tslint:disable-next-line:max-line-length
-    { key: '35e2b5b7-425c-4696-a706-a5be2c1f1243', labelValue: 'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions?'},
-    { key: '320c9e9a-65da-4fc0-bf87-d64468992572', labelValue: 'Ethnicity' },
-    { key: '04f9afe7-7786-4bfa-b7f1-2fc5fdeea20e', labelValue: 'Education Level' },
-    { key: '849d790e-a764-40c5-9099-e36ea5406d0b', labelValue: 'Marital Status' },
-    { key: '5fdc3adb-a1c3-4194-8a49-ebc61c15ee25', labelValue: 'Household income' },
-    { key: '2ba0c798-4db5-41c5-a597-16e9da8dd182', labelValue: 'Number of children' },
-    { key: '08b20841-5e1b-465c-b2ca-b2271617517a', labelValue: 'Do you or any member of your immediate family work in any of the following areas?' },
+    { key: '35e2b5b7-425c-4696-a706-a5be2c1f1243', labelValue: 'Do you or anyone in your household, or someone for whom you provide care suffer from any of the following medical conditions? *'},
+    { key: '320c9e9a-65da-4fc0-bf87-d64468992572', labelValue: 'Ethnicity *' },
+    { key: '04f9afe7-7786-4bfa-b7f1-2fc5fdeea20e', labelValue: 'Education Level *' },
+    { key: '849d790e-a764-40c5-9099-e36ea5406d0b', labelValue: 'Marital Status *' },
+    { key: '5fdc3adb-a1c3-4194-8a49-ebc61c15ee25', labelValue: 'Household income *' },
+    { key: '2ba0c798-4db5-41c5-a597-16e9da8dd182', labelValue: 'Number of children *' },
+    { key: '08b20841-5e1b-465c-b2ca-b2271617517a', labelValue: 'Do you or any member of your immediate family work in any of the following areas? *' },
     { key: '79e746d9-e454-453c-85bd-a007969c7ff5', labelValue: 'Other information: Some questions about your current system configurations' },
     { key: 'd5139a3d-ac03-4732-b62c-7e41d67fd90e', labelValue: 'BI App' },
     { key: '68dc6fa3-8a88-4e3f-acc4-ede4eb4e798b', labelValue: 'SMS/Text' },
@@ -477,20 +477,20 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cellphone *',
-      name: 'Cellphone *',
+      label: 'Cellphone',
+      name: 'Cellphone',
       value: '',
       inputType: 'text',
-      validations: [
-        {
-          name: 'required',
-          validator: Validators.required,
-          message: 'cellphone number is required'
-        }
-      ]
+      // validations: [
+      //   {
+      //     name: 'required',
+      //     validator: Validators.required,
+      //     message: 'cellphone number is required'
+      //   }
+      // ]
     },
     {
-      labelValue: 'Specify your profession or occupation',
+      labelValue: 'Specify your profession or occupation *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -512,8 +512,8 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: '',
       placeHolder: 'Select Profession/Occupation',
       type: 'select',
-      label: 'Specify your profession or occupation',
-      name: 'Specify your profession or occupation',
+      label: 'Specify your profession or occupation *',
+      name: 'Specify your profession or occupation *',
       value: '',
       inputType: '',
       validations: [
@@ -603,10 +603,8 @@ export class RegistrationFormComponent implements OnInit {
     // });
 
     this._loginService.postUser(JSON.stringify(this._finalObj)).subscribe(result => {
-      this.toastr.success('Account successfully created. Please log in to your new account.');
-      setTimeout(() => {        
+        localStorage.setItem('sucecess', 'true');
         this._route.navigateByUrl('/apps/login/auth/login');
-      }, 6000);
     });
   }
 

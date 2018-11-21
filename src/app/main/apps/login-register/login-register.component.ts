@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { AuthService } from 'angularx-social-login';
@@ -10,6 +10,7 @@ import { AuthGuardService } from './service/auth.service';
 import {MatDialog} from '@angular/material';
 import { trigger, transition, useAnimation, state, style} from '@angular/animations';
 import { shake } from 'ng-animate';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-login-register',
@@ -32,16 +33,23 @@ export class LoginRegisterComponent implements OnInit {
     public isUser = false;
     public harlemShake = true;
     private myTiming = 0;
-   
+    @Input() messageFromRegistration;
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
         private _authService: AuthService,
         private _authGuardService: AuthGuardService,
         private _biLoginService: LoginService,
-        public dialog: MatDialog,
+        public dialog: MatDialog, 
+        private toastr: ToastrService,
         private router: Router
     ) {
+        
+        const newRegister  =  localStorage.getItem('sucecess');
+        if (newRegister === 'true') {
+            localStorage.setItem('sucecess', 'false');
+            this.toastr.success('Account successfully created. Please log in to your new account.');
+        }
         // Configure the layout
         this._fuseConfigService.config = {
             layout: {
@@ -77,7 +85,7 @@ export class LoginRegisterComponent implements OnInit {
                 const  ocupattion: any = JSON.parse(userData.message);
                 localStorage.setItem('userName', this.loginForm.value.email);
                 ocupattion.forEach(element => {
-                    if (element.question === 'Specify your profession or occupation') {                        
+                    if (element.question === 'Specify your profession or occupation *') {                        
                         localStorage.setItem('profession', element.answer);
                     }
                 });
