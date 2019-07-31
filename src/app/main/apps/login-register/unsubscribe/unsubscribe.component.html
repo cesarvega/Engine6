@@ -13,8 +13,8 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email *</mat-label>
-                    <input matInput formControlName="emailFrom">
-                    <mat-error *ngIf="!formErrors.emailFrom.required">
+                    <input matInput formControlName="username">
+                    <mat-error *ngIf="!formErrors.username.required">
                         A valid Email is required!
                     </mat-error>
                 </mat-form-field>
@@ -22,18 +22,18 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Reason for unsubcribe *</mat-label>
-                    <mat-select placeholder="Reason for Communication" formControlName="reasonwhy">
+                    <mat-select placeholder="Reason for Communication" formControlName="reason">
                         <mat-option *ngFor="let contactReason of reasons" [value]="contactReason">
                             {{contactReason}}
                         </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="!formErrors.reasonwhy.required">
+                    <mat-error *ngIf="!formErrors.reason.required">
                         Select a reason is required!
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>if other please specify</mat-label>
-                    <textarea rows='3' cols='50' matInput placeholder="message" formControlName="Message"></textarea>
+                    <textarea rows='3' cols='50' matInput placeholder="message" formControlName="message"></textarea>
                     <!-- <mat-error *ngIf="!formErrors.Message.required">
                         5 characters minimum message is required!
                     </mat-error> -->

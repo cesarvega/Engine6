@@ -19,9 +19,9 @@ export class AnalyticsDashboardComponent implements OnInit
     widget1SelectedYear = '2018';
     widget5SelectedDay = 'today';
     yearDataWidget;
-    totalAmount;
-    avg;
-    totalAmountSurveys;
+    totalAmount: string;
+    avg: string;
+    totalAmountSurveys: string;
 
     /**
      * Constructor

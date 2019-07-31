@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
     { key: '0d1d3494-4939-49d7-bdbe-15eb48e923ab', labelValue: 'Mailing street/#apto/unit' },
     { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'State/Province' },
     { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code' },
-    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone' },
+    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cell Phone *' },
     { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation *' },
     { key: 'efcfa33d-efb0-43e8-8e51-23508ddedc39', labelValue: 'Type of industry *' },
     { key: '81d74098-5efd-4fc9-afce-88b98f745a23', labelValue: 'Title position *' },
@@ -93,7 +93,7 @@ export class ProfileComponent implements OnInit {
     { key: '08b20841-5e1b-465c-b2ca-b2271617517a', labelValue: 'Do you or any member of your immediate family work in any of the following areas? *' },
     { key: '79e746d9-e454-453c-85bd-a007969c7ff5', labelValue: 'Other information: Some questions about your current system configurations' },
     { key: 'd5139a3d-ac03-4732-b62c-7e41d67fd90e', labelValue: 'Please select how would you like to receive survey invitations' },
-    { key: '68dc6fa3-8a88-4e3f-acc4-ede4eb4e798b', labelValue: '' },
+    { key: '68dc6fa3-8a88-4e3f-acc4-ede4eb4e798b', labelValue: 'Upload License or Documents *' },
     { key: 'd840e65b-9794-4eed-9f2d-8f9ea3d2609e', labelValue: '' },
     { key: '2659adc0-cee0-4e15-8cff-baa2ecc78a7a', labelValue: '' },
     { key: '342838eb-0104-4537-beb8-b6183cb4fa36', labelValue: '' },
@@ -227,6 +227,30 @@ export class ProfileComponent implements OnInit {
           message: 'please enter first name'
         }
       ]
+    },
+    {
+      labelValue: 'upload-file *',
+      icon: '',
+      defaultInputValue: '',
+      componentType: 'false',
+      options: [''],
+      disabled: 'false',
+      componentId: '0',
+      sortOrder: '0',
+      tooltip: '',
+      placeHolder: 'Enter your First Name',
+      type: 'file',
+      label: 'Upload License or Documents *',
+      name: 'upload-file *',
+      value: '',
+      inputType: 'file',
+      // validations: [
+      //   {
+      //     name: 'required',
+      //     validator: Validators.required,
+      //     message: 'please enter first name'
+      //   }
+      // ]
     },
     {
 
@@ -464,7 +488,7 @@ export class ProfileComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Cell Phone',
+      labelValue: 'Cell Phone *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -475,17 +499,17 @@ export class ProfileComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cellphone',
-      name: 'Cellphone',
+      label: 'Cell Phone *',
+      name: 'Cell Phone *',
       value: '',
       inputType: 'text',
-      // validations: [
-      //   {
-      //     name: 'required',
-      //     validator: Validators.required,
-      //     message: 'cellphone number is required'
-      //   }
-      // ]
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'cellphone number is required'
+        }
+      ]
     },
     {
       icon: '',

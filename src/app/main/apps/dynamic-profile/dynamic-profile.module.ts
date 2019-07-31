@@ -20,6 +20,9 @@ import { RegistrationFormComponent } from '../login-register/registration-form/r
 import { ProfileComponent } from '../login-register/profile/profile.component';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ImageUploadModule } from 'ng2-imageupload';
 const routes: Routes = [
   {
     path     : 'user/profile',
@@ -44,7 +47,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     FuseSharedModule,
-    MatTooltipModule
+    PdfViewerModule,
+    ImageUploadModule 
   ],
   declarations:   [
     ProfileComponent,
@@ -60,7 +64,8 @@ const routes: Routes = [
     CheckboxComponent,
     LabelComponent,
     DynamicFieldDirective,
-    DynamicFormComponent
+    DynamicFormComponent,
+    FileUploaderComponent
   ],
    entryComponents: [
     AutocompleteComponent,
@@ -70,7 +75,8 @@ const routes: Routes = [
     DateComponent,
     RadiobuttonComponent,
     CheckboxComponent,
-    LabelComponent
+    LabelComponent,
+    FileUploaderComponent
 ]
 })
 export class DynamicProfileModule { }

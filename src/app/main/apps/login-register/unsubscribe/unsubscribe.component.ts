@@ -3,6 +3,8 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialUser, AuthService } from 'angularx-social-login';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-unsubscribe',
   templateUrl: './unsubscribe.component.html',
@@ -13,11 +15,12 @@ export class UnsubscribeComponent implements OnInit {
   private user: SocialUser;
   formErrors: any;
   reasons = ['Lack of surveys', 'I do not have the time', 'Compensation too low', 'Other -- please specify']; 
-
+  
   constructor(
     private _fuseConfigService: FuseConfigService,
-    private _formBuilder: FormBuilder,
-    private _authService: AuthService,
+    private _formBuilder: FormBuilder,    
+    private _loginService: LoginService,
+    private toastr: ToastrService,
     private router: Router
   ) {
     this._fuseConfigService.config = {
@@ -37,22 +40,27 @@ export class UnsubscribeComponent implements OnInit {
       }
     };
     this.formErrors = {
-      emailFrom: {},
-      reasonwhy: {},
-      Message: {}    
+      username: {},
+      reason: {},
+      message: {}    
     };
   }
 
   unsubscribe(): void {
-    console.log('unsubscribed');
-    this.router.navigateByUrl('/apps/login/goodbay');
+    if (this.loginForm.value.message === '') {
+      this.loginForm.value.message = '  ';
+    }
+    this._loginService.unsubscribe(this.loginForm.value).subscribe(x => {        
+      this.toastr.success('email sent');
+          this.router.navigateByUrl('/apps/login/thankyou');
+  }); 
   }
 
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
-      emailFrom: ['', [Validators.required, Validators.email]],
-      reasonwhy: ['', Validators.required],
-      Message: ['']
+      username: ['', [Validators.required, Validators.email]],
+      reason: ['', Validators.required],
+      message: ['']
     });
   }
 

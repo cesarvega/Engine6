@@ -57,7 +57,7 @@ const routes = [
     },         
     {
         path: '**',
-        redirectTo: 'surveys'
+        redirectTo: 'login'
     }
     // {
     //     path: 'dashboards/project',

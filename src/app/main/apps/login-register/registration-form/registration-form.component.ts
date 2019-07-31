@@ -36,7 +36,7 @@ export class RegistrationFormComponent implements OnInit {
     { key: '0d1d3494-4939-49d7-bdbe-15eb48e923ab', labelValue: 'Mailing street/#apto/unit' },
     { key: 'b5c9d2ee-69a8-45d2-b50f-c5ad21310d23', labelValue: 'State/Province' },
     { key: '19fde0b9-7162-41a1-9f79-8e33bec336a5', labelValue: 'Zip Code *' },
-    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cellphone' },
+    { key: '8933a8ed-9b7a-40a6-a234-478765560187', labelValue: 'Cell Phone *' },
     { key: 'f20bc868-a9ba-45d3-9918-270806149a8b', labelValue: 'Specify your profession or occupation *' },
     { key: 'efcfa33d-efb0-43e8-8e51-23508ddedc39', labelValue: 'Type of industry *' },
     { key: '81d74098-5efd-4fc9-afce-88b98f745a23', labelValue: 'Title position *' },
@@ -466,7 +466,7 @@ export class RegistrationFormComponent implements OnInit {
       ]
     },
     {
-      labelValue: 'Cell Phone',
+      labelValue: 'Cell Phone *',
       icon: '',
       defaultInputValue: '',
       componentType: 'false',
@@ -477,17 +477,17 @@ export class RegistrationFormComponent implements OnInit {
       tooltip: 'U.S./Canada can be used to receive our survey texts',
       placeHolder: 'Enter your Cell Phone Number',
       type: 'input',
-      label: 'Cellphone',
-      name: 'Cellphone',
+      label: 'Cell Phone *',
+      name: 'Cell Phone *',
       value: '',
       inputType: 'text',
-      // validations: [
-      //   {
-      //     name: 'required',
-      //     validator: Validators.required,
-      //     message: 'cellphone number is required'
-      //   }
-      // ]
+      validations: [
+        {
+          name: 'required',
+          validator: Validators.required,
+          message: 'cellphone number is required'
+        }
+      ]
     },
     {
       labelValue: 'Specify your profession or occupation *',

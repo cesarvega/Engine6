@@ -71,4 +71,5 @@ export class FaqComponent implements OnInit, OnDestroy
     {
         this.step--;
     }
+
 }

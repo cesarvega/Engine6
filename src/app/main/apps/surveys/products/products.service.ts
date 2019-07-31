@@ -19,7 +19,7 @@ export class EcommerceProductsService implements Resolve<any>
 
 
     products: any[];
-    now = true;
+    now = false;
     webApiUrl = 'https://ng6-node-app-boldepvhqf.now.sh/';
     apiCall = 'api/bi-surveys';
     API_URL = 'https://tools.brandinstitute.com/BIWebServices/' + 'api/BiFormCreator/';
@@ -72,7 +72,7 @@ export class EcommerceProductsService implements Resolve<any>
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/analytics-dashboard-widgets')
                 .subscribe((response: any) => {
-                    this.getSurveySummary('cvega@1.com').subscribe(res => {
+                    this.getSurveySummary('cvega@gmail.com').subscribe(res => {
                         if (res) {
                             const jsonData = JSON.parse(res.d)[0].json;
                             let amount = JSON.parse(jsonData).maxamount;

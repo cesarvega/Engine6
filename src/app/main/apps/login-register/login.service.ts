@@ -20,7 +20,8 @@ export class LoginService {
   protected ASMX_URL_VerifyUserName = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_verify_username';
   protected ASMX_URL_ChangePassword = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_changePassword';
   protected ASMX_URL_Verify_username_and_password = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_verify_username_and_password';
-
+  protected ASMX_URL_Tell_a_Friend = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_tellafriend';
+  protected ASMX_URL_Unsubscribe = 'https://tools.brandinstitute.com/wsPanelMembers/wsPanel.asmx/pm_unsubscribe';
   constructor(private httpClient: HttpClient) { }
 
   // get  all Users 
@@ -76,6 +77,18 @@ export class LoginService {
     const bodyString = JSON.stringify(data);
     const url = `${this.API_URL}`;
     return this.httpClient.post(this.ASMX_URL_ChangePassword, bodyString, this.httpOptions);
+  }
+
+  tellaFriend(data: any): Observable<any> {
+    const bodyString = JSON.stringify(data);
+    const url = `${this.API_URL}`;
+    return this.httpClient.post(this.ASMX_URL_Tell_a_Friend, bodyString, this.httpOptions);
+  }
+
+  unsubscribe(data: any): Observable<any> {
+    const bodyString = JSON.stringify(data);
+    const url = `${this.API_URL}`;
+    return this.httpClient.post(this.ASMX_URL_Unsubscribe, bodyString, this.httpOptions);
   }
 }
 

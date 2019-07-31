@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialUser, AuthService } from 'angularx-social-login';
 import { Router } from '@angular/router';
 import { ContactUsExternalService } from '../../contact-us-external/contact-us-external.service';
+import { LoginService } from '../login.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-tell-a-friend',
   templateUrl: './tell-a-friend.component.html',
@@ -18,7 +20,8 @@ export class TellAFriendComponent implements OnInit {
     private _fuseConfigService: FuseConfigService,
     private _formBuilder: FormBuilder,
     private router: Router,    
-    private _contactUsExternalService: ContactUsExternalService
+    private toastr: ToastrService,
+    private _loginService: LoginService
   ) {
     this._fuseConfigService.config = {
       layout: {
@@ -39,17 +42,17 @@ export class TellAFriendComponent implements OnInit {
     
     this.formErrors = {
       email: {},
+      first: {},
+      last: {},
       message: {}
-      // title: {},
-      // firstName: {},
-      // lastName: {},
-      // field: {},
     };
   }
 
   contactUs(): void {
-    this._contactUsExternalService.contacUs(this.loginForm).subscribe(x => {
+    const data =  {username: localStorage.getItem('userName'), email: this.loginForm.value.email, first: this.loginForm.value.first, last: this.loginForm.value.last};
+    this._loginService.tellaFriend(data).subscribe(x => {
       console.log(x);
+      this.toastr.success('email sent!');
       this.router.navigateByUrl('/apps/login/thankyou');
     });
   
@@ -57,11 +60,13 @@ export class TellAFriendComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      message: ['']
-      // title: ['', Validators.required],
-      // firstName:  ['', Validators.required],
-      // lastName:  ['', Validators.required],
-      // field: ['', [Validators.required, Validators.minLength(4)]],
+      first: ['', Validators.required],
+      last: ['', Validators.required],
+      // tslint:disable-next-line:max-line-length
+      message: [{value: `Hi,I thought you might be interested in joining the Brand Institute Panel. 
+      I’m already a Member and enjoy sharing my opinion on new products, drugs and services being developed right now.
+      Join the Brand Institute Panel and leave your mark on the future!Click ` +
+       `<a href='https://www.brandinstitute.com/memberservices/default.aspx?curPage=home.aspx'>here</a>` + ` to register.`, disabled: true}]
     });
   }
 }

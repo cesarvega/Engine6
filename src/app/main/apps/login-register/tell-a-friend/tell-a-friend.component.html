@@ -43,6 +43,20 @@
               </mat-form-field> -->
 
         <mat-form-field appearance="outline">
+          <mat-label>Recipient's First Name</mat-label>
+          <input matInput formControlName="first">
+          <mat-error *ngIf="!formErrors.first.required">
+            first name is required!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Recipient's Last Name</mat-label>
+          <input matInput formControlName="last">
+          <mat-error *ngIf="!formErrors.last.required">
+            Last name is required!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
           <mat-label>Recipient's Email</mat-label>
           <input matInput formControlName="email">
           <mat-error *ngIf="!formErrors.email.required">
@@ -64,7 +78,7 @@
 
         <mat-form-field appearance="outline">
           <mat-label>Recipient's Message</mat-label>
-          <textarea rows='3' cols='100' matInput style="height: 190px;" value="Hi, like me, I thought you might enjoy sharing your opinion on products, drugs, services in development. Join the Brand Institute Panel and leave your mark on the future!" autofocus="true" placeholder="Hi, like me, I thought you might enjoy sharing your opinion on products, drugs, services in development. Join the Brand Institute Panel and leave your mark on the future!"
+          <textarea rows='3' cols='100' matInput disabled style="height: 190px;" value="Hi, like me, I thought you might enjoy sharing your opinion on products, drugs, services in development. Join the Brand Institute Panel and leave your mark on the future!" autofocus="true" placeholder="Hi, like me, I thought you might enjoy sharing your opinion on products, drugs, services in development. Join the Brand Institute Panel and leave your mark on the future! Click here to register."
             formControlName="message"></textarea>
           <!-- <mat-error *ngIf="!formErrors.message.required">
             5 characters minimum message is required!

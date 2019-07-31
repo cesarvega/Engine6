@@ -16,6 +16,7 @@ import { RadiobuttonComponent } from '../radiobutton/radiobutton.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { LabelComponent } from '../textlabel/textlabel.component';
 import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
+import { FileUploaderComponent } from '../file-uploader/file-uploader.component';
 
 const componentMapper = {
   input: InputComponent,
@@ -25,7 +26,8 @@ const componentMapper = {
   radiobutton: RadiobuttonComponent,
   checkbox: CheckboxComponent,
   label: LabelComponent,
-  auto: AutocompleteComponent
+  auto: AutocompleteComponent,
+  file: FileUploaderComponent
 };
 @Directive({
   selector: '[dynamicField]'
